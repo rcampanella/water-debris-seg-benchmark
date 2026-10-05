@@ -1,0 +1,8 @@
+{
+  "benchmark": "water_debris_seg",
+  "version": "0.1.0-scaffold",
+  "generated_at": "2026-10-05",
+  "hard_rule": "train_eomt_videomt_masks_lars_only; box_sets_eval_mask_to_box_map_only",
+  "experiments": [],
+  "headline": {}
+}

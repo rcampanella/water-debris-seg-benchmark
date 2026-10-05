@@ -1,0 +1,23 @@
+{
+  "benchmark": "water_debris_seg",
+  "stage": 0,
+  "files": [
+    {"path": "docs/water_debris_seg_benchmark.md", "role": "spec"},
+    {"path": "docs/water_debris_seg_swarm.md", "role": "swarm"},
+    {"path": "docs/water_debris_seg_decision_log.md", "role": "decisions"},
+    {"path": "eval_outputs/water_debris_seg/REPORT.md", "role": "report"},
+    {"path": "data/water_debris/DISK_BUDGET.md", "role": "disk_gate"},
+    {"path": "eval_outputs/water_debris_seg/GPU_INVENTORY.md", "role": "gpu_gate"}
+  ],
+  "ablations": [
+    "01_zeroshot_lars",
+    "02_finetune_lars_semantic",
+    "03_finetune_lars_panoptic",
+    "04_flow_mask2box",
+    "05_cansurf_small_object",
+    "06_wsodd_distractors",
+    "07_videomt_temporal",
+    "08_specialized_yolo",
+    "09_cross_dataset_transfer"
+  ]
+}

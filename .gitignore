@@ -1,0 +1,31 @@
+# Dataset binaries (never commit)
+data/water_debris/lars/*
+!data/water_debris/lars/.gitkeep
+data/water_debris/flow/*
+!data/water_debris/flow/.gitkeep
+data/water_debris/cansurf/*
+!data/water_debris/cansurf/.gitkeep
+data/water_debris/wsodd/*
+!data/water_debris/wsodd/.gitkeep
+
+# Third-party clones and weights
+third_party/
+*.pth
+*.pt
+*.bin
+*.ckpt
+
+# Secrets and env
+.env
+.env.*
+*.pem
+credentials.json
+
+# Python / ML artifacts
+__pycache__/
+.venv/
+wandb/
+*.jsonl
+
+# OS
+.DS_Store
