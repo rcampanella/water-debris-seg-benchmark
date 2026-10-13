@@ -16,17 +16,40 @@
 
 ## Results
 
-| Method | mAP | AP_S | Source |
-|---|---|---|---|
-| EoMT zero-shot | — | — | *pending* |
-| EoMT LaRS-FT | — | — | *pending* |
-| YOLOv11 | — | — | ablations/08 |
+Scored with `eval_coco_bbox.py` (pycocotools) on 2026-10-13 against the **aligned** val GT (2209 images, 11526 boxes); audit trail in [`RESCORE.md`](../../RESCORE.md). mAP = AP@[.50:.95]; AR100 = recall at 100 dets/image; every image counts.
+
+| Method | mAP | AP50 | AP75 | AR100 | Images with preds | Dets | Source |
+|---|---|---|---|---|---|---|---|
+| EoMT zero-shot | **0.095** | 0.148 | 0.090 | 0.140 | 1502/2209 | 3766 | W&B `lhnbhuej`; [`metrics`](sources/eomt_zeroshot_yolo_aligned_gt.metrics.json), [`preds`](sources/eomt_zeroshot_val_preds_coco.json) |
+| EoMT LaRS panoptic FT (ab03 ckpt) | **0.034** | 0.069 | 0.021 | 0.047 | 1005/2209 | 1395 | W&B `qi6ymm68`, job 27660681; [`metrics`](sources/eomt_lars_panoptic_yolo_aligned_gt.metrics.json), [`preds`](sources/eomt_lars_panoptic_ft_val_preds_coco.json) |
+| *Ref:* EoMT LaRS semantic FT, min256 ([09](../09_cross_dataset_transfer/README.md)) | 0.078 | 0.160 | 0.061 | 0.173 | 2209/2209 | 6583 | ab09 |
+| *Ref:* YOLOv11n CANSURF-trained ([08](../08_specialized_yolo/README.md)) | **0.857** | 0.960 | 0.865 | 0.870 | 2209/2209 | 30206 | preds job **28000242** from train **27648816** |
+
+**Object sizes:** only **19 of 11526** CANSURF val boxes are small (< 32²), 1208 medium, 10299 large. CANSURF AP_S therefore rests on 19 objects and is not a usable headline; FloW (1199 of 2024 small) is the small-object test set.
+
+EoMT boxes all carry a fixed score of 0.5, so AP cannot rank its true hits above its false ones; AR100 is the fairer EoMT signal until real mask scores are exported. Scores on the original 2221-image GT differ by ≤ 0.001 (see `RESCORE.md`).
+
+### Superseded numbers (legacy scorer, kept for audit)
+
+Pre-2026-10-13 values from `eval_coco_bbox_legacy.py` (mAP = mean of AP@.50/.75; AP_S ignored false positives; images without predictions skipped). Files: `sources/*.metrics.legacy.json`.
+
+| Method | legacy mAP | legacy AP_S |
+|---|---|---|
+| EoMT zero-shot | 0.147 | 0.083 |
+| EoMT LaRS panoptic FT | 0.120 | 0.133 |
 
 ## Verdict
 
-*Pending.*
+LaRS panoptic FT clearly **underperforms** COCO zero-shot on CANSURF (**0.034 vs 0.095** mAP) and predicts nothing on 55% of images. CANSURF-trained YOLOv11n reaches **0.857** on the same scorer and GT, about 9× the best EoMT. CANSURF is dominated by large, close-range cans, so this ablation tests material/appearance transfer rather than far-field detection.
 
 ## Resources copied here
+
+| File | Description |
+|---|---|
+| `sources/cansurf_val_gt_coco.json` | YOLO val → COCO detection GT (2221 imgs, 11557 boxes) via `masks_to_coco_boxes.py` |
+| `sources/cansurf_val_gt_coco_yolo_aligned.json` | Same minus 12 corrupt YOLO val images (2209 imgs) |
+| `sources/eomt_*_yolo_aligned_gt.metrics.json` | pycocotools metrics on aligned GT (headline) |
+| `sources/*.metrics.legacy.json` | Superseded legacy-scorer metrics (audit only) |
 
 | Original | Copy in this folder | Present |
 |---|---|---|
@@ -34,4 +57,6 @@
 
 ## Code components
 
+- `scripts/eval_eomt_cansurf_mask2box.py` (`--lightning-ckpt` for ab03), `scripts/eval_coco_bbox.py`, `ablation05_eval_only.sbatch`, `ablation05_eomt_cansurf_larsft.sbatch`
+- W&B groups: `ablation05_eomt_cansurf_zeroshot`, `ablation05_eomt_cansurf_larsft`
 - [CANSURF repo](https://github.com/ZaidAljundiHW2/CANSURF) layout reference

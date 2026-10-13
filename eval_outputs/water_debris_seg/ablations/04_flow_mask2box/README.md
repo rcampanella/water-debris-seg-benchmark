@@ -1,8 +1,8 @@
 # Ablation 04 — FloW-Img mask→box mAP (eval only)
 
-**Question.** As a **detector**, how does EoMT/VidEoMT (zero-shot vs LaRS-trained) perform on **inland floating waste** boxes?
+**Question.** As a **detector**, how does EoMT (zero-shot vs LaRS-trained) perform on **inland floating waste** boxes?
 
-**Expected outcome.** Low mAP vs FloW paper detectors; **AP_S** especially poor (many objects &lt;32²). Validates need for domain-specific training or YOLO.
+**Expected outcome.** Low mAP vs FloW paper detectors; **AP_S** especially poor (many objects &lt;32²).
 
 **Hard rule.** **No training** on FloW. Inference + mask→box only.
 
@@ -10,28 +10,41 @@
 
 | Item | Value |
 |---|---|
-| Data | FloW-Img 800 test (or official split) |
-| Weights | 01 zero-shot and/or 03 LaRS panoptic |
+| Data | FloW-Img **test** (~800 images, paper 6:4 split) |
+| Weights | 01 zero-shot COCO ckpt; 03 LaRS panoptic Lightning ckpt |
 | Metrics | bbox mAP, AP_S |
+| Access | [ORCA portal](https://orca-tech.cn/en/datasets/FloW/Introduction) — see [`FLOW_DATA.md`](../../../../water-debris-seg/docs/FLOW_DATA.md) |
 
 ## Results
 
-| Weights | mAP | AP_S | Source |
-|---|---|---|---|
-| EoMT zero-shot | — | — | *pending* |
-| EoMT LaRS-FT | — | — | *pending* |
+Scored with `eval_coco_bbox.py` (pycocotools) on 2026-10-13; audit trail in [`RESCORE.md`](../../RESCORE.md). mAP = AP@[.50:.95]; AP_S = AP@[.50:.95] on GT area < 32²; AR100 = recall at 100 dets/image. All 800 test images count, including images a method left empty.
+
+| Weights | mAP | AP50 | AP_S | AR100 | Images with preds | Dets | Source |
+|---|---|---|---|---|---|---|---|
+| EoMT zero-shot | **0.034** | 0.103 | **0.012** | 0.093 | 478/800 | 996 | job **27767340**; [`metrics`](sources/eomt_zeroshot_flow_preds_coco.metrics.json), [`preds`](sources/eomt_zeroshot_flow_preds_coco.json) |
+| EoMT LaRS panoptic FT | **0.014** | 0.044 | **0.007** | 0.051 | 419/800 | 682 | job **27767341**; [`metrics`](sources/eomt_lars_panoptic_flow_preds_coco.metrics.json), [`preds`](sources/eomt_lars_panoptic_flow_preds_coco.json) |
+| *Ref:* EoMT LaRS semantic FT ([09](../09_cross_dataset_transfer/README.md)) | 0.082 | 0.229 | 0.044 | 0.281 | 800/800 | 2911 | ab09 |
+| *Ref:* YOLOv11n FloW-trained ([08](../08_specialized_yolo/README.md)) | **0.390** | 0.815 | **0.249** | 0.491 | 800/800 | 18029 | job **27942882** |
+
+EoMT boxes all carry a fixed score of 0.5, so AP cannot rank its true hits above its false ones; AR100 is the fairer EoMT signal until real mask scores are exported.
+
+### Superseded numbers (legacy scorer, kept for audit)
+
+Pre-2026-10-13 values from `eval_coco_bbox_legacy.py` (mAP = mean of AP@.50/.75; AP_S ignored false positives; images without predictions skipped). Files: `sources/*.metrics.legacy.json`.
+
+| Weights | legacy mAP | legacy AP_S |
+|---|---|---|
+| EoMT zero-shot | 0.086 | 0.168 |
+| EoMT LaRS panoptic FT | 0.040 | 0.130 |
 
 ## Verdict
 
-*Pending.* If FloW download blocked → **not run** (decision log).
-
-## Resources copied here
-
-| Original | Copy in this folder | Present |
-|---|---|---|
-| — | sources/ | — |
+COCO zero-shot still beats LaRS panoptic FT on FloW (**0.034 vs 0.014** mAP), and both are an order of magnitude below FloW-trained YOLOv11n (**0.390**). Neither predicts anything on ~40–48% of test images. Small floating waste is essentially undetected (AP_S ≤ 0.012). The earlier claim that AP_S was "relatively higher" was an artefact of the legacy scorer. Maritime LaRS training does not help inland box transfer.
 
 ## Code components
 
-- FloW adapter (future)
-- mask→box eval (shared)
+- `water_debris_seg/datasets/flow.py`, `scripts/verify_flow.py`
+- `masks_to_coco_boxes.py voc-split` (or `yolo-split`)
+- `ablation04_flow_gt_coco.sbatch`, `ablation04_eomt_flow_zeroshot.sbatch`, `ablation04_eomt_flow_larsft.sbatch`
+- Shared infer: `eval_eomt_cansurf_mask2box.py` with `--images` pointing at FloW test
+- W&B groups: `ablation04_eomt_flow_zeroshot`, `ablation04_eomt_flow_larsft`

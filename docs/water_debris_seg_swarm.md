@@ -1,6 +1,7 @@
 # Water debris segmentation — agent swarm
 
-**Status:** Stage 0 scaffold complete. Stage 1+ gated on disk slack and GPU inventory.  
+**Status:** Wave 1 — LaRS + CANSURF on scratch; Wave 2 smoke done. FloW pending ORCA. **WSODD out of scope v1** (ablation 06 cancelled).  
+**Host:** Snellius — data on `/scratch-shared/$USER/water-debris-seg/`, repo on home ([`DISK_BUDGET.md`](../data/water_debris/DISK_BUDGET.md)).  
 **Spec:** [`water_debris_seg_benchmark.md`](water_debris_seg_benchmark.md)  
 **Decision log:** [`water_debris_seg_decision_log.md`](water_debris_seg_decision_log.md)  
 **Artifacts:** [`eval_outputs/water_debris_seg/`](../eval_outputs/water_debris_seg/) (repo root)
@@ -13,9 +14,11 @@
 
 No dataset downloads, clones, or GPU jobs until:
 
-1. [`data/water_debris/DISK_BUDGET.md`](../data/water_debris/DISK_BUDGET.md) shows free space ≥ next stage + 20% slack.
-2. [`eval_outputs/water_debris_seg/GPU_INVENTORY.md`](../eval_outputs/water_debris_seg/GPU_INVENTORY.md) lists ≥1 working CUDA device (excluding `elec-gpue002` on Slurm).
+1. [`data/water_debris/DISK_BUDGET.md`](../data/water_debris/DISK_BUDGET.md) shows free space ≥ next stage + 20% slack on the **intended tier** (datasets → scratch-shared; repo/manifests → home).
+2. [`eval_outputs/water_debris_seg/GPU_INVENTORY.md`](../eval_outputs/water_debris_seg/GPU_INVENTORY.md) lists ≥1 working CUDA device from an **`srun`/`sbatch` GPU job** (not the login node).
 3. Ablation README stubs exist under `eval_outputs/water_debris_seg/ablations/`.
+
+**Snellius storage rule:** scratch is **not permanent** (14-day inactivity purge on `/scratch-shared`). Copy manifests, metrics, and final checkpoints to home; never keep the only copy of data on scratch.
 
 ---
 
@@ -121,10 +124,11 @@ Checklist:
 
 ```
 Owns: data/water_debris/DISK_BUDGET.md
-Tasks: df -h before each stage; compare to plan table + 20% slack
+Tasks: df -h + quota -s before each stage; map home vs scratch-shared; compare to plan table + 20% slack
 Depends: Agent 0
 Checklist:
-  [ ] Current avail bytes recorded
+  [ ] Current avail bytes recorded (home + scratch)
+  [ ] scratch-shared user tree created if Stage ≥1
   [ ] Next stage GO/NO-GO with reason
 ```
 
@@ -132,11 +136,12 @@ Checklist:
 
 ```
 Owns: eval_outputs/water_debris_seg/GPU_INVENTORY.md
-Tasks: nvidia-smi -L; per-device torch alloc; mark elec-gpue002 excluded on Slurm
+Tasks: srun on gpu_a100/gpu_h100; nvidia-smi -L; per-device torch alloc in benchmark conda env
 Depends: Agent 0
 Checklist:
-  [ ] working_devices[] listed
+  [ ] working_devices[] listed (hostname + GPU name)
   [ ] failed_devices[] with error text
+  [ ] Slurm partition + --gres documented in GPU_INVENTORY.md
 ```
 
 ### Agent 3 — LaRS download
@@ -166,13 +171,9 @@ Tasks: ORCA application download FloW-Img; log if blocked
 Depends: Disk gate
 ```
 
-### Agent 6 — WSODD
+### Agent 6 — WSODD *(cancelled v1)*
 
-```
-Owns: data/water_debris/wsodd/
-Tasks: Baidu download; VOC2COCO if needed
-Depends: Disk gate (download last — largest)
-```
+Ablation 06 out of scope (Baidu Pan). No download tasks.
 
 ### Agent 7 — Taxonomy adapters
 
@@ -189,7 +190,7 @@ Tests: import smoke + 1 batch load per available dataset
 Owns: third_party/eomt/, eval_outputs/.../smoke/eomt/
 Tasks: conda env; 8–16 LaRS or COCO val images; overlay PNGs
 Depends: Agent 7 (or COCO-only fallback)
-Hard rule: no fit on FloW/CANSURF/WSODD
+Hard rule: no fit on FloW/CANSURF
 ```
 
 ### Agent 9 — VidEoMT smoke
@@ -239,7 +240,7 @@ Hard rule: LaRS ONLY
 
 ```
 Owns: ablation/08_specialized_yolo/
-Tasks: YOLOv11 on CANSURF; optional FloW/WSODD-rubbish
+Tasks: YOLOv11 on CANSURF; optional FloW
 Depends: Agent 10
 ```
 
@@ -264,12 +265,13 @@ Checklist:
 
 ---
 
-## Parallelism and Slurm
+## Parallelism and Slurm (Snellius)
 
-- **Eval:** `#SBATCH --gres=gpu:1` per (model × dataset); array jobs OK.
-- **EoMT fit:** `--gres=gpu:4` when 4 healthy devices; else accumulate to batch 16.
-- **Always:** `#SBATCH --exclude=elec-gpue002` on this cluster.
-- Set `CUDA_VISIBLE_DEVICES` from `GPU_INVENTORY.md` working list only.
+- **Partition:** `gpu_a100` (default) or `gpu_h100`; **Eval:** `#SBATCH --gres=gpu:1` per (model × dataset); array jobs OK.
+- **EoMT fit:** `#SBATCH --partition=gpu_a100 --gres=gpu:4` on one node (4× A100 40GB); if queue constrained, use `--gres=gpu:1` with gradient accumulation to effective batch 16.
+- **I/O:** read/write datasets under `/scratch-shared/$USER/water-debris-seg/`; `#SBATCH --constraint=scratch-node` + `$TMPDIR` only for per-job burst I/O.
+- **Avoid** drained/down nodes: inspect `sinfo -p gpu_a100` before large array submits.
+- Prefer Slurm `--gres` over manual `CUDA_VISIBLE_DEVICES`.
 
 ---
 
@@ -288,4 +290,4 @@ Checklist:
 
 - Headline table in `REPORT.md`: EoMT / VidEoMT / YOLO × LaRS + available box sets.
 - Every number has a **Source** path in its ablation README.
-- Hard rule satisfied: no EoMT/VidEoMT checkpoint trained on FloW/CANSURF/WSODD.
+- Hard rule satisfied: no EoMT/VidEoMT checkpoint trained on FloW/CANSURF.

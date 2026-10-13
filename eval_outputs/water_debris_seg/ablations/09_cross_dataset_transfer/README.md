@@ -1,6 +1,6 @@
 # Ablation 09 — Cross-dataset transfer (LaRS-trained → box sets)
 
-**Question.** After **LaRS-only** fine-tuning, does maritime panoptic knowledge transfer to **FloW / CANSURF / WSODD** via mask→box mAP?
+**Question.** After **LaRS-only** fine-tuning, does maritime panoptic knowledge transfer to **FloW / CANSURF** via mask→box mAP?
 
 **Expected outcome.** Better than zero-shot on semantic “obstacle” alignment; still likely **below** YOLO trained on target domain (09 vs 08).
 
@@ -10,25 +10,46 @@
 
 | Checkpoint | Eval on |
 |---|---|
-| EoMT LaRS semantic (02) | mask→box on all three box sets |
+| EoMT LaRS semantic (02) | mask→box on FloW + CANSURF |
 | EoMT LaRS panoptic (03) | same |
 
 ## Results
 
-| Ckpt | FloW mAP | CANSURF mAP | WSODD rubbish AP | Source |
-|---|---|---|---|---|
-| LaRS semantic | — | — | — | *pending* |
-| LaRS panoptic | — | — | — | *pending* |
+Scored with `eval_coco_bbox.py` (pycocotools) on 2026-10-13; audit trail in [`RESCORE.md`](../../RESCORE.md). CANSURF uses the aligned GT (2209 images). mAP = AP@[.50:.95]; AR100 = recall at 100 dets/image.
+
+| Ckpt | FloW mAP | FloW AP_small | FloW AR100 | CANSURF mAP | CANSURF AR100 | Source |
+|---|---|---|---|---|---|---|
+| COCO zero-shot (baseline) | 0.034 | 0.012 | 0.093 | 0.095 | 0.140 | [04](../04_flow_mask2box/README.md), [05](../05_cansurf_small_object/README.md) |
+| LaRS semantic (obstacle CC→box) | **0.082** | **0.044** | **0.281** | 0.063 | **0.173** | FloW **27767594** / W&B `hd5bs8yz` ([`metrics`](sources/eomt_lars_semantic_flow_preds_coco.metrics.json)); CANSURF `vquavnrm` ([`metrics`](sources/eomt_lars_semantic_cansurf_aligned_gt.metrics.json)) |
+| LaRS semantic + **min256 px** CC filter | — | — | — | 0.078 | 0.173 | job **27711596**, W&B `hxuvlvcn` ([`metrics`](sources/eomt_lars_semantic_cansurf_min256_preds.metrics.json)) |
+| LaRS panoptic | 0.014 | 0.007 | 0.051 | 0.034 | 0.047 | [04](../04_flow_mask2box/README.md), [05](../05_cansurf_small_object/README.md) |
+| *Ceiling:* YOLOv11n in-domain ([08](../08_specialized_yolo/README.md)) | 0.390 | 0.249 | 0.491 | 0.857 | 0.870 | ab08 |
+
+CANSURF AP_small is omitted: only 19 GT boxes are small (see [05](../05_cansurf_small_object/README.md)). EoMT boxes carry a fixed score of 0.5, so AR100 is the fairer EoMT signal.
+
+### Superseded numbers (legacy scorer, kept for audit)
+
+| Ckpt | legacy FloW mAP (AP_small) | legacy CANSURF mAP (AP_small) |
+|---|---|---|
+| LaRS semantic | 0.133 (0.425) | 0.085 (0.632) |
+| LaRS semantic min256 | — | 0.108 (0.632) |
+
+The legacy AP_small never counted false positives, which is why it looked high. The earlier explanation ("many small CC boxes inflate AP_small") was wrong; it was a scorer defect. Files: `sources/*.metrics.legacy.json`.
 
 ## Verdict
 
-*Pending.*
+On **FloW**, LaRS **semantic** obstacle→box is the best EoMT variant (**0.082** mAP, recall 0.281 vs 0.093 zero-shot): treating "anything that is not water or sky" as a candidate finds far more floating waste than COCO thing classes. It is still ~5× below FloW-trained YOLO (0.390). Panoptic FT hurts vs zero-shot.
+
+On **CANSURF**, neither LaRS checkpoint beats COCO zero-shot on mAP (0.095); semantic has slightly higher recall (0.173 vs 0.140) but more false boxes. All EoMT variants are ~9× below CANSURF-trained YOLO (0.857).
 
 ## Resources copied here
 
 | Original | Copy in this folder | Present |
 |---|---|---|
-| ablations/02/03 ckpt paths | sources/ | — |
+| semantic preds | `sources/eomt_lars_semantic_cansurf_preds_coco.json` | yes |
+| semantic preds (min256) | `sources/eomt_lars_semantic_cansurf_min256_preds.json` | yes |
+| semantic preds (FloW) | `sources/eomt_lars_semantic_flow_preds_coco.json` | yes |
+| panoptic preds | see ablation 05 `eomt_lars_panoptic_ft_val_preds_coco.json` | yes |
 
 ## Code components
 

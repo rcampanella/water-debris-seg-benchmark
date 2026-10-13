@@ -18,8 +18,8 @@
 
 | Metric | Zero-shot | Fine-tuned | Source |
 |---|---|---|---|
-| PQ val | — | — | *pending* |
-| PQ by scene attribute | — | — | *pending* |
+| PQ val | ≈ 0.0014 (ablation 01 COCO-bridge) | **≈ 0.395** (`val_pq_all`, 11-class) | W&B fit `67kk33hk`, val `qmi79nsh`, re-val `xcl7zvm8` (27660922) |
+| PQ by scene attribute | — | — | *planned* (`lars_val_attributes.json` for stratification) |
 
 ## Verdict
 
@@ -33,4 +33,6 @@
 
 ## Code components
 
-- EoMT panoptic yaml (future)
+- Config: `water-debris-seg/configs/ablation03_lars_panoptic_finetune.yaml`
+- Slurm: `ablation03_eomt_lars.sbatch` (job **27607195**)
+- W&B group: `ablation03_finetune_lars_panoptic`

@@ -1,36 +1,23 @@
-# Ablation 06 — WSODD rubbish vs distractors (eval only)
+# Ablation 06 — WSODD rubbish vs distractors *(out of scope)*
 
-**Question.** On a **14-class harbor** dataset, does a segmenter-as-detector find **rubbish** without confusing **boats, buoys, balls, animals**?
+**Status:** **Excluded from benchmark v1** (2026-10-07). WSODD is hosted on [Baidu Pan](https://github.com/sunjiaen/WSODD#dataset_wsodd) only; automated or Snellius-side download is not practical for this project.
 
-**Expected outcome.** High precision on rubbish requires LaRS-FT or YOLO; zero-shot EoMT likely fires on generic “object” classes → FP on boats.
+**Original question.** On a **14-class harbor** dataset, does a segmenter-as-detector find **rubbish** without confusing **boats, buoys, balls, animals**?
 
-**Hard rule.** **No training** on WSODD for EoMT/VidEoMT. Per-frame mask→box only (no VidEoMT temporal claim).
+**Replacement in reduced benchmark.** Debris vs obstacles is covered by **LaRS panoptic** (things vs stuff) and **FloW/CANSURF** mask→box mAP. Harbor-specific **rubbish AP with distractors** is not scored.
 
-## Setup
-
-| Item | Value |
-|---|---|
-| Target class | rubbish (669 instances in dataset) |
-| Metrics | mAP on rubbish; FP rate on boat/buoy |
-| Resolution | 1920×1080 — record FPS |
+**If reinstated later** (mirror outside Baidu): per-frame mask→box on rubbish class only; no EoMT/VidEoMT training on WSODD.
 
 ## Results
 
-| Weights | rubbish AP | boat/buoy FP notes | Source |
-|---|---|---|---|
-| EoMT zero-shot | — | — | *pending* |
-| EoMT LaRS-FT | — | — | *pending* |
+| Weights | rubbish AP | Source |
+|---|---|---|
+| — | — | *not in scope* |
 
 ## Verdict
 
-*Pending.* Baidu download blocked → **not run**.
+**Cancelled** — not a benchmark failure; scope decision logged in [`docs/water_debris_seg_decision_log.md`](../../../../docs/water_debris_seg_decision_log.md).
 
-## Resources copied here
+## Code components (dormant)
 
-| Original | Copy in this folder | Present |
-|---|---|---|
-| — | sources/ | — |
-
-## Code components
-
-- WSODD VOC2COCO ([WSODD repo](https://github.com/sunjiaen/WSODD))
+- `water-debris-seg/scripts/download_wsodd.sh` (documents Baidu link; do not run for v1)
