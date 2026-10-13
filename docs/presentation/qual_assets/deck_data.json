@@ -1,0 +1,484 @@
+{
+  "outcome": {
+    "flow_eomt_zeroshot": {
+      "dataset": "flow_test",
+      "method": "EoMT zero-shot",
+      "n_gt": 2024,
+      "tp": 0.2026,
+      "fn_merged": 0.0148,
+      "fn_frag": 0.0,
+      "fn_loc": 0.0306,
+      "fn_missed": 0.752,
+      "recall50": 0.2026
+    },
+    "flow_eomt_semantic": {
+      "dataset": "flow_test",
+      "method": "EoMT semantic FT",
+      "n_gt": 2024,
+      "tp": 0.5613,
+      "fn_merged": 0.2352,
+      "fn_frag": 0.0044,
+      "fn_loc": 0.0988,
+      "fn_missed": 0.1003,
+      "recall50": 0.5613
+    },
+    "flow_eomt_panoptic": {
+      "dataset": "flow_test",
+      "method": "EoMT panoptic FT",
+      "n_gt": 2024,
+      "tp": 0.1191,
+      "fn_merged": 0.045,
+      "fn_frag": 0.0,
+      "fn_loc": 0.038,
+      "fn_missed": 0.7979,
+      "recall50": 0.1191
+    },
+    "flow_yolo11n": {
+      "dataset": "flow_test",
+      "method": "YOLOv11n",
+      "n_gt": 2024,
+      "tp": 0.8098,
+      "fn_merged": 0.0188,
+      "fn_frag": 0.0015,
+      "fn_loc": 0.0539,
+      "fn_missed": 0.1161,
+      "recall50": 0.8098
+    },
+    "cansurf_yolo11n": {
+      "dataset": "cansurf_val_aligned",
+      "method": "YOLOv11n",
+      "n_gt": 11526,
+      "tp": 0.9394,
+      "fn_merged": 0.0059,
+      "fn_frag": 0.0019,
+      "fn_loc": 0.0147,
+      "fn_missed": 0.0381,
+      "recall50": 0.9394
+    },
+    "cansurf_eomt_zeroshot": {
+      "dataset": "cansurf_val_aligned",
+      "method": "EoMT zero-shot",
+      "n_gt": 11526,
+      "tp": 0.196,
+      "fn_merged": 0.0521,
+      "fn_frag": 0.001,
+      "fn_loc": 0.0225,
+      "fn_missed": 0.7285,
+      "recall50": 0.196
+    },
+    "cansurf_eomt_semantic_aligned": {
+      "dataset": "cansurf_val_aligned",
+      "method": "EoMT semantic FT",
+      "n_gt": 11526,
+      "tp": 0.2894,
+      "fn_merged": 0.6474,
+      "fn_frag": 0.0003,
+      "fn_loc": 0.0339,
+      "fn_missed": 0.0289,
+      "recall50": 0.2894
+    },
+    "cansurf_eomt_panoptic": {
+      "dataset": "cansurf_val_aligned",
+      "method": "EoMT panoptic FT",
+      "n_gt": 11526,
+      "tp": 0.0891,
+      "fn_merged": 0.0356,
+      "fn_frag": 0.0,
+      "fn_loc": 0.0196,
+      "fn_missed": 0.8557,
+      "recall50": 0.0891
+    }
+  },
+  "det": {
+    "flow_eomt_zeroshot": {
+      "tp": 410,
+      "fp_merge": 10,
+      "fp_dup": 0,
+      "fp_loc": 51,
+      "fp_bkg": 525
+    },
+    "flow_eomt_semantic": {
+      "tp": 1136,
+      "fp_merge": 249,
+      "fp_dup": 0,
+      "fp_loc": 274,
+      "fp_bkg": 1252
+    },
+    "flow_eomt_panoptic": {
+      "tp": 241,
+      "fp_merge": 39,
+      "fp_dup": 0,
+      "fp_loc": 73,
+      "fp_bkg": 329
+    },
+    "flow_yolo11n": {
+      "tp": 1639,
+      "fp_merge": 42,
+      "fp_dup": 50,
+      "fp_loc": 151,
+      "fp_bkg": 266
+    },
+    "cansurf_yolo11n": {
+      "tp": 10827,
+      "fp_merge": 83,
+      "fp_dup": 175,
+      "fp_loc": 365,
+      "fp_bkg": 204
+    },
+    "cansurf_eomt_zeroshot": {
+      "tp": 2259,
+      "fp_merge": 225,
+      "fp_dup": 0,
+      "fp_loc": 192,
+      "fp_bkg": 1090
+    },
+    "cansurf_eomt_semantic_aligned": {
+      "tp": 3336,
+      "fp_merge": 1559,
+      "fp_dup": 0,
+      "fp_loc": 262,
+      "fp_bkg": 3594
+    },
+    "cansurf_eomt_panoptic": {
+      "tp": 1027,
+      "fp_merge": 163,
+      "fp_dup": 0,
+      "fp_loc": 132,
+      "fp_bkg": 73
+    }
+  },
+  "lars_small_example": {
+    "stem": "inhouse_seq_191_00399",
+    "objects": 21,
+    "obstacle_px_share": 0.762,
+    "objects_touched": 13,
+    "found_panoptic": 0
+  },
+  "box_metrics": {
+    "flow_eomt_zeroshot": {
+      "mAP": 0.0342,
+      "AP50": 0.1026,
+      "AP75": 0.0154,
+      "AP_small": 0.012,
+      "AR100": 0.0934
+    },
+    "flow_eomt_semantic": {
+      "mAP": 0.0824,
+      "AP50": 0.2294,
+      "AP75": 0.0403,
+      "AP_small": 0.044,
+      "AR100": 0.2807
+    },
+    "flow_eomt_panoptic": {
+      "mAP": 0.0143,
+      "AP50": 0.0441,
+      "AP75": 0.0057,
+      "AP_small": 0.0073,
+      "AR100": 0.0511
+    },
+    "flow_yolo11n": {
+      "mAP": 0.3904,
+      "AP50": 0.8151,
+      "AP75": 0.3149,
+      "AP_small": 0.2492,
+      "AR100": 0.4915
+    },
+    "cansurf_eomt_zeroshot": {
+      "mAP": 0.0948,
+      "AP50": 0.148,
+      "AP75": 0.0903,
+      "AP_small": 0.0001,
+      "AR100": 0.1403
+    },
+    "cansurf_eomt_semantic_aligned": {
+      "mAP": 0.0628,
+      "AP50": 0.1276,
+      "AP75": 0.0491,
+      "AP_small": 0.0007,
+      "AR100": 0.1732
+    },
+    "cansurf_eomt_panoptic": {
+      "mAP": 0.0335,
+      "AP50": 0.0688,
+      "AP75": 0.0209,
+      "AP_small": 0.0012,
+      "AR100": 0.047
+    },
+    "cansurf_yolo11n": {
+      "mAP": 0.8567,
+      "AP50": 0.9597,
+      "AP75": 0.8649,
+      "AP_small": 0.0596,
+      "AR100": 0.8702
+    }
+  },
+  "lars_pq": {
+    "zeroshot": {
+      "Boat/ship": 0.391,
+      "Row boats": 0.0,
+      "Paddle board": 0.0,
+      "Buoy": 0.0,
+      "Swimmer": 0.061,
+      "Animal": 0.131,
+      "Float": 0.0,
+      "Other": 0.0,
+      "Static Obstacle": 0.783,
+      "Water": 0.979,
+      "Sky": 0.934
+    },
+    "finetuned": {
+      "Boat/ship": 0.395,
+      "Row boats": 0.348,
+      "Paddle board": 0.342,
+      "Buoy": 0.138,
+      "Swimmer": 0.2,
+      "Animal": 0.035,
+      "Float": 0.0,
+      "Other": 0.077,
+      "Static Obstacle": 0.885,
+      "Water": 0.984,
+      "Sky": 0.937
+    },
+    "all": {
+      "zeroshot": 0.298,
+      "finetuned": 0.395
+    }
+  },
+  "lars_things_by_size": {
+    "large": {
+      "n": 141,
+      "found": 120
+    },
+    "medium": {
+      "n": 268,
+      "found": 172
+    },
+    "small": {
+      "n": 698,
+      "found": 96
+    }
+  },
+  "lars_things_by_class": {
+    "boat/ship": {
+      "n": 786,
+      "found": 329
+    },
+    "row boat": {
+      "n": 34,
+      "found": 17
+    },
+    "other": {
+      "n": 73,
+      "found": 6
+    },
+    "buoy": {
+      "n": 125,
+      "found": 19
+    },
+    "paddle board": {
+      "n": 30,
+      "found": 10
+    },
+    "swimmer": {
+      "n": 26,
+      "found": 6
+    },
+    "animal": {
+      "n": 30,
+      "found": 1
+    },
+    "float": {
+      "n": 3,
+      "found": 0
+    }
+  },
+  "lars_conditions": {
+    "all images": {
+      "n": 198,
+      "obstacle_iou": 0.936,
+      "things": 1107,
+      "found": 388
+    },
+    "glitter": {
+      "n": 16,
+      "obstacle_iou": 0.937,
+      "things": 66,
+      "found": 20
+    },
+    "fog": {
+      "n": 12,
+      "obstacle_iou": 0.903,
+      "things": 74,
+      "found": 19
+    },
+    "wakes": {
+      "n": 18,
+      "obstacle_iou": 0.88,
+      "things": 136,
+      "found": 69
+    },
+    "extra dark": {
+      "n": 26,
+      "obstacle_iou": 0.967,
+      "things": 73,
+      "found": 24
+    },
+    "extra bright": {
+      "n": 6,
+      "obstacle_iou": 0.922,
+      "things": 24,
+      "found": 11
+    },
+    "dusk": {
+      "n": 9,
+      "obstacle_iou": 0.79,
+      "things": 53,
+      "found": 17
+    },
+    "night": {
+      "n": 5,
+      "obstacle_iou": 0.866,
+      "things": 28,
+      "found": 17
+    }
+  },
+  "gt_sizes": {
+    "flow_test": {
+      "n": 2024,
+      "small": 1199
+    },
+    "cansurf_val_aligned": {
+      "n": 11526,
+      "small": 19
+    }
+  },
+  "consistency": 234,
+  "consistency_total": 234,
+  "sources": {
+    "outcome": "eval_outputs/water_debris_seg/qualitative/error_summary.csv",
+    "box_metrics": "eval_outputs/water_debris_seg/RESCORE.json (sha 0652d63664)",
+    "lars_pq": "ablations/01_zeroshot_lars/sources/pq_{zeroshot_predremap,native_ab03_check}_28011322.json",
+    "lars_things": "eval_outputs/water_debris_seg/qualitative/lars_val_things.csv",
+    "lars_conditions": "eval_outputs/water_debris_seg/qualitative/lars_val_per_image.csv"
+  },
+  "figures": {
+    "fig_random_flow": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/flow/test/images/000042.jpg",
+      "dataset": "flow_test",
+      "image_id": 42,
+      "sources": [
+        "qualitative/errors/flow_eomt_zeroshot/{gt,detections}.csv",
+        "qualitative/errors/flow_eomt_semantic/{gt,detections}.csv",
+        "qualitative/errors/flow_eomt_panoptic/{gt,detections}.csv",
+        "qualitative/errors/flow_yolo11n/{gt,detections}.csv"
+      ],
+      "preds": {
+        "flow_eomt_zeroshot": "ablations/04_flow_mask2box/sources/eomt_zeroshot_flow_preds_coco.json (sha cb0b2fb0d2)",
+        "flow_eomt_semantic": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_flow_preds_coco.json (sha 8931009cba)",
+        "flow_eomt_panoptic": "ablations/04_flow_mask2box/sources/eomt_lars_panoptic_flow_preds_coco.json (sha 1d163b9a6e)",
+        "flow_yolo11n": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.json (sha cdee516f60)"
+      },
+      "footer": "flow_test \u00b7 000042.jpg \u00b7 boxes from qualitative/errors/<run>/*.csv (pycocotools matching, IoU 0.5)"
+    },
+    "fig_missed_flow": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/flow/test/images/000657.jpg",
+      "dataset": "flow_test",
+      "image_id": 657,
+      "sources": [
+        "qualitative/errors/flow_eomt_zeroshot/{gt,detections}.csv",
+        "qualitative/errors/flow_eomt_panoptic/{gt,detections}.csv",
+        "qualitative/errors/flow_yolo11n/{gt,detections}.csv"
+      ],
+      "preds": {
+        "flow_eomt_zeroshot": "ablations/04_flow_mask2box/sources/eomt_zeroshot_flow_preds_coco.json (sha cb0b2fb0d2)",
+        "flow_eomt_panoptic": "ablations/04_flow_mask2box/sources/eomt_lars_panoptic_flow_preds_coco.json (sha 1d163b9a6e)",
+        "flow_yolo11n": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.json (sha cdee516f60)"
+      },
+      "footer": "flow_test \u00b7 000657.jpg \u00b7 boxes from qualitative/errors/<run>/*.csv (pycocotools matching, IoU 0.5)"
+    },
+    "fig_merge_flow_mask": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/flow/test/images/000212.jpg",
+      "dataset": "flow_test",
+      "image_id": 212,
+      "masks": [
+        "qualitative/masks/flow_test/flow_eomt_semantic/000212.npz"
+      ],
+      "masks_reproduce_scored_boxes": {
+        "flow_eomt_semantic": true
+      },
+      "footer": "flow_test \u00b7 000212.jpg \u00b7 masks qualitative/masks/flow_test/<run>/000212.npz (re-derive scored boxes: yes)"
+    },
+    "fig_merge_flow_zoom": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/flow/test/images/000212.jpg",
+      "dataset": "flow_test",
+      "image_id": 212,
+      "sources": [
+        "qualitative/errors/flow_eomt_semantic/{gt,detections}.csv",
+        "qualitative/errors/flow_yolo11n/{gt,detections}.csv"
+      ],
+      "preds": {
+        "flow_eomt_semantic": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_flow_preds_coco.json (sha 8931009cba)",
+        "flow_yolo11n": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.json (sha cdee516f60)"
+      },
+      "footer": "flow_test \u00b7 000212.jpg \u00b7 boxes from qualitative/errors/<run>/*.csv (pycocotools matching, IoU 0.5)"
+    },
+    "fig_merge_cansurf_mask": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/cansurf/val/images/375_dog_jpg.rf.9ebf22f3ceb195cbbe4493a90712638a.jpg",
+      "dataset": "cansurf_val_aligned",
+      "image_id": 78,
+      "masks": [
+        "qualitative/masks/cansurf_val_aligned/cansurf_eomt_zeroshot/375_dog_jpg.rf.9ebf22f3ceb195cbbe4493a90712638a.npz",
+        "qualitative/masks/cansurf_val_aligned/cansurf_eomt_semantic_aligned/375_dog_jpg.rf.9ebf22f3ceb195cbbe4493a90712638a.npz"
+      ],
+      "masks_reproduce_scored_boxes": {
+        "cansurf_eomt_zeroshot": true,
+        "cansurf_eomt_semantic_aligned": true
+      },
+      "footer": "cansurf_val_aligned \u00b7 375_dog_jpg.rf.9ebf22f3ceb195cbbe4493a90712638a.jpg \u00b7 masks qualitative/masks/cansurf_val_aligned/<run>/375_dog_jpg.rf.9ebf22f3ceb195cbbe4493a90712638a.npz (re-derive scored boxes: yes)"
+    },
+    "fig_shore_flow_mask": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/flow/test/images/000778.jpg",
+      "dataset": "flow_test",
+      "image_id": 778,
+      "masks": [
+        "qualitative/masks/flow_test/flow_eomt_semantic/000778.npz"
+      ],
+      "masks_reproduce_scored_boxes": {
+        "flow_eomt_semantic": true
+      },
+      "footer": "flow_test \u00b7 000778.jpg \u00b7 masks qualitative/masks/flow_test/<run>/000778.npz (re-derive scored boxes: yes)"
+    },
+    "fig_yolo_fail_cansurf": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/cansurf/val/images/frame_0000_IMG_3619.jpg",
+      "dataset": "cansurf_val_aligned",
+      "image_id": 1007,
+      "sources": [
+        "qualitative/errors/cansurf_yolo11n/{gt,detections}.csv",
+        "qualitative/errors/cansurf_eomt_semantic_aligned/{gt,detections}.csv"
+      ],
+      "preds": {
+        "cansurf_yolo11n": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.json (sha c6e2fa573e)",
+        "cansurf_eomt_semantic_aligned": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_cansurf_preds_coco.json (sha 071677d17c)"
+      },
+      "footer": "cansurf_val_aligned \u00b7 frame_0000_IMG_3619.jpg \u00b7 boxes from qualitative/errors/<run>/*.csv (pycocotools matching, IoU 0.5)"
+    },
+    "fig_lars_small": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/lars/val/images/inhouse_seq_191_00399.jpg",
+      "dataset": "lars_val",
+      "masks": [
+        "qualitative/masks/lars_val/semantic_lars/inhouse_seq_191_00399.npz",
+        "qualitative/masks/lars_val/panoptic_lars/inhouse_seq_191_00399.npz"
+      ],
+      "footer": "LaRS val \u00b7 inhouse_seq_191_00399.jpg \u00b7 masks qualitative/masks/lars_val/*/inhouse_seq_191_00399.npz \u00b7 GT LaRS semantic/panoptic PNGs \u00b7 object panel zoomed on GT objects"
+    },
+    "fig_lars_glitter": {
+      "image": "/scratch-shared/rcampanella/water-debris-seg/data/lars/val/images/inhouse_seq_344_00113.jpg",
+      "dataset": "lars_val",
+      "masks": [
+        "qualitative/masks/lars_val/semantic_lars/inhouse_seq_344_00113.npz",
+        "qualitative/masks/lars_val/panoptic_lars/inhouse_seq_344_00113.npz"
+      ],
+      "footer": "LaRS val \u00b7 inhouse_seq_344_00113.jpg \u00b7 masks qualitative/masks/lars_val/*/inhouse_seq_344_00113.npz \u00b7 GT LaRS semantic/panoptic PNGs \u00b7 object panel zoomed on GT objects"
+    }
+  }
+}
