@@ -16,18 +16,22 @@ LARS_PANOPTIC_STUFF = {1, 3, 5}
 
 UNIFIED_CLASSES = ("debris", "dynamic_obstacle", "static_context", "water", "sky")
 
-# Bridge LaRS panoptic category_id -> COCO panoptic category_id (ablation 01 zero-shot).
-# Chosen from IDs present in EoMT `datasets.coco_panoptic.CLASS_MAPPING`.
+# Bridge LaRS panoptic category_id -> COCO panoptic category_id (GT-side, legacy ablation 01 path).
+# Ids corrected 2026-10-13 against configs/panoptic_coco_categories.json (cocodataset/panopticapi);
+# the previous ids pointed at spoon/knife/food-other/paper (see decision log). Superseded for
+# ablation 01 by prediction-side remapping (scripts/eval_eomt_lars_panoptic_pq.py,
+# configs/coco133_to_lars_pred_map.json), because a one-to-one GT bridge penalises sibling
+# COCO classes (e.g. sea vs river). Kept only so the legacy dataset adapter is not wrong.
 LARS_TO_COCO_PANOPTIC_CATEGORY: dict[int, int] = {
-    1: 199,   # Static Obstacle -> wall-stone (COCO cat id)
-    3: 196,   # Water -> river (stuff)
-    5: 195,   # Sky -> sky-other-merged (stuff)
-    11: 50,   # Boat/ship -> boat
-    12: 50,
-    13: 50,
-    14: 49,   # Buoy -> surfboard (proxy)
+    1: 175,   # Static Obstacle -> wall-stone (stuff)
+    3: 148,   # Water -> river (stuff)
+    5: 187,   # Sky -> sky-other-merged (stuff)
+    11: 9,    # Boat/ship -> boat
+    12: 9,    # Row boats -> boat
+    13: 42,   # Paddle board -> surfboard
+    14: 42,   # Buoy -> surfboard (proxy)
     15: 1,    # Swimmer -> person
     16: 16,   # Animal -> bird (proxy)
-    17: 49,
-    19: 49,
+    17: 42,   # Float -> surfboard (proxy)
+    19: 42,   # Other -> surfboard (proxy)
 }
