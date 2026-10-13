@@ -1,0 +1,56 @@
+{
+  "n_images": 2209,
+  "n_gt": 11526,
+  "n_det_top100": 3766,
+  "det": {
+    "tp": 2259,
+    "fp_merge": 225,
+    "fp_dup": 0,
+    "fp_loc": 192,
+    "fp_bkg": 1090
+  },
+  "gt": {
+    "tp": {
+      "small": 1,
+      "medium": 148,
+      "large": 2110
+    },
+    "fn_merged": {
+      "small": 0,
+      "medium": 32,
+      "large": 568
+    },
+    "fn_frag": {
+      "small": 0,
+      "medium": 1,
+      "large": 10
+    },
+    "fn_loc": {
+      "small": 2,
+      "medium": 69,
+      "large": 188
+    },
+    "fn_missed": {
+      "small": 16,
+      "medium": 958,
+      "large": 7423
+    }
+  },
+  "recall_at_iou50": 0.19599167100468506,
+  "provenance": {
+    "run_id": "cansurf_eomt_zeroshot",
+    "method": "EoMT zero-shot",
+    "dataset": "cansurf_val_aligned",
+    "pred": "ablations/05_cansurf_small_object/sources/eomt_zeroshot_val_preds_coco.json",
+    "pred_sha256": "628e8dcd924d241dd4a6ed67a6fe89aec925bf2e7803005c70f8e459e509a182",
+    "gt": "ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "metrics": "ablations/05_cansurf_small_object/sources/eomt_zeroshot_yolo_aligned_gt.metrics.json",
+    "min_score": 0.0,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}

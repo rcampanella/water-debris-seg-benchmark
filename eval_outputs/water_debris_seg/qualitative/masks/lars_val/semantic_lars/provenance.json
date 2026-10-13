@@ -1,0 +1,12 @@
+{
+  "model": {
+    "kind": "semantic_lars",
+    "ckpt": "data/water_debris/checkpoints/ab02_semantic_mk2w7dr8/epoch=30-step=2356.ckpt",
+    "script": "eval_eomt_cansurf_semantic_mask2box.py",
+    "params": {
+      "min_pixels": 32
+    }
+  },
+  "images": "/scratch-shared/rcampanella/water-debris-seg/data/lars/val/images",
+  "n": 198
+}

@@ -1,0 +1,273 @@
+{
+  "run_id": "cansurf_eomt_panoptic",
+  "pred": "ablations/05_cansurf_small_object/sources/eomt_lars_panoptic_ft_val_preds_coco.json",
+  "model": {
+    "kind": "panoptic_lars",
+    "ckpt": "data/water_debris/checkpoints/ab03_panoptic_67kk33hk/epoch=11-step=7812.ckpt",
+    "script": "eval_eomt_cansurf_mask2box.py",
+    "params": {
+      "num_classes": 11,
+      "stuff_classes": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "n_images": 36,
+  "n_identical_box_sets": 36,
+  "images": [
+    {
+      "image_id": 166,
+      "file_name": "40_fantasy_jpg.rf.904ff248802c925ed6958f2e4b1d6a8e.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1061,
+      "file_name": "frame_0210_mostafa2.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1586,
+      "file_name": "frame_2730_zahra_cans.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1733,
+      "file_name": "frame_6420_zahra_cans.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 2003,
+      "file_name": "sprite-4_4_jpg.rf.4baea2b9335201b58060da83d39ffba2.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 2107,
+      "file_name": "sprite-6_22_jpg.rf.7a4eff617204ec909ab68a08f8edb36f.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 821,
+      "file_name": "655_dog_jpg.rf.a53165bf2e4d54e004fabc8fa61dfb59.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 323,
+      "file_name": "468_discuss_jpg.rf.47b33c6ba41d9a406d938e12be454c69.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 602,
+      "file_name": "575_dog_jpg.rf.f047c37dbe29637182baf044aa0d5aca.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1074,
+      "file_name": "frame_0255_IMG_3620.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1069,
+      "file_name": "frame_0240_IMG_3620.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1082,
+      "file_name": "frame_0285_IMG_3620.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 362,
+      "file_name": "485_room_jpg.rf.0e120362815561c585c4916e054f239a.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 363,
+      "file_name": "485_room_jpg.rf.2e78aac73cd74fdc6da1738cd40d34c1.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 479,
+      "file_name": "529_indoor_jpg.rf.1b9d9bc8f4772adc1890f90a45f409d7.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 78,
+      "file_name": "375_dog_jpg.rf.9ebf22f3ceb195cbbe4493a90712638a.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 79,
+      "file_name": "375_dog_jpg.rf.a0c4ca4033d84859ee061c3ae672192e.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 80,
+      "file_name": "375_dog_jpg.rf.f1c5ff01a86e6871ecdc4ae028ff6ab4.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1869,
+      "file_name": "frame_9705_zahra_cans.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 1515,
+      "file_name": "frame_15765_zahra_cans.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1338,
+      "file_name": "frame_11820_zahra_cans.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 953,
+      "file_name": "WhatsApp-Image-2022-02-11-at-6-30-11-PM-1-_jpeg_jpg.rf.e1698d09389adbe1ef1d1080a17776af.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 981,
+      "file_name": "WhatsApp-Image-2022-02-11-at-6-30-18-PM_jpeg_jpg.rf.85f969879a5f4bb32b74cccf6178e1f0.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 996,
+      "file_name": "WhatsApp-Image-2022-02-11-at-6-30-21-PM_jpeg_jpg.rf.528637ca6b35bfc648e7b6c02e80b07f.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 107,
+      "file_name": "387_white_jpg.rf.abeaa42ca055cfe0fa487c32ca3fa90f.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 279,
+      "file_name": "44_pattern_jpg.rf.86241ef2e12d365aa379931e92d59a15.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 780,
+      "file_name": "63_heart_jpg.rf.1b9b5585d85c467545c7024a6b5be031.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 1414,
+      "file_name": "frame_13725_zahra_cans.jpg",
+      "n_rederived": 4,
+      "n_scored": 4,
+      "identical": true
+    },
+    {
+      "image_id": 890,
+      "file_name": "IMG_7380.jpg",
+      "n_rederived": 3,
+      "n_scored": 3,
+      "identical": true
+    },
+    {
+      "image_id": 918,
+      "file_name": "IMG_7409.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 3,
+      "file_name": "345_room_jpg.rf.95f7695043cf54b6b7ea346fade2d980.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 27,
+      "file_name": "355_dog_jpg.rf.75d45e1ed642e6a35f4b383aad225bf4.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 37,
+      "file_name": "35_dog_jpg.rf.23d459ccd9dcca85c5fee16f12e2f7c9.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1007,
+      "file_name": "frame_0000_IMG_3619.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1022,
+      "file_name": "frame_0060_IMG_3619.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 1027,
+      "file_name": "frame_0075_IMG_3619.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    }
+  ]
+}

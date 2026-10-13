@@ -1,0 +1,56 @@
+{
+  "n_images": 800,
+  "n_gt": 2024,
+  "n_det_top100": 2911,
+  "det": {
+    "tp": 1136,
+    "fp_merge": 249,
+    "fp_dup": 0,
+    "fp_loc": 274,
+    "fp_bkg": 1252
+  },
+  "gt": {
+    "tp": {
+      "small": 509,
+      "medium": 519,
+      "large": 108
+    },
+    "fn_merged": {
+      "small": 381,
+      "medium": 95,
+      "large": 0
+    },
+    "fn_frag": {
+      "small": 2,
+      "medium": 7,
+      "large": 0
+    },
+    "fn_loc": {
+      "small": 160,
+      "medium": 38,
+      "large": 2
+    },
+    "fn_missed": {
+      "small": 147,
+      "medium": 52,
+      "large": 4
+    }
+  },
+  "recall_at_iou50": 0.5612648221343873,
+  "provenance": {
+    "run_id": "flow_eomt_semantic",
+    "method": "EoMT semantic FT",
+    "dataset": "flow_test",
+    "pred": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_flow_preds_coco.json",
+    "pred_sha256": "8931009cba81dc27f309686867156ae97573168d9c99e377b585500ceeecf5a3",
+    "gt": "ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "metrics": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_flow_preds_coco.metrics.json",
+    "min_score": 0.0,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "n_images": 800,
+  "n_gt": 2024,
+  "n_det_top100": 996,
+  "det": {
+    "tp": 410,
+    "fp_merge": 10,
+    "fp_dup": 0,
+    "fp_loc": 51,
+    "fp_bkg": 525
+  },
+  "gt": {
+    "tp": {
+      "small": 131,
+      "medium": 217,
+      "large": 62
+    },
+    "fn_merged": {
+      "small": 27,
+      "medium": 3,
+      "large": 0
+    },
+    "fn_frag": {
+      "small": 0,
+      "medium": 0,
+      "large": 0
+    },
+    "fn_loc": {
+      "small": 45,
+      "medium": 17,
+      "large": 0
+    },
+    "fn_missed": {
+      "small": 996,
+      "medium": 474,
+      "large": 52
+    }
+  },
+  "recall_at_iou50": 0.2025691699604743,
+  "provenance": {
+    "run_id": "flow_eomt_zeroshot",
+    "method": "EoMT zero-shot",
+    "dataset": "flow_test",
+    "pred": "ablations/04_flow_mask2box/sources/eomt_zeroshot_flow_preds_coco.json",
+    "pred_sha256": "cb0b2fb0d23700ac3636cfcc9a0ca401501fbd6cbdda42d83ff0af21e792ebb4",
+    "gt": "ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "metrics": "ablations/04_flow_mask2box/sources/eomt_zeroshot_flow_preds_coco.metrics.json",
+    "min_score": 0.0,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}

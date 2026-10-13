@@ -1,0 +1,56 @@
+{
+  "n_images": 2209,
+  "n_gt": 11526,
+  "n_det_top100": 11654,
+  "det": {
+    "tp": 10827,
+    "fp_merge": 83,
+    "fp_dup": 175,
+    "fp_loc": 365,
+    "fp_bkg": 204
+  },
+  "gt": {
+    "tp": {
+      "small": 6,
+      "medium": 769,
+      "large": 10052
+    },
+    "fn_merged": {
+      "small": 0,
+      "medium": 48,
+      "large": 20
+    },
+    "fn_frag": {
+      "small": 0,
+      "medium": 12,
+      "large": 10
+    },
+    "fn_loc": {
+      "small": 10,
+      "medium": 103,
+      "large": 57
+    },
+    "fn_missed": {
+      "small": 3,
+      "medium": 276,
+      "large": 160
+    }
+  },
+  "recall_at_iou50": 0.9393545028630922,
+  "provenance": {
+    "run_id": "cansurf_yolo11n",
+    "method": "YOLOv11n (CANSURF-trained)",
+    "dataset": "cansurf_val_aligned",
+    "pred": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.json",
+    "pred_sha256": "c6e2fa573ed2f731d0b900d1d348a64c615b9438237c2bc4a0df95b8a1cb33d1",
+    "gt": "ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "metrics": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.metrics.json",
+    "min_score": 0.25,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}

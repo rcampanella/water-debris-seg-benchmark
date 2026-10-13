@@ -1,0 +1,56 @@
+{
+  "n_images": 2209,
+  "n_gt": 11526,
+  "n_det_top100": 1395,
+  "det": {
+    "tp": 1027,
+    "fp_merge": 163,
+    "fp_dup": 0,
+    "fp_loc": 132,
+    "fp_bkg": 73
+  },
+  "gt": {
+    "tp": {
+      "small": 2,
+      "medium": 309,
+      "large": 716
+    },
+    "fn_merged": {
+      "small": 3,
+      "medium": 77,
+      "large": 330
+    },
+    "fn_frag": {
+      "small": 0,
+      "medium": 0,
+      "large": 0
+    },
+    "fn_loc": {
+      "small": 3,
+      "medium": 124,
+      "large": 99
+    },
+    "fn_missed": {
+      "small": 11,
+      "medium": 698,
+      "large": 9154
+    }
+  },
+  "recall_at_iou50": 0.08910289779628666,
+  "provenance": {
+    "run_id": "cansurf_eomt_panoptic",
+    "method": "EoMT panoptic FT",
+    "dataset": "cansurf_val_aligned",
+    "pred": "ablations/05_cansurf_small_object/sources/eomt_lars_panoptic_ft_val_preds_coco.json",
+    "pred_sha256": "4f3f71b5a8141036b02a9b4b35540c3dc2e82b81beb9e44fb2e0add31d7bd7fd",
+    "gt": "ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "metrics": "ablations/05_cansurf_small_object/sources/eomt_lars_panoptic_yolo_aligned_gt.metrics.json",
+    "min_score": 0.0,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}

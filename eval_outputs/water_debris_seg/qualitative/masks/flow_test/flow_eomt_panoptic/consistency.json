@@ -1,0 +1,315 @@
+{
+  "run_id": "flow_eomt_panoptic",
+  "pred": "ablations/04_flow_mask2box/sources/eomt_lars_panoptic_flow_preds_coco.json",
+  "model": {
+    "kind": "panoptic_lars",
+    "ckpt": "data/water_debris/checkpoints/ab03_panoptic_67kk33hk/epoch=11-step=7812.ckpt",
+    "script": "eval_eomt_cansurf_mask2box.py",
+    "params": {
+      "num_classes": 11,
+      "stuff_classes": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "n_images": 42,
+  "n_identical_box_sets": 42,
+  "images": [
+    {
+      "image_id": 42,
+      "file_name": "000042.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 266,
+      "file_name": "000266.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 395,
+      "file_name": "000395.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 431,
+      "file_name": "000431.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 524,
+      "file_name": "000524.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 777,
+      "file_name": "000777.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 96,
+      "file_name": "000096.jpg",
+      "n_rederived": 3,
+      "n_scored": 3,
+      "identical": true
+    },
+    {
+      "image_id": 546,
+      "file_name": "000546.jpg",
+      "n_rederived": 3,
+      "n_scored": 3,
+      "identical": true
+    },
+    {
+      "image_id": 763,
+      "file_name": "000763.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 657,
+      "file_name": "000657.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 631,
+      "file_name": "000631.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 380,
+      "file_name": "000380.jpg",
+      "n_rederived": 5,
+      "n_scored": 5,
+      "identical": true
+    },
+    {
+      "image_id": 146,
+      "file_name": "000146.jpg",
+      "n_rederived": 5,
+      "n_scored": 5,
+      "identical": true
+    },
+    {
+      "image_id": 450,
+      "file_name": "000450.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 500,
+      "file_name": "000500.jpg",
+      "n_rederived": 5,
+      "n_scored": 5,
+      "identical": true
+    },
+    {
+      "image_id": 212,
+      "file_name": "000212.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 469,
+      "file_name": "000469.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 661,
+      "file_name": "000661.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 21,
+      "file_name": "000021.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 99,
+      "file_name": "000099.jpg",
+      "n_rederived": 3,
+      "n_scored": 3,
+      "identical": true
+    },
+    {
+      "image_id": 102,
+      "file_name": "000102.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 667,
+      "file_name": "000667.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 778,
+      "file_name": "000778.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 36,
+      "file_name": "000036.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 127,
+      "file_name": "000127.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 154,
+      "file_name": "000154.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 204,
+      "file_name": "000204.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 423,
+      "file_name": "000423.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 665,
+      "file_name": "000665.jpg",
+      "n_rederived": 7,
+      "n_scored": 7,
+      "identical": true
+    },
+    {
+      "image_id": 1,
+      "file_name": "000001.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 274,
+      "file_name": "000274.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 440,
+      "file_name": "000440.jpg",
+      "n_rederived": 1,
+      "n_scored": 1,
+      "identical": true
+    },
+    {
+      "image_id": 590,
+      "file_name": "000590.jpg",
+      "n_rederived": 5,
+      "n_scored": 5,
+      "identical": true
+    },
+    {
+      "image_id": 637,
+      "file_name": "000637.jpg",
+      "n_rederived": 6,
+      "n_scored": 6,
+      "identical": true
+    },
+    {
+      "image_id": 702,
+      "file_name": "000702.jpg",
+      "n_rederived": 5,
+      "n_scored": 5,
+      "identical": true
+    },
+    {
+      "image_id": 741,
+      "file_name": "000741.jpg",
+      "n_rederived": 5,
+      "n_scored": 5,
+      "identical": true
+    },
+    {
+      "image_id": 222,
+      "file_name": "000222.jpg",
+      "n_rederived": 2,
+      "n_scored": 2,
+      "identical": true
+    },
+    {
+      "image_id": 696,
+      "file_name": "000696.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 728,
+      "file_name": "000728.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 680,
+      "file_name": "000680.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 759,
+      "file_name": "000759.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    },
+    {
+      "image_id": 165,
+      "file_name": "000165.jpg",
+      "n_rederived": 0,
+      "n_scored": 0,
+      "identical": true
+    }
+  ]
+}

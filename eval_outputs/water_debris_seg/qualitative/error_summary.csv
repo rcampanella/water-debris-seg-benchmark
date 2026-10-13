@@ -1,0 +1,9 @@
+run_id,dataset,method,min_score,n_gt,n_det,recall_iou50,det_tp,det_fp_merge,det_fp_dup,det_fp_loc,det_fp_bkg,gt_tp_small,gt_tp_medium,gt_tp_large,gt_fn_merged_small,gt_fn_merged_medium,gt_fn_merged_large,gt_fn_frag_small,gt_fn_frag_medium,gt_fn_frag_large,gt_fn_loc_small,gt_fn_loc_medium,gt_fn_loc_large,gt_fn_missed_small,gt_fn_missed_medium,gt_fn_missed_large
+flow_eomt_zeroshot,flow_test,EoMT zero-shot,0.0,2024,996,0.2026,410,10,0,51,525,131,217,62,27,3,0,0,0,0,45,17,0,996,474,52
+flow_eomt_semantic,flow_test,EoMT semantic FT,0.0,2024,2911,0.5613,1136,249,0,274,1252,509,519,108,381,95,0,2,7,0,160,38,2,147,52,4
+flow_eomt_panoptic,flow_test,EoMT panoptic FT,0.0,2024,682,0.1191,241,39,0,73,329,98,131,12,75,15,1,0,0,0,66,11,0,960,554,101
+flow_yolo11n,flow_test,YOLOv11n (FloW-trained),0.25,2024,2148,0.8098,1639,42,50,151,266,869,668,102,38,0,0,1,1,1,94,11,4,197,31,7
+cansurf_yolo11n,cansurf_val_aligned,YOLOv11n (CANSURF-trained),0.25,11526,11654,0.9394,10827,83,175,365,204,6,769,10052,0,48,20,0,12,10,10,103,57,3,276,160
+cansurf_eomt_zeroshot,cansurf_val_aligned,EoMT zero-shot,0.0,11526,3766,0.196,2259,225,0,192,1090,1,148,2110,0,32,568,0,1,10,2,69,188,16,958,7423
+cansurf_eomt_semantic_aligned,cansurf_val_aligned,EoMT semantic FT,0.0,11526,8751,0.2894,3336,1559,0,262,3594,12,796,2528,0,246,7216,0,0,4,4,157,230,3,9,321
+cansurf_eomt_panoptic,cansurf_val_aligned,EoMT panoptic FT,0.0,11526,1395,0.0891,1027,163,0,132,73,2,309,716,3,77,330,0,0,0,3,124,99,11,698,9154

@@ -1,0 +1,56 @@
+{
+  "n_images": 2209,
+  "n_gt": 11526,
+  "n_det_top100": 8751,
+  "det": {
+    "tp": 3336,
+    "fp_merge": 1559,
+    "fp_dup": 0,
+    "fp_loc": 262,
+    "fp_bkg": 3594
+  },
+  "gt": {
+    "tp": {
+      "small": 12,
+      "medium": 796,
+      "large": 2528
+    },
+    "fn_merged": {
+      "small": 0,
+      "medium": 246,
+      "large": 7216
+    },
+    "fn_frag": {
+      "small": 0,
+      "medium": 0,
+      "large": 4
+    },
+    "fn_loc": {
+      "small": 4,
+      "medium": 157,
+      "large": 230
+    },
+    "fn_missed": {
+      "small": 3,
+      "medium": 9,
+      "large": 321
+    }
+  },
+  "recall_at_iou50": 0.2894325871941697,
+  "provenance": {
+    "run_id": "cansurf_eomt_semantic_aligned",
+    "method": "EoMT semantic FT",
+    "dataset": "cansurf_val_aligned",
+    "pred": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_cansurf_preds_coco.json",
+    "pred_sha256": "071677d17cb450cec355605b51450b41926e5b5de8d53435ded7d7a1f61e0b32",
+    "gt": "ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "metrics": "ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_cansurf_aligned_gt.metrics.json",
+    "min_score": 0.0,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}

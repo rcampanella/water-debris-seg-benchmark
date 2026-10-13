@@ -1,0 +1,56 @@
+{
+  "n_images": 800,
+  "n_gt": 2024,
+  "n_det_top100": 2148,
+  "det": {
+    "tp": 1639,
+    "fp_merge": 42,
+    "fp_dup": 50,
+    "fp_loc": 151,
+    "fp_bkg": 266
+  },
+  "gt": {
+    "tp": {
+      "small": 869,
+      "medium": 668,
+      "large": 102
+    },
+    "fn_merged": {
+      "small": 38,
+      "medium": 0,
+      "large": 0
+    },
+    "fn_frag": {
+      "small": 1,
+      "medium": 1,
+      "large": 1
+    },
+    "fn_loc": {
+      "small": 94,
+      "medium": 11,
+      "large": 4
+    },
+    "fn_missed": {
+      "small": 197,
+      "medium": 31,
+      "large": 7
+    }
+  },
+  "recall_at_iou50": 0.8097826086956522,
+  "provenance": {
+    "run_id": "flow_yolo11n",
+    "method": "YOLOv11n (FloW-trained)",
+    "dataset": "flow_test",
+    "pred": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.json",
+    "pred_sha256": "cdee516f6016c4dce107c9849d8ba7ebd7ae63971a7a80390d21ae3c50ada81a",
+    "gt": "ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "metrics": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.metrics.json",
+    "min_score": 0.25,
+    "iou_match": 0.5,
+    "iou_near": 0.1,
+    "ioa_fragment": 0.5,
+    "max_dets": 100,
+    "matching": "pycocotools COCOeval evalImgs, areaRng=all"
+  }
+}
