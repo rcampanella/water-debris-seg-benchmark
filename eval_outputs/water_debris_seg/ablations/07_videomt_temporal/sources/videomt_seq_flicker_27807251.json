@@ -1,0 +1,289 @@
+{
+  "n_clips": 35,
+  "mean_flicker_proxy": 0.3107908845307365,
+  "clips": [
+    {
+      "clip_id": "davimar_seq_08",
+      "video_id": 1,
+      "n_frames": 29,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8273317482593734,
+      "flicker_proxy": 0.1726682517406266
+    },
+    {
+      "clip_id": "davimar_seq_36",
+      "video_id": 2,
+      "n_frames": 60,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.5530608747143633,
+      "flicker_proxy": 0.44693912528563673
+    },
+    {
+      "clip_id": "davimar_seq_42",
+      "video_id": 3,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6000639888095002,
+      "flicker_proxy": 0.3999360111904998
+    },
+    {
+      "clip_id": "davimar_seq_69",
+      "video_id": 4,
+      "n_frames": 60,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.4506364525042643,
+      "flicker_proxy": 0.5493635474957357
+    },
+    {
+      "clip_id": "davimar_seq_70",
+      "video_id": 5,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.3741885629762335,
+      "flicker_proxy": 0.6258114370237665
+    },
+    {
+      "clip_id": "inhouse_seq_117",
+      "video_id": 6,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.484375,
+      "flicker_proxy": 0.515625
+    },
+    {
+      "clip_id": "inhouse_seq_131",
+      "video_id": 7,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.642711494264052,
+      "flicker_proxy": 0.35728850573594795
+    },
+    {
+      "clip_id": "inhouse_seq_132",
+      "video_id": 8,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6299343667655787,
+      "flicker_proxy": 0.3700656332344213
+    },
+    {
+      "clip_id": "inhouse_seq_141",
+      "video_id": 9,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.7877674658482265,
+      "flicker_proxy": 0.21223253415177346
+    },
+    {
+      "clip_id": "inhouse_seq_153",
+      "video_id": 10,
+      "n_frames": 75,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.7596119796759028,
+      "flicker_proxy": 0.24038802032409723
+    },
+    {
+      "clip_id": "inhouse_seq_155",
+      "video_id": 11,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8356958953946148,
+      "flicker_proxy": 0.16430410460538525
+    },
+    {
+      "clip_id": "inhouse_seq_158",
+      "video_id": 12,
+      "n_frames": 60,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6482095075468046,
+      "flicker_proxy": 0.3517904924531954
+    },
+    {
+      "clip_id": "inhouse_seq_159",
+      "video_id": 13,
+      "n_frames": 15,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.5780671788645615,
+      "flicker_proxy": 0.4219328211354385
+    },
+    {
+      "clip_id": "inhouse_seq_191",
+      "video_id": 14,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6905005730234371,
+      "flicker_proxy": 0.30949942697656285
+    },
+    {
+      "clip_id": "inhouse_seq_194",
+      "video_id": 15,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.7346938775510204,
+      "flicker_proxy": 0.26530612244897955
+    },
+    {
+      "clip_id": "inhouse_seq_198",
+      "video_id": 16,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8408814866928881,
+      "flicker_proxy": 0.1591185133071119
+    },
+    {
+      "clip_id": "inhouse_seq_244",
+      "video_id": 17,
+      "n_frames": 75,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.32879811011198207,
+      "flicker_proxy": 0.6712018898880179
+    },
+    {
+      "clip_id": "inhouse_seq_245",
+      "video_id": 18,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6709233227251379,
+      "flicker_proxy": 0.3290766772748621
+    },
+    {
+      "clip_id": "inhouse_seq_260",
+      "video_id": 19,
+      "n_frames": 26,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8974572784369229,
+      "flicker_proxy": 0.10254272156307709
+    },
+    {
+      "clip_id": "inhouse_seq_273",
+      "video_id": 20,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.7023043338066842,
+      "flicker_proxy": 0.2976956661933158
+    },
+    {
+      "clip_id": "inhouse_seq_296",
+      "video_id": 21,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6159547165971743,
+      "flicker_proxy": 0.38404528340282573
+    },
+    {
+      "clip_id": "inhouse_seq_314",
+      "video_id": 22,
+      "n_frames": 15,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6671381756758457,
+      "flicker_proxy": 0.33286182432415434
+    },
+    {
+      "clip_id": "inhouse_seq_318",
+      "video_id": 23,
+      "n_frames": 15,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.9261115497534733,
+      "flicker_proxy": 0.07388845024652668
+    },
+    {
+      "clip_id": "inhouse_seq_344",
+      "video_id": 24,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6173404016359274,
+      "flicker_proxy": 0.3826595983640726
+    },
+    {
+      "clip_id": "inhouse_seq_346",
+      "video_id": 25,
+      "n_frames": 75,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.7968814088311207,
+      "flicker_proxy": 0.20311859116887931
+    },
+    {
+      "clip_id": "inhouse_seq_369",
+      "video_id": 26,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8485695497376884,
+      "flicker_proxy": 0.1514304502623116
+    },
+    {
+      "clip_id": "inhouse_seq_372",
+      "video_id": 27,
+      "n_frames": 75,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.642403328585778,
+      "flicker_proxy": 0.357596671414222
+    },
+    {
+      "clip_id": "inhouse_seq_381",
+      "video_id": 28,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6806077448126339,
+      "flicker_proxy": 0.31939225518736614
+    },
+    {
+      "clip_id": "inhouse_seq_387",
+      "video_id": 29,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.764955128466297,
+      "flicker_proxy": 0.23504487153370301
+    },
+    {
+      "clip_id": "inhouse_seq_406",
+      "video_id": 30,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.641135085576764,
+      "flicker_proxy": 0.358864914423236
+    },
+    {
+      "clip_id": "inhouse_seq_413",
+      "video_id": 31,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.9381478351583058,
+      "flicker_proxy": 0.0618521648416942
+    },
+    {
+      "clip_id": "inhouse_seq_82",
+      "video_id": 32,
+      "n_frames": 45,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6101208456779101,
+      "flicker_proxy": 0.38987915432208986
+    },
+    {
+      "clip_id": "mit_seq_02",
+      "video_id": 33,
+      "n_frames": 60,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8372723240702226,
+      "flicker_proxy": 0.16272767592977744
+    },
+    {
+      "clip_id": "mit_seq_08",
+      "video_id": 34,
+      "n_frames": 60,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.6805035808900309,
+      "flicker_proxy": 0.31949641910996907
+    },
+    {
+      "clip_id": "mit_seq_21",
+      "video_id": 35,
+      "n_frames": 30,
+      "n_tracks_pred": 50,
+      "mean_pairwise_iou": 0.8179638679835031,
+      "flicker_proxy": 0.18203613201649693
+    }
+  ],
+  "results_json": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/eval_27806956/inference/results.json",
+  "ytvis_json": "/scratch-shared/rcampanella/water-debris-seg/data/lars/ytvis/lars_ytvis_val.json",
+  "note": "VidEoMT thing-class flicker = 1 - mean consecutive per-class mIoU (ignore=255)"
+}

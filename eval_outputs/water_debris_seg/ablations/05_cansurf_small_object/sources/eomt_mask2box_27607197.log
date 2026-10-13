@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 248, in <module>
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 183, in main
+    stuff = set(model.stuff_classes)
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 39, in build_model
+    network = EoMT(
+              ^^^^^
+    ...<5 lines>...
+    model = MaskClassificationPanoptic(
+    ^
+TypeError: EoMT.__init__() got an unexpected keyword argument 'img_size'

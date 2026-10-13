@@ -1,0 +1,219 @@
+{
+  "n_clips": 35,
+  "mean_flicker_proxy": 0.22910839546151882,
+  "clips": [
+    {
+      "clip_id": "davimar_seq_08",
+      "n_frames": 29,
+      "mean_pairwise_iou": 0.9146678654920487,
+      "flicker_proxy": 0.0853321345079513
+    },
+    {
+      "clip_id": "davimar_seq_36",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.8656498424498376,
+      "flicker_proxy": 0.13435015755016244
+    },
+    {
+      "clip_id": "davimar_seq_42",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.8533683743024679,
+      "flicker_proxy": 0.14663162569753208
+    },
+    {
+      "clip_id": "davimar_seq_69",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.8546941119482963,
+      "flicker_proxy": 0.14530588805170375
+    },
+    {
+      "clip_id": "davimar_seq_70",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.8670166790146719,
+      "flicker_proxy": 0.13298332098532806
+    },
+    {
+      "clip_id": "inhouse_seq_117",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.8817287420548884,
+      "flicker_proxy": 0.11827125794511162
+    },
+    {
+      "clip_id": "inhouse_seq_131",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.6592725646979144,
+      "flicker_proxy": 0.3407274353020856
+    },
+    {
+      "clip_id": "inhouse_seq_132",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.744152176641356,
+      "flicker_proxy": 0.255847823358644
+    },
+    {
+      "clip_id": "inhouse_seq_141",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.630762967083061,
+      "flicker_proxy": 0.369237032916939
+    },
+    {
+      "clip_id": "inhouse_seq_153",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.7670460626567129,
+      "flicker_proxy": 0.23295393734328707
+    },
+    {
+      "clip_id": "inhouse_seq_155",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.7428883683772504,
+      "flicker_proxy": 0.25711163162274964
+    },
+    {
+      "clip_id": "inhouse_seq_158",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.8587353460123699,
+      "flicker_proxy": 0.1412646539876301
+    },
+    {
+      "clip_id": "inhouse_seq_159",
+      "n_frames": 15,
+      "mean_pairwise_iou": 0.8156094393559865,
+      "flicker_proxy": 0.1843905606440135
+    },
+    {
+      "clip_id": "inhouse_seq_191",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.7064106018391834,
+      "flicker_proxy": 0.29358939816081664
+    },
+    {
+      "clip_id": "inhouse_seq_194",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.7064817510627547,
+      "flicker_proxy": 0.2935182489372453
+    },
+    {
+      "clip_id": "inhouse_seq_198",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.726823491775466,
+      "flicker_proxy": 0.273176508224534
+    },
+    {
+      "clip_id": "inhouse_seq_244",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.6456979359860893,
+      "flicker_proxy": 0.35430206401391073
+    },
+    {
+      "clip_id": "inhouse_seq_245",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.7789285926469441,
+      "flicker_proxy": 0.22107140735305586
+    },
+    {
+      "clip_id": "inhouse_seq_260",
+      "n_frames": 26,
+      "mean_pairwise_iou": 0.8562407169938088,
+      "flicker_proxy": 0.14375928300619123
+    },
+    {
+      "clip_id": "inhouse_seq_273",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.8358821790470025,
+      "flicker_proxy": 0.16411782095299754
+    },
+    {
+      "clip_id": "inhouse_seq_296",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.7360406098234328,
+      "flicker_proxy": 0.2639593901765672
+    },
+    {
+      "clip_id": "inhouse_seq_314",
+      "n_frames": 15,
+      "mean_pairwise_iou": 0.731717249139079,
+      "flicker_proxy": 0.268282750860921
+    },
+    {
+      "clip_id": "inhouse_seq_318",
+      "n_frames": 15,
+      "mean_pairwise_iou": 0.8100990374173437,
+      "flicker_proxy": 0.18990096258265632
+    },
+    {
+      "clip_id": "inhouse_seq_344",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.7490991749897085,
+      "flicker_proxy": 0.25090082501029154
+    },
+    {
+      "clip_id": "inhouse_seq_346",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.8480537700945059,
+      "flicker_proxy": 0.1519462299054941
+    },
+    {
+      "clip_id": "inhouse_seq_369",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.7631232889913548,
+      "flicker_proxy": 0.23687671100864516
+    },
+    {
+      "clip_id": "inhouse_seq_372",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.7311405352378151,
+      "flicker_proxy": 0.2688594647621849
+    },
+    {
+      "clip_id": "inhouse_seq_381",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.6192239082095594,
+      "flicker_proxy": 0.3807760917904406
+    },
+    {
+      "clip_id": "inhouse_seq_387",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.8437008489261973,
+      "flicker_proxy": 0.15629915107380266
+    },
+    {
+      "clip_id": "inhouse_seq_406",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.6464721793801277,
+      "flicker_proxy": 0.3535278206198723
+    },
+    {
+      "clip_id": "inhouse_seq_413",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.692730874573251,
+      "flicker_proxy": 0.307269125426749
+    },
+    {
+      "clip_id": "inhouse_seq_82",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.674875840644712,
+      "flicker_proxy": 0.32512415935528804
+    },
+    {
+      "clip_id": "mit_seq_02",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.7669137150955538,
+      "flicker_proxy": 0.23308628490444616
+    },
+    {
+      "clip_id": "mit_seq_08",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.840406346632073,
+      "flicker_proxy": 0.15959365336792697
+    },
+    {
+      "clip_id": "mit_seq_21",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.8155509702540162,
+      "flicker_proxy": 0.18444902974598376
+    }
+  ],
+  "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/67kk33hk/checkpoints/epoch=11-step=7812.ckpt",
+  "task": "panoptic",
+  "note": "panoptic flicker = 1 - mean consecutive per-class mIoU"
+}

@@ -1,0 +1,24 @@
+{
+  "results": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27772987/inference/results.json",
+  "n_preds": 350,
+  "upstream_all_frames": {
+    "AP": 0.0,
+    "AP50": 0.0,
+    "AP75": 0.0,
+    "APs": 0.0,
+    "APm": 0.0,
+    "APl": 0.0,
+    "AR1": 0.0,
+    "AR10": 0.0
+  },
+  "per_keyframe": {
+    "AP": 0.0149,
+    "AP50": 0.0397,
+    "AP75": 0.007,
+    "APs": 0.0048,
+    "APm": 0.2651,
+    "APl": 0.407,
+    "AR1": 0.0255,
+    "AR10": 0.0339
+  }
+}

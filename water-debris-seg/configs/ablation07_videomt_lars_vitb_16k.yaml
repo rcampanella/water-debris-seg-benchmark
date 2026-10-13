@@ -1,0 +1,9 @@
+# Ablation 07 — VidEoMT LaRS ViT-B, 16k iters (~4× the 4k baseline schedule).
+_BASE_: ablation07_videomt_lars_vitb.yaml
+
+SOLVER:
+  MAX_ITER: 16000
+  WARMUP_STEPS: [400, 800]
+
+TEST:
+  EVAL_PERIOD: 2000

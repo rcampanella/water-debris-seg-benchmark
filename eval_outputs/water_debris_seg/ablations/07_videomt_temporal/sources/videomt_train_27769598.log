@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/run_videomt_train_lars.py", line 64, in <module>
+    main()
+    ~~~~^^
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/run_videomt_train_lars.py", line 43, in main
+    apply_prepare_targets_patch()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/water_debris_seg/videomt/prepare_targets_patch.py", line 54, in apply_prepare_targets_patch
+    videomt_mod.videomt.prepare_targets = prepare_targets_fixed
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'videomt' has no attribute 'videomt'

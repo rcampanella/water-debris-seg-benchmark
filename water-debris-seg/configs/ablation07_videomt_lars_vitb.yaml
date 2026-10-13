@@ -1,0 +1,30 @@
+# Ablation 07 — VidEoMT online ViT-B on LaRS YTVIS (8 thing classes, keyframe labels).
+_BASE_: /scratch-shared/rcampanella/water-debris-seg/third_party/videomt/configs/ytvis19/videomt/dinov2/vit-base/videomt_online_ViTB.yaml
+
+MODEL:
+  WEIGHTS: /scratch-shared/rcampanella/water-debris-seg/artifacts/checkpoints/videomt/yt_2019_base_segmenter.pth
+  BACKBONE:
+    NUM_CLASSES: 8
+  # YTVISDatasetMapper uses SEM_SEG_HEAD.NUM_CLASSES for padding instances (must match BACKBONE).
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 8
+
+DATASETS:
+  TRAIN: ("lars_ytvis_train",)
+  TEST: ("lars_ytvis_val",)
+  DATASET_RATIO: [1.0]
+  DATASET_NEED_MAP: [False]
+  DATASET_TYPE: ["video_instance"]
+  DATASET_TYPE_TEST: ["video_instance"]
+
+SOLVER:
+  IMS_PER_BATCH: 2
+  BASE_LR: 0.0001
+  MAX_ITER: 4000
+  WARMUP_STEPS: [200, 400]
+
+TEST:
+  EVAL_PERIOD: 1000
+
+DATALOADER:
+  NUM_WORKERS: 2

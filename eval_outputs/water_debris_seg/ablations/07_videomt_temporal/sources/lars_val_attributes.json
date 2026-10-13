@@ -1,0 +1,34 @@
+{
+  "split": "val",
+  "n_images": 198,
+  "attributes": {
+    "scene_type": {
+      "sea_like": 119,
+      "river_like": 79
+    },
+    "lighting": {
+      "day_like": 184,
+      "dusk_like": 9,
+      "night_like": 5
+    },
+    "reflections": {
+      "none": 84,
+      "moderate": 103,
+      "heavy": 10
+    },
+    "waves": {
+      "moderate": 173,
+      "still": 23,
+      "rough": 2
+    }
+  },
+  "special_true_counts": {
+    "extra_bright": 6,
+    "glitter": 16,
+    "plants_debris": 6,
+    "dirty_lens": 6,
+    "extra_dark": 26,
+    "wakes": 18,
+    "fog": 12
+  }
+}

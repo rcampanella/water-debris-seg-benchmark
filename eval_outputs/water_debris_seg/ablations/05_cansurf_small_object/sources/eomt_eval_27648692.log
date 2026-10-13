@@ -1,0 +1,38 @@
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run lhnbhuej
+wandb: Tracking run with wandb version 0.30.0
+wandb: Run data is saved locally in /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_104423-lhnbhuej
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eomt_cansurf_mask2box_eval_27648692
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: 
+wandb: Run history:
+wandb:          AP50 ▁
+wandb:          AP75 ▁
+wandb:      AP_small ▁
+wandb:           mAP ▁
+wandb:      n_images ▁
+wandb: n_predictions ▁
+wandb: 
+wandb: Run summary:
+wandb:          AP50 0.18439
+wandb:          AP75 0.11027
+wandb:      AP_small 0.08333
+wandb:           mAP 0.14733
+wandb:      n_images 0
+wandb: n_predictions 3782
+wandb: 
+wandb: 🚀 View run eomt_cansurf_mask2box_eval_27648692 at: https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej
+wandb: ⭐️ View project at: https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_104423-lhnbhuej/logs
+{
+  "mAP": 0.14732893934474678,
+  "AP50": 0.1843891738802676,
+  "AP75": 0.11026870480922596,
+  "AP_small": 0.08333333333333333
+}

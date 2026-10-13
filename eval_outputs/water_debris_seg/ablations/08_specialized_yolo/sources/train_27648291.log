@@ -1,0 +1,52 @@
+
+    Arguments received: ['yolo', 'detect', 'train', 'data=/scratch-shared/rcampanella/water-debris-seg/data/cansurf/data.yaml', 'model=yolo11n.pt', 'epochs=50', 'imgsz=640', 'batch=16', 'device=0', 'project=/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/08_specialized_yolo', 'name=cansurf_train', 'exist_ok=True', 'wandb=True']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of ['detect', 'segment', 'semantic', 'depth', 'classify', 'pose', 'obb']
+                MODE (required) is one of ['train', 'val', 'predict', 'export', 'track', 'benchmark']
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo26n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo26n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Validate a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo26n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO26n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo26n-cls.pt format=onnx imgsz=224,128
+
+    5. Ultralytics solutions usage
+        yolo solutions count or any of ['crop', 'blur', 'workout', 'heatmap', 'isegment', 'visioneye', 'speed', 'queue', 'analytics', 'inference', 'trackzone', 'region', 'security', 'parking'] source="path/to/video.mp4"
+
+    6. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo login API_KEY
+        yolo logout
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Platform: https://platform.ultralytics.com
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+Traceback (most recent call last):
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/bin/yolo", line 6, in <module>
+    sys.exit(entrypoint())
+             ~~~~~~~~~~^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/ultralytics/cfg/__init__.py", line 1107, in entrypoint
+    check_dict_alignment(full_args_dict, overrides)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/ultralytics/cfg/__init__.py", line 686, in check_dict_alignment
+    raise SyntaxError(string) from e
+SyntaxError: '[31m[1mwandb[0m' is not a valid YOLO argument. 
+

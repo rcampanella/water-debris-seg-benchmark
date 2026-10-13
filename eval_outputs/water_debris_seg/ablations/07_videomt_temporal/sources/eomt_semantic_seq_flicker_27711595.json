@@ -1,0 +1,218 @@
+{
+  "n_clips": 35,
+  "mean_flicker_proxy": 0.04060504556846386,
+  "clips": [
+    {
+      "clip_id": "davimar_seq_08",
+      "n_frames": 29,
+      "mean_pairwise_iou": 0.9936721601656505,
+      "flicker_proxy": 0.00632783983434948
+    },
+    {
+      "clip_id": "davimar_seq_36",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.9764752657400012,
+      "flicker_proxy": 0.023524734259998792
+    },
+    {
+      "clip_id": "davimar_seq_42",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.986776269030297,
+      "flicker_proxy": 0.013223730969702974
+    },
+    {
+      "clip_id": "davimar_seq_69",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.95853496086126,
+      "flicker_proxy": 0.04146503913874
+    },
+    {
+      "clip_id": "davimar_seq_70",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9824064667477752,
+      "flicker_proxy": 0.01759353325222479
+    },
+    {
+      "clip_id": "inhouse_seq_117",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9845902892364853,
+      "flicker_proxy": 0.015409710763514717
+    },
+    {
+      "clip_id": "inhouse_seq_131",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.8930812073850083,
+      "flicker_proxy": 0.10691879261499171
+    },
+    {
+      "clip_id": "inhouse_seq_132",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9316230480098862,
+      "flicker_proxy": 0.06837695199011384
+    },
+    {
+      "clip_id": "inhouse_seq_141",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.8516074812746254,
+      "flicker_proxy": 0.14839251872537462
+    },
+    {
+      "clip_id": "inhouse_seq_153",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.9411231263935028,
+      "flicker_proxy": 0.05887687360649718
+    },
+    {
+      "clip_id": "inhouse_seq_155",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9504682886781115,
+      "flicker_proxy": 0.049531711321888494
+    },
+    {
+      "clip_id": "inhouse_seq_158",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.9643855652229933,
+      "flicker_proxy": 0.035614434777006654
+    },
+    {
+      "clip_id": "inhouse_seq_159",
+      "n_frames": 15,
+      "mean_pairwise_iou": 0.9907469508193788,
+      "flicker_proxy": 0.009253049180621198
+    },
+    {
+      "clip_id": "inhouse_seq_191",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9642792437327002,
+      "flicker_proxy": 0.03572075626729976
+    },
+    {
+      "clip_id": "inhouse_seq_194",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9837969562103008,
+      "flicker_proxy": 0.016203043789699167
+    },
+    {
+      "clip_id": "inhouse_seq_198",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9855812905412731,
+      "flicker_proxy": 0.01441870945872692
+    },
+    {
+      "clip_id": "inhouse_seq_244",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.9236186180968542,
+      "flicker_proxy": 0.0763813819031458
+    },
+    {
+      "clip_id": "inhouse_seq_245",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9699277781892096,
+      "flicker_proxy": 0.03007222181079039
+    },
+    {
+      "clip_id": "inhouse_seq_260",
+      "n_frames": 26,
+      "mean_pairwise_iou": 0.994489688873291,
+      "flicker_proxy": 0.005510311126708967
+    },
+    {
+      "clip_id": "inhouse_seq_273",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9904952775472882,
+      "flicker_proxy": 0.009504722452711833
+    },
+    {
+      "clip_id": "inhouse_seq_296",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9763200392668274,
+      "flicker_proxy": 0.023679960733172578
+    },
+    {
+      "clip_id": "inhouse_seq_314",
+      "n_frames": 15,
+      "mean_pairwise_iou": 0.9758087864943913,
+      "flicker_proxy": 0.02419121350560871
+    },
+    {
+      "clip_id": "inhouse_seq_318",
+      "n_frames": 15,
+      "mean_pairwise_iou": 0.9952126713026138,
+      "flicker_proxy": 0.004787328697386184
+    },
+    {
+      "clip_id": "inhouse_seq_344",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9461900235592634,
+      "flicker_proxy": 0.053809976440736595
+    },
+    {
+      "clip_id": "inhouse_seq_346",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.9807363568662524,
+      "flicker_proxy": 0.01926364313374762
+    },
+    {
+      "clip_id": "inhouse_seq_369",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9406795658428093,
+      "flicker_proxy": 0.05932043415719068
+    },
+    {
+      "clip_id": "inhouse_seq_372",
+      "n_frames": 75,
+      "mean_pairwise_iou": 0.943886735233235,
+      "flicker_proxy": 0.056113264766765036
+    },
+    {
+      "clip_id": "inhouse_seq_381",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9357032730723872,
+      "flicker_proxy": 0.06429672692761279
+    },
+    {
+      "clip_id": "inhouse_seq_387",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.928697619869402,
+      "flicker_proxy": 0.07130238013059798
+    },
+    {
+      "clip_id": "inhouse_seq_406",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9924679717113232,
+      "flicker_proxy": 0.007532028288676829
+    },
+    {
+      "clip_id": "inhouse_seq_413",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9520227406738382,
+      "flicker_proxy": 0.047977259326161814
+    },
+    {
+      "clip_id": "inhouse_seq_82",
+      "n_frames": 45,
+      "mean_pairwise_iou": 0.9157538240154584,
+      "flicker_proxy": 0.08424617598454165
+    },
+    {
+      "clip_id": "mit_seq_02",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.9438179165630017,
+      "flicker_proxy": 0.056182083436998265
+    },
+    {
+      "clip_id": "mit_seq_08",
+      "n_frames": 60,
+      "mean_pairwise_iou": 0.9503357804427712,
+      "flicker_proxy": 0.04966421955722877
+    },
+    {
+      "clip_id": "mit_seq_21",
+      "n_frames": 30,
+      "mean_pairwise_iou": 0.9835101674342978,
+      "flicker_proxy": 0.016489832565702245
+    }
+  ],
+  "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/mk2w7dr8/checkpoints/epoch=30-step=2356.ckpt",
+  "note": "Semantic 3-class ab02 ckpt; flicker = 1 - mean consecutive mIoU"
+}

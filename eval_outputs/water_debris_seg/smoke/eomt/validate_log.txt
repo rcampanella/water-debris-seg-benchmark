@@ -1,0 +1,50 @@
+[rank: 0] Seed set to 0
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 main.py validate -c configs/dinov2/coco/panoptic/eo ...
+Using 16bit Automatic Mixed Precision (AMP)
+Using default `ModelCheckpoint`. Consider installing `litmodels` package to enable `LitModelCheckpoint` for automatic upload to the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Validation: |          | 0/? [00:00<?, ?it/s]Validation:   0%|          | 0/2 [00:00<?, ?it/s]Validation DataLoader 0:   0%|          | 0/2 [00:00<?, ?it/s]Validation DataLoader 0:  50%|█████     | 1/2 [00:06<00:06,  0.15it/s]Validation DataLoader 0: 100%|██████████| 2/2 [00:06<00:00,  0.29it/s]Validation DataLoader 0: 100%|██████████| 2/2 [00:07<00:00,  0.28it/s][1;32mPQ All: 0.0 | PQ Things: 0.0 | PQ Stuff: 0.0[0m
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Validate metric                 DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      metrics/val_pq_all                   0.0
+ metrics/val_pq_all_block_-1               0.0
+ metrics/val_pq_all_block_-2               0.0
+ metrics/val_pq_all_block_-3               0.0
+     metrics/val_pq_stuff                  0.0
+metrics/val_pq_stuff_block_-1              0.0
+metrics/val_pq_stuff_block_-2              0.0
+metrics/val_pq_stuff_block_-3              0.0
+    metrics/val_pq_things                  0.0
+metrics/val_pq_things_block_-1             0.0
+metrics/val_pq_things_block_-2             0.0
+metrics/val_pq_things_block_-3             0.0
+      metrics/val_rq_all                   0.0
+ metrics/val_rq_all_block_-1               0.0
+ metrics/val_rq_all_block_-2               0.0
+ metrics/val_rq_all_block_-3               0.0
+     metrics/val_rq_stuff                  0.0
+metrics/val_rq_stuff_block_-1              0.0
+metrics/val_rq_stuff_block_-2              0.0
+metrics/val_rq_stuff_block_-3              0.0
+    metrics/val_rq_things                  0.0
+metrics/val_rq_things_block_-1             0.0
+metrics/val_rq_things_block_-2             0.0
+metrics/val_rq_things_block_-3             0.0
+      metrics/val_sq_all                   0.0
+ metrics/val_sq_all_block_-1               0.0
+ metrics/val_sq_all_block_-2               0.0
+ metrics/val_sq_all_block_-3               0.0
+     metrics/val_sq_stuff                  0.0
+metrics/val_sq_stuff_block_-1              0.0
+metrics/val_sq_stuff_block_-2              0.0
+metrics/val_sq_stuff_block_-3              0.0
+    metrics/val_sq_things                  0.0
+metrics/val_sq_things_block_-1             0.0
+metrics/val_sq_things_block_-2             0.0
+metrics/val_sq_things_block_-3             0.0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

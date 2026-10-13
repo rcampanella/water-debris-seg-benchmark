@@ -1,0 +1,13 @@
+# Ultralytics val skips these (bad YOLO coords); exclude from aligned COCO GT for fair mAP vs YOLO.
+frame_0645_zahra_cans.jpg
+frame_0660_zahra_cans.jpg
+frame_0690_zahra_cans.jpg
+frame_0885_zahra_cans.jpg
+frame_10095_zahra_cans.jpg
+frame_10950_zahra_cans.jpg
+frame_10965_zahra_cans.jpg
+frame_13545_zahra_cans.jpg
+frame_4065_zahra_cans.jpg
+frame_5115_zahra_cans.jpg
+frame_7125_zahra_cans.jpg
+frame_8280_zahra_cans.jpg

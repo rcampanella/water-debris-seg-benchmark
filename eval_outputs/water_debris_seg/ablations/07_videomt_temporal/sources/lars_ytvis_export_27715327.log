@@ -1,0 +1,16 @@
+{
+  "split": "train",
+  "out_json": "/scratch-shared/rcampanella/water-debris-seg/data/lars/ytvis/lars_ytvis_train.json",
+  "n_videos": 1291,
+  "n_clips_with_labeled_keyframe": 1291,
+  "n_thing_track_annotations": 6078,
+  "n_thing_categories": 8
+}
+{
+  "split": "val",
+  "out_json": "/scratch-shared/rcampanella/water-debris-seg/data/lars/ytvis/lars_ytvis_val.json",
+  "n_videos": 35,
+  "n_clips_with_labeled_keyframe": 35,
+  "n_thing_track_annotations": 512,
+  "n_thing_categories": 8
+}

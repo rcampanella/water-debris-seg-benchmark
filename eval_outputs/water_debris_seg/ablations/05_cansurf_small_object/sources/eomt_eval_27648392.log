@@ -1,0 +1,41 @@
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.30.0
+wandb: Run data is saved locally in /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_103909-glnvdl1f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eomt_cansurf_mask2box_eval_27648392
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/glnvdl1f
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 218, in <module>
+    main()
+    ~~~~^^
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 203, in main
+    metrics = evaluate_bbox_map(args.gt_coco, pred_file)
+  File "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_coco_bbox.py", line 71, in evaluate_bbox_map
+    out = metric.compute()
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/torchmetrics/metric.py", line 699, in wrapped_func
+    value = _squeeze_if_scalar(compute(*args, **kwargs))
+                               ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/torchmetrics/detection/mean_ap.py", line 566, in compute
+    return _calculate_map_with_coco(
+        self._coco_backend,
+    ...<15 lines>...
+        self.extended_summary,
+    )
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/torchmetrics/detection/helpers.py", line 708, in _calculate_map_with_coco
+    coco_eval.evaluate()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/pycocotools/cocoeval.py", line 148, in evaluate
+    self.ious = {(imgId, catId): computeIoU(imgId, catId) \
+                                 ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/pycocotools/cocoeval.py", line 189, in computeIoU
+    ious = maskUtils.iou(d,g,iscrowd)
+  File "pycocotools/_mask.pyx", line 239, in pycocotools._mask.iou
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/numpy/__init__.py", line 414, in __getattr__
+    raise AttributeError("module {!r} has no attribute "
+                         "{!r}".format(__name__, attr))
+AttributeError: module 'numpy' has no attribute 'NPY_OWNDATA'
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33meomt_cansurf_mask2box_eval_27648392[0m at: [34mhttps://wandb.ai/riccardo-campanella/water-debris-seg/runs/glnvdl1f[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../../scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_103909-glnvdl1f/logs[0m

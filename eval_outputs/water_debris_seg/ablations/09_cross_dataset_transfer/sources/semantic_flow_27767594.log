@@ -1,0 +1,45 @@
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: creating run
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261008_133326-hd5bs8yz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eomt_lars_semantic_flow_27767594
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+wandb: uploading output.log
+wandb: 
+wandb: uploading wandb-summary.json
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          AP50 ▁
+wandb:          AP75 ▁
+wandb:      AP_small ▁
+wandb:           mAP ▁
+wandb:      n_images ▁
+wandb: n_predictions ▁
+wandb: 
+wandb: Run summary:
+wandb:          AP50 0.22791
+wandb:          AP75 0.0386
+wandb:      AP_small 0.42452
+wandb:           mAP 0.13326
+wandb:      n_images 800
+wandb: n_predictions 2911
+wandb: 
+wandb: 🚀 View run eomt_lars_semantic_flow_27767594 at: https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz
+wandb: ⭐️ View project at: https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261008_133326-hd5bs8yz/logs
+processed 200/800 images, 728 dets
+processed 400/800 images, 1435 dets
+processed 600/800 images, 2167 dets
+processed 800/800 images, 2911 dets
+{
+  "mAP": 0.13325706308576576,
+  "AP50": 0.22791196657093596,
+  "AP75": 0.03860215960059558,
+  "AP_small": 0.4245204336947456
+}
+wrote /home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/09_cross_dataset_transfer/sources/eomt_lars_semantic_flow_preds_coco.json (2911 boxes)

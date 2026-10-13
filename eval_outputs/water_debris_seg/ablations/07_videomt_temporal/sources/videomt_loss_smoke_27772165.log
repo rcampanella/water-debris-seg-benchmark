@@ -1,0 +1,21 @@
+=== upstream (no keyframe patch) ===
+
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+windows with a labeled frame: 36/500 = 0.072
+batch 0: active (frame,track) GT = 0; {'loss_ce': 3.9738, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 1: active (frame,track) GT = 2; {'loss_ce': 4.0641, 'loss_mask': 3.785, 'loss_dice': 4.996}
+batch 2: active (frame,track) GT = 0; {'loss_ce': 3.9162, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 3: active (frame,track) GT = 0; {'loss_ce': 4.0391, 'loss_mask': 0.0, 'loss_dice': 0.0}
+FAIL: zero mask loss on some batch
+=== patched ===
+
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+windows with a labeled frame: 407/500 = 0.814
+batch 0: active (frame,track) GT = 3; {'loss_ce': 4.0755, 'loss_mask': 3.5245, 'loss_dice': 4.9919}
+  torch.stack([torch.from_numpy(np.ascontiguousarray(x)) for x in masks])
+batch 1: active (frame,track) GT = 4; {'loss_ce': 4.0292, 'loss_mask': 3.7115, 'loss_dice': 4.9599}
+batch 2: active (frame,track) GT = 0; {'loss_ce': 0.0, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 3: active (frame,track) GT = 0; {'loss_ce': 0.0, 'loss_mask': 0.0, 'loss_dice': 0.0}
+FAIL: zero mask loss on some batch

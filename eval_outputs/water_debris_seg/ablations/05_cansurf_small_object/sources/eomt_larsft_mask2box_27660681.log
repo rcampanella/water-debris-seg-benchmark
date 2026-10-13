@@ -1,0 +1,50 @@
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run qi6ymm68
+wandb: Tracking run with wandb version 0.30.0
+wandb: Run data is saved locally in /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_143007-qi6ymm68
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eomt_lars_panoptic_cansurf_27660681
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+wandb: uploading history steps 0-0, summary, console lines 11-18
+wandb: 
+wandb: Run history:
+wandb:          AP50 ▁
+wandb:          AP75 ▁
+wandb:      AP_small ▁
+wandb:           mAP ▁
+wandb:      n_images ▁
+wandb: n_predictions ▁
+wandb: 
+wandb: Run summary:
+wandb:          AP50 0.19498
+wandb:          AP75 0.04565
+wandb:      AP_small 0.13333
+wandb:           mAP 0.12031
+wandb:      n_images 2221
+wandb: n_predictions 1406
+wandb: 
+wandb: 🚀 View run eomt_lars_panoptic_cansurf_27660681 at: https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68
+wandb: ⭐️ View project at: https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_143007-qi6ymm68/logs
+processed 200/2221 images, 66 dets
+processed 400/2221 images, 147 dets
+processed 600/2221 images, 232 dets
+processed 800/2221 images, 273 dets
+processed 1000/2221 images, 377 dets
+processed 1200/2221 images, 454 dets
+processed 1400/2221 images, 681 dets
+processed 1600/2221 images, 869 dets
+processed 1800/2221 images, 1145 dets
+processed 2000/2221 images, 1298 dets
+processed 2200/2221 images, 1401 dets
+{
+  "mAP": 0.1203148917638131,
+  "AP50": 0.19497788844843722,
+  "AP75": 0.04565189507918897,
+  "AP_small": 0.13333333333333333
+}
+wrote /home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/eomt_lars_panoptic_ft_val_preds_coco.json (1406 boxes)

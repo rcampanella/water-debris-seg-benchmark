@@ -1,0 +1,42 @@
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261008_132235-u45u5rne
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eomt_flow_mask2box_27767340
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+wandb: uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          AP50 ▁
+wandb:          AP75 ▁
+wandb:      AP_small ▁
+wandb:           mAP ▁
+wandb:      n_images ▁
+wandb: n_predictions ▁
+wandb: 
+wandb: Run summary:
+wandb:          AP50 0.1495
+wandb:          AP75 0.02169
+wandb:      AP_small 0.16795
+wandb:           mAP 0.0856
+wandb:      n_images 800
+wandb: n_predictions 996
+wandb: 
+wandb: 🚀 View run eomt_flow_mask2box_27767340 at: https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne
+wandb: ⭐️ View project at: https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261008_132235-u45u5rne/logs
+processed 200/800 images, 207 dets
+processed 400/800 images, 445 dets
+processed 600/800 images, 689 dets
+processed 800/800 images, 996 dets
+{
+  "mAP": 0.08559658761396852,
+  "AP50": 0.1494996312755557,
+  "AP75": 0.02169354395238131,
+  "AP_small": 0.16794871794871793
+}
+wrote /home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/eomt_zeroshot_flow_preds_coco.json (996 boxes)

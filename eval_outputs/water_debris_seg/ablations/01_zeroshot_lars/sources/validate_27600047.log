@@ -1,0 +1,57 @@
+[rank: 0] Seed set to 0
+INFO:root:Loaded 197 keys
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 main.py validate --config /home/rcampanella/project ...
+Using 16bit Automatic Mixed Precision (AMP)
+Using default `ModelCheckpoint`. Consider installing `litmodels` package to enable `LitModelCheckpoint` for automatic upload to the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+wandb: Tracking run with wandb version 0.19.10
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Validation: |          | 0/? [00:00<?, ?it/s]Validation:   0%|          | 0/50 [00:00<?, ?it/s]Validation DataLoader 0:   0%|          | 0/50 [00:00<?, ?it/s]Validation DataLoader 0:   2%|▏         | 1/50 [00:07<06:30,  0.13it/s]Validation DataLoader 0:   4%|▍         | 2/50 [00:08<03:27,  0.23it/s]Validation DataLoader 0:   6%|▌         | 3/50 [00:09<02:26,  0.32it/s]Validation DataLoader 0:   8%|▊         | 4/50 [00:09<01:54,  0.40it/s]Validation DataLoader 0:  10%|█         | 5/50 [00:10<01:34,  0.48it/s]Validation DataLoader 0:  12%|█▏        | 6/50 [00:11<01:20,  0.54it/s]Validation DataLoader 0:  14%|█▍        | 7/50 [00:11<01:11,  0.60it/s]Validation DataLoader 0:  16%|█▌        | 8/50 [00:12<01:03,  0.66it/s]Validation DataLoader 0:  18%|█▊        | 9/50 [00:12<00:58,  0.70it/s]Validation DataLoader 0:  20%|██        | 10/50 [00:13<00:53,  0.75it/s]Validation DataLoader 0:  22%|██▏       | 11/50 [00:13<00:49,  0.79it/s]Validation DataLoader 0:  24%|██▍       | 12/50 [00:14<00:44,  0.85it/s]Validation DataLoader 0:  26%|██▌       | 13/50 [00:14<00:40,  0.91it/s]Validation DataLoader 0:  28%|██▊       | 14/50 [00:14<00:38,  0.94it/s]Validation DataLoader 0:  30%|███       | 15/50 [00:15<00:36,  0.97it/s]Validation DataLoader 0:  32%|███▏      | 16/50 [00:16<00:34,  1.00it/s]Validation DataLoader 0:  34%|███▍      | 17/50 [00:16<00:32,  1.02it/s]Validation DataLoader 0:  36%|███▌      | 18/50 [00:17<00:30,  1.05it/s]Validation DataLoader 0:  38%|███▊      | 19/50 [00:17<00:28,  1.07it/s]Validation DataLoader 0:  40%|████      | 20/50 [00:18<00:27,  1.09it/s]Validation DataLoader 0:  42%|████▏     | 21/50 [00:18<00:26,  1.11it/s]Validation DataLoader 0:  44%|████▍     | 22/50 [00:19<00:24,  1.13it/s]Validation DataLoader 0:  46%|████▌     | 23/50 [00:19<00:23,  1.15it/s]Validation DataLoader 0:  48%|████▊     | 24/50 [00:20<00:22,  1.18it/s]Validation DataLoader 0:  50%|█████     | 25/50 [00:20<00:20,  1.21it/s]Validation DataLoader 0:  52%|█████▏    | 26/50 [00:20<00:19,  1.24it/s]Validation DataLoader 0:  54%|█████▍    | 27/50 [00:21<00:18,  1.27it/s]Validation DataLoader 0:  56%|█████▌    | 28/50 [00:21<00:16,  1.31it/s]Validation DataLoader 0:  58%|█████▊    | 29/50 [00:21<00:15,  1.34it/s]Validation DataLoader 0:  60%|██████    | 30/50 [00:22<00:14,  1.36it/s]Validation DataLoader 0:  62%|██████▏   | 31/50 [00:22<00:13,  1.37it/s]Validation DataLoader 0:  64%|██████▍   | 32/50 [00:23<00:13,  1.38it/s]Validation DataLoader 0:  66%|██████▌   | 33/50 [00:23<00:12,  1.39it/s]Validation DataLoader 0:  68%|██████▊   | 34/50 [00:24<00:11,  1.40it/s]Validation DataLoader 0:  70%|███████   | 35/50 [00:24<00:10,  1.43it/s]Validation DataLoader 0:  72%|███████▏  | 36/50 [00:24<00:09,  1.45it/s]Validation DataLoader 0:  74%|███████▍  | 37/50 [00:25<00:08,  1.46it/s]Validation DataLoader 0:  76%|███████▌  | 38/50 [00:25<00:08,  1.48it/s]Validation DataLoader 0:  78%|███████▊  | 39/50 [00:26<00:07,  1.50it/s]Validation DataLoader 0:  80%|████████  | 40/50 [00:26<00:06,  1.52it/s]Validation DataLoader 0:  82%|████████▏ | 41/50 [00:26<00:05,  1.54it/s]Validation DataLoader 0:  84%|████████▍ | 42/50 [00:26<00:05,  1.56it/s]Validation DataLoader 0:  86%|████████▌ | 43/50 [00:27<00:04,  1.58it/s]Validation DataLoader 0:  88%|████████▊ | 44/50 [00:27<00:03,  1.60it/s]Validation DataLoader 0:  90%|█████████ | 45/50 [00:27<00:03,  1.62it/s]Validation DataLoader 0:  92%|█████████▏| 46/50 [00:28<00:02,  1.63it/s]Validation DataLoader 0:  94%|█████████▍| 47/50 [00:28<00:01,  1.65it/s]Validation DataLoader 0:  96%|█████████▌| 48/50 [00:28<00:01,  1.66it/s]Validation DataLoader 0:  98%|█████████▊| 49/50 [00:29<00:00,  1.68it/s]Validation DataLoader 0: 100%|██████████| 50/50 [00:29<00:00,  1.71it/s]Validation DataLoader 0: 100%|██████████| 50/50 [00:29<00:00,  1.70it/s][1;32mPQ All: 0.1 | PQ Things: 0.2 | PQ Stuff: 0.0[0m
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Validate metric                 DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      metrics/val_pq_all          0.0014483831830839511
+ metrics/val_pq_all_block_-1       0.001453424490596542
+ metrics/val_pq_all_block_-2      0.0014300999125655906
+ metrics/val_pq_all_block_-3      0.00015423173967160682
+     metrics/val_pq_stuff                  0.0
+metrics/val_pq_stuff_block_-1              0.0
+metrics/val_pq_stuff_block_-2              0.0
+metrics/val_pq_stuff_block_-3              0.0
+    metrics/val_pq_things          0.002407937041877069
+metrics/val_pq_things_block_-1     0.002416318215616751
+metrics/val_pq_things_block_-2    0.0023775411046402946
+metrics/val_pq_things_block_-3    0.00025641026720404637
+      metrics/val_rq_all          0.0023657924362591332
+ metrics/val_rq_all_block_-1      0.0024526557303909072
+ metrics/val_rq_all_block_-2       0.002395335724927429
+ metrics/val_rq_all_block_-3       0.000200501257987847
+     metrics/val_rq_stuff                  0.0
+metrics/val_rq_stuff_block_-1              0.0
+metrics/val_rq_stuff_block_-2              0.0
+metrics/val_rq_stuff_block_-3              0.0
+    metrics/val_rq_things          0.00393312992528081
+metrics/val_rq_things_block_-1     0.004077540151774884
+metrics/val_rq_things_block_-2     0.003982245642691851
+metrics/val_rq_things_block_-3    0.00033333334140479566
+      metrics/val_sq_all           0.009576759417055046
+ metrics/val_sq_all_block_-1       0.009355904090972174
+ metrics/val_sq_all_block_-2       0.009413828269431466
+ metrics/val_sq_all_block_-3       0.005783690097636746
+     metrics/val_sq_stuff                  0.0
+metrics/val_sq_stuff_block_-1              0.0
+metrics/val_sq_stuff_block_-2              0.0
+metrics/val_sq_stuff_block_-3              0.0
+    metrics/val_sq_things          0.015921362530854015
+metrics/val_sq_things_block_-1     0.015554190551241241
+metrics/val_sq_things_block_-2     0.015650489497929812
+metrics/val_sq_things_block_-3     0.009615384787321091
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/offline-run-20261005_123349-txjoa9ef[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../artifacts/wandb/wandb/offline-run-20261005_123349-txjoa9ef/logs[0m

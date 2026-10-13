@@ -1,0 +1,36 @@
+# Ablation 02 — EoMT fine-tune LaRS semantic (3-class obstacle / water / sky)
+trainer:
+  max_epochs: 31
+  logger:
+    class_path: lightning.pytorch.loggers.wandb.WandbLogger
+    init_args:
+      project: water-debris-seg
+      group: ablation02_finetune_lars_semantic
+      name: eomt_lars_semantic_ft
+      tags: [eomt, finetune, lars, semantic]
+      log_model: false
+model:
+  class_path: training.mask_classification_semantic.MaskClassificationSemantic
+  init_args:
+    ckpt_path: null
+    load_ckpt_class_head: false
+    ignore_idx: 255
+    attn_mask_annealing_enabled: true
+    attn_mask_annealing_start_steps: [6520, 13040, 19560, 26080]
+    attn_mask_annealing_end_steps: [13040, 19560, 26080, 32600]
+    network:
+      class_path: models.eomt.EoMT
+      init_args:
+        num_q: 200
+        num_blocks: 3
+        encoder:
+          class_path: models.vit.ViT
+          init_args:
+            backbone_name: vit_base_patch14_reg4_dinov2
+data:
+  class_path: water_debris_seg.eomt_adapters.lars_semantic.LarsSemantic
+  init_args:
+    num_classes: 3
+    batch_size: 8
+    num_workers: 4
+    img_size: [640, 640]

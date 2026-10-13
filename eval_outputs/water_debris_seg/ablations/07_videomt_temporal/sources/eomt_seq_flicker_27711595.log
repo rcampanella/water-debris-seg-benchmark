@@ -1,0 +1,5 @@
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+{
+  "n_clips": 35,
+  "mean_flicker_proxy": 0.04060504556846386
+}

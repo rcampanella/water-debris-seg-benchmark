@@ -1,0 +1,31 @@
+=== upstream (no keyframe patch) ===
+
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+windows with a labeled frame: 51/500 = 0.102
+batch 0: active (frame,track) GT = 0; {'loss_ce': 3.915, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 1: active (frame,track) GT = 0; {'loss_ce': 3.9635, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 2: active (frame,track) GT = 0; {'loss_ce': 3.9009, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 3: active (frame,track) GT = 0; {'loss_ce': 3.9549, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 4: active (frame,track) GT = 0; {'loss_ce': 3.9311, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 5: active (frame,track) GT = 0; {'loss_ce': 3.9222, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 6: active (frame,track) GT = 0; {'loss_ce': 4.0133, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batch 7: active (frame,track) GT = 0; {'loss_ce': 3.997, 'loss_mask': 0.0, 'loss_dice': 0.0}
+batches with GT: 0/8
+FAIL: mask supervision missing
+=== patched ===
+
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+windows with a labeled frame: 500/500 = 1.000
+  torch.stack([torch.from_numpy(np.ascontiguousarray(x)) for x in masks])
+batch 0: active (frame,track) GT = 3; {'loss_ce': 3.966, 'loss_mask': 3.7738, 'loss_dice': 4.9715}
+batch 1: active (frame,track) GT = 3; {'loss_ce': 4.0103, 'loss_mask': 3.7875, 'loss_dice': 4.9163}
+batch 2: active (frame,track) GT = 6; {'loss_ce': 3.9816, 'loss_mask': 3.644, 'loss_dice': 4.9301}
+batch 3: active (frame,track) GT = 10; {'loss_ce': 4.0002, 'loss_mask': 3.716, 'loss_dice': 4.9985}
+batch 4: active (frame,track) GT = 5; {'loss_ce': 4.0588, 'loss_mask': 3.8607, 'loss_dice': 4.9543}
+batch 5: active (frame,track) GT = 3; {'loss_ce': 3.9426, 'loss_mask': 3.5587, 'loss_dice': 4.9951}
+batch 6: active (frame,track) GT = 6; {'loss_ce': 3.9493, 'loss_mask': 3.7612, 'loss_dice': 4.9952}
+batch 7: active (frame,track) GT = 4; {'loss_ce': 3.9198, 'loss_mask': 3.6818, 'loss_dice': 4.9671}
+batches with GT: 8/8
+PASS: mask/dice loss > 0 whenever GT present

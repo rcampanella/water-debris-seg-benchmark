@@ -1,0 +1,65 @@
+[rank: 0] Seed set to 0
+INFO:root:Loaded 197 keys
+Traceback (most recent call last):
+  File "/gpfs/scratch1/shared/rcampanella/water-debris-seg/third_party/eomt/main.py", line 183, in <module>
+    cli_main()
+    ~~~~~~~~^^
+  File "/gpfs/scratch1/shared/rcampanella/water-debris-seg/third_party/eomt/main.py", line 161, in cli_main
+    LightningCLI(
+    ~~~~~~~~~~~~^
+        LightningModule,
+        ^^^^^^^^^^^^^^^^
+    ...<15 lines>...
+        },
+        ^^
+    )
+    ^
+  File "/gpfs/scratch1/shared/rcampanella/water-debris-seg/third_party/eomt/main.py", line 111, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/cli.py", line 394, in __init__
+    self.instantiate_classes()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/cli.py", line 561, in instantiate_classes
+    self.config_init = self.parser.instantiate_classes(self.config)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_deprecated.py", line 140, in patched_instantiate_classes
+    cfg = self._unpatched_instantiate_classes(cfg, **kwargs)
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_core.py", line 1254, in instantiate_classes
+    cfg[subcommand] = subparser.instantiate_classes(cfg[subcommand], instantiate_groups=instantiate_groups)
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_deprecated.py", line 140, in patched_instantiate_classes
+    cfg = self._unpatched_instantiate_classes(cfg, **kwargs)
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_core.py", line 1245, in instantiate_classes
+    parent[key] = component.instantiate_classes(value)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_typehints.py", line 625, in instantiate_classes
+    value[num] = adapt_typehints(
+                 ~~~~~~~~~~~~~~~^
+        val,
+        ^^^^
+    ...<4 lines>...
+        logger=self.logger,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_typehints.py", line 846, in adapt_typehints
+    raise_union_unexpected_value(sorted_subtypes, val, vals)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/gpfs/scratch1/shared/rcampanella/water-debris-seg/third_party/eomt/main.py", line 44, in _raise_union
+    raise e
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_typehints.py", line 838, in adapt_typehints
+    vals.append(adapt_typehints(val, subtype, **adapt_kwargs))
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_typehints.py", line 1095, in adapt_typehints
+    val = adapt_class_type(val, serialize, instantiate_classes, sub_add_kwargs, prev_val=prev_val)
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_typehints.py", line 1417, in adapt_class_type
+    return instantiator_fn(val_class, **{**init_args, **dict_kwargs})
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/jsonargparse/_common.py", line 223, in __call__
+    return instantiator(class_type, *args, **kwargs)
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/cli.py", line 815, in __call__
+    return class_type(*args, **kwargs)
+  File "/gpfs/scratch1/shared/rcampanella/water-debris-seg/third_party/eomt/training/mask_classification_panoptic.py", line 81, in __init__
+    thing_classes = [i for i in range(num_classes) if i not in stuff_classes]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable

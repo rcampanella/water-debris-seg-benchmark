@@ -1,0 +1,90 @@
+{
+  "splits": {
+    "train": {
+      "seq_dir": "/scratch-shared/rcampanella/water-debris-seg/data/lars/train/images_seq",
+      "n_clips": 1291,
+      "n_frames": 21278,
+      "n_unparsed": 11097,
+      "clip_frame_counts_sample": [
+        [
+          10,
+          "mastr_0001"
+        ],
+        [
+          10,
+          "mastr_0002"
+        ],
+        [
+          10,
+          "mastr_0003"
+        ],
+        [
+          10,
+          "mastr_0004"
+        ],
+        [
+          10,
+          "mastr_0005"
+        ]
+      ]
+    },
+    "val": {
+      "seq_dir": "/scratch-shared/rcampanella/water-debris-seg/data/lars/val/images_seq",
+      "n_clips": 35,
+      "n_frames": 1450,
+      "n_unparsed": 1510,
+      "clip_frame_counts_sample": [
+        [
+          15,
+          "inhouse_seq_159"
+        ],
+        [
+          15,
+          "inhouse_seq_314"
+        ],
+        [
+          15,
+          "inhouse_seq_318"
+        ],
+        [
+          26,
+          "inhouse_seq_260"
+        ],
+        [
+          29,
+          "davimar_seq_08"
+        ]
+      ]
+    },
+    "test": {
+      "seq_dir": "/scratch-shared/rcampanella/water-debris-seg/data/lars/test/images_seq",
+      "n_clips": 231,
+      "n_frames": 9626,
+      "n_unparsed": 8340,
+      "clip_frame_counts_sample": [
+        [
+          15,
+          "inhouse_seq_107"
+        ],
+        [
+          15,
+          "inhouse_seq_110"
+        ],
+        [
+          15,
+          "inhouse_seq_118"
+        ],
+        [
+          15,
+          "inhouse_seq_120"
+        ],
+        [
+          15,
+          "inhouse_seq_125"
+        ]
+      ]
+    }
+  },
+  "total_clips": 1557,
+  "total_frames": 32354
+}

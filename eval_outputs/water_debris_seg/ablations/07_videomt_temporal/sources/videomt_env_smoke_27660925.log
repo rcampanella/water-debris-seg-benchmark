@@ -1,0 +1,10 @@
+=== VidEoMT env smoke ===
+python: 3.13.5
+torch: 2.7.0+cu126
+torchvision: 0.22.0+cu126
+detectron2: FAIL: No module named 'detectron2'
+videomt repo: OK (/scratch-shared/rcampanella/water-debris-seg/third_party/videomt)
+LaRS sequences marker: OK
+videomt git: f351ccb
+
+Next: install detectron2 in a dedicated env (see videomt README); eomt venv may not include it.

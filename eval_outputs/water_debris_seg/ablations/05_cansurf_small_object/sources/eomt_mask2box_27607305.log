@@ -1,0 +1,40 @@
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+processed 200/2221 images, 566 dets
+processed 400/2221 images, 1055 dets
+processed 600/2221 images, 1531 dets
+processed 800/2221 images, 2051 dets
+processed 1000/2221 images, 2410 dets
+processed 1200/2221 images, 2899 dets
+processed 1400/2221 images, 3163 dets
+processed 1600/2221 images, 3421 dets
+processed 1800/2221 images, 3586 dets
+processed 2000/2221 images, 3693 dets
+processed 2200/2221 images, 3774 dets
+loading annotations into memory...
+Done (t=0.03s)
+creating index...
+index created!
+Loading and preparing results...
+DONE (t=0.02s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 247, in <module>
+    main()
+    ~~~~^^
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 223, in main
+    metrics = run_coco_eval(args.gt_coco, predictions)
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_eomt_cansurf_mask2box.py", line 139, in run_coco_eval
+    ev.evaluate()
+    ~~~~~~~~~~~^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/pycocotools/cocoeval.py", line 148, in evaluate
+    self.ious = {(imgId, catId): computeIoU(imgId, catId) \
+                                 ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/pycocotools/cocoeval.py", line 189, in computeIoU
+    ious = maskUtils.iou(d,g,iscrowd)
+  File "pycocotools/_mask.pyx", line 239, in pycocotools._mask.iou
+  File "/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/numpy/__init__.py", line 792, in __getattr__
+    raise AttributeError(f"module {__name__!r} has no attribute {attr!r}")
+AttributeError: module 'numpy' has no attribute 'NPY_OWNDATA'

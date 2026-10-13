@@ -1,0 +1,66 @@
+[rank: 0] Seed set to 0
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python3 main.py validate --config /home/rcampanella/project ...
+Using 16bit Automatic Mixed Precision (AMP)
+Using default `ModelCheckpoint`. Consider installing `litmodels` package to enable `LitModelCheckpoint` for automatic upload to the Lightning model registry.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+wandb: WARNING The anonymous setting has no effect and will be removed in a future version.
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run qmi79nsh
+wandb: Tracking run with wandb version 0.30.0
+wandb: Run data is saved locally in /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/wandb/run-20261006_103617-qmi79nsh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run eomt_lars_panoptic_val_27648289
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qmi79nsh
+Restoring states from the checkpoint path at /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/67kk33hk/checkpoints/epoch=11-step=7812.ckpt
+/scratch-shared/rcampanella/water-debris-seg/envs/eomt/lib/python3.13/site-packages/lightning/pytorch/callbacks/model_checkpoint.py:362: The dirpath has changed from '/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/67kk33hk/checkpoints' to '/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/qmi79nsh/checkpoints', therefore `best_model_score`, `kth_best_model_path`, `kth_value`, `last_model_path` and `best_k_models` won't be reloaded. Only `best_model_path` will be reloaded.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Loaded model weights from the checkpoint at /scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/67kk33hk/checkpoints/epoch=11-step=7812.ckpt
+Validation: |          | 0/? [00:00<?, ?it/s]Validation:   0%|          | 0/50 [00:00<?, ?it/s]Validation DataLoader 0:   0%|          | 0/50 [00:00<?, ?it/s]Validation DataLoader 0:   2%|▏         | 1/50 [00:09<08:00,  0.10it/s]Validation DataLoader 0:   4%|▍         | 2/50 [00:10<04:09,  0.19it/s]Validation DataLoader 0:   6%|▌         | 3/50 [00:10<02:51,  0.27it/s]Validation DataLoader 0:   8%|▊         | 4/50 [00:11<02:11,  0.35it/s]Validation DataLoader 0:  10%|█         | 5/50 [00:11<01:46,  0.42it/s]Validation DataLoader 0:  12%|█▏        | 6/50 [00:12<01:30,  0.49it/s]Validation DataLoader 0:  14%|█▍        | 7/50 [00:12<01:18,  0.55it/s]Validation DataLoader 0:  16%|█▌        | 8/50 [00:13<01:09,  0.61it/s]Validation DataLoader 0:  18%|█▊        | 9/50 [00:13<01:02,  0.66it/s]Validation DataLoader 0:  20%|██        | 10/50 [00:14<00:56,  0.71it/s]Validation DataLoader 0:  22%|██▏       | 11/50 [00:14<00:51,  0.76it/s]Validation DataLoader 0:  24%|██▍       | 12/50 [00:14<00:46,  0.82it/s]Validation DataLoader 0:  26%|██▌       | 13/50 [00:14<00:42,  0.87it/s]Validation DataLoader 0:  28%|██▊       | 14/50 [00:15<00:39,  0.91it/s]Validation DataLoader 0:  30%|███       | 15/50 [00:15<00:37,  0.94it/s]Validation DataLoader 0:  32%|███▏      | 16/50 [00:16<00:34,  0.98it/s]Validation DataLoader 0:  34%|███▍      | 17/50 [00:16<00:32,  1.01it/s]Validation DataLoader 0:  36%|███▌      | 18/50 [00:17<00:30,  1.04it/s]Validation DataLoader 0:  38%|███▊      | 19/50 [00:17<00:29,  1.06it/s]Validation DataLoader 0:  40%|████      | 20/50 [00:18<00:27,  1.10it/s]Validation DataLoader 0:  42%|████▏     | 21/50 [00:18<00:25,  1.12it/s]Validation DataLoader 0:  44%|████▍     | 22/50 [00:19<00:24,  1.15it/s]Validation DataLoader 0:  46%|████▌     | 23/50 [00:19<00:22,  1.18it/s]Validation DataLoader 0:  48%|████▊     | 24/50 [00:19<00:21,  1.21it/s]Validation DataLoader 0:  50%|█████     | 25/50 [00:20<00:20,  1.24it/s]Validation DataLoader 0:  52%|█████▏    | 26/50 [00:20<00:18,  1.27it/s]Validation DataLoader 0:  54%|█████▍    | 27/50 [00:20<00:17,  1.31it/s]Validation DataLoader 0:  56%|█████▌    | 28/50 [00:20<00:16,  1.35it/s]Validation DataLoader 0:  58%|█████▊    | 29/50 [00:20<00:15,  1.39it/s]Validation DataLoader 0:  60%|██████    | 30/50 [00:21<00:14,  1.40it/s]Validation DataLoader 0:  62%|██████▏   | 31/50 [00:21<00:13,  1.42it/s]Validation DataLoader 0:  64%|██████▍   | 32/50 [00:22<00:12,  1.43it/s]Validation DataLoader 0:  66%|██████▌   | 33/50 [00:22<00:11,  1.44it/s]Validation DataLoader 0:  68%|██████▊   | 34/50 [00:23<00:11,  1.44it/s]Validation DataLoader 0:  70%|███████   | 35/50 [00:23<00:10,  1.47it/s]Validation DataLoader 0:  72%|███████▏  | 36/50 [00:24<00:09,  1.49it/s]Validation DataLoader 0:  74%|███████▍  | 37/50 [00:24<00:08,  1.50it/s]Validation DataLoader 0:  76%|███████▌  | 38/50 [00:24<00:07,  1.53it/s]Validation DataLoader 0:  78%|███████▊  | 39/50 [00:25<00:07,  1.55it/s]Validation DataLoader 0:  80%|████████  | 40/50 [00:25<00:06,  1.57it/s]Validation DataLoader 0:  82%|████████▏ | 41/50 [00:25<00:05,  1.60it/s]Validation DataLoader 0:  84%|████████▍ | 42/50 [00:25<00:04,  1.62it/s]Validation DataLoader 0:  86%|████████▌ | 43/50 [00:26<00:04,  1.65it/s]Validation DataLoader 0:  88%|████████▊ | 44/50 [00:26<00:03,  1.67it/s]Validation DataLoader 0:  90%|█████████ | 45/50 [00:26<00:02,  1.69it/s]Validation DataLoader 0:  92%|█████████▏| 46/50 [00:26<00:02,  1.71it/s]Validation DataLoader 0:  94%|█████████▍| 47/50 [00:27<00:01,  1.73it/s]Validation DataLoader 0:  96%|█████████▌| 48/50 [00:27<00:01,  1.75it/s]Validation DataLoader 0:  98%|█████████▊| 49/50 [00:27<00:00,  1.77it/s]Validation DataLoader 0: 100%|██████████| 50/50 [00:27<00:00,  1.80it/s]Validation DataLoader 0: 100%|██████████| 50/50 [00:27<00:00,  1.79it/s][1;32mPQ All: 39.5 | PQ Things: 19.2 | PQ Stuff: 93.6[0m
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Validate metric                 DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+      metrics/val_pq_all            0.3945102912673428
+ metrics/val_pq_all_block_-1       0.38296761017291414
+ metrics/val_pq_all_block_-2        0.3440205922661897
+ metrics/val_pq_all_block_-3        0.2682374805031461
+     metrics/val_pq_stuff           0.935505177622174
+metrics/val_pq_stuff_block_-1       0.9368366706069575
+metrics/val_pq_stuff_block_-2       0.9341084388936143
+metrics/val_pq_stuff_block_-3       0.9358196011836315
+    metrics/val_pq_things          0.19163720888428115
+metrics/val_pq_things_block_-1     0.17526671251014783
+metrics/val_pq_things_block_-2     0.12273764978090534
+metrics/val_pq_things_block_-3     0.017894185247964094
+      metrics/val_rq_all            0.4621598618951711
+ metrics/val_rq_all_block_-1        0.4445872198451649
+ metrics/val_rq_all_block_-2        0.3894743804227222
+ metrics/val_rq_all_block_-3        0.2840310443531383
+     metrics/val_rq_stuff           0.9770336548487345
+metrics/val_rq_stuff_block_-1       0.9787763555844624
+metrics/val_rq_stuff_block_-2       0.9752851923306782
+metrics/val_rq_stuff_block_-3       0.9789471626281738
+    metrics/val_rq_things           0.2690821895375848
+metrics/val_rq_things_block_-1     0.24426629394292831
+metrics/val_rq_things_block_-2     0.16979532595723867
+metrics/val_rq_things_block_-3          0.0234375
+      metrics/val_sq_all            0.6945441511042165
+ metrics/val_sq_all_block_-1        0.6453555921399476
+ metrics/val_sq_all_block_-2        0.6482592534222994
+ metrics/val_sq_all_block_-3        0.3300009873086188
+     metrics/val_sq_stuff           0.9570868696148628
+metrics/val_sq_stuff_block_-1       0.9568018107014076
+metrics/val_sq_stuff_block_-2       0.9572772896578724
+metrics/val_sq_stuff_block_-3       0.9555085410494464
+    metrics/val_sq_things           0.5960906316627242
+metrics/val_sq_things_block_-1      0.5285632601794001
+metrics/val_sq_things_block_-2      0.5323774898339595
+metrics/val_sq_things_block_-3      0.0954356546558085
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33meomt_lars_panoptic_val_27648289[0m at: [34mhttps://wandb.ai/riccardo-campanella/water-debris-seg/runs/qmi79nsh[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../artifacts/wandb/wandb/run-20261006_103617-qmi79nsh/logs[0m

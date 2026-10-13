@@ -1,0 +1,5 @@
+
+Category ids in annotations are not in [1, #categories]! We'll apply a mapping for you.
+
+Loaded 1291 videos from lars_ytvis_train
+sample video_id=1 length=90 frames_with_anns=6
