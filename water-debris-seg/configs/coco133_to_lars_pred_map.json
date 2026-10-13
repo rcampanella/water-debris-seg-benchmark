@@ -1,0 +1,309 @@
+{
+  "_doc": "Prediction-side remap for ablation 01: frozen COCO-133 EoMT predictions -> LaRS 11-class panoptic space, scored against native LaRS GT. Many-to-one by COCO name (ids from panoptic_coco_categories.json, cocodataset/panopticapi). COCO classes not listed -> LaRS 'unknown' (index 11, EoMT's no-prediction class; ignored as a class, excluded from PQ mean). Row boats, Buoy and Float have no COCO counterpart and can only be missed. Thing/stuff consistency: COCO stuff only maps to LaRS stuff, COCO things only to LaRS things.",
+  "lars_index": {
+    "Static Obstacle": 0,
+    "Water": 1,
+    "Sky": 2,
+    "Boat/ship": 3,
+    "Row boats": 4,
+    "Paddle board": 5,
+    "Buoy": 6,
+    "Swimmer": 7,
+    "Animal": 8,
+    "Float": 9,
+    "Other": 10
+  },
+  "map": {
+    "Static Obstacle": [
+      {
+        "name": "bridge",
+        "coco_id": 95,
+        "isthing": 0
+      },
+      {
+        "name": "house",
+        "coco_id": 128,
+        "isthing": 0
+      },
+      {
+        "name": "building-other-merged",
+        "coco_id": 197,
+        "isthing": 0
+      },
+      {
+        "name": "tree-merged",
+        "coco_id": 184,
+        "isthing": 0
+      },
+      {
+        "name": "fence-merged",
+        "coco_id": 185,
+        "isthing": 0
+      },
+      {
+        "name": "mountain-merged",
+        "coco_id": 192,
+        "isthing": 0
+      },
+      {
+        "name": "rock-merged",
+        "coco_id": 198,
+        "isthing": 0
+      },
+      {
+        "name": "wall-brick",
+        "coco_id": 171,
+        "isthing": 0
+      },
+      {
+        "name": "wall-stone",
+        "coco_id": 175,
+        "isthing": 0
+      },
+      {
+        "name": "wall-tile",
+        "coco_id": 176,
+        "isthing": 0
+      },
+      {
+        "name": "wall-wood",
+        "coco_id": 177,
+        "isthing": 0
+      },
+      {
+        "name": "wall-other-merged",
+        "coco_id": 199,
+        "isthing": 0
+      },
+      {
+        "name": "roof",
+        "coco_id": 151,
+        "isthing": 0
+      },
+      {
+        "name": "platform",
+        "coco_id": 144,
+        "isthing": 0
+      },
+      {
+        "name": "pavement-merged",
+        "coco_id": 191,
+        "isthing": 0
+      },
+      {
+        "name": "road",
+        "coco_id": 149,
+        "isthing": 0
+      },
+      {
+        "name": "railroad",
+        "coco_id": 147,
+        "isthing": 0
+      },
+      {
+        "name": "sand",
+        "coco_id": 154,
+        "isthing": 0
+      },
+      {
+        "name": "grass-merged",
+        "coco_id": 193,
+        "isthing": 0
+      },
+      {
+        "name": "dirt-merged",
+        "coco_id": 194,
+        "isthing": 0
+      },
+      {
+        "name": "gravel",
+        "coco_id": 125,
+        "isthing": 0
+      },
+      {
+        "name": "playingfield",
+        "coco_id": 145,
+        "isthing": 0
+      },
+      {
+        "name": "snow",
+        "coco_id": 159,
+        "isthing": 0
+      },
+      {
+        "name": "tent",
+        "coco_id": 166,
+        "isthing": 0
+      },
+      {
+        "name": "stairs",
+        "coco_id": 161,
+        "isthing": 0
+      },
+      {
+        "name": "door-stuff",
+        "coco_id": 112,
+        "isthing": 0
+      },
+      {
+        "name": "window-other",
+        "coco_id": 181,
+        "isthing": 0
+      },
+      {
+        "name": "window-blind",
+        "coco_id": 180,
+        "isthing": 0
+      },
+      {
+        "name": "net",
+        "coco_id": 138,
+        "isthing": 0
+      }
+    ],
+    "Water": [
+      {
+        "name": "river",
+        "coco_id": 148,
+        "isthing": 0
+      },
+      {
+        "name": "sea",
+        "coco_id": 155,
+        "isthing": 0
+      },
+      {
+        "name": "water-other",
+        "coco_id": 178,
+        "isthing": 0
+      }
+    ],
+    "Sky": [
+      {
+        "name": "sky-other-merged",
+        "coco_id": 187,
+        "isthing": 0
+      }
+    ],
+    "Boat/ship": [
+      {
+        "name": "boat",
+        "coco_id": 9,
+        "isthing": 1
+      }
+    ],
+    "Paddle board": [
+      {
+        "name": "surfboard",
+        "coco_id": 42,
+        "isthing": 1
+      }
+    ],
+    "Swimmer": [
+      {
+        "name": "person",
+        "coco_id": 1,
+        "isthing": 1
+      }
+    ],
+    "Animal": [
+      {
+        "name": "bird",
+        "coco_id": 16,
+        "isthing": 1
+      },
+      {
+        "name": "cat",
+        "coco_id": 17,
+        "isthing": 1
+      },
+      {
+        "name": "dog",
+        "coco_id": 18,
+        "isthing": 1
+      },
+      {
+        "name": "horse",
+        "coco_id": 19,
+        "isthing": 1
+      },
+      {
+        "name": "sheep",
+        "coco_id": 20,
+        "isthing": 1
+      },
+      {
+        "name": "cow",
+        "coco_id": 21,
+        "isthing": 1
+      },
+      {
+        "name": "elephant",
+        "coco_id": 22,
+        "isthing": 1
+      },
+      {
+        "name": "bear",
+        "coco_id": 23,
+        "isthing": 1
+      },
+      {
+        "name": "zebra",
+        "coco_id": 24,
+        "isthing": 1
+      },
+      {
+        "name": "giraffe",
+        "coco_id": 25,
+        "isthing": 1
+      }
+    ],
+    "Other": [
+      {
+        "name": "bottle",
+        "coco_id": 44,
+        "isthing": 1
+      },
+      {
+        "name": "cup",
+        "coco_id": 47,
+        "isthing": 1
+      },
+      {
+        "name": "frisbee",
+        "coco_id": 34,
+        "isthing": 1
+      },
+      {
+        "name": "sports ball",
+        "coco_id": 37,
+        "isthing": 1
+      },
+      {
+        "name": "kite",
+        "coco_id": 38,
+        "isthing": 1
+      },
+      {
+        "name": "backpack",
+        "coco_id": 27,
+        "isthing": 1
+      },
+      {
+        "name": "handbag",
+        "coco_id": 31,
+        "isthing": 1
+      },
+      {
+        "name": "suitcase",
+        "coco_id": 33,
+        "isthing": 1
+      },
+      {
+        "name": "umbrella",
+        "coco_id": 28,
+        "isthing": 1
+      }
+    ]
+  }
+}
