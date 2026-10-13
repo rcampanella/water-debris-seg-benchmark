@@ -29,3 +29,23 @@ wandb/
 
 # OS
 .DS_Store
+
+# Model checkpoints (large binaries)
+data/water_debris/checkpoints/**/*.ckpt
+
+# Dataset symlinks to scratch (replace the old placeholder dirs)
+data/water_debris/lars
+data/water_debris/cansurf
+
+# Regenerable renders (rebuild: see eval_outputs/water_debris_seg/qualitative/README.md)
+eval_outputs/water_debris_seg/qualitative/panels/
+eval_outputs/water_debris_seg/qualitative/mask_panels/
+docs/presentation/*.pptx
+docs/presentation/qual_assets/*.png
+
+# Ultralytics side outputs: stray run dirs and image mosaics (curves/CSVs are kept)
+runs/
+**/train_batch*.jpg
+**/val_batch*_labels.jpg
+**/val_batch*_pred.jpg
+**/labels.jpg

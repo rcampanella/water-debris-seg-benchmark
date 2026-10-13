@@ -1,0 +1,22 @@
+{
+  "host": "snellius",
+  "scratch_root": "/scratch-shared/rcampanella/water-debris-seg/third_party",
+  "pinned": "2026-10-05",
+  "repos": [
+    {
+      "name": "eomt",
+      "url": "https://github.com/tue-mps/eomt",
+      "sha": "0f1e1ccbc0e105f1a100e885174e1d716ad02990"
+    },
+    {
+      "name": "videomt",
+      "url": "https://github.com/tue-mps/videomt",
+      "sha": "f351ccbfb2096c71bf3bce6241c8eb257c5cffeb"
+    },
+    {
+      "name": "ultralytics",
+      "url": "https://github.com/ultralytics/ultralytics",
+      "sha": "94313082d0a08e615d02c11500479a757c04f7e1"
+    }
+  ]
+}
