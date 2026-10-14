@@ -114,5 +114,8 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 | [`videomt_seq_flicker_27776809`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/wzpe700z) | finished | 27776809 | ✅ online values match the reported results |
 | [`videomt_lars_eval_27806956`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27806956) | finished | 27806956 | ab07 eval of 16k ckpt (AP 0.009); W&B summary empty |
 | [`videomt_seq_flicker_27807251`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/r4ugnnd5) | finished | 27807251 | ✅ online values match the reported results |
+| [`ab07_keyframe_ap_27772987`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27772987) | finished | 27772987 | ✅ online values match the reported results |
+| [`ab07_keyframe_ap_27775358`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27775358) | finished | 27775358 | ✅ online values match the reported results |
+| [`ab07_keyframe_ap_27806956`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27806956) | finished | 27806956 | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

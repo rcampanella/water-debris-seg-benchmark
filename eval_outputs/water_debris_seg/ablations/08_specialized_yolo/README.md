@@ -20,7 +20,7 @@ Optional: SAHI on CANSURF/FloW for far-field recall.
 |---|---|---|---|---|---|---|---|
 | YOLO11n 50ep train | CANSURF val | — | **0.966** | 0.978 | 0.924 | **27648816** | Ultralytics local run |
 | W&B val replay | CANSURF val | **0.861** | **0.966** | 0.978 | 0.924 | **27660923** | `n3vuqqbi` |
-| YOLO11n 50ep train (1080 train / 120 val) | FloW **test** (800) | **0.391** | **0.822** | 0.856 | 0.767 | **27942882** | [`flow_test_val_27942882.log`](sources/flow_test_val_27942882.log). **Not in W&B**: run [`flow_train_20261012_153258`](#wb-runs) holds the training curves and the 120-image *val-split* result (mAP50-95 0.466), not this test-split result |
+| YOLO11n 50ep train (1080 train / 120 val) | FloW **test** (800) | **0.391** | **0.822** | 0.856 | 0.767 | **27942882** | [`flow_test_val_27942882.log`](sources/flow_test_val_27942882.log). Test result in W&B: [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split). The training run [`flow_train_20261012_153258`](#wb-runs) holds the curves and the 120-image *val-split* result (mAP50-95 0.466) and is tagged `val-split-only` |
 
 These are Ultralytics' own metrics. FloW split: `training/` minus a seeded 10% val slice ([`flow_val_split.txt`](sources/flow_val_split.txt)); the official test split is scored only. Recipe identical to CANSURF (imgsz 640, batch 16, 50 epochs) — note FloW images are 1280×720, so 640 halves resolution for the many small objects.
 
@@ -60,6 +60,9 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 |---|---|---|---|
 | [`cansurf_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/cansurf_train_20261006_104548) | finished | — | ✅ online values match the reported results |
 | [`yolo11n_cansurf_val_wandb_27660923`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/n3vuqqbi) | finished | 27660923 | ✅ online values match the reported results |
-| [`flow_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258) | finished | — | ❌ online value is a different split than the reported result |
+| [`flow_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258) | finished | — | ❌ online value is a different split than the reported result → corrected: [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split) |
+| [`rescore_flow_yolo11n`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_yolo11n) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_yolo11n`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_yolo11n) | finished | — | ✅ online values match the reported results |
+| [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split) | finished | — | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

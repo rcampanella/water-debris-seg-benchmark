@@ -70,7 +70,11 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 | Run | State | Slurm | Audit |
 |---|---|---|---|
 | [`eomt_cansurf_mask2box_eval_27648392`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/glnvdl1f) | failed | 27648392 | failed attempt |
-| [`eomt_cansurf_mask2box_eval_27648692`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej) | finished | 27648692 | ⚠️ online holds pre-fix (superseded) values |
-| [`eomt_lars_panoptic_cansurf_27660681`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68) | finished | 27660681 | ⚠️ online holds pre-fix (superseded) values |
+| [`eomt_cansurf_mask2box_eval_27648692`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej) | finished | 27648692 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_zeroshot_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt) |
+| [`eomt_lars_panoptic_cansurf_27660681`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68) | finished | 27660681 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_panoptic_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt) |
+| [`rescore_cansurf_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_zeroshot_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_panoptic_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt) | finished | — | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

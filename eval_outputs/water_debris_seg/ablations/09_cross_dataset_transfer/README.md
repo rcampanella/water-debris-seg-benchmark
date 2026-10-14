@@ -63,8 +63,12 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 
 | Run | State | Slurm | Audit |
 |---|---|---|---|
-| [`eomt_lars_semantic_cansurf_27660924`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm) | finished | 27660924 | ⚠️ online holds pre-fix (superseded) values |
-| [`eomt_semantic_cansurf_min256_27711596`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn) | finished | 27711596 | ⚠️ online holds pre-fix (superseded) values |
-| [`eomt_lars_semantic_flow_27767594`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz) | finished | 27767594 | ⚠️ online holds pre-fix (superseded) values |
+| [`eomt_lars_semantic_cansurf_27660924`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm) | finished | 27660924 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic) |
+| [`eomt_semantic_cansurf_min256_27711596`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn) | finished | 27711596 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256) |
+| [`eomt_lars_semantic_flow_27767594`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz) | finished | 27767594 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic) |
+| [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_semantic_aligned`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_aligned) | finished | — | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256) | finished | — | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

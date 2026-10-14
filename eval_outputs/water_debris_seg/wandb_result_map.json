@@ -1,5 +1,5 @@
 {
-  "_doc": "Hand-curated map from each reported result to the W&B run that logged it, used by water-debris-seg/scripts/wandb_audit.py. 'registry_id' entries take reference values from RESCORE.json (legacy = pre-2026-10-13 scorer, new = pycocotools) and the W&B run id from box_eval_registry.json. 'checks' entries compare an online summary key with local files: kind rescore | json (key path) | log (regex group 1). tol is absolute. 'expect' states what the audit should find so a change in W&B or in the files is flagged. supporting_runs lists runs that back a documented result or a documented invalid run but have no directly comparable logged value.",
+  "_doc": "Hand-curated map from each reported result to the W&B run that logged it, used by water-debris-seg/scripts/wandb_audit.py. 'registry_id' entries take reference values from RESCORE.json (legacy = pre-2026-10-13 scorer, new = pycocotools) and the W&B run id from box_eval_registry.json. 'checks' entries compare an online summary key with local files: kind rescore | json (key path) | log (regex group 1). tol is absolute. 'expect' states what the audit should find so a change in W&B or in the files is flagged. supporting_runs lists runs that back a documented result or a documented invalid run but have no directly comparable logged value. audit_entries / rescore_<registry_id> runs are the 2026-10-13 correction runs (group audit_2026-10-13); corrected_by links a superseded run to its correction; closed_gaps records what was previously missing from W&B.",
   "box_metrics": [
     "mAP",
     "AP50",
@@ -81,7 +81,8 @@
           },
           "expect": "online equals superseded value (label-bridge bug); corrected PQ is not in W&B"
         }
-      ]
+      ],
+      "corrected_by": "ab01_zeroshot_lars_pq_predremap"
     },
     {
       "id": "ab02_miou",
@@ -247,7 +248,8 @@
           },
           "expect": "differs: the reported test-split result (0.390 pycocotools / 0.391 Ultralytics) is not logged to W&B"
         }
-      ]
+      ],
+      "corrected_by": "ab08_yolo_flow_test_split"
     },
     {
       "id": "ab07_flicker_eomt_semantic",
@@ -334,38 +336,6 @@
       ]
     }
   ],
-  "not_in_wandb": [
-    {
-      "what": "Corrected ablation 01 LaRS PQ 0.298 (prediction-side remap) and the ab03 reproduction 0.3946",
-      "slurm": "28011322",
-      "local": "ablations/01_zeroshot_lars/sources/pq_*_28011322.json"
-    },
-    {
-      "what": "All pycocotools box metrics (RESCORE): the restated mAP / AP_small for ablations 04, 05, 08, 09",
-      "slurm": "local script rescore_box_predictions.py",
-      "local": "RESCORE.json, RESCORE.md"
-    },
-    {
-      "what": "YOLOv11n FloW test-split result (0.391 Ultralytics, 0.390 pycocotools)",
-      "slurm": "27942882 (post-training steps)",
-      "local": "ablations/08_specialized_yolo/sources/flow_test_val_27942882.log, yolo11n_flow_test_preds_coco.metrics.json"
-    },
-    {
-      "what": "YOLOv11n CANSURF pycocotools predictions and metrics",
-      "slurm": "28000242",
-      "local": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.*"
-    },
-    {
-      "what": "VidEoMT per-keyframe AP (0.016 at 4k, 0.009 at 16k): the eval runs have empty W&B summaries",
-      "slurm": "27775358, 27806956",
-      "local": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_*.json"
-    },
-    {
-      "what": "Qualitative error tables, saved masks and panels",
-      "slurm": "28001374",
-      "local": "qualitative/"
-    }
-  ],
   "supporting_runs": [
     {
       "run": "lars_vitb_27772987",
@@ -399,5 +369,216 @@
       "run": "microrun_20261006_104546",
       "role": "YOLO smoke test"
     }
-  ]
+  ],
+  "audit_entries": [
+    {
+      "id": "ab01_pq_corrected",
+      "ablation": "01",
+      "what": "CORRECTED LaRS val PQ, zero-shot EoMT (prediction-side remap)",
+      "wandb_run": "ab01_zeroshot_lars_pq_predremap",
+      "slurm": "28011322",
+      "checks": [
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ (val_pq_all)",
+          "tol": 1e-06,
+          "current": {
+            "kind": "json",
+            "file": "ablations/01_zeroshot_lars/sources/pq_zeroshot_predremap_28011322.json",
+            "path": [
+              "pq_all"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab03_pq_script_check",
+      "ablation": "03",
+      "what": "PQ script check on the fine-tuned ckpt (reproduces EoMT validate 0.3945)",
+      "wandb_run": "ab03_pq_script_check",
+      "slurm": "28011322",
+      "checks": [
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ (val_pq_all)",
+          "tol": 1e-06,
+          "current": {
+            "kind": "json",
+            "file": "ablations/01_zeroshot_lars/sources/pq_native_ab03_check_28011322.json",
+            "path": [
+              "pq_all"
+            ]
+          }
+        },
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ vs EoMT validate log (27660922)",
+          "tol": 0.001,
+          "current": {
+            "kind": "log",
+            "file": "ablations/03_finetune_lars_panoptic/sources/validate_27660922.log",
+            "regex": "val_pq_all\\s+([0-9.]+)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab08_flow_test",
+      "ablation": "08",
+      "what": "YOLOv11n FloW TEST split (Ultralytics + pycocotools)",
+      "wandb_run": "ab08_yolo_flow_test_split",
+      "slurm": "27942882",
+      "checks": [
+        {
+          "online_key": "ultralytics/test/mAP50-95",
+          "label": "mAP50-95 test (Ultralytics)",
+          "tol": 0.001,
+          "current": {
+            "kind": "log",
+            "file": "ablations/08_specialized_yolo/sources/flow_test_val_27942882.log",
+            "regex": "\\ball\\s+800\\s+2024\\s+[0-9.]+\\s+[0-9.]+\\s+[0-9.]+\\s+([0-9.]+)"
+          }
+        },
+        {
+          "online_key": "pycocotools/test/mAP",
+          "label": "mAP test (pycocotools)",
+          "tol": 1e-06,
+          "current": {
+            "kind": "rescore",
+            "registry_id": "flow_yolo11n",
+            "which": "new",
+            "metric": "mAP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_keyframe_ap_27772987",
+      "ablation": "07",
+      "what": "VidEoMT per-keyframe AP, 4k training preds",
+      "wandb_run": "ab07_keyframe_ap_27772987",
+      "slurm": "27772987",
+      "checks": [
+        {
+          "online_key": "per_keyframe/AP",
+          "label": "per-keyframe AP",
+          "tol": 1e-06,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_27772987.json",
+            "path": [
+              "per_keyframe",
+              "AP"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_keyframe_ap_27775358",
+      "ablation": "07",
+      "what": "VidEoMT per-keyframe AP, 4k eval",
+      "wandb_run": "ab07_keyframe_ap_27775358",
+      "slurm": "27775358",
+      "checks": [
+        {
+          "online_key": "per_keyframe/AP",
+          "label": "per-keyframe AP",
+          "tol": 1e-06,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_27775358.json",
+            "path": [
+              "per_keyframe",
+              "AP"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_keyframe_ap_27806956",
+      "ablation": "07",
+      "what": "VidEoMT per-keyframe AP, 16k eval",
+      "wandb_run": "ab07_keyframe_ap_27806956",
+      "slurm": "27806956",
+      "checks": [
+        {
+          "online_key": "per_keyframe/AP",
+          "label": "per-keyframe AP",
+          "tol": 1e-06,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_27806956.json",
+            "path": [
+              "per_keyframe",
+              "AP"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "qualitative_recall",
+      "ablation": "qual",
+      "what": "Qualitative analysis: YOLOv11n FloW recall@IoU0.5",
+      "wandb_run": "qualitative_error_analysis",
+      "slurm": "28001374",
+      "checks": [
+        {
+          "online_key": "recall_iou50/flow_yolo11n",
+          "label": "recall@0.5 (flow_yolo11n)",
+          "tol": 0.0001,
+          "current": {
+            "kind": "json",
+            "file": "qualitative/errors/flow_yolo11n/summary.json",
+            "path": [
+              "recall_at_iou50"
+            ]
+          },
+          "note": "online value comes from error_summary.csv, rounded to 4 decimals"
+        }
+      ]
+    }
+  ],
+  "closed_gaps": [
+    {
+      "what": "Corrected ablation 01 LaRS PQ 0.298 (prediction-side remap) and the ab03 reproduction 0.3946",
+      "slurm": "28011322",
+      "local": "ablations/01_zeroshot_lars/sources/pq_*_28011322.json",
+      "now_in_wandb": "ab01_zeroshot_lars_pq_predremap, ab03_pq_script_check"
+    },
+    {
+      "what": "All pycocotools box metrics (RESCORE): the restated mAP / AP_small for ablations 04, 05, 08, 09",
+      "slurm": "local script rescore_box_predictions.py",
+      "local": "RESCORE.json, RESCORE.md",
+      "now_in_wandb": "rescore_* (12 runs)"
+    },
+    {
+      "what": "YOLOv11n FloW test-split result (0.391 Ultralytics, 0.390 pycocotools)",
+      "slurm": "27942882 (post-training steps)",
+      "local": "ablations/08_specialized_yolo/sources/flow_test_val_27942882.log, yolo11n_flow_test_preds_coco.metrics.json",
+      "now_in_wandb": "ab08_yolo_flow_test_split"
+    },
+    {
+      "what": "YOLOv11n CANSURF pycocotools predictions and metrics",
+      "slurm": "28000242",
+      "local": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.*",
+      "now_in_wandb": "rescore_cansurf_yolo11n"
+    },
+    {
+      "what": "VidEoMT per-keyframe AP (0.016 at 4k, 0.009 at 16k): the eval runs have empty W&B summaries",
+      "slurm": "27775358, 27806956",
+      "local": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_*.json",
+      "now_in_wandb": "ab07_keyframe_ap_27772987 / _27775358 / _27806956"
+    },
+    {
+      "what": "Qualitative error tables, saved masks and panels",
+      "slurm": "28001374",
+      "local": "qualitative/",
+      "now_in_wandb": "qualitative_error_analysis"
+    }
+  ],
+  "not_in_wandb": []
 }

@@ -48,5 +48,6 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 | [`eomt_lars_panoptic_ft_27607195`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/67kk33hk) | finished | 27607195 | ✅ online values match the reported results |
 | [`eomt_lars_panoptic_val_27648289`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qmi79nsh) | finished | 27648289 | ✅ online values match the reported results |
 | [`eomt_lars_panoptic_val_27660922`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/xcl7zvm8) | finished | 27660922 | ✅ online values match the reported results |
+| [`ab03_pq_script_check`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab03_pq_script_check) | finished | — | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

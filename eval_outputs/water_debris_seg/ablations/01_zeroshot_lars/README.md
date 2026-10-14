@@ -238,6 +238,7 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 
 | Run | State | Slurm | Audit |
 |---|---|---|---|
-| [`eomt_base640_2x_lars_val_27600047`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/txjoa9ef) | finished | 27600047 | ⚠️ online holds pre-fix (superseded) values |
+| [`eomt_base640_2x_lars_val_27600047`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/txjoa9ef) | finished | 27600047 | ⚠️ online holds pre-fix (superseded) values → corrected: [`ab01_zeroshot_lars_pq_predremap`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap) |
+| [`ab01_zeroshot_lars_pq_predremap`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap) | finished | — | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

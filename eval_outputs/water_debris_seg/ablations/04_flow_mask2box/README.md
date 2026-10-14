@@ -57,7 +57,9 @@ Online runs for this ablation (fetched 2026-10-14); value-by-value comparison wi
 
 | Run | State | Slurm | Audit |
 |---|---|---|---|
-| [`eomt_lars_panoptic_flow_27767341`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/0c4pnnn0) | finished | 27767341 | ⚠️ online holds pre-fix (superseded) values |
-| [`eomt_flow_mask2box_27767340`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne) | finished | 27767340 | ⚠️ online holds pre-fix (superseded) values |
+| [`eomt_lars_panoptic_flow_27767341`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/0c4pnnn0) | finished | 27767341 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic) |
+| [`eomt_flow_mask2box_27767340`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne) | finished | 27767340 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot) |
+| [`rescore_flow_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot) | finished | — | ✅ online values match the reported results |
+| [`rescore_flow_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic) | finished | — | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->
