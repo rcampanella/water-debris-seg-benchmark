@@ -262,7 +262,7 @@ flowchart LR
 - Swarm / agents: [`docs/water_debris_seg_swarm.md`](../../../docs/water_debris_seg_swarm.md)
 - Disk: [`data/water_debris/DISK_BUDGET.md`](../../../data/water_debris/DISK_BUDGET.md)
 - GPU: [GPU_INVENTORY.md](GPU_INVENTORY.md)
-- W&B: project `water-debris-seg` (+ two path-named YOLO projects). Every result → run link with online-vs-reported comparison: [`WANDB_AUDIT.md`](WANDB_AUDIT.md); all runs: [`wandb_runs.json`](wandb_runs.json). **The original mask→box runs still show the pre-2026-10-13 (legacy-scorer) values** (tagged `superseded-scorer-2026-10-13`); the corrected values, the corrected ablation 01 PQ and the YOLO FloW test result are logged as new runs in W&B group [`audit_2026-10-13`](https://wandb.ai/riccardo-campanella/water-debris-seg?nw=nwuserriccardocampanellaing) (19 runs, pinned to a commit that contains the code).
+- W&B: project `water-debris-seg` (+ two path-named YOLO projects). Every result → run link with online-vs-reported comparison: [`WANDB_AUDIT.md`](WANDB_AUDIT.md); all runs: [`wandb_runs.json`](wandb_runs.json). **The original mask→box runs still show the pre-2026-10-13 (legacy-scorer) values** (tagged `superseded-scorer-2026-10-13`); the corrected values, the corrected ablation 01 PQ and the YOLO FloW test result are logged as new runs in W&B group [`audit_2026-10-13`](https://wandb.ai/riccardo-campanella/water-debris-seg/groups/audit_2026-10-13) (19 runs, pinned to a commit that contains the code).
 
 ## Caveats
 
