@@ -262,7 +262,7 @@ flowchart LR
 - Swarm / agents: [`docs/water_debris_seg_swarm.md`](../../../docs/water_debris_seg_swarm.md)
 - Disk: [`data/water_debris/DISK_BUDGET.md`](../../../data/water_debris/DISK_BUDGET.md)
 - GPU: [GPU_INVENTORY.md](GPU_INVENTORY.md)
-- W&B project: `water-debris-seg`
+- W&B: project `water-debris-seg` (+ two path-named YOLO projects). Every result → run link with online-vs-reported comparison: [`WANDB_AUDIT.md`](WANDB_AUDIT.md); all runs: [`wandb_runs.json`](wandb_runs.json). **Online mask→box metrics are the pre-2026-10-13 (legacy-scorer) values**; corrected values and the corrected ablation 01 PQ are in git only.
 
 ## Caveats
 
@@ -270,7 +270,7 @@ flowchart LR
 - Snellius: keep heavy data on scratch-shared (14-day inactivity purge); home is persistent but 200 GiB — see `DISK_BUDGET.md`.
 - EoMT mask→box uses fixed score 0.5 per box; AP is pessimistic for EoMT — read AR100 alongside.
 - Optional aligned GT: `cansurf_val_gt_coco_yolo_aligned.json` (12 corrupt val images dropped).
-- Box metrics before 2026-10-13 (legacy scorer) are superseded; see [`RESCORE.md`](RESCORE.md).
+- Box metrics before 2026-10-13 (legacy scorer) are superseded; see [`RESCORE.md`](RESCORE.md). The W&B runs for ablations 04/05/09 still show the legacy values ([`WANDB_AUDIT.md`](WANDB_AUDIT.md)).
 - Ablation 01 LaRS PQ restated 2026-10-13 (0.0014 → **0.298**) after a GT-bridge bug (boats→"spoon", water→"food-other"); now scored by prediction-side remap in native LaRS space. Box-set zero-shot results were never affected.
 - CANSURF AP_small is not meaningful (19 small GT boxes).
 - YOLO FloW runs at imgsz 640 on 1280×720 images (CANSURF recipe parity); a 1280 run may raise the ceiling.

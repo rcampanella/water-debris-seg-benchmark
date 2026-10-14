@@ -1,0 +1,403 @@
+{
+  "_doc": "Hand-curated map from each reported result to the W&B run that logged it, used by water-debris-seg/scripts/wandb_audit.py. 'registry_id' entries take reference values from RESCORE.json (legacy = pre-2026-10-13 scorer, new = pycocotools) and the W&B run id from box_eval_registry.json. 'checks' entries compare an online summary key with local files: kind rescore | json (key path) | log (regex group 1). tol is absolute. 'expect' states what the audit should find so a change in W&B or in the files is flagged. supporting_runs lists runs that back a documented result or a documented invalid run but have no directly comparable logged value.",
+  "box_metrics": [
+    "mAP",
+    "AP50",
+    "AP_small"
+  ],
+  "box_entries": [
+    {
+      "id": "ab04_flow_zeroshot",
+      "ablation": "04",
+      "what": "FloW test, EoMT zero-shot mask\u2192box",
+      "registry_id": "flow_eomt_zeroshot",
+      "slurm": "27767340"
+    },
+    {
+      "id": "ab04_flow_panoptic",
+      "ablation": "04",
+      "what": "FloW test, EoMT panoptic FT mask\u2192box",
+      "registry_id": "flow_eomt_panoptic",
+      "slurm": "27767341"
+    },
+    {
+      "id": "ab09_flow_semantic",
+      "ablation": "09",
+      "what": "FloW test, EoMT semantic FT obstacle\u2192box",
+      "registry_id": "flow_eomt_semantic",
+      "slurm": "27767594"
+    },
+    {
+      "id": "ab05_cansurf_zeroshot",
+      "ablation": "05",
+      "what": "CANSURF val (original 2221-image GT), EoMT zero-shot",
+      "registry_id": "cansurf_eomt_zeroshot_origgt",
+      "slurm": "27648692"
+    },
+    {
+      "id": "ab05_cansurf_panoptic",
+      "ablation": "05",
+      "what": "CANSURF val (original GT), EoMT panoptic FT",
+      "registry_id": "cansurf_eomt_panoptic_origgt",
+      "slurm": "27660681"
+    },
+    {
+      "id": "ab09_cansurf_semantic",
+      "ablation": "09",
+      "what": "CANSURF val (original GT), EoMT semantic FT",
+      "registry_id": "cansurf_eomt_semantic",
+      "slurm": "27660924"
+    },
+    {
+      "id": "ab09_cansurf_semantic_min256",
+      "ablation": "09",
+      "what": "CANSURF val (aligned GT), EoMT semantic FT, min-area 256",
+      "registry_id": "cansurf_eomt_semantic_min256",
+      "slurm": "27711596"
+    }
+  ],
+  "entries": [
+    {
+      "id": "ab01_pq",
+      "ablation": "01",
+      "what": "LaRS val PQ, zero-shot EoMT",
+      "wandb_run": "txjoa9ef",
+      "slurm": "27600047",
+      "checks": [
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ (val_pq_all)",
+          "current": {
+            "kind": "json",
+            "file": "ablations/01_zeroshot_lars/sources/pq_zeroshot_predremap_28011322.json",
+            "path": [
+              "pq_all"
+            ]
+          },
+          "legacy": {
+            "kind": "log",
+            "file": "ablations/01_zeroshot_lars/sources/validate_27600047.log",
+            "regex": "val_pq_all\\s+([0-9.]+)"
+          },
+          "expect": "online equals superseded value (label-bridge bug); corrected PQ is not in W&B"
+        }
+      ]
+    },
+    {
+      "id": "ab02_miou",
+      "ablation": "02",
+      "what": "LaRS val mIoU, semantic FT (validate run)",
+      "wandb_run": "duguh1wo",
+      "slurm": "27660680",
+      "checks": [
+        {
+          "online_key": "metrics/val_iou_all",
+          "label": "mIoU (val_iou_all)",
+          "tol": 0.002,
+          "current": {
+            "kind": "log",
+            "file": "ablations/02_finetune_lars_semantic/sources/validate_27660680.log",
+            "regex": "val_iou_all\\s+([0-9.]+)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab02_fit",
+      "ablation": "02",
+      "what": "LaRS semantic FT training run (final val mIoU)",
+      "wandb_run": "mk2w7dr8",
+      "slurm": "27658486",
+      "checks": [
+        {
+          "online_key": "metrics/val_iou_all",
+          "label": "mIoU (val_iou_all)",
+          "tol": 0.002,
+          "current": {
+            "kind": "log",
+            "file": "ablations/02_finetune_lars_semantic/sources/validate_27660680.log",
+            "regex": "val_iou_all\\s+([0-9.]+)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab03_val",
+      "ablation": "03",
+      "what": "LaRS val PQ, panoptic FT (validate runs)",
+      "wandb_run": "xcl7zvm8",
+      "slurm": "27660922",
+      "checks": [
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ (val_pq_all)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/01_zeroshot_lars/sources/pq_native_ab03_check_28011322.json",
+            "path": [
+              "pq_all"
+            ]
+          },
+          "note": "current = independent re-computation (job 28011322); EoMT's own validate log reads 0.3945"
+        }
+      ]
+    },
+    {
+      "id": "ab03_val_first",
+      "ablation": "03",
+      "what": "LaRS val PQ, panoptic FT (first validate run)",
+      "wandb_run": "qmi79nsh",
+      "slurm": "27648289",
+      "checks": [
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ (val_pq_all)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/01_zeroshot_lars/sources/pq_native_ab03_check_28011322.json",
+            "path": [
+              "pq_all"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab03_fit",
+      "ablation": "03",
+      "what": "LaRS panoptic FT training run (final val PQ)",
+      "wandb_run": "67kk33hk",
+      "slurm": "27607195",
+      "checks": [
+        {
+          "online_key": "metrics/val_pq_all",
+          "label": "PQ (val_pq_all)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/01_zeroshot_lars/sources/pq_native_ab03_check_28011322.json",
+            "path": [
+              "pq_all"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab08_cansurf_train",
+      "ablation": "08",
+      "what": "YOLOv11n CANSURF training run (final val)",
+      "wandb_run": "cansurf_train_20261006_104548",
+      "project": "-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo",
+      "slurm": "27648816",
+      "checks": [
+        {
+          "online_key": "metrics/mAP50-95(B)",
+          "label": "mAP50-95 (Ultralytics)",
+          "tol": 0.01,
+          "current": {
+            "kind": "rescore",
+            "registry_id": "cansurf_yolo11n",
+            "which": "new",
+            "metric": "mAP"
+          },
+          "note": "Ultralytics and pycocotools AP differ by ~0.004 (interpolation); same split (CANSURF val)"
+        }
+      ]
+    },
+    {
+      "id": "ab08_cansurf_val_replay",
+      "ablation": "08",
+      "what": "YOLOv11n CANSURF val replay logged to W&B",
+      "wandb_run": "n3vuqqbi",
+      "slurm": "27660923",
+      "checks": [
+        {
+          "online_key": "metrics/mAP50-95",
+          "label": "mAP50-95 (Ultralytics)",
+          "tol": 0.01,
+          "current": {
+            "kind": "rescore",
+            "registry_id": "cansurf_yolo11n",
+            "which": "new",
+            "metric": "mAP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab08_flow_train",
+      "ablation": "08",
+      "what": "YOLOv11n FloW training run: online value is the 120-image val split, NOT the test split",
+      "wandb_run": "flow_train_20261012_153258",
+      "project": "-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo",
+      "slurm": "27942882",
+      "checks": [
+        {
+          "online_key": "metrics/mAP50-95(B)",
+          "label": "mAP50-95 (val split, last epoch)",
+          "tol": 0.01,
+          "current": {
+            "kind": "rescore",
+            "registry_id": "flow_yolo11n",
+            "which": "new",
+            "metric": "mAP"
+          },
+          "expect": "differs: the reported test-split result (0.390 pycocotools / 0.391 Ultralytics) is not logged to W&B"
+        }
+      ]
+    },
+    {
+      "id": "ab07_flicker_eomt_semantic",
+      "ablation": "07",
+      "what": "Flicker proxy, EoMT semantic FT",
+      "wandb_run": "g1bfz3nn",
+      "slurm": "27711595",
+      "checks": [
+        {
+          "online_key": "flicker/mean_proxy",
+          "label": "flicker (mean proxy)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/eomt_semantic_seq_flicker_27711595.json",
+            "path": [
+              "mean_flicker_proxy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_flicker_eomt_panoptic",
+      "ablation": "07",
+      "what": "Flicker proxy, EoMT panoptic FT",
+      "wandb_run": "5aoppsyb",
+      "slurm": "27715321",
+      "checks": [
+        {
+          "online_key": "flicker_panoptic/mean_proxy",
+          "label": "flicker (mean proxy)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/eomt_panoptic_seq_flicker_27715321.json",
+            "path": [
+              "mean_flicker_proxy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_flicker_videomt_4k",
+      "ablation": "07",
+      "what": "Flicker proxy, VidEoMT 4k",
+      "wandb_run": "wzpe700z",
+      "slurm": "27776809",
+      "checks": [
+        {
+          "online_key": "flicker/mean_proxy",
+          "label": "flicker (mean proxy)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/videomt_seq_flicker_27776809.json",
+            "path": [
+              "mean_flicker_proxy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_flicker_videomt_16k",
+      "ablation": "07",
+      "what": "Flicker proxy, VidEoMT 16k",
+      "wandb_run": "r4ugnnd5",
+      "slurm": "27807251",
+      "checks": [
+        {
+          "online_key": "flicker/mean_proxy",
+          "label": "flicker (mean proxy)",
+          "tol": 0.001,
+          "current": {
+            "kind": "json",
+            "file": "ablations/07_videomt_temporal/sources/videomt_seq_flicker_27807251.json",
+            "path": [
+              "mean_flicker_proxy"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "not_in_wandb": [
+    {
+      "what": "Corrected ablation 01 LaRS PQ 0.298 (prediction-side remap) and the ab03 reproduction 0.3946",
+      "slurm": "28011322",
+      "local": "ablations/01_zeroshot_lars/sources/pq_*_28011322.json"
+    },
+    {
+      "what": "All pycocotools box metrics (RESCORE): the restated mAP / AP_small for ablations 04, 05, 08, 09",
+      "slurm": "local script rescore_box_predictions.py",
+      "local": "RESCORE.json, RESCORE.md"
+    },
+    {
+      "what": "YOLOv11n FloW test-split result (0.391 Ultralytics, 0.390 pycocotools)",
+      "slurm": "27942882 (post-training steps)",
+      "local": "ablations/08_specialized_yolo/sources/flow_test_val_27942882.log, yolo11n_flow_test_preds_coco.metrics.json"
+    },
+    {
+      "what": "YOLOv11n CANSURF pycocotools predictions and metrics",
+      "slurm": "28000242",
+      "local": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.*"
+    },
+    {
+      "what": "VidEoMT per-keyframe AP (0.016 at 4k, 0.009 at 16k): the eval runs have empty W&B summaries",
+      "slurm": "27775358, 27806956",
+      "local": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_*.json"
+    },
+    {
+      "what": "Qualitative error tables, saved masks and panels",
+      "slurm": "28001374",
+      "local": "qualitative/"
+    }
+  ],
+  "supporting_runs": [
+    {
+      "run": "lars_vitb_27772987",
+      "role": "ab07 VidEoMT 4k training run behind AP 0.016 / flicker 0.612"
+    },
+    {
+      "run": "lars_vitb_16k_27776810",
+      "role": "ab07 VidEoMT 16k training run (in-train AP 0.010)"
+    },
+    {
+      "run": "eval_27775358",
+      "role": "ab07 eval of 4k ckpt (AP 0.016); W&B summary empty"
+    },
+    {
+      "run": "eval_27806956",
+      "role": "ab07 eval of 16k ckpt (AP 0.009); W&B summary empty"
+    },
+    {
+      "run": "lars_vitb_27760828",
+      "role": "ab07 documented bad run (NUM_CLASSES mismatch, AP 0.000)"
+    },
+    {
+      "run": "lars_vitb_27769861",
+      "role": "ab07 documented bad run (no mask supervision, AP 0.000)"
+    },
+    {
+      "run": "g0xb8i9q",
+      "role": "smoke test"
+    },
+    {
+      "run": "microrun_20261006_104546",
+      "role": "YOLO smoke test"
+    }
+  ]
+}

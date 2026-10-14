@@ -1,5 +1,5 @@
 {
-  "_doc": "Every box-prediction run scored on FloW/CANSURF. Paths are relative to eval_outputs/water_debris_seg/. Read by water-debris-seg/scripts/rescore_box_predictions.py and the qualitative tooling. headline=true marks the row quoted in REPORT.md. qualitative=false excludes a headline run from panels/selection (near-duplicate of another run). model = EoMT inference config that produced the preds (ckpt paths relative to repo root unless absolute; checkpoints verified by sha256 in data/water_debris/checkpoints/SHA256SUMS).",
+  "_doc": "Every box-prediction run scored on FloW/CANSURF. Paths are relative to eval_outputs/water_debris_seg/. Read by water-debris-seg/scripts/rescore_box_predictions.py and the qualitative tooling. headline=true marks the row quoted in REPORT.md. qualitative=false excludes a headline run from panels/selection (near-duplicate of another run). model = EoMT inference config that produced the preds (ckpt paths relative to repo root unless absolute; checkpoints verified by sha256 in data/water_debris/checkpoints/SHA256SUMS). wandb_run/wandb_project = the W&B run whose logged values the audit compares (see WANDB_AUDIT.md); for EoMT box runs that run holds the pre-2026-10-13 (legacy-scorer) metrics.",
   "ground_truth": {
     "flow_test": {
       "path": "ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
@@ -33,7 +33,9 @@
           "num_classes": 133,
           "stuff_classes": "80-132"
         }
-      }
+      },
+      "wandb_run": "u45u5rne",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "flow_eomt_semantic",
@@ -50,7 +52,9 @@
         "params": {
           "min_pixels": 32
         }
-      }
+      },
+      "wandb_run": "hd5bs8yz",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "flow_eomt_panoptic",
@@ -73,7 +77,9 @@
             2
           ]
         }
-      }
+      },
+      "wandb_run": "0c4pnnn0",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "flow_yolo11n",
@@ -83,7 +89,9 @@
       "pred": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.json",
       "metrics": "ablations/08_specialized_yolo/sources/yolo11n_flow_test_preds_coco.metrics.json",
       "slurm": "27942882",
-      "headline": true
+      "headline": true,
+      "wandb_run": "flow_train_20261012_153258",
+      "wandb_project": "-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo"
     },
     {
       "id": "cansurf_yolo11n",
@@ -93,7 +101,10 @@
       "pred": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.json",
       "metrics": "ablations/08_specialized_yolo/sources/yolo11n_cansurf_val_preds_coco.metrics.json",
       "slurm": "28000242 (preds); train 27648816",
-      "headline": true
+      "headline": true,
+      "wandb_run": "cansurf_train_20261006_104548",
+      "wandb_project": "-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo",
+      "wandb_val_replay": "n3vuqqbi"
     },
     {
       "id": "cansurf_eomt_zeroshot",
@@ -111,7 +122,9 @@
           "num_classes": 133,
           "stuff_classes": "80-132"
         }
-      }
+      },
+      "wandb_run": "lhnbhuej",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "cansurf_eomt_zeroshot_origgt",
@@ -129,7 +142,9 @@
           "num_classes": 133,
           "stuff_classes": "80-132"
         }
-      }
+      },
+      "wandb_run": "lhnbhuej",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "cansurf_eomt_semantic",
@@ -146,7 +161,9 @@
         "params": {
           "min_pixels": 32
         }
-      }
+      },
+      "wandb_run": "vquavnrm",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "cansurf_eomt_semantic_aligned",
@@ -163,7 +180,9 @@
         "params": {
           "min_pixels": 32
         }
-      }
+      },
+      "wandb_run": "vquavnrm",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "cansurf_eomt_semantic_min256",
@@ -181,7 +200,9 @@
         "params": {
           "min_pixels": 256
         }
-      }
+      },
+      "wandb_run": "hxuvlvcn",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "cansurf_eomt_panoptic",
@@ -203,7 +224,9 @@
             2
           ]
         }
-      }
+      },
+      "wandb_run": "qi6ymm68",
+      "wandb_project": "water-debris-seg"
     },
     {
       "id": "cansurf_eomt_panoptic_origgt",
@@ -225,7 +248,9 @@
             2
           ]
         }
-      }
+      },
+      "wandb_run": "qi6ymm68",
+      "wandb_project": "water-debris-seg"
     }
   ]
 }

@@ -48,3 +48,17 @@ New API keys look like `wandb_…` (~86 chars). Use **`wandb>=0.20`** in the EoM
 All Slurm jobs **source** `wandb_env.sh` (`WANDB_PROJECT=water-debris-seg`, online when `WANDB_API_KEY` is set). EoMT uses `WandbLogger`; YOLO uses `wandb=True` (respects `WANDB_PROJECT` / `WANDB_NAME` / `WANDB_RUN_GROUP`).
 
 Logs are also copied under `eval_outputs/water_debris_seg/` for the benchmark report.
+
+## Auditing results against W&B (added 2026-10-14)
+
+```bash
+source ~/.config/water-debris-seg/wandb.env
+python water-debris-seg/scripts/wandb_audit.py     # read-only; rewrites WANDB_AUDIT.md, wandb_runs.json and the W&B block in each ablation README
+```
+
+Results are mapped to runs in `eval_outputs/water_debris_seg/wandb_result_map.json` (box runs via `box_eval_registry.json` → `wandb_run`). Known limits:
+
+- **Project names:** Ultralytics names the W&B project after its `project=` save path, so `cansurf_train`, `flow_train` and the YOLO smoke run are in path-named projects, not `water-debris-seg`.
+- **Code pin:** W&B's recorded commit is the upstream eomt/videomt repo, the scaffold commit, or none; this project's code was untracked when the runs executed.
+- **Pre-fix box metrics:** `eval_eomt_*_mask2box.py` logged `evaluate_bbox_map()` of the legacy scorer; ablations 04/05/09 runs still carry those values.
+- **Not logged:** corrected ablation 01 PQ (28011322), pycocotools re-scoring, the YOLO FloW test-split result (no W&B run contains it; the online run shows the val split), VidEoMT eval AP (empty summaries).
