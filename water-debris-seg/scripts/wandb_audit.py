@@ -49,8 +49,12 @@ def value_of(spec: dict, rescore: dict) -> float | None:
             v = v[k]
         return float(v)
     if kind == "log":
-        m = re.search(spec["regex"], (EVAL / spec["file"]).read_text(errors="replace"))
-        return float(m.group(1)) if m else None
+        text = (EVAL / spec["file"]).read_text(errors="replace")
+        ms = list(re.finditer(spec["regex"], text))
+        if not ms:
+            return None
+        m = ms[-1] if spec.get("last") else ms[0]  # "last": final evaluation in a log with periodic evals
+        return float(m.group(spec.get("group", 1)))
     raise ValueError(kind)
 
 
@@ -93,7 +97,13 @@ def main() -> None:
                 "created": r.created_at, "url": url(entity, p.name, r.id), "slurm": m.group(1) if m else None,
                 "git_commit": getattr(r, "commit", None), "last_step": r.lastHistoryStep, "tags": list(r.tags), "notes": r.notes,
                 "summary": clean(r.summary), "config": clean(r.config),
+                "artifacts": [a.name for a in r.logged_artifacts()],
             })
+            rec = runs[-1]
+            rec["has_evidence"] = any(a.startswith("evidence-") for a in rec["artifacts"])
+            ls, ns = rec["last_step"], len(rec["summary"])
+            rec["data"] = (f"full history ({ls + 1} steps)" if ls >= 1 else "one logged step" if ls == 0
+                           else "summary only" if ns else "nothing logged") + (" + evidence files" if rec["has_evidence"] else "")
     runs.sort(key=lambda r: r["created"])
     by_id = {(r["project"], r["id"]): r for r in runs}
     by_id_only = {r["id"]: r for r in runs}
@@ -175,11 +185,21 @@ def main() -> None:
                "`wandb_log_corrections.py` in group `audit_2026-10-13` (the originals were not modified):", "",
                "| Previously missing | Now in W&B | Local source |", "|---|---|---|"]
         md += [f"| {g['what']} | `{g['now_in_wandb']}` | `{g['local']}` |" for g in rmap["closed_gaps"]]
-    md += ["", "## 3. All benchmark runs on W&B", "", "| Created | Group | Run | State | Slurm | Recorded git commit | Tags | Cited result |", "|---|---|---|---|---|---|---|---|"]
+    held_by = rmap.get("data_held_by", {})
+
+    def run_cell(r, n) -> str:
+        """Link a run only if W&B holds something to look at."""
+        return f"`{r['name'][:n]}` (no link: nothing logged)" if r["data"].startswith("nothing") else f"[`{r['name'][:n]}`]({r['url']})"
+
+    def data_cell(r) -> str:
+        h = held_by.get(r["id"])
+        return r["data"] + (f"; values in [`{h}`]({by_id_only[h]['url']})" if h in by_id_only else "")
+
+    md += ["", "## 3. All benchmark runs on W&B", "", "| Created | Group | Run | State | Slurm | Data on W&B | Recorded git commit | Tags | Cited result |", "|---|---|---|---|---|---|---|---|---|"]
     for r in runs:
         state = r["state"] if r["state"] == "finished" else f"**{r['state']}**"
         c = (r["git_commit"] or "none")[:10]
-        md.append(f"| {r['created'][:16]} | {r['group']} | [`{r['name'][:40]}`]({r['url']}) | {state} | {r['slurm'] or '—'} | `{c}` | {', '.join(t for t in r['tags'] if 'superseded' in t or t == 'val-split-only') or '—'} | {cited(r)} |")
+        md.append(f"| {r['created'][:16]} | {r['group']} | {run_cell(r, 40)} | {state} | {r['slurm'] or '—'} | {data_cell(r)} | `{c}` | {', '.join(t for t in r['tags'] if 'superseded' in t or t == 'val-split-only') or '—'} | {cited(r)} |")
     audit_commits = sorted({(r["git_commit"] or "none")[:10] for r in runs if r["group"] == "audit_2026-10-13"})
     md += ["", "## 4. Limitations of what W&B can prove", "",
            "- **Code version (original runs):** the commit W&B recorded is the upstream repo's (`0f1e1ccb` = tue-mps/eomt, `f351ccbf` = tue-mps/videomt), "
@@ -187,6 +207,9 @@ def main() -> None:
            "executed, so no original run pins it. Commit `9bc24c7` contains the code as of 2026-10-09. "
            f"The correction runs (group `audit_2026-10-13`) pin " + ", ".join(f"`{c}`" for c in audit_commits) + ", which contains the code that produced them.",
            "- **Project names:** Ultralytics sets the W&B project from its `project=` path, so the original YOLO runs sit in path-named projects; the correction runs are all in `water-debris-seg`.",
+           f"- **Data behind each link** (§3 'Data on W&B'): {sum(r['data'].startswith('nothing') for r in runs)} runs logged nothing and are listed "
+           "without a link; the correction runs carry their values as a logged step plus an `evidence-<run>` artifact with the files "
+           "the values were computed from (added 2026-10-14 by `wandb_attach_evidence.py`).",
            "- **Original mask→box runs keep their pre-fix values** (tagged `superseded-scorer-2026-10-13`, with a note linking the correction); values were not edited, so history stays auditable.",
            f"- **{len(mapped)} of {len(runs)} runs** have a value compared in §1; {len(roles)} more back a documented result or invalid run without a comparable logged value; "
            f"{len(attempts)} are failed or crashed attempts; {len(unmapped)} support no result."]
@@ -221,8 +244,8 @@ def main() -> None:
         block = [start, "", "## W&B runs", "",
                  f"Online runs for this ablation (fetched {fetched[:10]}); value-by-value comparison with the reported results: "
                  "[`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).", "",
-                 "| Run | State | Slurm | Audit |", "|---|---|---|---|"]
-        block += [f"| [`{r['name'][:48]}`]({r['url']}) | {r['state']} | {r['slurm'] or '—'} | {audit_cell(r)} |" for r in mine]
+                 "| Run | State | Slurm | Data on W&B | Audit |", "|---|---|---|---|---|"]
+        block += [f"| {run_cell(r, 48)} | {r['state']} | {r['slurm'] or '—'} | {data_cell(r)} | {audit_cell(r)} |" for r in mine]
         block += ["", end]
         text = readmes[0].read_text()
         if start in text:
