@@ -1,0 +1,13 @@
+Ultralytics 8.4.173 🚀 Python-3.13.5 torch-2.7.0+cu126 CUDA:0 (NVIDIA A100-SXM4-40GB, 40471MiB)
+YOLO11n summary (fused): 100 layers, 2,583,907 parameters, 0 gradients, 6.4 GFLOPs
+WARNING ⚠️ [34m[1mval: [0mSlow image access detected (ping: 0.0±0.0 ms, read: 5.1±2.7 MB/s, size: 184.8 KB). Use local storage instead of remote/mounted storage for better performance. See https://docs.ultralytics.com/guides/model-training-tips
+[K[34m[1mval: [0mScanning /gpfs/scratch1/shared/rcampanella/water-debris-seg/data/lars/yolo_boxes/val/labels.cache... 198 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 198/198 25.2Mit/s 0.0s
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 7% ╸─────────── 1/13 6.3s/it 1.9s<1:16[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 30% ━━━╸──────── 4/13 7.2it/s 2.0s<1.2s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 53% ━━━━━━────── 7/13 12.6it/s 2.1s<0.5s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 76% ━━━━━━━━━─── 10/13 11.8it/s 2.4s<0.3s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 92% ━━━━━━━━━━━─ 12/13 11.9it/s 2.6s<0.1s[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 13/13 4.9it/s 2.7s
+                   all        198       1268      0.537      0.369      0.325      0.167
+Speed: 0.2ms preprocess, 4.0ms inference, 0.0ms loss, 0.7ms postprocess per image
+{
+ "ultralytics_mAP50-95": 0.1674420626857343,
+ "coco_all_mAP": 0.16841610236424978,
+ "coco_objects_mAP": 0.14503794400133074,
+ "merged_matches": null
+}

@@ -1,0 +1,113 @@
+{
+  "checkpoint": {
+    "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/runs/lars_full_stageB/weights/last.pt",
+    "weights_sha256": "44adb0621b1b43392ce8cf96ec447e55cd08c80b640b26bd936fe5b13a3d80ba",
+    "gt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/sources/lars_val_gt_coco_boxes.json",
+    "gt_sha256": "097a413cc96067df4e324a3601abd86a88961fd6361c069609bf45117a04797b",
+    "imgsz": 640,
+    "n_pred": 13970,
+    "ultralytics": {
+      "mAP50-95": 0.1674420626857343,
+      "mAP50": 0.32493099133936143,
+      "precision": 0.5372752917310515,
+      "recall": 0.3692980627532119,
+      "per_class_mAP50-95": {
+        "Static Obstacle": 0.36478159560650214,
+        "Boat/ship": 0.3009383646890206,
+        "Row boats": 0.21855457418835328,
+        "Paddle board": 0.32644125554263176,
+        "Buoy": 0.1260067445484952,
+        "Swimmer": 0.08346099791617548,
+        "Animal": 0.02453201694390733,
+        "Float": 0.0,
+        "Other": 0.06226301473652303
+      }
+    },
+    "pycocotools_all_9_classes": {
+      "mAP": 0.16841610236424978,
+      "AP50": 0.32115703363712444,
+      "AP75": 0.1553867067213968,
+      "AP_small": 0.04764706381016542,
+      "AP_medium": 0.3355779666031197,
+      "AP_large": 0.2869847304490876,
+      "AR1": 0.16128326470837245,
+      "AR10": 0.2697914111599252,
+      "AR100": 0.29120558938763863,
+      "AR_small": 0.10749560003027242,
+      "AR_medium": 0.4483539476396619,
+      "AR_large": 0.4465937803692906
+    },
+    "pycocotools_objects_8_classes": {
+      "mAP": 0.14503794400133074,
+      "AP50": 0.2818474345170575,
+      "AP75": 0.13165161837140807,
+      "AP_small": 0.053602946786436095,
+      "AP_medium": 0.3915076277036397,
+      "AP_large": 0.27344711388684484,
+      "AR1": 0.11470980182917705,
+      "AR10": 0.22535673540437823,
+      "AR100": 0.24736435257722253,
+      "AR_small": 0.1209325500340565,
+      "AR_medium": 0.5230796055796056,
+      "AR_large": 0.41047052154195013
+    },
+    "per_class": {
+      "Static Obstacle": {
+        "AP": 0.3554413692676021,
+        "AP50": 0.6356338265976592,
+        "AR100": 0.6419354838709677
+      },
+      "Boat/ship": {
+        "AP": 0.3074182340011315,
+        "AP50": 0.5540739236061388,
+        "AR100": 0.4212319790301442
+      },
+      "Row boats": {
+        "AP": 0.23258325255286708,
+        "AP50": 0.40551468295931814,
+        "AR100": 0.39375
+      },
+      "Paddle board": {
+        "AP": 0.3386231003630765,
+        "AP50": 0.5494328069978566,
+        "AR100": 0.5266666666666666
+      },
+      "Buoy": {
+        "AP": 0.1209826387730343,
+        "AP50": 0.32288801743296214,
+        "AR100": 0.1944
+      },
+      "Swimmer": {
+        "AP": 0.0823004430037547,
+        "AP50": 0.21507742665134263,
+        "AR100": 0.19615384615384618
+      },
+      "Animal": {
+        "AP": 0.022818185697396035,
+        "AP50": 0.057309570184011865,
+        "AR100": 0.17
+      },
+      "Float": {
+        "AP": 0.0,
+        "AP50": 0.0,
+        "AR100": 0.0
+      },
+      "Other": {
+        "AP": 0.055577697619386,
+        "AP50": 0.15048304830483047,
+        "AR100": 0.07671232876712328
+      }
+    },
+    "gt_boxes_per_class": {
+      "Static Obstacle": 186,
+      "Boat/ship": 763,
+      "Row boats": 32,
+      "Paddle board": 30,
+      "Buoy": 125,
+      "Swimmer": 26,
+      "Animal": 30,
+      "Float": 3,
+      "Other": 73
+    }
+  }
+}

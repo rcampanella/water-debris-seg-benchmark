@@ -1,0 +1,266 @@
+{
+  "splits": {
+    "train_all": {
+      "images": 2605,
+      "sequences": 1792,
+      "boxes_per_class": {
+        "Static Obstacle": 2533,
+        "Boat/ship": 5746,
+        "Animal": 361,
+        "Buoy": 1562,
+        "Float": 22,
+        "Other": 499,
+        "Row boats": 435,
+        "Paddle board": 152,
+        "Swimmer": 345
+      },
+      "crowd_excluded_from_labels": {
+        "Boat/ship": 175,
+        "Float": 1,
+        "Row boats": 9,
+        "Swimmer": 4,
+        "Other": 2,
+        "Buoy": 6,
+        "Paddle board": 2
+      },
+      "object_boxes": 9122,
+      "object_boxes_small_lt_32px": 5480,
+      "object_boxes_centred_inside_a_static_obstacle_box": 6423,
+      "images_without_labels": 11
+    },
+    "train90": {
+      "images": 2360,
+      "sequences": 1613,
+      "boxes_per_class": {
+        "Static Obstacle": 2297,
+        "Boat/ship": 5306,
+        "Animal": 343,
+        "Buoy": 1395,
+        "Float": 22,
+        "Other": 454,
+        "Row boats": 399,
+        "Paddle board": 137,
+        "Swimmer": 297
+      },
+      "crowd_excluded_from_labels": {
+        "Boat/ship": 161,
+        "Float": 1,
+        "Row boats": 7,
+        "Swimmer": 4,
+        "Buoy": 6,
+        "Other": 1,
+        "Paddle board": 2
+      },
+      "object_boxes": 8353,
+      "object_boxes_small_lt_32px": 5040,
+      "object_boxes_centred_inside_a_static_obstacle_box": 5895,
+      "images_without_labels": 11
+    },
+    "held10": {
+      "images": 245,
+      "sequences": 179,
+      "boxes_per_class": {
+        "Static Obstacle": 236,
+        "Row boats": 36,
+        "Boat/ship": 440,
+        "Other": 45,
+        "Animal": 18,
+        "Swimmer": 48,
+        "Buoy": 167,
+        "Paddle board": 15
+      },
+      "crowd_excluded_from_labels": {
+        "Boat/ship": 14,
+        "Row boats": 2,
+        "Other": 1
+      },
+      "object_boxes": 769,
+      "object_boxes_small_lt_32px": 440,
+      "object_boxes_centred_inside_a_static_obstacle_box": 528,
+      "images_without_labels": 0
+    },
+    "val": {
+      "images": 198,
+      "sequences": 77,
+      "boxes_per_class": {
+        "Static Obstacle": 186,
+        "Boat/ship": 763,
+        "Row boats": 32,
+        "Other": 73,
+        "Buoy": 125,
+        "Paddle board": 30,
+        "Swimmer": 26,
+        "Animal": 30,
+        "Float": 3
+      },
+      "crowd_excluded_from_labels": {
+        "Boat/ship": 23,
+        "Row boats": 2
+      },
+      "object_boxes": 1082,
+      "object_boxes_small_lt_32px": 615,
+      "object_boxes_centred_inside_a_static_obstacle_box": 662,
+      "images_without_labels": 0
+    }
+  },
+  "box_vs_stored_mismatch": 0,
+  "max_diff_px": 0,
+  "examples": [
+    {
+      "example": "Static Obstacle (whole-image region)",
+      "image": "davimar_seq_08_00008.jpg",
+      "size": [
+        2208,
+        1242
+      ],
+      "class": "Static Obstacle",
+      "traced_box_xywh": [
+        0,
+        0,
+        2208,
+        762
+      ],
+      "stored_box_xywh": [
+        0,
+        0,
+        2208,
+        762
+      ],
+      "yolo_line": "0 0.500000 0.306763 1.000000 0.613527",
+      "decoded_box_xywh": [
+        0.0,
+        -0.0,
+        2208.0,
+        762.0
+      ],
+      "max_roundtrip_error_px": 0.001
+    },
+    {
+      "example": "large boat",
+      "image": "davimar_seq_08_00008.jpg",
+      "size": [
+        2208,
+        1242
+      ],
+      "class": "Boat/ship",
+      "traced_box_xywh": [
+        0,
+        476,
+        168,
+        183
+      ],
+      "stored_box_xywh": [
+        0,
+        476,
+        168,
+        183
+      ],
+      "yolo_line": "1 0.038043 0.456924 0.076087 0.147343",
+      "decoded_box_xywh": [
+        -0.0,
+        476.0,
+        168.0,
+        183.0
+      ],
+      "max_roundtrip_error_px": 0.001
+    },
+    {
+      "example": "small buoy",
+      "image": "inhouse_seq_131_00179.jpg",
+      "size": [
+        1920,
+        1080
+      ],
+      "class": "Buoy",
+      "traced_box_xywh": [
+        1305,
+        680,
+        16,
+        17
+      ],
+      "stored_box_xywh": [
+        1305,
+        680,
+        16,
+        17
+      ],
+      "yolo_line": "4 0.683854 0.637500 0.008333 0.015741",
+      "decoded_box_xywh": [
+        1305.0,
+        680.0,
+        16.0,
+        17.0
+      ],
+      "max_roundtrip_error_px": 0.001
+    },
+    {
+      "example": "float",
+      "image": "inhouse_seq_296_00299.jpg",
+      "size": [
+        1920,
+        1080
+      ],
+      "class": "Float",
+      "traced_box_xywh": [
+        1677,
+        614,
+        67,
+        12
+      ],
+      "stored_box_xywh": [
+        1677,
+        614,
+        67,
+        12
+      ],
+      "yolo_line": "7 0.890885 0.574074 0.034896 0.011111",
+      "decoded_box_xywh": [
+        1677.0,
+        614.0,
+        67.0,
+        12.0
+      ],
+      "max_roundtrip_error_px": 0.001
+    },
+    {
+      "example": "'Other' (debris-like)",
+      "image": "davimar_seq_42_00025.jpg",
+      "size": [
+        2208,
+        1242
+      ],
+      "class": "Other",
+      "traced_box_xywh": [
+        1293,
+        596,
+        8,
+        8
+      ],
+      "stored_box_xywh": [
+        1293,
+        596,
+        8,
+        8
+      ],
+      "yolo_line": "8 0.587409 0.483092 0.003623 0.006441",
+      "decoded_box_xywh": [
+        1293.0,
+        596.0,
+        8.0,
+        8.0
+      ],
+      "max_roundtrip_error_px": 0.001
+    }
+  ],
+  "class_index": {
+    "0": "Static Obstacle",
+    "1": "Boat/ship",
+    "2": "Row boats",
+    "3": "Paddle board",
+    "4": "Buoy",
+    "5": "Swimmer",
+    "6": "Animal",
+    "7": "Float",
+    "8": "Other"
+  }
+}

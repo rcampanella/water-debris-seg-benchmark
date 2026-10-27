@@ -1,0 +1,22 @@
+{
+  "source": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/runs/lars_lora_stageA/results.csv",
+  "epochs_run": 100,
+  "best_epoch": 77,
+  "best_fitness": 0.27005799999999996,
+  "at_best": {
+    "metrics/mAP50(B)": 0.43528,
+    "metrics/mAP50-95(B)": 0.2517,
+    "train/box_loss": 0.80229,
+    "val/box_loss": 1.0275,
+    "train/cls_loss": 0.70974,
+    "val/cls_loss": 0.86151
+  },
+  "at_last": {
+    "metrics/mAP50(B)": 0.40613,
+    "metrics/mAP50-95(B)": 0.235,
+    "train/box_loss": 0.85166,
+    "val/box_loss": 1.02723,
+    "train/cls_loss": 0.66105,
+    "val/cls_loss": 0.8721
+  }
+}

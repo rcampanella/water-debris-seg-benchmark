@@ -1,0 +1,147 @@
+[
+  {
+    "example": "Static Obstacle (whole-image region)",
+    "image": "davimar_seq_08_00008.jpg",
+    "size": [
+      2208,
+      1242
+    ],
+    "class": "Static Obstacle",
+    "traced_box_xywh": [
+      0,
+      0,
+      2208,
+      762
+    ],
+    "stored_box_xywh": [
+      0,
+      0,
+      2208,
+      762
+    ],
+    "yolo_line": "0 0.500000 0.306763 1.000000 0.613527",
+    "decoded_box_xywh": [
+      0.0,
+      -0.0,
+      2208.0,
+      762.0
+    ],
+    "max_roundtrip_error_px": 0.001
+  },
+  {
+    "example": "large boat",
+    "image": "davimar_seq_08_00008.jpg",
+    "size": [
+      2208,
+      1242
+    ],
+    "class": "Boat/ship",
+    "traced_box_xywh": [
+      0,
+      476,
+      168,
+      183
+    ],
+    "stored_box_xywh": [
+      0,
+      476,
+      168,
+      183
+    ],
+    "yolo_line": "1 0.038043 0.456924 0.076087 0.147343",
+    "decoded_box_xywh": [
+      -0.0,
+      476.0,
+      168.0,
+      183.0
+    ],
+    "max_roundtrip_error_px": 0.001
+  },
+  {
+    "example": "small buoy",
+    "image": "inhouse_seq_131_00179.jpg",
+    "size": [
+      1920,
+      1080
+    ],
+    "class": "Buoy",
+    "traced_box_xywh": [
+      1305,
+      680,
+      16,
+      17
+    ],
+    "stored_box_xywh": [
+      1305,
+      680,
+      16,
+      17
+    ],
+    "yolo_line": "4 0.683854 0.637500 0.008333 0.015741",
+    "decoded_box_xywh": [
+      1305.0,
+      680.0,
+      16.0,
+      17.0
+    ],
+    "max_roundtrip_error_px": 0.001
+  },
+  {
+    "example": "float",
+    "image": "inhouse_seq_296_00299.jpg",
+    "size": [
+      1920,
+      1080
+    ],
+    "class": "Float",
+    "traced_box_xywh": [
+      1677,
+      614,
+      67,
+      12
+    ],
+    "stored_box_xywh": [
+      1677,
+      614,
+      67,
+      12
+    ],
+    "yolo_line": "7 0.890885 0.574074 0.034896 0.011111",
+    "decoded_box_xywh": [
+      1677.0,
+      614.0,
+      67.0,
+      12.0
+    ],
+    "max_roundtrip_error_px": 0.001
+  },
+  {
+    "example": "'Other' (debris-like)",
+    "image": "davimar_seq_42_00025.jpg",
+    "size": [
+      2208,
+      1242
+    ],
+    "class": "Other",
+    "traced_box_xywh": [
+      1293,
+      596,
+      8,
+      8
+    ],
+    "stored_box_xywh": [
+      1293,
+      596,
+      8,
+      8
+    ],
+    "yolo_line": "8 0.587409 0.483092 0.003623 0.006441",
+    "decoded_box_xywh": [
+      1293.0,
+      596.0,
+      8.0,
+      8.0
+    ],
+    "max_roundtrip_error_px": 0.001
+  }
+]

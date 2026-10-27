@@ -1,0 +1,44 @@
+New https://pypi.org/project/ultralytics/8.4.184 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.4.173 🚀 Python-3.13.5 torch-2.7.0+cu126 CUDA:0 (NVIDIA A100-SXM4-40GB, 40471MiB)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=16, bgr=0.0, box=7.5, cache=ram, cfg=None, channels_last=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, cls_remap=True, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/lars_yolo_11cls/stageA.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dgrad=0.5, dis=6.0, distill_model=None, dlam=1.0, dlog=1.0, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=100, erasing=0.4, exist_ok=True, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, iou=0.7, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11s.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=lars_full_11s_11cls_stageA, nbs=64, nms=None, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=100, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=water-debris-seg, quantize=None, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/runs/runs/detect/water-debris-seg/lars_full_11s_11cls_stageA, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=tracktrack.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=8, workspace=None
+wandb: Currently logged in as: riccardocampanella-ing (riccardo-campanella) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/runs/runs/detect/water-debris-seg/lars_full_11s_11cls_stageA/wandb/run-20261023_194329-lars_full_11s_11cls_stageA_20261023_194328
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lars_full_11s_11cls_stageA
+wandb: ⭐️ View project at https://wandb.ai/riccardo-campanella/water-debris-seg
+wandb: 🚀 View run at https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_full_11s_11cls_stageA_20261023_194328
+
+Traceback (most recent call last):
+  File "/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/ultralytics/engine/trainer.py", line 858, in get_dataset
+    data = check_det_dataset(self.args.data, split=self.args.split)
+  File "/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/ultralytics/data/utils.py", line 796, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: Dataset '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/lars_yolo_11cls/stageA.yaml' images not found, missing path '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/datasets/data/water_debris/lars_yolo_11cls/held10/images'
+Note dataset download directory is '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/datasets'. You can update this in '/home/rcampanella/.config/wdseg-ultralytics/Ultralytics/settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/train_yolo_lars.py", line 160, in <module>
+    main()
+    ~~~~^^
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/train_yolo_lars.py", line 142, in main
+    model.train(**kw)
+    ~~~~~~~~~~~^^^^^^
+  File "/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/ultralytics/engine/model.py", line 884, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/ultralytics/models/yolo/detect/train.py", line 62, in __init__
+    super().__init__(cfg, overrides, _callbacks)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/ultralytics/engine/trainer.py", line 202, in __init__
+    self.data = self.get_dataset()
+                ~~~~~~~~~~~~~~~~^^
+  File "/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/ultralytics/engine/trainer.py", line 862, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/lars_yolo_11cls/stageA.yaml' error ❌ Dataset '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/lars_yolo_11cls/stageA.yaml' images not found, missing path '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/datasets/data/water_debris/lars_yolo_11cls/held10/images'
+Note dataset download directory is '/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/datasets'. You can update this in '/home/rcampanella/.config/wdseg-ultralytics/Ultralytics/settings.json'
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mlars_full_11s_11cls_stageA[0m at: [34mhttps://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_full_11s_11cls_stageA_20261023_194328[0m
+[1;34mwandb[0m: Find logs at: [1;35mruns/detect/water-debris-seg/lars_full_11s_11cls_stageA/wandb/run-20261023_194329-lars_full_11s_11cls_stageA_20261023_194328/logs[0m

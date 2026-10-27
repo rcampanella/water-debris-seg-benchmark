@@ -1,0 +1,14 @@
+WARNING ⚠️ [34m[1mval: [0mSlow image access detected (ping: 0.0±0.0 ms, read: 6.9±4.5 MB/s, size: 321.6 KB). Use local storage instead of remote/mounted storage for better performance. See https://docs.ultralytics.com/guides/model-training-tips
+[K[34m[1mval: [0mScanning /gpfs/scratch1/shared/rcampanella/water-debris-seg/data/lars/yolo_boxes/val/labels.cache... 198 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 198/198 23.7Mit/s 0.0s
+Overriding model.yaml nc=80 with nc=9
+Transferred 448/499 items from pretrained weights
+[4.2] init: 198 images {"trivial_neg": 12.17, "easy_neg": 0.0, "hard_neg": 0.0, "easy_pos": 0.0, "hard_pos": 87.83}
+[4.2] full_bce: 198 images {"trivial_neg": 1.32, "easy_neg": 8.82, "hard_neg": 10.32, "easy_pos": 19.04, "hard_pos": 60.49}
+[4.2] full_focal: 198 images {"trivial_neg": 41.05, "easy_neg": 26.18, "hard_neg": 5.35, "easy_pos": 3.58, "hard_pos": 23.85}
+[4.2] lora_bce: 198 images {"trivial_neg": 1.83, "easy_neg": 9.51, "hard_neg": 10.98, "easy_pos": 15.13, "hard_pos": 62.55}
+[4.2] lora_focal: 198 images {"trivial_neg": 41.38, "easy_neg": 28.46, "hard_neg": 3.92, "easy_pos": 2.83, "hard_pos": 23.42}
+[4.3] full_bce: {'TP': 628, 'FP': 345, 'FN': 640}
+[4.3] full_focal: {'TP': 573, 'FP': 351, 'FN': 695}
+[4.3] lora_bce: {'TP': 577, 'FP': 314, 'FN': 691}
+[4.3] lora_focal: {'TP': 552, 'FP': 342, 'FN': 716}
+wrote /gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/focal_study/study.json
