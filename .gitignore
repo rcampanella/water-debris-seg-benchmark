@@ -49,3 +49,14 @@ runs/
 **/val_batch*_labels.jpg
 **/val_batch*_pred.jpg
 **/labels.jpg
+data/water_debris/third_party/
+data/water_debris/lars_backup/
+data/water_debris/cansurf_home/
+data/water_debris/yolo_splits/
+data/water_debris/lars_eomt_zips/
+data/water_debris/lars_yolo_11cls/
+data/water_debris/sam_masks/
+data/water_debris/eomt_box_zips/
+
+# Prediction dumps behind fix 1 / 1b scores (tens of MB each; regenerate from the checkpoint named in each JSON)
+eval_outputs/water_debris_seg/**/*.preds.json

@@ -2,7 +2,7 @@
 # Submit YOLO + EoMT smoke jobs after EoMT venv exists and passes CUDA import.
 set -euo pipefail
 SCRATCH="/scratch-shared/${USER}/water-debris-seg"
-VENV="${SCRATCH}/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 REPO="${HOME}/projects/water-debris-seg-benchmark"
 
 if [[ ! -x "${VENV}/bin/python" ]]; then

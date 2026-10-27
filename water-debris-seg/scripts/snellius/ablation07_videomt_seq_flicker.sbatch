@@ -18,7 +18,7 @@ RESULTS="${1:-${SCRATCH}/artifacts/videomt/eval_27775358/inference/results.json}
 LABEL="${2:-27775358}"
 mkdir -p "${SCRATCH}/logs" "${OUT}/sources"
 
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export PYTHONPATH="${WDS}/scripts:${WDS}:${PYTHONPATH:-}"
 
 python "${WDS}/scripts/lars_seq_videomt_flicker.py" \

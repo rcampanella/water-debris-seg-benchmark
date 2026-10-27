@@ -15,6 +15,6 @@ REPO="${HOME}/projects/water-debris-seg-benchmark"
 WDS="${REPO}/water-debris-seg"
 
 # shellcheck disable=SC1091
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export PYTHONPATH="${WDS}/scripts:${WDS}:${EOMT}:${PYTHONPATH:-}"
 python "${WDS}/scripts/qual_dump_masks.py" "${MODE:-all}"

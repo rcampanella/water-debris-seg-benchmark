@@ -14,7 +14,7 @@ VID="${SCRATCH}/third_party/videomt"
 WDS="${HOME}/projects/water-debris-seg-benchmark/water-debris-seg"
 OUT="${WDS}/../eval_outputs/water_debris_seg/ablations/07_videomt_temporal/sources"
 mkdir -p "${SCRATCH}/logs" "${OUT}"
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export PYTHONPATH="${VID}:${WDS}:${PYTHONPATH:-}"
 cd "${VID}"
 {

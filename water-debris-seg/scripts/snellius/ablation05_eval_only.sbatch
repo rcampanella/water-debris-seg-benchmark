@@ -12,7 +12,7 @@ WDS="${REPO}/water-debris-seg"
 OUT="${REPO}/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object"
 GT="${OUT}/sources/cansurf_val_gt_coco.json"
 PREDS="${OUT}/sources/eomt_zeroshot_val_preds_coco.json"
-VENV="/scratch-shared/${USER}/water-debris-seg/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 mkdir -p "/scratch-shared/${USER}/water-debris-seg/logs" "$OUT/sources"
 
 # shellcheck disable=SC1091

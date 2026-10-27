@@ -17,10 +17,10 @@ GT="${REPO}/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sour
 PRED="${OUT}/sources/yolo11n_cansurf_val_preds_coco.json"
 
 # shellcheck disable=SC1091
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export YOLO_CONFIG_DIR="${SCRATCH}/artifacts/ultralytics_config"
 python "${WDS}/scripts/yolo_predict_to_coco.py" \
   --weights "${OUT}/cansurf_train/weights/best.pt" --gt-coco "${GT}" \
-  --images "${SCRATCH}/data/cansurf/val/images" --out "${PRED}" --imgsz 640
+  --images "${HOME}/projects/water-debris-seg-benchmark/data/water_debris/cansurf_home/val/images" --out "${PRED}" --imgsz 640
 python "${WDS}/scripts/eval_coco_bbox.py" --gt-coco "${GT}" --pred-coco "${PRED}" \
   --out "${PRED%.json}.metrics.json" 2>&1 | tee "${OUT}/sources/cansurf_cocoeval_${SLURM_JOB_ID}.log"

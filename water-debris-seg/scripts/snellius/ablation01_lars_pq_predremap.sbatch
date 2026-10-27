@@ -17,7 +17,7 @@ WDS="${REPO}/water-debris-seg"
 OUT="${REPO}/eval_outputs/water_debris_seg/ablations/01_zeroshot_lars/sources"
 
 # shellcheck disable=SC1091
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export PYTHONPATH="${WDS}/scripts:${WDS}:${EOMT}:${PYTHONPATH:-}"
 python "${WDS}/scripts/eval_eomt_lars_panoptic_pq.py" --mode native \
   --ckpt "${REPO}/data/water_debris/checkpoints/ab03_panoptic_67kk33hk/epoch=11-step=7812.ckpt" \

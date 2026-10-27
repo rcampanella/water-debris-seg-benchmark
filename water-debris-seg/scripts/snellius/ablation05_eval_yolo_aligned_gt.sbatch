@@ -13,7 +13,7 @@ OUT="${REPO}/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object"
 GT="${OUT}/sources/cansurf_val_gt_coco_yolo_aligned.json"
 mkdir -p "/scratch-shared/${USER}/water-debris-seg/logs"
 
-source "/scratch-shared/${USER}/water-debris-seg/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export PYTHONPATH="${WDS}/scripts:${WDS}:${PYTHONPATH:-}"
 
 run_eval() {

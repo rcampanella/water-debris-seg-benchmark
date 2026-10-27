@@ -11,7 +11,7 @@
 # with eval_coco_bbox.py against the ablation 04 GT so mAP/AP_small match EoMT mask→box.
 set -euo pipefail
 SCRATCH="/scratch-shared/${USER}/water-debris-seg"
-VENV="${SCRATCH}/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 REPO="${HOME}/projects/water-debris-seg-benchmark"
 WDS="${REPO}/water-debris-seg"
 FLOW="${SCRATCH}/data/flow"
