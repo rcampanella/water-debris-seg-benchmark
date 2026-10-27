@@ -8,10 +8,10 @@
 
 set -euo pipefail
 SCRATCH="/scratch-shared/${USER}/water-debris-seg"
-VENV="${SCRATCH}/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 REPO="${HOME}/projects/water-debris-seg-benchmark"
 WDS="${REPO}/water-debris-seg"
-DATA="${SCRATCH}/data/cansurf"
+DATA="${HOME}/projects/water-debris-seg-benchmark/data/water_debris/cansurf_home"
 OUT="${REPO}/eval_outputs/water_debris_seg/ablations/08_specialized_yolo"
 mkdir -p "${SCRATCH}/logs" "$OUT/sources"
 

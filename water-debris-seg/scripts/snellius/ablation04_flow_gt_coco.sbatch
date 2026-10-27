@@ -14,7 +14,7 @@ OUT="${REPO}/eval_outputs/water_debris_seg/ablations/04_flow_mask2box"
 GT="${OUT}/sources/flow_test_gt_coco.json"
 mkdir -p "${SCRATCH}/logs" "$OUT/sources"
 
-source "${SCRATCH}/envs/eomt/bin/activate" 2>/dev/null || true
+source "${HOME}/envs/wdseg-eomt/bin/activate" 2>/dev/null || true
 export PYTHONPATH="${WDS}:${PYTHONPATH:-}"
 
 python "${WDS}/scripts/verify_flow.py"

@@ -104,7 +104,7 @@ def main() -> None:
     parser.add_argument(
         "--images",
         type=Path,
-        default=scratch_root() / "data/cansurf/val/images",
+        default=Path(__file__).resolve().parents[2] / "data/water_debris/cansurf_home/val/images",  # on home since 2026-10-23 (scratch purge)
     )
     parser.add_argument("--gt-coco", type=Path, required=True)
     parser.add_argument("--lightning-ckpt", type=Path, required=True)

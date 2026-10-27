@@ -61,17 +61,20 @@ def pack(
     layout_root: Path,
     out_root: Path,
     smoke_n: int | None,
+    train: tuple[str, list[str]] | None = None,
+    val: tuple[str, list[str]] | None = None,
 ) -> None:
+    """train / val: (LaRS source split, image names); default = LaRS train / LaRS val (optionally the first smoke_n)."""
     if out_root.exists():
         shutil.rmtree(out_root)
     out_root.mkdir(parents=True)
 
-    train_names = _pick_images(layout_root / "train", smoke_n)
-    val_names = _pick_images(layout_root / "val", smoke_n)
+    train_src, train_names = train or ("train", _pick_images(layout_root / "train", smoke_n))
+    val_src, val_names = val or ("val", _pick_images(layout_root / "val", smoke_n))
 
     for split, names, zip_name, folder in (
-        ("train", train_names, "train2017.zip", "train2017"),
-        ("val", val_names, "val2017.zip", "val2017"),
+        (train_src, train_names, "train2017.zip", "train2017"),
+        (val_src, val_names, "val2017.zip", "val2017"),
     ):
         files = [
             (layout_root / split / "images" / n, f"{folder}/{n}") for n in names
@@ -81,27 +84,27 @@ def pack(
     ann_dir = out_root / "_panoptic_build"
     ann_dir.mkdir()
     _filter_panoptic_json(
-        layout_root / "train" / "panoptic_annotations.json",
+        layout_root / train_src / "panoptic_annotations.json",
         set(train_names),
         ann_dir / "panoptic_train2017.json",
     )
     _filter_panoptic_json(
-        layout_root / "val" / "panoptic_annotations.json",
+        layout_root / val_src / "panoptic_annotations.json",
         set(val_names),
         ann_dir / "panoptic_val2017.json",
     )
 
     pan_zip = out_root / "panoptic_annotations_trainval2017.zip"
     with zipfile.ZipFile(pan_zip, "w", compression=zipfile.ZIP_STORED) as zf:
-        for split, names, folder in (
-            ("train", train_names, "panoptic_train2017"),
-            ("val", val_names, "panoptic_val2017"),
+        for split, src, names, folder in (
+            ("train", train_src, train_names, "panoptic_train2017"),
+            ("val", val_src, val_names, "panoptic_val2017"),
         ):
             zf.write(
                 ann_dir / f"panoptic_{split}2017.json",
                 f"annotations/panoptic_{split}2017.json",
             )
-            nested = _nested_panoptic_zip(names, split, layout_root, folder)
+            nested = _nested_panoptic_zip(names, src, layout_root, folder)
             zf.writestr(f"annotations/panoptic_{split}2017.zip", nested)
 
     shutil.rmtree(ann_dir)
@@ -128,8 +131,31 @@ def main() -> int:
         default=None,
         help="Output directory (default: .../eomt_smoke_zips or .../eomt_full_zips).",
     )
+    parser.add_argument(
+        "--heldout-stage",
+        choices=["A", "B"],
+        default=None,
+        help="Held-out protocol (fairness fixes 3/4): A = LaRS train minus held10 / held10; "
+        "B = all LaRS train / held10 (monitored only). held10 = ablation 10's 245-image slice.",
+    )
+    parser.add_argument(
+        "--held10",
+        type=Path,
+        default=ROOT.parent / "data/water_debris/lars_backup/yolo_boxes/held10/labels",
+        help="Folder whose *.txt stems name the held-out images.",
+    )
     args = parser.parse_args()
     layout = verify_lars_layout()
+    if args.heldout_stage:
+        held = sorted(f"{p.stem}.jpg" for p in args.held10.glob("*.txt"))
+        all_train = _pick_images(layout.root / "train", None)
+        missing = set(held) - set(all_train)
+        if missing:
+            raise RuntimeError(f"{len(missing)} held-out images not in LaRS train, e.g. {sorted(missing)[:3]}")
+        train = [n for n in all_train if n not in set(held)] if args.heldout_stage == "A" else all_train
+        out_root = args.out or (ROOT.parent / "data/water_debris/lars_eomt_zips" / f"stage{args.heldout_stage}")
+        pack(layout.root, out_root, None, train=("train", train), val=("train", held))
+        return 0
     n = None if args.full else args.smoke
     default_out = layout.root / ("eomt_full_zips" if args.full else "eomt_smoke_zips")
     out_root = args.out or default_out

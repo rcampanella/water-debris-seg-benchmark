@@ -8,7 +8,7 @@
 
 set -euo pipefail
 SCRATCH="/scratch-shared/${USER}/water-debris-seg"
-VENV="${SCRATCH}/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 EOMT="${SCRATCH}/third_party/eomt"
 REPO="${HOME}/projects/water-debris-seg-benchmark"
 WDS="${REPO}/water-debris-seg"

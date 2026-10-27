@@ -2,7 +2,7 @@
 # Install VidEoMT stack into the shared EoMT venv on scratch (Detectron2 + panopticapi + videomt reqs).
 set -euo pipefail
 SCRATCH="${WATER_DEBRIS_SCRATCH_ROOT:-/scratch-shared/${USER}/water-debris-seg}"
-VENV="${SCRATCH}/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 VID="${SCRATCH}/third_party/videomt"
 
 if [[ ! -d "${VENV}/bin" ]]; then

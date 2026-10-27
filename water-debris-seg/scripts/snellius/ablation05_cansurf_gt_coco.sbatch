@@ -9,11 +9,11 @@ set -euo pipefail
 SCRATCH="/scratch-shared/${USER}/water-debris-seg"
 REPO="${HOME}/projects/water-debris-seg-benchmark"
 WDS="${REPO}/water-debris-seg"
-CANSURF="${SCRATCH}/data/cansurf"
+CANSURF="${HOME}/projects/water-debris-seg-benchmark/data/water_debris/cansurf_home"
 OUT="${REPO}/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object"
 mkdir -p "${SCRATCH}/logs" "$OUT/sources"
 
-source "${SCRATCH}/envs/eomt/bin/activate" 2>/dev/null || true
+source "${HOME}/envs/wdseg-eomt/bin/activate" 2>/dev/null || true
 python "${WDS}/scripts/masks_to_coco_boxes.py" yolo-split \
   --images "${CANSURF}/val/images" \
   --labels "${CANSURF}/val/labels" \

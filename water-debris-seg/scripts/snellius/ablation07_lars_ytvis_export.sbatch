@@ -9,7 +9,7 @@
 
 set -euo pipefail
 SCRATCH="/scratch-shared/${USER}/water-debris-seg"
-VENV="${SCRATCH}/envs/eomt"
+VENV="${HOME}/envs/wdseg-eomt"
 REPO="${HOME}/projects/water-debris-seg-benchmark"
 WDS="${REPO}/water-debris-seg"
 OUT="${REPO}/eval_outputs/water_debris_seg/ablations/07_videomt_temporal"

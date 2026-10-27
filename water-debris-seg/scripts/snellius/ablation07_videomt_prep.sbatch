@@ -14,7 +14,7 @@ VID="${SCRATCH}/third_party/videomt"
 OUT="${REPO}/eval_outputs/water_debris_seg/ablations/07_videomt_temporal"
 mkdir -p "${SCRATCH}/logs" "$OUT/sources"
 
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 export PYTHONPATH="${WDS}:${PYTHONPATH:-}"
 
 python "${WDS}/scripts/verify_lars_sequences.py" | tee "${OUT}/sources/sequences_check_${SLURM_JOB_ID}.log"

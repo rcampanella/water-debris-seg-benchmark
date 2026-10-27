@@ -15,14 +15,14 @@ EOMT="${SCRATCH}/third_party/eomt"
 mkdir -p "${SCRATCH}/logs"
 
 # shellcheck disable=SC1091
-source "${SCRATCH}/envs/eomt/bin/activate"
+source "${HOME}/envs/wdseg-eomt/bin/activate"
 source "${WDS}/scripts/snellius/wandb_env.sh"
 export PYTHONPATH="${WDS}:${EOMT}:${PYTHONPATH:-}"
 
 export WANDB_RUN_GROUP=smoke_yolo
 export WANDB_NAME="yolo11n_cansurf_smoke_${SLURM_JOB_ID}"
 bash "${WDS}/scripts/snellius/smoke_yolo_cansurf.sbatch" 2>/dev/null || {
-  DATA="${SCRATCH}/data/cansurf"
+  DATA="${HOME}/projects/water-debris-seg-benchmark/data/water_debris/cansurf_home"
   OUT="${REPO}/eval_outputs/water_debris_seg/smoke/yolo"
   pip install -q ultralytics
   yolo settings wandb=True 2>/dev/null || true
