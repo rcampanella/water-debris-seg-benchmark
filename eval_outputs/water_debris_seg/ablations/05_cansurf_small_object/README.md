@@ -1,10 +1,12 @@
 # Ablation 05 — CANSURF mask→box mAP (eval only)
 
+> **Role in the benchmark (2026-10-23).** **Values on this page are superseded** for the comparison: every EoMT box carried a constant confidence (0.5) and every predicted class counted as a can. The cross-domain cells are re-scored in [fix 1b](../../fairness_fixes/FIX1_LARS_SPLIT_METRICS.md#5-consequence-for-flow-and-cansurf-ablations-04-05-09); EoMT trained on CANSURF (SAM masks) comes from [fix 3](../../fairness_fixes/FIX3_SAM_BOX_DATASETS.md). The YOLO reference row here is YOLOv11n (ablation 08).
+
 **Question.** Can mask transformers detect **reflective aluminum cans** at distance compared to YOLOv11 (and optional SAHI)?
 
 **Expected outcome.** YOLO **beats** EoMT on mAP/recall; EoMT may miss far-field AP_S unless SAHI-style tiling at inference (optional, document separately).
 
-**Hard rule.** **No training** on CANSURF for EoMT/VidEoMT.
+**Rule for this ablation** (benchmark-wide rule revised 2026-10-23, see the banner). **No training** on CANSURF for EoMT/VidEoMT.
 
 ## Setup
 
@@ -20,8 +22,8 @@ Scored with `eval_coco_bbox.py` (pycocotools) on 2026-10-13 against the **aligne
 
 | Method | mAP | AP50 | AP75 | AR100 | Images with preds | Dets | Source |
 |---|---|---|---|---|---|---|---|
-| EoMT zero-shot | **0.095** | 0.148 | 0.090 | 0.140 | 1502/2209 | 3766 | W&B `lhnbhuej`; [`metrics`](sources/eomt_zeroshot_yolo_aligned_gt.metrics.json), [`preds`](sources/eomt_zeroshot_val_preds_coco.json) |
-| EoMT LaRS panoptic FT (ab03 ckpt) | **0.034** | 0.069 | 0.021 | 0.047 | 1005/2209 | 1395 | W&B `qi6ymm68`, job 27660681; [`metrics`](sources/eomt_lars_panoptic_yolo_aligned_gt.metrics.json), [`preds`](sources/eomt_lars_panoptic_ft_val_preds_coco.json) |
+| EoMT zero-shot | **0.095** | 0.148 | 0.090 | 0.140 | 1502/2209 | 3766 | W&B corrected run [`rescore_cansurf_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot); the original run [`lhnbhuej`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej) still shows the pre-fix 0.147 (legacy scorer, 2221-image GT); [`metrics`](sources/eomt_zeroshot_yolo_aligned_gt.metrics.json), [`preds`](sources/eomt_zeroshot_val_preds_coco.json) |
+| EoMT LaRS panoptic FT (ab03 ckpt) | **0.034** | 0.069 | 0.021 | 0.047 | 1005/2209 | 1395 | job 27660681; W&B corrected run [`rescore_cansurf_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic); the original run [`qi6ymm68`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68) still shows the pre-fix 0.120; [`metrics`](sources/eomt_lars_panoptic_yolo_aligned_gt.metrics.json), [`preds`](sources/eomt_lars_panoptic_ft_val_preds_coco.json) |
 | *Ref:* EoMT LaRS semantic FT, min256 ([09](../09_cross_dataset_transfer/README.md)) | 0.078 | 0.160 | 0.061 | 0.173 | 2209/2209 | 6583 | ab09 |
 | *Ref:* YOLOv11n CANSURF-trained ([08](../08_specialized_yolo/README.md)) | **0.857** | 0.960 | 0.865 | 0.870 | 2209/2209 | 30206 | preds job **28000242** from train **27648816** |
 
@@ -67,14 +69,14 @@ LaRS panoptic FT clearly **underperforms** COCO zero-shot on CANSURF (**0.034 vs
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_cansurf_mask2box_eval_27648392`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/glnvdl1f) | failed | 27648392 | failed attempt |
-| [`eomt_cansurf_mask2box_eval_27648692`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej) | finished | 27648692 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_zeroshot_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt) |
-| [`eomt_lars_panoptic_cansurf_27660681`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68) | finished | 27660681 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_panoptic_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt) |
-| [`rescore_cansurf_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_eomt_zeroshot_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_eomt_panoptic_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt) | finished | — | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| `eomt_cansurf_mask2box_eval_27648392` (no link: nothing logged) | failed | 27648392 | nothing logged | failed attempt |
+| [`eomt_cansurf_mask2box_eval_27648692`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej) | finished | 27648692 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_zeroshot_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt) |
+| [`eomt_lars_panoptic_cansurf_27660681`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68) | finished | 27660681 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_panoptic_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt) |
+| [`rescore_cansurf_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_zeroshot_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_panoptic_origgt`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

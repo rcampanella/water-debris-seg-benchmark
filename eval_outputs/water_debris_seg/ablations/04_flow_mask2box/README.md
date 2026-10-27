@@ -1,10 +1,12 @@
 # Ablation 04 — FloW-Img mask→box mAP (eval only)
 
+> **Role in the benchmark (2026-10-23).** **Values on this page are superseded** for the comparison: every EoMT box carried a constant confidence (0.5) and every predicted class counted as waste. The cross-domain cells are re-scored in [fix 1b](../../fairness_fixes/FIX1_LARS_SPLIT_METRICS.md#5-consequence-for-flow-and-cansurf-ablations-04-05-09); EoMT trained on FloW (SAM masks) comes from [fix 3](../../fairness_fixes/FIX3_SAM_BOX_DATASETS.md).
+
 **Question.** As a **detector**, how does EoMT (zero-shot vs LaRS-trained) perform on **inland floating waste** boxes?
 
 **Expected outcome.** Low mAP vs FloW paper detectors; **AP_S** especially poor (many objects &lt;32²).
 
-**Hard rule.** **No training** on FloW. Inference + mask→box only.
+**Rule for this ablation** (benchmark-wide rule revised 2026-10-23, see the banner). **No training** on FloW. Inference + mask→box only.
 
 ## Setup
 
@@ -55,11 +57,11 @@ COCO zero-shot still beats LaRS panoptic FT on FloW (**0.034 vs 0.014** mAP), an
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_lars_panoptic_flow_27767341`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/0c4pnnn0) | finished | 27767341 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic) |
-| [`eomt_flow_mask2box_27767340`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne) | finished | 27767340 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot) |
-| [`rescore_flow_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot) | finished | — | ✅ online values match the reported results |
-| [`rescore_flow_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic) | finished | — | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`eomt_lars_panoptic_flow_27767341`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/0c4pnnn0) | finished | 27767341 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic) |
+| [`eomt_flow_mask2box_27767340`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne) | finished | 27767340 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot) |
+| [`rescore_flow_eomt_zeroshot`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_flow_eomt_panoptic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

@@ -1,0 +1,56 @@
+{
+  "source": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_cansurf_lora_stageA/csv/version_0/metrics.csv",
+  "metric": "metrics/val_ap_all",
+  "per_epoch": [
+    [
+      1,
+      0.6728048324584961
+    ],
+    [
+      2,
+      0.7230456471443176
+    ],
+    [
+      3,
+      0.741263210773468
+    ],
+    [
+      4,
+      0.7480959296226501
+    ],
+    [
+      5,
+      0.7478387355804443
+    ],
+    [
+      6,
+      0.7517297267913818
+    ],
+    [
+      7,
+      0.7572565674781799
+    ],
+    [
+      8,
+      0.7610911726951599
+    ],
+    [
+      9,
+      0.7660053968429565
+    ],
+    [
+      10,
+      0.7570198178291321
+    ],
+    [
+      11,
+      0.7660044431686401
+    ],
+    [
+      12,
+      0.7654950022697449
+    ]
+  ],
+  "best_epoch": 9,
+  "best_value": 0.7660053968429565
+}

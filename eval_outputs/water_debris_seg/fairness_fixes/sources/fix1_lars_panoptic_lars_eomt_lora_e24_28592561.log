@@ -1,0 +1,107 @@
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+50/198
+100/198
+150/198
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: The ``compute`` method of metric PanopticQuality was called before the ``update`` method which may lead to errors, as metric states have not yet been updated.
+  warnings.warn(*args, **kwargs)
+{
+ "mIoU": {
+  "mean": 0.972363684503648,
+  "per_class": {
+   "obstacle": 0.9479251179620054,
+   "water": 0.9856788854488462,
+   "sky": 0.9834870501000924
+  },
+  "void_pixel_share": 0.004154344170122482,
+  "gt": "LaRS val semantic_masks (0 obstacle, 1 water, 2 sky, 255 ignored)"
+ },
+ "PQ": {
+  "all": 0.3985441321155511,
+  "things": 0.19437693112110468,
+  "stuff": 0.9429900014340747,
+  "per_class": {
+   "Boat/ship": 0.4299467091043437,
+   "Row boats": 0.22971877891973969,
+   "Paddle board": 0.2919727265695613,
+   "Buoy": 0.2196172726394546,
+   "Swimmer": 0.3098927858712235,
+   "Animal": 0.07386717586451486,
+   "Float": 0.0,
+   "Other": 0.0,
+   "Static Obstacle": 0.898472428160841,
+   "Water": 0.9845254686143663,
+   "Sky": 0.9459721075270173
+  }
+ },
+ "box_AP": {
+  "all_9_classes": {
+   "mAP": 0.17921921994972143,
+   "AP50": 0.31861214078671934,
+   "AP75": 0.15738213564046247,
+   "AP_small": 0.09778632873812107,
+   "AP_medium": 0.33135628981035575,
+   "AP_large": 0.47627045370300863,
+   "AR1": 0.176092944459094,
+   "AR10": 0.2878693945686332,
+   "AR100": 0.3060556186883696,
+   "AR_small": 0.18228312134577077,
+   "AR_medium": 0.5319923727066584,
+   "AR_large": 0.6398185941043084
+  },
+  "objects_8_classes": {
+   "mAP": 0.1438353007799658,
+   "AP50": 0.2656188880160421,
+   "AP75": 0.12232262873130564,
+   "AP_small": 0.043581048401814766,
+   "AP_medium": 0.38646284340399023,
+   "AP_large": 0.4762781112562754,
+   "AR1": 0.1179970356347603,
+   "AR10": 0.24314070329831453,
+   "AR100": 0.26353300113194267,
+   "AR_small": 0.10506851151399214,
+   "AR_medium": 0.6173244348244348,
+   "AR_large": 0.6359920634920635
+  },
+  "per_class_AP": {
+   "Static Obstacle": 0.4622905733077661,
+   "Boat/ship": 0.22193216406189786,
+   "Row boats": 0.20785959723506528,
+   "Paddle board": 0.3579413218062559,
+   "Buoy": 0.09619032323959557,
+   "Swimmer": 0.20122222067906162,
+   "Animal": 0.042760401551107836,
+   "Float": 0.0014026402640264024,
+   "Other": 0.021373737402716173
+  },
+  "constant_score_0.5": {
+   "all_9_classes": {
+    "mAP": 0.14098445296776319,
+    "AP50": 0.23254277579614493,
+    "AP75": 0.13186723082029142,
+    "AP_small": 0.07960363892709803,
+    "AP_medium": 0.1927436017605385,
+    "AP_large": 0.41431222885229935,
+    "AR1": 0.1360743769665714,
+    "AR10": 0.1823696189824556,
+    "AR100": 0.1837821717711552,
+    "AR_small": 0.09408776107963099,
+    "AR_medium": 0.2396361574933003,
+    "AR_large": 0.464684159378037
+   },
+   "objects_8_classes": {
+    "mAP": 0.08954800429370877,
+    "AP50": 0.163564932532938,
+    "AP75": 0.08122811611441003,
+    "AP_small": 0.0145540937929853,
+    "AP_medium": 0.2248675353872949,
+    "AP_large": 0.3884347019402322,
+    "AR1": 0.07284173860352186,
+    "AR10": 0.12492388587139161,
+    "AR100": 0.12651300775867863,
+    "AR_small": 0.030848731214584875,
+    "AR_medium": 0.27957551707551703,
+    "AR_large": 0.4321315192743764
+   }
+  },
+  "n_dets": 13302,
+  "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs

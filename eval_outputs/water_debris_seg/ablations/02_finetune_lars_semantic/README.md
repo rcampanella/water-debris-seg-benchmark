@@ -1,10 +1,12 @@
 # Ablation 02 — EoMT fine-tune LaRS semantic (3-class)
 
+> **Role in the benchmark (2026-10-23).** **Not in the main comparison table** (decision 2026-10-23): EoMT panoptic (ablation 03) gives PQ, mIoU and box AP. This page is kept as a reference (mIoU 98.0), and the checkpoint validates the new mIoU scorer in [fix 1](../../fairness_fixes/FIX1_LARS_SPLIT_METRICS.md). Its FloW / CANSURF values (ablation 09) used a constant confidence and are superseded.
+
 **Question.** Does LaRS-only semantic fine-tuning improve **obstacle / water / sky** mIoU for USV nearshore scenes?
 
 **Expected outcome.** mIoU **↑** vs ablation 01 on val; largest gain on water boundary and glare cases (attribute slices).
 
-**Hard rule.** Training data = **LaRS train semantic masks only**. No FloW/CANSURF.
+**Rule for this ablation** (benchmark-wide rule revised 2026-10-23, see the banner). Training data = **LaRS train semantic masks only**. No FloW/CANSURF.
 
 ## Setup
 
@@ -46,9 +48,9 @@ Strong LaRS val mIoU; CANSURF transfer via obstacle CC→box is **poor** overall
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_lars_semantic_ft_27658486`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/mk2w7dr8) | finished | 27658486 | ✅ online values match the reported results |
-| [`eomt_lars_semantic_val_27660680`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/duguh1wo) | finished | 27660680 | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`eomt_lars_semantic_ft_27658486`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/mk2w7dr8) | finished | 27658486 | full history (237 steps) | ✅ online values match the reported results |
+| [`eomt_lars_semantic_val_27660680`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/duguh1wo) | finished | 27660680 | full history (5 steps) | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

@@ -1,0 +1,12 @@
+200/4950
+400/4950
+600/4950
+800/4950
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/make_sam_masks.py", line 160, in <module>
+    main()
+    ~~~~^^
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/make_sam_masks.py", line 74, in main
+    assert len(masks) == len(boxes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

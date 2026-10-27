@@ -1,0 +1,22 @@
+{
+  "source": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/flow_full_11s_stageA/results.csv",
+  "epochs_run": 100,
+  "best_epoch": 84,
+  "best_fitness": 0.5317000000000001,
+  "at_best": {
+    "metrics/mAP50(B)": 0.90655,
+    "metrics/mAP50-95(B)": 0.49005,
+    "train/box_loss": 1.3061,
+    "val/box_loss": 1.48276,
+    "train/cls_loss": 0.58293,
+    "val/cls_loss": 0.62657
+  },
+  "at_last": {
+    "metrics/mAP50(B)": 0.89329,
+    "metrics/mAP50-95(B)": 0.48614,
+    "train/box_loss": 1.1985,
+    "val/box_loss": 1.47693,
+    "train/cls_loss": 0.5235,
+    "val/cls_loss": 0.6072
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "model": "coco133",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/eomt_coco/coco_panoptic_eomt_base_640_2x.bin",
+  "ckpt_sha256": "2c8f3296d46f410b85ab64edca34792241d9842dc5031b6b00d4f721a663a8ec",
+  "dataset": "flow",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "mapping": {
+    "file": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/configs/coco133_to_lars_pred_map_tightened.json",
+    "sha256": "ebb88330e9c84cabbc8ba6cabd286e1301339e20d70a62fde7f51ab7dedbdf4a"
+  },
+  "n_images": 800,
+  "debris_classes": [
+    "backpack",
+    "bottle",
+    "cup",
+    "frisbee",
+    "handbag",
+    "kite",
+    "sports ball",
+    "suitcase",
+    "umbrella"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.07092095094239127,
+      "AP50": 0.17456838541794426,
+      "AP75": 0.048826864782742604,
+      "AP_small": 0.01767945066435118,
+      "AP_medium": 0.11555681452479911,
+      "AP_large": 0.35648159035213234,
+      "AR1": 0.075197628458498,
+      "AR10": 0.12193675889328064,
+      "AR100": 0.1259881422924901,
+      "AR_small": 0.041367806505421184,
+      "AR_medium": 0.20703234880450064,
+      "AR_large": 0.5105263157894736
+    },
+    "class_agnostic": {
+      "mAP": 0.07561766754189181,
+      "AP50": 0.2337472346651462,
+      "AP75": 0.0324692084238601,
+      "AP_small": 0.039963275302988946,
+      "AP_medium": 0.11559495363300865,
+      "AP_large": 0.2403625164664295,
+      "AR1": 0.09792490118577077,
+      "AR10": 0.254001976284585,
+      "AR100": 0.31264822134387354,
+      "AR_small": 0.19316096747289407,
+      "AR_medium": 0.4433192686357244,
+      "AR_large": 0.7543859649122806
+    },
+    "n_dets_debris": 2862,
+    "n_dets_agnostic": 28149,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_coco133_flow_map-tightened_28511592.preds.json"
+  }
+}

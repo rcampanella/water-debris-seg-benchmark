@@ -1,0 +1,22 @@
+{
+  "source": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/cansurf_full_11s_stageA/results.csv",
+  "epochs_run": 100,
+  "best_epoch": 90,
+  "best_fitness": 0.8139719999999999,
+  "at_best": {
+    "metrics/mAP50(B)": 0.97887,
+    "metrics/mAP50-95(B)": 0.79565,
+    "train/box_loss": 0.48802,
+    "val/box_loss": 1.1804,
+    "train/cls_loss": 0.26541,
+    "val/cls_loss": 0.47194
+  },
+  "at_last": {
+    "metrics/mAP50(B)": 0.97828,
+    "metrics/mAP50-95(B)": 0.79395,
+    "train/box_loss": 0.40675,
+    "val/box_loss": 1.17002,
+    "train/cls_loss": 0.20776,
+    "val/cls_loss": 0.47642
+  }
+}

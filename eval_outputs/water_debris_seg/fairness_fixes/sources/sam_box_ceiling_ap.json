@@ -1,0 +1,25 @@
+{
+  "flow": {
+    "source": "data/water_debris/sam_masks/flow/instances_train_all.json",
+    "n_images": 1200,
+    "n_boxes": 3248,
+    "mAP": 0.4612273324132594,
+    "AP50": 0.9674954351796272,
+    "AP75": 0.35354380579384753,
+    "AP_small": 0.3628651486547713,
+    "AP_medium": 0.604697324303888,
+    "AP_large": 0.7905951884434053
+  },
+  "cansurf": {
+    "source": "data/water_debris/sam_masks/cansurf/instances_train_all.json",
+    "n_images": 4950,
+    "n_boxes": 18376,
+    "mAP": 0.6009556939394097,
+    "AP50": 0.977207654811884,
+    "AP75": 0.5275866010401068,
+    "AP_small": 0.33419416227060056,
+    "AP_medium": 0.37543580100518215,
+    "AP_large": 0.7067895655566454
+  },
+  "note": "Each SAM mask's min/max box is scored as a detection (score 1) against the GT boxes of the training pool. The result is the box AP of a model that reproduces the SAM masks exactly: an approximate ceiling for EoMT trained on SAM masks and scored with mask-derived boxes against the (looser) GT boxes. Not strict: the test split has no SAM masks, and a model can learn boxes looser than SAM's."
+}

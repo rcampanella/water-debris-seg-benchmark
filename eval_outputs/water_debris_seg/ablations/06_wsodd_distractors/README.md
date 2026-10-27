@@ -1,5 +1,7 @@
 # Ablation 06 — WSODD rubbish vs distractors *(out of scope)*
 
+> **Role in the benchmark (2026-10-23).** Unchanged: out of scope v1. Not part of the [main comparison table](../../fairness_fixes/README.md#main-comparison-table-decisions-enforced).
+
 **Status:** **Excluded from benchmark v1** (2026-10-07). WSODD is hosted on [Baidu Pan](https://github.com/sunjiaen/WSODD#dataset_wsodd) only; automated or Snellius-side download is not practical for this project.
 
 **Original question.** On a **14-class harbor** dataset, does a segmenter-as-detector find **rubbish** without confusing **boats, buoys, balls, animals**?

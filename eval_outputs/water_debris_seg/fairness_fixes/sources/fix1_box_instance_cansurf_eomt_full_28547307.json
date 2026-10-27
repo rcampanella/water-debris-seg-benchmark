@@ -1,0 +1,49 @@
+{
+  "model": "box_instance",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_cansurf_full_stageB/water-debris-seg/8188sdjb/checkpoints/epoch=10-step=13310.ckpt",
+  "ckpt_sha256": "c2df69a394910578b4e710fc7c7242260fd3a4d9d4d1bd9b12d6860c2b4895c6",
+  "dataset": "cansurf",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "n_images": 2209,
+  "debris_classes": [
+    "cansurf"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.6308124003824916,
+      "AP50": 0.9674005850341225,
+      "AP75": 0.60198798583428,
+      "AP_small": 0.061655364046993295,
+      "AP_medium": 0.28050921994020817,
+      "AP_large": 0.6665453010720892,
+      "AR1": 0.12529932326913068,
+      "AR10": 0.7176817629706751,
+      "AR100": 0.7569755335762625,
+      "AR_small": 0.23157894736842102,
+      "AR_medium": 0.4543424317617866,
+      "AR_large": 0.7934750946693854
+    },
+    "class_agnostic": {
+      "mAP": 0.6308124003824916,
+      "AP50": 0.9674005850341225,
+      "AP75": 0.60198798583428,
+      "AP_small": 0.061655364046993295,
+      "AP_medium": 0.28050921994020817,
+      "AP_large": 0.6665453010720892,
+      "AR1": 0.12529932326913068,
+      "AR10": 0.7176817629706751,
+      "AR100": 0.7569755335762625,
+      "AR_small": 0.23157894736842102,
+      "AR_medium": 0.4543424317617866,
+      "AR_large": 0.7934750946693854
+    },
+    "n_dets_debris": 113317,
+    "n_dets_agnostic": 113317,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_box_instance_cansurf_eomt_full_28547307.preds.json"
+  }
+}

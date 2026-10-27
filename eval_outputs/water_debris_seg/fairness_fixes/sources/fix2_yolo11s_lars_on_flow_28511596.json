@@ -1,0 +1,41 @@
+{
+  "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/runs/lars_full_11s_stageB/weights/last.pt",
+  "weights_sha256": "a00afe110be48e3bcc068e900dba627fd000fdb18b97c4f5e282fddf53e76aff",
+  "dataset": "flow",
+  "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+  "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+  "debris_classes": [
+    "Float",
+    "Other"
+  ],
+  "debris_only": {
+    "mAP": 0.03304907562629824,
+    "AP50": 0.10620775903915262,
+    "AP75": 0.012595269178735638,
+    "AP_small": 0.03135338068520354,
+    "AP_medium": 0.05523917673075231,
+    "AP_large": 0.04882160826541499,
+    "AR1": 0.04861660079051383,
+    "AR10": 0.09441699604743084,
+    "AR100": 0.0991106719367589,
+    "AR_small": 0.08698915763135948,
+    "AR_medium": 0.12081575246132208,
+    "AR_large": 0.09122807017543859
+  },
+  "class_agnostic": {
+    "mAP": 0.07295680637242256,
+    "AP50": 0.20944770914126432,
+    "AP75": 0.03735964837831222,
+    "AP_small": 0.05399813365003037,
+    "AP_medium": 0.12002501010528595,
+    "AP_large": 0.06324695483150992,
+    "AR1": 0.08843873517786562,
+    "AR10": 0.2252470355731225,
+    "AR100": 0.29748023715415023,
+    "AR_small": 0.2481234361968307,
+    "AR_medium": 0.36849507735583675,
+    "AR_large": 0.3736842105263158
+  },
+  "n_dets_debris": 2428,
+  "n_dets_agnostic": 29704
+}

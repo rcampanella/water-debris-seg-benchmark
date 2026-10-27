@@ -1,0 +1,119 @@
+{
+  "model": "lars_panoptic",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_lars_lora_stageB/water-debris-seg/8xdisbps/checkpoints/epoch=11-step=7812.ckpt",
+  "ckpt_sha256": "a179b339fb58721788da7307b9cda5d9ac49f477b8044789106c9313fccf9f5c",
+  "dataset": "lars",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32.0,
+    "lora_tensors": 48
+  },
+  "mIoU": {
+    "mean": 0.971598969953781,
+    "per_class": {
+      "obstacle": 0.9463381342398627,
+      "water": 0.9856675015659918,
+      "sky": 0.9827912740554888
+    },
+    "void_pixel_share": 0.004300396434852962,
+    "gt": "LaRS val semantic_masks (0 obstacle, 1 water, 2 sky, 255 ignored)"
+  },
+  "n_images": 198,
+  "PQ": {
+    "all": 0.37943353968406757,
+    "things": 0.1699093024017922,
+    "stuff": 0.9381648391034683,
+    "per_class": {
+      "Boat/ship": 0.4367299493366227,
+      "Row boats": 0.03535856498465528,
+      "Paddle board": 0.3363171098981616,
+      "Buoy": 0.20564610457036478,
+      "Swimmer": 0.26644332930377956,
+      "Animal": 0.07877936112075368,
+      "Float": 0.0,
+      "Other": 0.0,
+      "Static Obstacle": 0.8822860590613142,
+      "Water": 0.9842914731213541,
+      "Sky": 0.9479169851277369
+    }
+  },
+  "box_AP": {
+    "all_9_classes": {
+      "mAP": 0.16793704439136686,
+      "AP50": 0.3025855628111002,
+      "AP75": 0.1541479498603013,
+      "AP_small": 0.10821552354104298,
+      "AP_medium": 0.25606509251786413,
+      "AP_large": 0.426009958226322,
+      "AR1": 0.17426703476355232,
+      "AR10": 0.2776945913563916,
+      "AR100": 0.2983729194274148,
+      "AR_small": 0.17218341956146835,
+      "AR_medium": 0.4796114203257061,
+      "AR_large": 0.6226757369614512
+    },
+    "objects_8_classes": {
+      "mAP": 0.13209515199089558,
+      "AP50": 0.2502386091518604,
+      "AP75": 0.12014233569891943,
+      "AP_small": 0.04257579731700673,
+      "AP_medium": 0.2987426079375082,
+      "AP_large": 0.418909475001274,
+      "AR1": 0.11836224206598564,
+      "AR10": 0.23236609269529537,
+      "AR100": 0.25562921177519643,
+      "AR_small": 0.10620634700665188,
+      "AR_medium": 0.5595466570466571,
+      "AR_large": 0.6168253968253967
+    },
+    "per_class_AP": {
+      "Static Obstacle": 0.45467218359513706,
+      "Boat/ship": 0.22713856527385942,
+      "Row boats": 0.16174137696302018,
+      "Paddle board": 0.3504837939404378,
+      "Buoy": 0.08174313670116716,
+      "Swimmer": 0.1695380874156788,
+      "Animal": 0.048387921242797026,
+      "Float": 0.0,
+      "Other": 0.017728334390204374
+    },
+    "constant_score_0.5": {
+      "all_9_classes": {
+        "mAP": 0.1269519250952746,
+        "AP50": 0.20867203403213333,
+        "AP75": 0.11934625253582196,
+        "AP_small": 0.10917998089345723,
+        "AP_medium": 0.16775656252825485,
+        "AP_large": 0.31282195704988613,
+        "AR1": 0.1252640758151782,
+        "AR10": 0.16178574877354843,
+        "AR100": 0.16380992235735503,
+        "AR_small": 0.12009936766034326,
+        "AR_medium": 0.2168728097299526,
+        "AR_large": 0.35262876579203106
+      },
+      "objects_8_classes": {
+        "mAP": 0.07616728729165577,
+        "AP50": 0.13980632615309038,
+        "AP75": 0.07197509681342511,
+        "AP_small": 0.02282747850513941,
+        "AP_medium": 0.19571598961629733,
+        "AP_large": 0.27244887924357925,
+        "AR1": 0.06155380572218301,
+        "AR10": 0.10264068780034949,
+        "AR100": 0.10491788308213194,
+        "AR_small": 0.03511178861788618,
+        "AR_medium": 0.253018278018278,
+        "AR_large": 0.3027891156462585
+      }
+    },
+    "n_dets": 13824,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/10_yolo_lars_boxes/sources/lars_val_gt_coco_boxes.json",
+    "gt_sha256": "097a413cc96067df4e324a3601abd86a88961fd6361c069609bf45117a04797b",
+    "predictions": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_lars_panoptic_lars_eomt_lora_28511609.preds.json"
+  }
+}

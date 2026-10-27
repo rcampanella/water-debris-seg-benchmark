@@ -1,6 +1,6 @@
 {
  "entity": "riccardo-campanella",
- "fetched": "2026-10-14T09:51:14+00:00",
+ "fetched": "2026-10-14T15:30:09+00:00",
  "runs": [
   {
    "id": "txjoa9ef",
@@ -81,7 +81,13 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "run-txjoa9ef-history:v0",
+    "run-txjoa9ef-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "67kk33hk",
@@ -371,7 +377,14 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "source-water-debris-seg-main.py:v0",
+    "run-67kk33hk-history:v0",
+    "run-67kk33hk-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (180 steps)"
   },
   {
    "id": "qmi79nsh",
@@ -451,7 +464,13 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "run-qmi79nsh-history:v0",
+    "run-qmi79nsh-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "glnvdl1f",
@@ -469,7 +488,12 @@
    "summary": {},
    "config": {
     "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/checkpoints/eomt/coco_panoptic_eomt_base_640_2x.bin"
-   }
+   },
+   "artifacts": [
+    "run-glnvdl1f-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "nothing logged"
   },
   {
    "id": "lhnbhuej",
@@ -496,7 +520,13 @@
    },
    "config": {
     "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/checkpoints/eomt/coco_panoptic_eomt_base_640_2x.bin"
-   }
+   },
+   "artifacts": [
+    "run-lhnbhuej-history:v0",
+    "run-lhnbhuej-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "microrun_20261006_104546",
@@ -595,7 +625,16 @@
     "warmup_bias_lr": 0.1,
     "copy_paste_mode": "flip",
     "warmup_momentum": 0.8
-   }
+   },
+   "artifacts": [
+    "run_microrun_20261006_104546_model:v0",
+    "run-microrun_20261006_104546-curvesPrecision-RecallB_table-7B4o6g:v0",
+    "run-microrun_20261006_104546-curvesF1-ConfidenceB_table--In1Bg:v0",
+    "run-microrun_20261006_104546-curvesPrecision-ConfidenceB_table-AJFKlA:v0",
+    "run-microrun_20261006_104546-curvesRecall-ConfidenceB_table-dzixWA:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (4 steps)"
   },
   {
    "id": "cansurf_train_20261006_104548",
@@ -694,7 +733,17 @@
     "warmup_bias_lr": 0.1,
     "copy_paste_mode": "flip",
     "warmup_momentum": 0.8
-   }
+   },
+   "artifacts": [
+    "run_cansurf_train_20261006_104548_model:v0",
+    "run-cansurf_train_20261006_104548-curvesPrecision-RecallB_table-Bd7PbQ:v0",
+    "run-cansurf_train_20261006_104548-curvesF1-ConfidenceB_table-nuDhng:v0",
+    "run-cansurf_train_20261006_104548-curvesPrecision-ConfidenceB_table-zp6PoQ:v0",
+    "run-cansurf_train_20261006_104548-curvesRecall-ConfidenceB_table-BA1nPA:v0",
+    "run-cansurf_train_20261006_104548-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (53 steps)"
   },
   {
    "id": "g0xb8i9q",
@@ -768,7 +817,12 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "run-g0xb8i9q-history:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "mk2w7dr8",
@@ -1027,7 +1081,14 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "source-water-debris-seg-main.py:v0",
+    "run-mk2w7dr8-history:v0",
+    "run-mk2w7dr8-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (237 steps)"
   },
   {
    "id": "qi6ymm68",
@@ -1056,7 +1117,12 @@
     "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/checkpoints/eomt/coco_panoptic_eomt_base_640_2x.bin",
     "num_classes": 11,
     "lightning_ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/67kk33hk/checkpoints/epoch=11-step=7812.ckpt"
-   }
+   },
+   "artifacts": [
+    "run-qi6ymm68-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "duguh1wo",
@@ -1105,7 +1171,13 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "run-duguh1wo-history:v0",
+    "run-duguh1wo-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (5 steps)"
   },
   {
    "id": "vquavnrm",
@@ -1133,7 +1205,13 @@
    "config": {
     "lightning_ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/mk2w7dr8/checkpoints/epoch=30-step=2356.ckpt",
     "obstacle_class": 0
-   }
+   },
+   "artifacts": [
+    "run-vquavnrm-history:v0",
+    "run-vquavnrm-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "xcl7zvm8",
@@ -1213,7 +1291,13 @@
     "class_coefficient": 2,
     "no_object_coefficient": 0.1,
     "importance_sample_ratio": 0.75
-   }
+   },
+   "artifacts": [
+    "run-xcl7zvm8-history:v0",
+    "run-xcl7zvm8-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "n3vuqqbi",
@@ -1234,7 +1318,12 @@
     "metrics/precision": 0.9782574840859152,
     "metrics/recall": 0.9236508762797154
    },
-   "config": {}
+   "config": {},
+   "artifacts": [
+    "run-n3vuqqbi-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "hxuvlvcn",
@@ -1262,7 +1351,12 @@
    "config": {
     "lightning_ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/mk2w7dr8/checkpoints/epoch=30-step=2356.ckpt",
     "obstacle_class": 0
-   }
+   },
+   "artifacts": [
+    "run-hxuvlvcn-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "g1bfz3nn",
@@ -1281,7 +1375,10 @@
     "flicker/mean_proxy": 0.04060504556846386,
     "flicker/n_clips": 35
    },
-   "config": {}
+   "config": {},
+   "artifacts": [],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "5aoppsyb",
@@ -1300,7 +1397,12 @@
     "flicker_panoptic/mean_proxy": 0.2291083954615188,
     "flicker_panoptic/n_clips": 35
    },
-   "config": {}
+   "config": {},
+   "artifacts": [
+    "run-5aoppsyb-history:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "lars_vitb_27716592",
@@ -1322,7 +1424,10 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27716592",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [],
+   "has_evidence": false,
+   "data": "nothing logged"
   },
   {
    "id": "lars_vitb_27718883",
@@ -1362,7 +1467,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27718883",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_27718883-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (15 steps)"
   },
   {
    "id": "lars_vitb_27760828",
@@ -1418,7 +1528,13 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27760828",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_27760828-history:v0",
+    "run-lars_vitb_27760828-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (3065 steps)"
   },
   {
    "id": "0c4pnnn0",
@@ -1447,7 +1563,13 @@
     "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/checkpoints/eomt/coco_panoptic_eomt_base_640_2x.bin",
     "num_classes": 11,
     "lightning_ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/67kk33hk/checkpoints/epoch=11-step=7812.ckpt"
-   }
+   },
+   "artifacts": [
+    "run-0c4pnnn0-history:v0",
+    "run-0c4pnnn0-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "u45u5rne",
@@ -1475,7 +1597,13 @@
    "config": {
     "ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/checkpoints/eomt/coco_panoptic_eomt_base_640_2x.bin",
     "num_classes": 133
-   }
+   },
+   "artifacts": [
+    "run-u45u5rne-history:v0",
+    "run-u45u5rne-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "hd5bs8yz",
@@ -1503,7 +1631,13 @@
    "config": {
     "lightning_ckpt": "/scratch-shared/rcampanella/water-debris-seg/artifacts/wandb/water-debris-seg/mk2w7dr8/checkpoints/epoch=30-step=2356.ckpt",
     "obstacle_class": 0
-   }
+   },
+   "artifacts": [
+    "run-hd5bs8yz-history:v0",
+    "run-hd5bs8yz-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "lars_vitb_27769294",
@@ -1543,7 +1677,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27769294",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_27769294-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (150 steps)"
   },
   {
    "id": "lars_vitb_27769704",
@@ -1583,7 +1722,13 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27769704",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_27769704-history:v0",
+    "run-lars_vitb_27769704-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (75 steps)"
   },
   {
    "id": "lars_vitb_27769861",
@@ -1639,7 +1784,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27769861",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_27769861-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (3065 steps)"
   },
   {
    "id": "lars_vitb_27772987",
@@ -1695,7 +1845,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_27772987",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_27772987-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (3065 steps)"
   },
   {
    "id": "eval_27775358",
@@ -1717,7 +1872,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/eval_27775358",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-eval_27775358-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "nothing logged"
   },
   {
    "id": "lars_vitb_16k_27776810",
@@ -1773,7 +1933,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/lars_vitb_16k_27776810",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-lars_vitb_16k_27776810-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (12128 steps)"
   },
   {
    "id": "wzpe700z",
@@ -1793,7 +1958,10 @@
     "flicker/n_clips": 35,
     "flicker/source_results": "27775358"
    },
-   "config": {}
+   "config": {},
+   "artifacts": [],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "eval_27806956",
@@ -1815,7 +1983,12 @@
     "OUTPUT_DIR": "/scratch-shared/rcampanella/water-debris-seg/artifacts/videomt/eval_27806956",
     "VIS_PERIOD": 0,
     "FLOAT32_PRECISION": ""
-   }
+   },
+   "artifacts": [
+    "run-eval_27806956-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "nothing logged"
   },
   {
    "id": "r4ugnnd5",
@@ -1835,7 +2008,10 @@
     "flicker/n_clips": 35,
     "flicker/source_results": "16k_27806956"
    },
-   "config": {}
+   "config": {},
+   "artifacts": [],
+   "has_evidence": false,
+   "data": "one logged step"
   },
   {
    "id": "flow_train_20261012_153258",
@@ -1936,7 +2112,17 @@
     "warmup_bias_lr": 0.1,
     "copy_paste_mode": "flip",
     "warmup_momentum": 0.8
-   }
+   },
+   "artifacts": [
+    "run_flow_train_20261012_153258_model:v0",
+    "run-flow_train_20261012_153258-curvesF1-ConfidenceB_table:v0",
+    "run-flow_train_20261012_153258-curvesPrecision-RecallB_table:v0",
+    "run-flow_train_20261012_153258-curvesPrecision-ConfidenceB_table:v0",
+    "run-flow_train_20261012_153258-curvesRecall-ConfidenceB_table:v0",
+    "run-flow_train_20261012_153258-events:v0"
+   ],
+   "has_evidence": false,
+   "data": "full history (53 steps)"
   },
   {
    "id": "rescore_flow_eomt_zeroshot",
@@ -1947,8 +2133,8 @@
    "created": "2026-10-14T09:46:26Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_zeroshot",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -1991,8 +2177,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "u45u5rne",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/u45u5rne",
+    "evidence_artifact": "evidence-rescore_flow_eomt_zeroshot"
+   },
+   "artifacts": [
+    "evidence-rescore_flow_eomt_zeroshot:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_flow_eomt_semantic",
@@ -2003,8 +2195,8 @@
    "created": "2026-10-14T09:46:34Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2047,8 +2239,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "hd5bs8yz",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz",
+    "evidence_artifact": "evidence-rescore_flow_eomt_semantic"
+   },
+   "artifacts": [
+    "evidence-rescore_flow_eomt_semantic:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_flow_eomt_panoptic",
@@ -2059,8 +2257,8 @@
    "created": "2026-10-14T09:46:37Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_panoptic",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2103,8 +2301,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "0c4pnnn0",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/0c4pnnn0"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/0c4pnnn0",
+    "evidence_artifact": "evidence-rescore_flow_eomt_panoptic"
+   },
+   "artifacts": [
+    "evidence-rescore_flow_eomt_panoptic:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_flow_yolo11n",
@@ -2115,8 +2319,8 @@
    "created": "2026-10-14T09:46:40Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_yolo11n",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2159,8 +2363,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "flow_train_20261012_153258",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258",
+    "evidence_artifact": "evidence-rescore_flow_yolo11n"
+   },
+   "artifacts": [
+    "evidence-rescore_flow_yolo11n:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_yolo11n",
@@ -2171,8 +2381,8 @@
    "created": "2026-10-14T09:46:43Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_yolo11n",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2215,8 +2425,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "cansurf_train_20261006_104548",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/cansurf_train_20261006_104548"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/cansurf_train_20261006_104548",
+    "evidence_artifact": "evidence-rescore_cansurf_yolo11n"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_yolo11n:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_zeroshot",
@@ -2227,8 +2443,8 @@
    "created": "2026-10-14T09:46:47Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2271,8 +2487,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "lhnbhuej",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_zeroshot"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_zeroshot:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_zeroshot_origgt",
@@ -2283,8 +2505,8 @@
    "created": "2026-10-14T09:46:50Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_zeroshot_origgt",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2327,8 +2549,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "lhnbhuej",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lhnbhuej",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_zeroshot_origgt"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_zeroshot_origgt:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_semantic",
@@ -2339,8 +2567,8 @@
    "created": "2026-10-14T09:46:53Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2383,8 +2611,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "vquavnrm",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_semantic"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_semantic:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_semantic_aligned",
@@ -2395,8 +2629,8 @@
    "created": "2026-10-14T09:46:56Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_aligned",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2439,8 +2673,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "vquavnrm",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_semantic_aligned"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_semantic_aligned:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_semantic_min256",
@@ -2451,8 +2691,8 @@
    "created": "2026-10-14T09:47:00Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2495,8 +2735,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "hxuvlvcn",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_semantic_min256"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_semantic_min256:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_panoptic",
@@ -2507,8 +2753,8 @@
    "created": "2026-10-14T09:47:03Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2551,8 +2797,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "qi6ymm68",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_panoptic"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_panoptic:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "rescore_cansurf_eomt_panoptic_origgt",
@@ -2563,8 +2815,8 @@
    "created": "2026-10-14T09:47:07Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_panoptic_origgt",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "pycocotools",
     "rescore"
@@ -2607,8 +2859,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "qi6ymm68",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qi6ymm68",
+    "evidence_artifact": "evidence-rescore_cansurf_eomt_panoptic_origgt"
+   },
+   "artifacts": [
+    "evidence-rescore_cansurf_eomt_panoptic_origgt:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "ab01_zeroshot_lars_pq_predremap",
@@ -2619,8 +2877,8 @@
    "created": "2026-10-14T09:47:10Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "lars-native-space",
     "pq"
@@ -2657,8 +2915,14 @@
     "source_file": "ablations/01_zeroshot_lars/sources/pq_zeroshot_predremap_28011322.json",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "txjoa9ef",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/txjoa9ef"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/txjoa9ef",
+    "evidence_artifact": "evidence-ab01_zeroshot_lars_pq_predremap"
+   },
+   "artifacts": [
+    "evidence-ab01_zeroshot_lars_pq_predremap:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "ab03_pq_script_check",
@@ -2669,8 +2933,8 @@
    "created": "2026-10-14T09:47:14Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab03_pq_script_check",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "lars-native-space",
     "pq"
@@ -2705,8 +2969,14 @@
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "source_file": "ablations/01_zeroshot_lars/sources/pq_native_ab03_check_28011322.json",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
-    "original_run": "67kk33hk / qmi79nsh / xcl7zvm8"
-   }
+    "original_run": "67kk33hk / qmi79nsh / xcl7zvm8",
+    "evidence_artifact": "evidence-ab03_pq_script_check"
+   },
+   "artifacts": [
+    "evidence-ab03_pq_script_check:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "ab08_yolo_flow_test_split",
@@ -2717,8 +2987,8 @@
    "created": "2026-10-14T09:47:21Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "test-split",
     "yolo"
@@ -2742,8 +3012,14 @@
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "flow_train_20261012_153258",
     "pycocotools_run": "rescore_flow_yolo11n",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258",
+    "evidence_artifact": "evidence-ab08_yolo_flow_test_split"
+   },
+   "artifacts": [
+    "evidence-ab08_yolo_flow_test_split:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "ab07_keyframe_ap_27772987",
@@ -2754,8 +3030,8 @@
    "created": "2026-10-14T09:47:25Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27772987",
    "slurm": "27772987",
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "keyframe-ap",
     "videomt"
@@ -2789,8 +3065,14 @@
     "source_file": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_27772987.json",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "lars_vitb_27772987",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27772987"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27772987",
+    "evidence_artifact": "evidence-ab07_keyframe_ap_27772987"
+   },
+   "artifacts": [
+    "evidence-ab07_keyframe_ap_27772987:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "ab07_keyframe_ap_27775358",
@@ -2801,8 +3083,8 @@
    "created": "2026-10-14T09:47:29Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27775358",
    "slurm": "27775358",
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "keyframe-ap",
     "videomt"
@@ -2836,8 +3118,14 @@
     "source_file": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_27775358.json",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "eval_27775358",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27775358"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27775358",
+    "evidence_artifact": "evidence-ab07_keyframe_ap_27775358"
+   },
+   "artifacts": [
+    "evidence-ab07_keyframe_ap_27775358:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "ab07_keyframe_ap_27806956",
@@ -2848,8 +3136,8 @@
    "created": "2026-10-14T09:47:32Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27806956",
    "slurm": "27806956",
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": -1,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 0,
    "tags": [
     "keyframe-ap",
     "videomt"
@@ -2883,8 +3171,14 @@
     "source_file": "ablations/07_videomt_temporal/sources/videomt_rescore_keyframe_27806956.json",
     "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
     "original_run": "eval_27806956",
-    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27806956"
-   }
+    "original_run_url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27806956",
+    "evidence_artifact": "evidence-ab07_keyframe_ap_27806956"
+   },
+   "artifacts": [
+    "evidence-ab07_keyframe_ap_27806956:v0"
+   ],
+   "has_evidence": true,
+   "data": "one logged step + evidence files"
   },
   {
    "id": "qualitative_error_analysis",
@@ -2895,8 +3189,8 @@
    "created": "2026-10-14T09:47:35Z",
    "url": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qualitative_error_analysis",
    "slurm": null,
-   "git_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
-   "last_step": 0,
+   "git_commit": "cf9dc677309ca799a2a92da8a727fe5069542736",
+   "last_step": 1,
    "tags": [
     "qualitative"
    ],
@@ -3080,8 +3374,15 @@
     "selection": "qualitative/selection.json",
     "repo_commit": "c72a2e944614ada76a757bfa3409e61aaa3330aa",
     "source_file": "qualitative/error_summary.csv",
-    "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)"
-   }
+    "decision_log": "docs/water_debris_seg_decision_log.md (entries dated 2026-10-13)",
+    "evidence_artifact": "evidence-qualitative_error_analysis"
+   },
+   "artifacts": [
+    "run-qualitative_error_analysis-error_summary:v0",
+    "evidence-qualitative_error_analysis:v0"
+   ],
+   "has_evidence": true,
+   "data": "full history (2 steps) + evidence files"
   }
  ]
 }

@@ -1,0 +1,54 @@
+{
+  "model": "box_instance",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_cansurf_lora_stageB/water-debris-seg/ip8at1js/checkpoints/epoch=8-step=10890.ckpt",
+  "ckpt_sha256": "c89eea3134db8d4f46bf77381b85d667b489a1e9b3602061bc3edeef13e08c52",
+  "dataset": "cansurf",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32.0,
+    "lora_tensors": 48
+  },
+  "n_images": 2209,
+  "debris_classes": [
+    "cansurf"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.6284131197423667,
+      "AP50": 0.9704425998883294,
+      "AP75": 0.6053906647777159,
+      "AP_small": 0.0399441834691619,
+      "AP_medium": 0.26690618459924326,
+      "AP_large": 0.6655510585968153,
+      "AR1": 0.12437098733298628,
+      "AR10": 0.7187315634218289,
+      "AR100": 0.7644195731389901,
+      "AR_small": 0.2263157894736842,
+      "AR_medium": 0.4691480562448304,
+      "AR_large": 0.8000873871249636
+    },
+    "class_agnostic": {
+      "mAP": 0.6284131197423667,
+      "AP50": 0.9704425998883294,
+      "AP75": 0.6053906647777159,
+      "AP_small": 0.0399441834691619,
+      "AP_medium": 0.26690618459924326,
+      "AP_large": 0.6655510585968153,
+      "AR1": 0.12437098733298628,
+      "AR10": 0.7187315634218289,
+      "AR100": 0.7644195731389901,
+      "AR_small": 0.2263157894736842,
+      "AR_medium": 0.4691480562448304,
+      "AR_large": 0.8000873871249636
+    },
+    "n_dets_debris": 189794,
+    "n_dets_agnostic": 189794,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_box_instance_cansurf_eomt_lora_28547309.preds.json"
+  }
+}

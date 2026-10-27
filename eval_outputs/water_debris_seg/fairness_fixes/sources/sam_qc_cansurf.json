@@ -1,0 +1,47 @@
+{
+  "dataset": "cansurf",
+  "images": 4950,
+  "masks": 18376,
+  "box_iou_median": {
+    "all": 0.8183593136431537,
+    "small": 0.6944479167013893,
+    "medium": 0.7050012555037364,
+    "large": 0.9504633677929716
+  },
+  "box_iou_share_below_0.5": 0.011047017849368741,
+  "n_by_size": {
+    "small": 4812,
+    "medium": 1492,
+    "large": 12072
+  },
+  "empty_share": 0.00038093164997823247,
+  "tiny_share": 0.0002720940356987375,
+  "stop_rules": {
+    "empty_plus_tiny_le_5pct": true,
+    "renders_reviewed": "pending manual review of the 20 renders"
+  },
+  "pass_automatic": true,
+  "box_iou_is_ceiling_not_stop_rule": true,
+  "renders": [
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_00.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_01.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_02.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_03.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_04.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_05.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_06.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_07.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_08.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_09.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_10.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_11.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_12.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_13.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_14.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_15.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_16.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_17.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_18.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/cansurf_19.png"
+  ]
+}

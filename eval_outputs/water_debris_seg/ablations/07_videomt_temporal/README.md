@@ -1,10 +1,12 @@
 # Ablation 07 — VidEoMT temporal on LaRS sequences
 
+> **Role in the benchmark (2026-10-23).** **Separate temporal table** (decision 2026-10-23), next to the main comparison: VidEoMT gives per-keyframe mask AP and flicker, not PQ / mIoU / box AP ([fairness_fixes README](../../fairness_fixes/README.md#temporal-table-videomt-separate-from-the-main-comparison)). The per-frame reference is now EoMT panoptic (flicker 0.229); its flicker averages over all classes, VidEoMT's over the 8 object classes, so an aligned re-computation is pending. EoMT semantic (0.041) stays here as a reference.
+
 **Question.** Does **online** VidEoMT beat per-frame EoMT on LaRS keyframes for PQ/mIoU and **temporal stability** (mask flicker, thing ID switches)?
 
 **Expected outcome.** Similar or slightly better PQ vs EoMT still; clear win on ID stability for boats/buoys over 9-frame context.
 
-**Hard rule.** VidEoMT **training** (if any) uses **LaRS sequences only**. Box sets: eval-only mask→box on stills (optional side table).
+**Rule for this ablation** (benchmark-wide rule revised 2026-10-23, see the banner). VidEoMT **training** (if any) uses **LaRS sequences only**. Box sets: eval-only mask→box on stills (optional side table).
 
 ## Setup
 
@@ -98,24 +100,24 @@ Inference keeps `MODEL.BACKBONE.TEST.MAX_NUM` = **10** tracks per clip, while va
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_seq_flicker_27711595`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/g1bfz3nn) | finished | 27711595 | ✅ online values match the reported results |
-| [`eomt_panoptic_seq_flicker_27715321`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/5aoppsyb) | finished | 27715321 | ✅ online values match the reported results |
-| [`videomt_lars_vitb_27716592`](https://wandb.ai/riccardo-campanella/videomt/runs/lars_vitb_27716592) | failed | 27716592 | failed attempt |
-| [`videomt_lars_vitb_27718883`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27718883) | failed | 27718883 | failed attempt |
-| [`videomt_lars_vitb_27760828`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27760828) | finished | 27760828 | ab07 documented bad run (NUM_CLASSES mismatch, AP 0.000) |
-| [`videomt_lars_vitb_27769294`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27769294) | crashed | 27769294 | crashed attempt |
-| [`videomt_lars_vitb_27769704`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27769704) | crashed | 27769704 | crashed attempt |
-| [`videomt_lars_vitb_27769861`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27769861) | finished | 27769861 | ab07 documented bad run (no mask supervision, AP 0.000) |
-| [`videomt_lars_vitb_27772987`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27772987) | finished | 27772987 | ab07 VidEoMT 4k training run behind AP 0.016 / flicker 0.612 |
-| [`videomt_lars_eval_27775358`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27775358) | finished | 27775358 | ab07 eval of 4k ckpt (AP 0.016); W&B summary empty |
-| [`videomt_lars_vitb_16k_27776810`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_16k_27776810) | finished | 27776810 | ab07 VidEoMT 16k training run (in-train AP 0.010) |
-| [`videomt_seq_flicker_27776809`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/wzpe700z) | finished | 27776809 | ✅ online values match the reported results |
-| [`videomt_lars_eval_27806956`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/eval_27806956) | finished | 27806956 | ab07 eval of 16k ckpt (AP 0.009); W&B summary empty |
-| [`videomt_seq_flicker_27807251`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/r4ugnnd5) | finished | 27807251 | ✅ online values match the reported results |
-| [`ab07_keyframe_ap_27772987`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27772987) | finished | 27772987 | ✅ online values match the reported results |
-| [`ab07_keyframe_ap_27775358`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27775358) | finished | 27775358 | ✅ online values match the reported results |
-| [`ab07_keyframe_ap_27806956`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27806956) | finished | 27806956 | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`eomt_seq_flicker_27711595`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/g1bfz3nn) | finished | 27711595 | one logged step | ✅ online values match the reported results |
+| [`eomt_panoptic_seq_flicker_27715321`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/5aoppsyb) | finished | 27715321 | one logged step | ✅ online values match the reported results |
+| `videomt_lars_vitb_27716592` (no link: nothing logged) | failed | 27716592 | nothing logged | failed attempt |
+| [`videomt_lars_vitb_27718883`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27718883) | failed | 27718883 | full history (15 steps) | failed attempt |
+| [`videomt_lars_vitb_27760828`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27760828) | finished | 27760828 | full history (3065 steps) | ab07 documented bad run (NUM_CLASSES mismatch, AP 0.000) |
+| [`videomt_lars_vitb_27769294`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27769294) | crashed | 27769294 | full history (150 steps) | crashed attempt |
+| [`videomt_lars_vitb_27769704`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27769704) | crashed | 27769704 | full history (75 steps) | crashed attempt |
+| [`videomt_lars_vitb_27769861`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27769861) | finished | 27769861 | full history (3065 steps) | ab07 documented bad run (no mask supervision, AP 0.000) |
+| [`videomt_lars_vitb_27772987`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_27772987) | finished | 27772987 | full history (3065 steps) | ✅ online values match the reported results |
+| `videomt_lars_eval_27775358` (no link: nothing logged) | finished | 27775358 | nothing logged; values in [`ab07_keyframe_ap_27775358`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27775358) | ab07 eval of 4k ckpt (AP 0.016); W&B summary empty |
+| [`videomt_lars_vitb_16k_27776810`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_vitb_16k_27776810) | finished | 27776810 | full history (12128 steps) | ✅ online values match the reported results |
+| [`videomt_seq_flicker_27776809`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/wzpe700z) | finished | 27776809 | one logged step | ✅ online values match the reported results |
+| `videomt_lars_eval_27806956` (no link: nothing logged) | finished | 27806956 | nothing logged; values in [`ab07_keyframe_ap_27806956`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27806956) | ab07 eval of 16k ckpt (AP 0.009); W&B summary empty |
+| [`videomt_seq_flicker_27807251`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/r4ugnnd5) | finished | 27807251 | one logged step | ✅ online values match the reported results |
+| [`ab07_keyframe_ap_27772987`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27772987) | finished | 27772987 | one logged step + evidence files | ✅ online values match the reported results |
+| [`ab07_keyframe_ap_27775358`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27775358) | finished | 27775358 | one logged step + evidence files | ✅ online values match the reported results |
+| [`ab07_keyframe_ap_27806956`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab07_keyframe_ap_27806956) | finished | 27806956 | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

@@ -1,5 +1,5 @@
 {
-  "_doc": "Hand-curated map from each reported result to the W&B run that logged it, used by water-debris-seg/scripts/wandb_audit.py. 'registry_id' entries take reference values from RESCORE.json (legacy = pre-2026-10-13 scorer, new = pycocotools) and the W&B run id from box_eval_registry.json. 'checks' entries compare an online summary key with local files: kind rescore | json (key path) | log (regex group 1). tol is absolute. 'expect' states what the audit should find so a change in W&B or in the files is flagged. supporting_runs lists runs that back a documented result or a documented invalid run but have no directly comparable logged value. audit_entries / rescore_<registry_id> runs are the 2026-10-13 correction runs (group audit_2026-10-13); corrected_by links a superseded run to its correction; closed_gaps records what was previously missing from W&B.",
+  "_doc": "Hand-curated map from each reported result to the W&B run that logged it, used by water-debris-seg/scripts/wandb_audit.py. 'registry_id' entries take reference values from RESCORE.json (legacy = pre-2026-10-13 scorer, new = pycocotools) and the W&B run id from box_eval_registry.json. 'checks' entries compare an online summary key with local files: kind rescore | json (key path) | log (regex group 1). tol is absolute. 'expect' states what the audit should find so a change in W&B or in the files is flagged. supporting_runs lists runs that back a documented result or a documented invalid run but have no directly comparable logged value. audit_entries / rescore_<registry_id> runs are the 2026-10-13 correction runs (group audit_2026-10-13); corrected_by links a superseded run to its correction; closed_gaps records what was previously missing from W&B. data_held_by: runs that logged nothing, mapped to the run that now holds their numbers.",
   "box_metrics": [
     "mAP",
     "AP50",
@@ -334,17 +334,63 @@
           }
         }
       ]
+    },
+    {
+      "id": "ab07_train_16k_inrain_ap",
+      "ablation": "07",
+      "what": "VidEoMT 16k training run: final in-train keyframe AP / APm (units as logged, percent)",
+      "wandb_run": "lars_vitb_16k_27776810",
+      "slurm": "27776810",
+      "checks": [
+        {
+          "online_key": "segm/AP",
+          "label": "AP (%) final eval",
+          "tol": 0.001,
+          "current": {
+            "kind": "log",
+            "file": "ablations/07_videomt_temporal/sources/videomt_train_16k_27776810.log",
+            "regex": "copypaste: ([0-9.]+),([0-9.]+),([0-9.]+),([0-9.]+),([0-9.]+),",
+            "last": true,
+            "group": 1
+          }
+        },
+        {
+          "online_key": "segm/APm",
+          "label": "APm (%) final eval",
+          "tol": 0.001,
+          "current": {
+            "kind": "log",
+            "file": "ablations/07_videomt_temporal/sources/videomt_train_16k_27776810.log",
+            "regex": "copypaste: ([0-9.]+),([0-9.]+),([0-9.]+),([0-9.]+),([0-9.]+),",
+            "last": true,
+            "group": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "ab07_train_4k_upstream_ap",
+      "ablation": "07",
+      "what": "VidEoMT 4k training run: upstream VIS AP (0 = documented metric artefact)",
+      "wandb_run": "lars_vitb_27772987",
+      "slurm": "27772987",
+      "checks": [
+        {
+          "online_key": "segm/AP",
+          "label": "AP (%) final eval",
+          "tol": 0.001,
+          "current": {
+            "kind": "log",
+            "file": "ablations/07_videomt_temporal/sources/videomt_train_27772987.log",
+            "regex": "copypaste: ([0-9.]+),([0-9.]+),([0-9.]+),([0-9.]+),([0-9.]+),",
+            "last": true,
+            "group": 1
+          }
+        }
+      ]
     }
   ],
   "supporting_runs": [
-    {
-      "run": "lars_vitb_27772987",
-      "role": "ab07 VidEoMT 4k training run behind AP 0.016 / flicker 0.612"
-    },
-    {
-      "run": "lars_vitb_16k_27776810",
-      "role": "ab07 VidEoMT 16k training run (in-train AP 0.010)"
-    },
     {
       "run": "eval_27775358",
       "role": "ab07 eval of 4k ckpt (AP 0.016); W&B summary empty"
@@ -580,5 +626,9 @@
       "now_in_wandb": "qualitative_error_analysis"
     }
   ],
-  "not_in_wandb": []
+  "not_in_wandb": [],
+  "data_held_by": {
+    "eval_27775358": "ab07_keyframe_ap_27775358",
+    "eval_27806956": "ab07_keyframe_ap_27806956"
+  }
 }

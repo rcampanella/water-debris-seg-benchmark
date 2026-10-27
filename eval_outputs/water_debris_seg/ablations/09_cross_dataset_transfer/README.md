@@ -1,10 +1,12 @@
 # Ablation 09 — Cross-dataset transfer (LaRS-trained → box sets)
 
+> **Role in the benchmark (2026-10-23).** **Cross-domain row of the main comparison table** (LaRS → FloW / CANSURF). The panoptic values here are superseded by [fix 1b](../../fairness_fixes/FIX1_LARS_SPLIT_METRICS.md#5-consequence-for-flow-and-cansurf-ablations-04-05-09) (real confidences; debris-only classes Float, Other; class-agnostic as reference). The semantic path is dropped with ablation 02. The YOLO counterpart (LaRS-trained YOLOv11s on FloW / CANSURF) comes from [fix 2](../../fairness_fixes/FIX2_YOLO_ON_LARS.md).
+
 **Question.** After **LaRS-only** fine-tuning, does maritime panoptic knowledge transfer to **FloW / CANSURF** via mask→box mAP?
 
 **Expected outcome.** Better than zero-shot on semantic “obstacle” alignment; still likely **below** YOLO trained on target domain (09 vs 08).
 
-**Hard rule.** Checkpoint from ablations 02–03 only; **eval only** on box sets.
+**Rule for this ablation** (benchmark-wide rule revised 2026-10-23, see the banner). Checkpoint from ablations 02–03 only; **eval only** on box sets.
 
 ## Setup
 
@@ -20,8 +22,8 @@ Scored with `eval_coco_bbox.py` (pycocotools) on 2026-10-13; audit trail in [`RE
 | Ckpt | FloW mAP | FloW AP_small | FloW AR100 | CANSURF mAP | CANSURF AR100 | Source |
 |---|---|---|---|---|---|---|
 | COCO zero-shot (baseline) | 0.034 | 0.012 | 0.093 | 0.095 | 0.140 | [04](../04_flow_mask2box/README.md), [05](../05_cansurf_small_object/README.md) |
-| LaRS semantic (obstacle CC→box) | **0.082** | **0.044** | **0.281** | 0.063 | **0.173** | FloW **27767594** / W&B `hd5bs8yz` ([`metrics`](sources/eomt_lars_semantic_flow_preds_coco.metrics.json)); CANSURF `vquavnrm` ([`metrics`](sources/eomt_lars_semantic_cansurf_aligned_gt.metrics.json)) |
-| LaRS semantic + **min256 px** CC filter | — | — | — | 0.078 | 0.173 | job **27711596**, W&B `hxuvlvcn` ([`metrics`](sources/eomt_lars_semantic_cansurf_min256_preds.metrics.json)) |
+| LaRS semantic (obstacle CC→box) | **0.082** | **0.044** | **0.281** | 0.063 | **0.173** | FloW **27767594**: W&B corrected [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic), original [`hd5bs8yz`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz) shows the pre-fix 0.133 ([`metrics`](sources/eomt_lars_semantic_flow_preds_coco.metrics.json)); CANSURF: corrected [`rescore_cansurf_eomt_semantic_aligned`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_aligned), original [`vquavnrm`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm) shows the pre-fix 0.085 ([`metrics`](sources/eomt_lars_semantic_cansurf_aligned_gt.metrics.json)) |
+| LaRS semantic + **min256 px** CC filter | — | — | — | 0.078 | 0.173 | job **27711596**: W&B corrected [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256), original [`hxuvlvcn`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn) shows the pre-fix 0.108 ([`metrics`](sources/eomt_lars_semantic_cansurf_min256_preds.metrics.json)) |
 | LaRS panoptic | 0.014 | 0.007 | 0.051 | 0.034 | 0.047 | [04](../04_flow_mask2box/README.md), [05](../05_cansurf_small_object/README.md) |
 | *Ceiling:* YOLOv11n in-domain ([08](../08_specialized_yolo/README.md)) | 0.390 | 0.249 | 0.491 | 0.857 | 0.870 | ab08 |
 
@@ -61,14 +63,14 @@ On **CANSURF**, neither LaRS checkpoint beats COCO zero-shot on mAP (0.095); sem
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_lars_semantic_cansurf_27660924`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm) | finished | 27660924 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic) |
-| [`eomt_semantic_cansurf_min256_27711596`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn) | finished | 27711596 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256) |
-| [`eomt_lars_semantic_flow_27767594`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz) | finished | 27767594 | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic) |
-| [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_eomt_semantic_aligned`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_aligned) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256) | finished | — | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`eomt_lars_semantic_cansurf_27660924`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/vquavnrm) | finished | 27660924 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic) |
+| [`eomt_semantic_cansurf_min256_27711596`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hxuvlvcn) | finished | 27711596 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256) |
+| [`eomt_lars_semantic_flow_27767594`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/hd5bs8yz) | finished | 27767594 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic) |
+| [`rescore_flow_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_eomt_semantic) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_semantic`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_semantic_aligned`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_aligned) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_eomt_semantic_min256`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_eomt_semantic_min256) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

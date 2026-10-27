@@ -1,0 +1,23 @@
+{
+  "dataset": "flow",
+  "held_out_rule": "ablation 08 seeded held-out list (flow_val_split.txt)",
+  "root": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/yolo_splits/flow",
+  "splits": {
+    "train90": {
+      "images": 1080,
+      "boxes": 2904
+    },
+    "held10": {
+      "images": 120,
+      "boxes": 344
+    },
+    "train_all": {
+      "images": 1200,
+      "boxes": 3248
+    },
+    "test": {
+      "images": 800,
+      "boxes": 2024
+    }
+  }
+}

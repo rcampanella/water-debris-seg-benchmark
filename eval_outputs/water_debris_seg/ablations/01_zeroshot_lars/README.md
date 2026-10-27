@@ -1,5 +1,7 @@
 # Ablation 01 — EoMT zero-shot on LaRS (+ box-set mask→box)
 
+> **Role in the benchmark (2026-10-23).** **Main comparison table: EoMT zero-shot row.** LaRS PQ 0.298 stays (also to be reported with the tightened COCO → LaRS mapping, [COVERAGE_CLASSES.md § 6](../../fairness_fixes/COVERAGE_CLASSES.md#6-classes-under-the-agreed-decisions-2026-10-23)); LaRS mIoU and box AP are added by [fix 1](../../fairness_fixes/FIX1_LARS_SPLIT_METRICS.md). The zero-shot FloW / CANSURF values (ablations 04, 05) are superseded by fix 1b.
+
 > **Re-run 2026-10-13 (job 28011322).** The original LaRS PQ ≈ 0.0014 came from a GT bridge (`taxonomy.py`) that pointed at the wrong COCO ids (boats → *spoon*, buoys/floats → *knife*, water → *food-other*, sky → *paper*), so correct predictions could not match. Ablation 01 is now scored with **prediction-side remapping**: GT stays native LaRS 11-class; frozen COCO-133 predictions are mapped many-to-one (`water-debris-seg/configs/coco133_to_lars_pred_map.json`). The script reproduces EoMT's own validate for ab03 (0.3946 vs 0.3945), so 01 and 03 are now in the **same label space**. Sections below that discuss 0.0014 are kept for the record and marked superseded.
 
 **Question.** How well do **unfine-tuned** COCO/ADE EoMT weights transfer to maritime panoptic/semantic labels and to debris-like detection on box-only sets?
@@ -22,7 +24,7 @@ This is **rung 2 of the EoMT eval ladder** (after smoke): a frozen, off-the-shel
 | [08 YOLO](../08_specialized_yolo/README.md) | In-domain box detector | Specialized ceiling on CANSURF/FloW |
 | [09 transfer](../09_cross_dataset_transfer/README.md) | LaRS-FT weights on box sets | Separates “generic VFM” vs “LaRS-adapted VFM” |
 
-**Benchmark relevance.** The spec’s hard rule is: train masks **only on LaRS**; treat FloW/CANSURF as **eval-only** detection. Ablation 01 is the only run that uses **neither** LaRS training **nor** box-set training. If a generic COCO panoptic checkpoint already segmented water-surface debris well, LaRS fine-tuning (02/03) and specialized YOLO (08) would be unnecessary. The measured near-zero PQ and the ~6–12× CANSURF mAP gap vs YOLO justify those later stages.
+**Benchmark relevance.** When this ablation was designed, the spec's hard rule was: train masks **only on LaRS**; treat FloW/CANSURF as **eval-only** detection (revised 2026-10-23: EoMT now also trains on FloW/CANSURF with box-prompted SAM masks, fix 3). Ablation 01 is the only run that uses **neither** LaRS training **nor** box-set training. If a generic COCO panoptic checkpoint already segmented water-surface debris well, LaRS fine-tuning (02/03) and specialized YOLO (08) would be unnecessary. The measured near-zero PQ and the ~6–12× CANSURF mAP gap vs YOLO justify those later stages.
 
 ### Inputs
 
@@ -172,7 +174,7 @@ Shared scripts: `eval_eomt_cansurf_mask2box.py`, `eval_coco_bbox.py`, `masks_to_
 
 LaRS panoptic categories (ID → name): Static Obstacle (1), Water (3), Sky (5); things: Boat/ship (11), Row boats (12), Paddle board (13), Buoy (14), Swimmer (15), Animal (16), Float (17), Other (19).
 
-**Hard rule reminder.** LaRS is the only legal **mask-training** set in the benchmark, but this ablation does not train even there. FloW/CANSURF must not be used to `fit` EoMT (boxes are loose on water: glare, ripples, partial submersion).
+**Hard rule reminder (rule until 2026-10-23).** LaRS was the only legal **mask-training** set in the benchmark, but this ablation does not train even there. FloW/CANSURF must not be used to `fit` EoMT (boxes are loose on water: glare, ripples, partial submersion).
 
 Scale (from spec): LaRS 4000+ keyframes; FloW-Img 2000 images / 5271 boxes; CANSURF ~7.2k raw YOLO images.
 
@@ -236,9 +238,9 @@ Zero-shot COCO EoMT transfers **well on stuff and boats** (PQ 0.298; water 0.98,
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_base640_2x_lars_val_27600047`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/txjoa9ef) | finished | 27600047 | ⚠️ online holds pre-fix (superseded) values → corrected: [`ab01_zeroshot_lars_pq_predremap`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap) |
-| [`ab01_zeroshot_lars_pq_predremap`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap) | finished | — | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`eomt_base640_2x_lars_val_27600047`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/txjoa9ef) | finished | 27600047 | one logged step | ⚠️ online holds pre-fix (superseded) values → corrected: [`ab01_zeroshot_lars_pq_predremap`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap) |
+| [`ab01_zeroshot_lars_pq_predremap`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab01_zeroshot_lars_pq_predremap) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

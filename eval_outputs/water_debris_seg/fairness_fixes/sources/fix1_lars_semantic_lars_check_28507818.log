@@ -1,0 +1,16 @@
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+50/198
+100/198
+150/198
+{
+ "mIoU": {
+  "mean": 0.9804905284652072,
+  "per_class": {
+   "obstacle": 0.96566867933732,
+   "water": 0.9892029967857923,
+   "sky": 0.9865999092725091
+  },
+  "void_pixel_share": 0.0,
+  "gt": "LaRS val semantic_masks (0 obstacle, 1 water, 2 sky, 255 ignored)"
+ }
+}

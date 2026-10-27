@@ -1,0 +1,9 @@
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+Traceback (most recent call last):
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_sam_panoptic.py", line 248, in <module>
+    main()
+    ~~~~^^
+  File "/home/rcampanella/projects/water-debris-seg-benchmark/water-debris-seg/scripts/eval_sam_panoptic.py", line 198, in main
+    assert len(masks) == len(dets), f"SAM returned {len(masks)} masks for {len(dets)} boxes"
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: SAM returned 10 masks for 11 boxes

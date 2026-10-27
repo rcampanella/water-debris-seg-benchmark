@@ -7,12 +7,12 @@
     },
     "cansurf_val_aligned": {
       "path": "ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
-      "images": "/scratch-shared/rcampanella/water-debris-seg/data/cansurf/val/images",
+      "images": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/cansurf_home/val/images",
       "note": "12 corrupt val images dropped; headline CANSURF GT"
     },
     "cansurf_val_original": {
       "path": "ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco.json",
-      "images": "/scratch-shared/rcampanella/water-debris-seg/data/cansurf/val/images"
+      "images": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/cansurf_home/val/images"
     }
   },
   "runs": [

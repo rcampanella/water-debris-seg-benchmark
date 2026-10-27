@@ -1,5 +1,7 @@
 # Ablation 08 — YOLOv11 specialized baselines
 
+> **Role in the benchmark (2026-10-23).** **Reference, not in the main comparison table.** These results are **YOLOv11n** with our settings (50 epochs, batch 16). The CANSURF paper trains **YOLOv11s** (`yolo11s.pt`, 150 epochs, batch 64, [`train.py`](https://github.com/ZaidAljundiHW2/CANSURF)), so "CANSURF paper recipe" below refers to image size only. The comparison uses YOLOv11s trained on FloW and CANSURF with the held-out protocol ([fix 3](../../fairness_fixes/FIX3_SAM_BOX_DATASETS.md)), which also removes this page's CANSURF checkpoint selection on the scored split.
+
 **Question.** What is the **in-domain detection ceiling** on box-native datasets vs general mask transformers?
 
 **Expected outcome.** YOLO **beats** EoMT mask→box on CANSURF/FloW; matches or exceeds cited paper baselines where we retrain.
@@ -56,13 +58,13 @@ YOLO trained in-domain is the ceiling on both box sets: **0.857** mAP on CANSURF
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`cansurf_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/cansurf_train_20261006_104548) | finished | — | ✅ online values match the reported results |
-| [`yolo11n_cansurf_val_wandb_27660923`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/n3vuqqbi) | finished | 27660923 | ✅ online values match the reported results |
-| [`flow_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258) | finished | — | ❌ online value is a different split than the reported result → corrected: [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split) |
-| [`rescore_flow_yolo11n`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_yolo11n) | finished | — | ✅ online values match the reported results |
-| [`rescore_cansurf_yolo11n`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_yolo11n) | finished | — | ✅ online values match the reported results |
-| [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split) | finished | — | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`cansurf_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/cansurf_train_20261006_104548) | finished | — | full history (53 steps) | ✅ online values match the reported results |
+| [`yolo11n_cansurf_val_wandb_27660923`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/n3vuqqbi) | finished | 27660923 | one logged step | ✅ online values match the reported results |
+| [`flow_train`](https://wandb.ai/riccardo-campanella/-home-rcampanella-projects-water-debris-seg-benchmark-eval_outputs-water_debris_seg-ablations-08_specialized_yolo/runs/flow_train_20261012_153258) | finished | — | full history (53 steps) | ❌ online value is a different split than the reported result → corrected: [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split) |
+| [`rescore_flow_yolo11n`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_flow_yolo11n) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`rescore_cansurf_yolo11n`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/rescore_cansurf_yolo11n) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
+| [`ab08_yolo_flow_test_split`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab08_yolo_flow_test_split) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

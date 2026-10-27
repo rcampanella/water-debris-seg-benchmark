@@ -1,10 +1,12 @@
 # Ablation 03 — EoMT fine-tune LaRS panoptic (11-class)
 
+> **Role in the benchmark (2026-10-23).** **Main comparison table: the EoMT row** (LaRS PQ 0.395). [Fix 1](../../fairness_fixes/FIX1_LARS_SPLIT_METRICS.md) adds LaRS mIoU, box AP and an EoMT + SAM control row; fix 1b re-scores its FloW / CANSURF boxes with real confidences and debris-only classes (Float, Other). [Fix 4](../../fairness_fixes/FIX4_EOMT_LORA.md) reruns full fine-tuning with the held-out protocol and adds a LoRA arm. Note: this run used COCO's attention-mask annealing schedule (start step 14,782) for 7,812 steps, so masked attention stayed fully on in training and inference (consistent, but not EoMT's mask-free inference).
+
 **Question.** Can panoptic fine-tuning on LaRS separate **debris-like things** (Float, Other) from **dynamic obstacles** (Boat, Buoy, Swimmer)?
 
 **Expected outcome.** PQ **↑** vs ablation 01; thing AP on Buoy/Boat better than zero-shot; still may trail YOLO on tiny cans (cross-dataset in 09).
 
-**Hard rule.** LaRS panoptic train **only**.
+**Rule for this ablation** (benchmark-wide rule revised 2026-10-23, see the banner). LaRS panoptic train **only**.
 
 ## Setup
 
@@ -43,11 +45,11 @@
 
 Online runs for this ablation (fetched 2026-10-14); value-by-value comparison with the reported results: [`WANDB_AUDIT.md`](../../WANDB_AUDIT.md).
 
-| Run | State | Slurm | Audit |
-|---|---|---|---|
-| [`eomt_lars_panoptic_ft_27607195`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/67kk33hk) | finished | 27607195 | ✅ online values match the reported results |
-| [`eomt_lars_panoptic_val_27648289`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qmi79nsh) | finished | 27648289 | ✅ online values match the reported results |
-| [`eomt_lars_panoptic_val_27660922`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/xcl7zvm8) | finished | 27660922 | ✅ online values match the reported results |
-| [`ab03_pq_script_check`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab03_pq_script_check) | finished | — | ✅ online values match the reported results |
+| Run | State | Slurm | Data on W&B | Audit |
+|---|---|---|---|---|
+| [`eomt_lars_panoptic_ft_27607195`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/67kk33hk) | finished | 27607195 | full history (180 steps) | ✅ online values match the reported results |
+| [`eomt_lars_panoptic_val_27648289`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/qmi79nsh) | finished | 27648289 | one logged step | ✅ online values match the reported results |
+| [`eomt_lars_panoptic_val_27660922`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/xcl7zvm8) | finished | 27660922 | one logged step | ✅ online values match the reported results |
+| [`ab03_pq_script_check`](https://wandb.ai/riccardo-campanella/water-debris-seg/runs/ab03_pq_script_check) | finished | — | one logged step + evidence files | ✅ online values match the reported results |
 
 <!-- wandb-links:end -->

@@ -1,0 +1,23 @@
+{
+  "dataset": "cansurf",
+  "held_out_rule": "10% of 3338 sequence groups (Roboflow suffix and trailing frame number removed), seed 0",
+  "root": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/yolo_splits/cansurf",
+  "splits": {
+    "train90": {
+      "images": 4553,
+      "boxes": 16706
+    },
+    "held10": {
+      "images": 397,
+      "boxes": 1670
+    },
+    "train_all": {
+      "images": 4950,
+      "boxes": 18376
+    },
+    "test": {
+      "images": 2221,
+      "boxes": 11557
+    }
+  }
+}

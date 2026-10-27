@@ -1,0 +1,49 @@
+200/4950
+400/4950
+600/4950
+800/4950
+1000/4950
+1200/4950
+1400/4950
+1600/4950
+1800/4950
+2000/4950
+2200/4950
+2400/4950
+2600/4950
+2800/4950
+3000/4950
+3200/4950
+3400/4950
+3600/4950
+3800/4950
+4000/4950
+4200/4950
+4400/4950
+4600/4950
+4800/4950
+{
+ "dataset": "cansurf",
+ "images": 4950,
+ "masks": 18376,
+ "box_iou_median": {
+  "all": 0.8183593136431537,
+  "small": 0.6944479167013893,
+  "medium": 0.7050012555037364,
+  "large": 0.9504633677929716
+ },
+ "box_iou_share_below_0.5": 0.011047017849368741,
+ "n_by_size": {
+  "small": 4812,
+  "medium": 1492,
+  "large": 12072
+ },
+ "empty_share": 0.00038093164997823247,
+ "tiny_share": 0.0002720940356987375,
+ "stop_rules": {
+  "empty_plus_tiny_le_5pct": true,
+  "renders_reviewed": "pending manual review of the 20 renders"
+ },
+ "pass_automatic": true,
+ "box_iou_is_ceiling_not_stop_rule": true
+}

@@ -1,0 +1,21 @@
+{
+  "model": "lars_semantic",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/ab02_semantic_mk2w7dr8/epoch=30-step=2356.ckpt",
+  "ckpt_sha256": "8b1f33990959f463d005228fbd8d963a7d0a410ed21537853779728a1e4273e0",
+  "dataset": "lars",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "mIoU": {
+    "mean": 0.9804905284652072,
+    "per_class": {
+      "obstacle": 0.96566867933732,
+      "water": 0.9892029967857923,
+      "sky": 0.9865999092725091
+    },
+    "void_pixel_share": 0.0,
+    "gt": "LaRS val semantic_masks (0 obstacle, 1 water, 2 sky, 255 ignored)"
+  },
+  "n_images": 198
+}

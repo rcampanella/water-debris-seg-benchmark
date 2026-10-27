@@ -1,0 +1,50 @@
+{
+  "model": "lars_panoptic",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/ab03_panoptic_67kk33hk/epoch=11-step=7812.ckpt",
+  "ckpt_sha256": "a580345fd6fc3da7deae577aff59e9393d283fd59c7e442ee6edf0654bb550f2",
+  "dataset": "cansurf",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "n_images": 2209,
+  "debris_classes": [
+    "Float",
+    "Other"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.0750423223505665,
+      "AP50": 0.17657307381148196,
+      "AP75": 0.04548495390351583,
+      "AP_small": 0.0024745494742167257,
+      "AP_medium": 0.0924016632496234,
+      "AP_large": 0.09064027497949462,
+      "AR1": 0.0575221238938053,
+      "AR10": 0.233697726878362,
+      "AR100": 0.3307391983342009,
+      "AR_small": 0.1526315789473684,
+      "AR_medium": 0.28982630272952853,
+      "AR_large": 0.3359258180405865
+    },
+    "class_agnostic": {
+      "mAP": 0.11553555203521514,
+      "AP50": 0.27012956435034147,
+      "AP75": 0.07896442501356961,
+      "AP_small": 0.003930734135690463,
+      "AP_medium": 0.1194252654231708,
+      "AP_large": 0.1319027862568101,
+      "AR1": 0.06691827173347215,
+      "AR10": 0.24353635259413497,
+      "AR100": 0.38776678813118165,
+      "AR_small": 0.1736842105263158,
+      "AR_medium": 0.3070306038047973,
+      "AR_large": 0.3976890960287407
+    },
+    "n_dets_debris": 64732,
+    "n_dets_agnostic": 178059,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_lars_panoptic_cansurf_28511595.preds.json"
+  }
+}

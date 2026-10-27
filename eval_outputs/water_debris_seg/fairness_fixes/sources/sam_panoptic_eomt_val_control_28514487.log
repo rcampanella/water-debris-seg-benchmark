@@ -1,0 +1,50 @@
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+25/198
+50/198
+75/198
+100/198
+125/198
+150/198
+175/198
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: The ``compute`` method of metric PanopticQuality was called before the ``update`` method which may lead to errors, as metric states have not yet been updated.
+  warnings.warn(*args, **kwargs)
+{
+ "by_threshold": {
+  "eomt_keep_rule": {
+   "PQ": 0.3431197815970743,
+   "PQ_things": 0.2148405197353561,
+   "PQ_stuff": 0.6851978132283227,
+   "PQ_per_class": {
+    "Boat/ship": 0.4376741331130335,
+    "Row boats": 0.34807437658309937,
+    "Paddle board": 0.4124750131512158,
+    "Buoy": 0.1790291772871263,
+    "Swimmer": 0.21260626605365118,
+    "Animal": 0.035677120468317725,
+    "Float": 0.0,
+    "Other": 0.09318807122640482,
+    "Static Obstacle": 0.3988712157087235,
+    "Water": 0.7494766302646165,
+    "Sky": 0.9072455937116283
+   },
+   "mIoU": 0.7014680144562938,
+   "IoU_per_class": {
+    "obstacle": 0.43284243135884026,
+    "water": 0.7214554834783892,
+    "sky": 0.950106128531652
+   }
+  }
+ },
+ "pilot_region_iou": {
+  "Water": {
+   "median": 0.9697113854946878,
+   "n_images": 198,
+   "share_below_0.8": 0.010101010101010102
+  },
+  "Sky": {
+   "median": 0.9755965358940885,
+   "n_images": 176,
+   "share_below_0.8": 0.028409090909090908
+  }
+ }
+}

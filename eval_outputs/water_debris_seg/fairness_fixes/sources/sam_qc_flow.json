@@ -1,0 +1,47 @@
+{
+  "dataset": "flow",
+  "images": 1200,
+  "masks": 3248,
+  "box_iou_median": {
+    "all": 0.7764180596212685,
+    "small": 0.7170807300044635,
+    "medium": 0.8305678260853433,
+    "large": 0.9005848334000326
+  },
+  "box_iou_share_below_0.5": 0.0166256157635468,
+  "n_by_size": {
+    "small": 1796,
+    "medium": 1264,
+    "large": 188
+  },
+  "empty_share": 0.0,
+  "tiny_share": 0.0,
+  "stop_rules": {
+    "empty_plus_tiny_le_5pct": true,
+    "renders_reviewed": "pending manual review of the 20 renders"
+  },
+  "pass_automatic": true,
+  "box_iou_is_ceiling_not_stop_rule": true,
+  "renders": [
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_00.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_01.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_02.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_03.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_04.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_05.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_06.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_07.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_08.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_09.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_10.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_11.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_12.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_13.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_14.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_15.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_16.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_17.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_18.png",
+    "eval_outputs/water_debris_seg/fairness_fixes/sam_qc/flow_19.png"
+  ]
+}
