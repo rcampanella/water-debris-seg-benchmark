@@ -1,0 +1,49 @@
+{
+  "model": "box_instance",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_flow_full_e24_lr5_stageB/water-debris-seg/55uhn5tt/checkpoints/epoch=23-step=7200.ckpt",
+  "ckpt_sha256": "7b24adde22ce9c9169ebbb79175d4a38100e332cfe269f79e210277e06274815",
+  "dataset": "flow",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "n_images": 800,
+  "debris_classes": [
+    "flow"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.09978228285229994,
+      "AP50": 0.3144691154430246,
+      "AP75": 0.036667333672884245,
+      "AP_small": 0.04156948344134568,
+      "AP_medium": 0.1964066031119923,
+      "AP_large": 0.2211743618512691,
+      "AR1": 0.11042490118577078,
+      "AR10": 0.20449604743083008,
+      "AR100": 0.24214426877470357,
+      "AR_small": 0.12969140950792327,
+      "AR_medium": 0.37890295358649795,
+      "AR_large": 0.5719298245614035
+    },
+    "class_agnostic": {
+      "mAP": 0.09978228285229994,
+      "AP50": 0.3144691154430246,
+      "AP75": 0.036667333672884245,
+      "AP_small": 0.04156948344134568,
+      "AP_medium": 0.1964066031119923,
+      "AP_large": 0.2211743618512691,
+      "AR1": 0.11042490118577078,
+      "AR10": 0.20449604743083008,
+      "AR100": 0.24214426877470357,
+      "AR_small": 0.12969140950792327,
+      "AR_medium": 0.37890295358649795,
+      "AR_large": 0.5719298245614035
+    },
+    "n_dets_debris": 74840,
+    "n_dets_agnostic": 74840,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_box_instance_flow_eomt_full_e24_lr5_28615366.preds.json"
+  }
+}

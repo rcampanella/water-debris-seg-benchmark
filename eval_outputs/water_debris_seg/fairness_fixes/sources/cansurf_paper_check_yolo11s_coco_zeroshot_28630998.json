@@ -1,0 +1,35 @@
+{
+  "weights": "data/water_debris/checkpoints/yolo/yolo11s.pt",
+  "ours": "eval_outputs/water_debris_seg/fairness_fixes/sources/cansurf_paper_yolo11s_coco_zeroshot_28630998.json",
+  "variant": "paper_class_id0",
+  "paper_script": "data/water_debris/third_party/cansurf_benchmark/yolov11_benchmark.py",
+  "n_images": 2209,
+  "paper_script_result": {
+    "class": "person",
+    "TP": 246,
+    "FP": 6004,
+    "FN": 115014,
+    "precision": 0.03936,
+    "recall": 0.0021343050494534097,
+    "f1": 0.004049049460949717,
+    "mean_iou": 0.698150634765625
+  },
+  "ours_result": {
+    "precision": 0.03936,
+    "recall": 0.0021343050494534097,
+    "f1": 0.004049049460949717,
+    "TP": 246,
+    "FP": 6004,
+    "FN": 115014,
+    "mean_iou": 0.6981614934444346
+  },
+  "ours_minus_paper": {
+    "TP": 0,
+    "FP": 0,
+    "FN": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "mean_iou": 1.0858678809566591e-05
+  }
+}

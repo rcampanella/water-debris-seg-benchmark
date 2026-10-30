@@ -1,0 +1,35 @@
+{
+  "weights": "eval_outputs/water_debris_seg/fairness_fixes/runs/runs/detect/water-debris-seg/cansurf_full_11s_stageB/weights/last.pt",
+  "ours": "eval_outputs/water_debris_seg/fairness_fixes/sources/cansurf_paper_yolo11s_cansurf_28630629.json",
+  "variant": "class_agnostic",
+  "paper_script": "data/water_debris/third_party/cansurf_benchmark/yolov11_benchmark.py",
+  "n_images": 2209,
+  "paper_script_result": {
+    "class": "debris",
+    "TP": 98024,
+    "FP": 12916,
+    "FN": 17236,
+    "precision": 0.883576708130521,
+    "recall": 0.850459829949679,
+    "f1": 0.8667020335985852,
+    "mean_iou": 0.9602068662643433
+  },
+  "ours_result": {
+    "precision": 0.8837893789378938,
+    "recall": 0.8518913760194343,
+    "f1": 0.8675472698356601,
+    "TP": 98189,
+    "FP": 12911,
+    "FN": 17071,
+    "mean_iou": 0.960061280405916
+  },
+  "ours_minus_paper": {
+    "TP": 165,
+    "FP": -5,
+    "FN": -165,
+    "precision": 0.00021267080737275013,
+    "recall": 0.001431546069755374,
+    "f1": 0.0008452362370748867,
+    "mean_iou": -0.00014558585842727734
+  }
+}

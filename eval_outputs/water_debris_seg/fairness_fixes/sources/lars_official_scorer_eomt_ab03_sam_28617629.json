@@ -1,0 +1,51 @@
+{
+  "source": "eomt",
+  "masks": "SAM",
+  "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/ab03_panoptic_67kk33hk/epoch=11-step=7812.ckpt",
+  "weights_sha256": "a580345fd6fc3da7deae577aff59e9393d283fd59c7e442ee6edf0654bb550f2",
+  "split": "val",
+  "n_images": 198,
+  "sam": {
+    "weights": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/sam/sam2.1_l.pt",
+    "sha256": "ab7e1ac9cb9f6eb3bcf197ece044f06a707ec49129361a2b47e93e1db6989efd"
+  },
+  "merge_rule": "objects (score desc) > Static Obstacle > Water > Sky; drop segment if < 80% of its mask is kept",
+  "by_threshold": {
+    "eomt_keep_rule": {
+      "PQ": 0.3431197815970743,
+      "PQ_things": 0.2148405197353561,
+      "PQ_stuff": 0.6851978132283227,
+      "PQ_per_class": {
+        "Boat/ship": 0.4376741331130335,
+        "Row boats": 0.34807437658309937,
+        "Paddle board": 0.4124750131512158,
+        "Buoy": 0.1790291772871263,
+        "Swimmer": 0.21260626605365118,
+        "Animal": 0.035677120468317725,
+        "Float": 0.0,
+        "Other": 0.09318807122640482,
+        "Static Obstacle": 0.3988712157087235,
+        "Water": 0.7494766302646165,
+        "Sky": 0.9072455937116283
+      },
+      "mIoU": 0.7014680144562938,
+      "IoU_per_class": {
+        "obstacle": 0.43284243135884026,
+        "water": 0.7214554834783892,
+        "sky": 0.950106128531652
+      }
+    }
+  },
+  "pilot_region_iou": {
+    "Water": {
+      "median": 0.9697113854946878,
+      "n_images": 198,
+      "share_below_0.8": 0.010101010101010102
+    },
+    "Sky": {
+      "median": 0.9755965358940885,
+      "n_images": 176,
+      "share_below_0.8": 0.028409090909090908
+    }
+  }
+}

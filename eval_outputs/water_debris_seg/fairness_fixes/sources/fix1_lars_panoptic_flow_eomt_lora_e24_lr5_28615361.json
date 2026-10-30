@@ -1,0 +1,55 @@
+{
+  "model": "lars_panoptic",
+  "ckpt": "../eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_lars_lora_e24_lr5_stageB/water-debris-seg/qolmyo20/checkpoints/epoch=22-step=14973.ckpt",
+  "ckpt_sha256": "83ff67164daa5be2ab0508f31c88a11e06cbd14f3418793f871d87f1c46f9c49",
+  "dataset": "flow",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32.0,
+    "lora_tensors": 48
+  },
+  "n_images": 800,
+  "debris_classes": [
+    "Float",
+    "Other"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.13627456471059496,
+      "AP50": 0.40537929536424905,
+      "AP75": 0.054160118304890405,
+      "AP_small": 0.07839537255363631,
+      "AP_medium": 0.25699017236209787,
+      "AP_large": 0.29159882674272125,
+      "AR1": 0.13759881422924897,
+      "AR10": 0.2964426877470356,
+      "AR100": 0.3439229249011858,
+      "AR_small": 0.2458715596330275,
+      "AR_medium": 0.46807313642756687,
+      "AR_large": 0.6017543859649123
+    },
+    "class_agnostic": {
+      "mAP": 0.10317277387588089,
+      "AP50": 0.31672141344975535,
+      "AP75": 0.03991896235969991,
+      "AP_small": 0.07232315691972446,
+      "AP_medium": 0.18789590470332143,
+      "AP_large": 0.14162751002472967,
+      "AR1": 0.11897233201581026,
+      "AR10": 0.2913537549407115,
+      "AR100": 0.3618083003952569,
+      "AR_small": 0.2645537948290242,
+      "AR_medium": 0.4832630098452883,
+      "AR_large": 0.6280701754385963
+    },
+    "n_dets_debris": 25996,
+    "n_dets_agnostic": 61074,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_lars_panoptic_flow_eomt_lora_e24_lr5_28615361.preds.json"
+  }
+}

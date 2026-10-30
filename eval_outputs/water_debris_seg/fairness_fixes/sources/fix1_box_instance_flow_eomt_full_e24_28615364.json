@@ -1,0 +1,49 @@
+{
+  "model": "box_instance",
+  "ckpt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/runs/eomt_flow_full_e24_stageB/water-debris-seg/vneqafov/checkpoints/epoch=23-step=7200.ckpt",
+  "ckpt_sha256": "24b216cbf19fd30b388da72aa024a48050c8b8e1ba43bc0cfd038c9102959f50",
+  "dataset": "flow",
+  "eomt_post_processing": {
+    "instance": "mask_classification_instance.eval_step, top-100",
+    "panoptic": "to_per_pixel_preds_panoptic"
+  },
+  "n_images": 800,
+  "debris_classes": [
+    "flow"
+  ],
+  "box_AP": {
+    "debris_only": {
+      "mAP": 0.25597741857705775,
+      "AP50": 0.6784198692432925,
+      "AP75": 0.14636656940615944,
+      "AP_small": 0.1080700187490256,
+      "AP_medium": 0.418442752815874,
+      "AP_large": 0.6333961737258392,
+      "AR1": 0.17445652173913043,
+      "AR10": 0.34387351778656133,
+      "AR100": 0.40696640316205535,
+      "AR_small": 0.27522935779816515,
+      "AR_medium": 0.5780590717299579,
+      "AR_large": 0.7254385964912281
+    },
+    "class_agnostic": {
+      "mAP": 0.25597741857705775,
+      "AP50": 0.6784198692432925,
+      "AP75": 0.14636656940615944,
+      "AP_small": 0.1080700187490256,
+      "AP_medium": 0.418442752815874,
+      "AP_large": 0.6333961737258392,
+      "AR1": 0.17445652173913043,
+      "AR10": 0.34387351778656133,
+      "AR100": 0.40696640316205535,
+      "AR_small": 0.27522935779816515,
+      "AR_medium": 0.5780590717299579,
+      "AR_large": 0.7254385964912281
+    },
+    "n_dets_debris": 74125,
+    "n_dets_agnostic": 74125,
+    "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_box_instance_flow_eomt_full_e24_28615364.preds.json"
+  }
+}

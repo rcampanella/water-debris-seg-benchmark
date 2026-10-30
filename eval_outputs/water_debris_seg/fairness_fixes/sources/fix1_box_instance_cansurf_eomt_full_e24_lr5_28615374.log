@@ -1,0 +1,49 @@
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/lightning/pytorch/utilities/parsing.py:209: Attribute 'network' is an instance of `nn.Module` and is already saved during checkpointing. It is recommended to ignore them using `self.save_hyperparameters(ignore=['network'])`.
+200/2209
+400/2209
+600/2209
+800/2209
+1000/2209
+1200/2209
+1400/2209
+1600/2209
+1800/2209
+2000/2209
+2200/2209
+{
+ "box_AP": {
+  "debris_only": {
+   "mAP": 0.5781852663771858,
+   "AP50": 0.894397557765503,
+   "AP75": 0.5529351078283128,
+   "AP_small": 0.053155768364598927,
+   "AP_medium": 0.13610087451398536,
+   "AP_large": 0.6278461418413227,
+   "AR1": 0.11691827173347218,
+   "AR10": 0.6714124587888253,
+   "AR100": 0.7285094568800972,
+   "AR_small": 0.1526315789473684,
+   "AR_medium": 0.2846153846153846,
+   "AR_large": 0.7816875424798524
+  },
+  "class_agnostic": {
+   "mAP": 0.5781852663771858,
+   "AP50": 0.894397557765503,
+   "AP75": 0.5529351078283128,
+   "AP_small": 0.053155768364598927,
+   "AP_medium": 0.13610087451398536,
+   "AP_large": 0.6278461418413227,
+   "AR1": 0.11691827173347218,
+   "AR10": 0.6714124587888253,
+   "AR100": 0.7285094568800972,
+   "AR_small": 0.1526315789473684,
+   "AR_medium": 0.2846153846153846,
+   "AR_large": 0.7816875424798524
+  },
+  "n_dets_debris": 180128,
+  "n_dets_agnostic": 180128,
+  "gt": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+  "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+  "predictions_class_agnostic_with_src_class": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_box_instance_cansurf_eomt_full_e24_lr5_28615374.preds.json"
+ }
+}
