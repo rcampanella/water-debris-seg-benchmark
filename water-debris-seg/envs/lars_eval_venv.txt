@@ -1,0 +1,11 @@
+numpy==1.26.4
+opencv-python==4.10.0.84
+pandas==2.3.3
+pillow==11.3.0
+python-dateutil==3.0.0
+pytz==2026.5
+PyYAML==6.0.3
+six==1.17.0
+tqdm==4.70.1
+tzdata==2026.5
+yacs==0.1.8
