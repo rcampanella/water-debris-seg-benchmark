@@ -156,10 +156,14 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--no-sam", action="store_true",
                     help="check: EoMT's own masks instead of SAM; must reproduce EoMT's panoptic PQ exactly")
+    ap.add_argument("--export-png", type=Path, help="val, one threshold: also write the scored panoptic maps as LaRS evaluator PNGs")
     args = ap.parse_args()
+    assert not args.export_png or (args.split == "val" and len(args.thresholds) == 1), "--export-png needs --split val and one threshold"
 
     import torch
     from PIL import Image
+
+    from water_debris_seg.lars_panoptic_png import write_lars_png
     from torchvision import tv_tensors
     from training.lightning_module import LightningModule  # type: ignore[import-untyped]
     from ultralytics import SAM
@@ -214,6 +218,8 @@ def main() -> None:
             segs = [(c, s, m) for (c, s, _), m in zip(dets, masks) if t is None or s >= t]
             preds = merge(segs, (H, W))
             LightningModule.update_metrics_panoptic(hosts[t], [preds.to(device)], [target.to(device)], [crowd.to(device)], 0)
+            if args.export_png:
+                write_lars_png(preds, args.export_png / f"{stem}.png")
             if args.split == "val":
                 sem = np.asarray(Image.open(LARS / "val/semantic_masks" / f"{stem}.png"))
                 c11 = preds[:, :, 0].numpy()

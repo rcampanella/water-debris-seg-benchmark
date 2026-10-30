@@ -175,11 +175,14 @@ def main() -> None:
     ap.add_argument("--mapping", choices=["tightened", "full"], default="tightened", help="COCO -> LaRS map (coco133 on LaRS)")
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--export-png", type=Path, help="LaRS only: also write the scored panoptic maps as LaRS evaluator PNGs")
     args = ap.parse_args()
 
     import torch
     from PIL import Image
     from torchvision import tv_tensors
+
+    from water_debris_seg.lars_panoptic_png import write_lars_png
 
     from eval_eomt_cansurf_mask2box import build_model_coco133, build_model_lars_panoptic
     from eval_eomt_cansurf_semantic_mask2box import build_model_lars_semantic, predict_semantic_logits
@@ -262,6 +265,8 @@ def main() -> None:
                                                               model.overlap_thresh)[0].cpu()
                     if args.model == "coco133":
                         preds = remap_coco_preds(preds, to_lars)
+                    if args.export_png:
+                        write_lars_png(preds, args.export_png / f"{stem}.png")
                     target, crowd = load_target(stem, a)
                     LightningModule.update_metrics_panoptic(host, [preds.to(device)], [target.to(device)], [crowd.to(device)], 0)
                     c11 = preds[:, :, 0].numpy()

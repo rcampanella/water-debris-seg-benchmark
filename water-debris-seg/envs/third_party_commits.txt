@@ -1,1 +1,3 @@
 eomt https://github.com/tue-mps/eomt.git 0f1e1ccbc0e105f1a100e885174e1d716ad02990 # matched file-by-file to the code our EoMT runs used (2026-10-23)
+lars_evaluator https://github.com/lojzezust/lars_evaluator 204edd41a04cb5d3f1be8b40fab37f7a7008f8ec (cloned 2026-10-27)
+cansurf_benchmark https://github.com/ZaidAljundiHW2/CANSURF 449ede66bd368b9581767a230cc621b6518c2c52 # yolov11_benchmark.py (sha256 6b28382f...) and _sahi.py only, in data/water_debris/third_party/cansurf_benchmark (2026-10-27)

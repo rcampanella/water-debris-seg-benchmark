@@ -60,3 +60,4 @@ data/water_debris/eomt_box_zips/
 
 # Prediction dumps behind fix 1 / 1b scores (tens of MB each; regenerate from the checkpoint named in each JSON)
 eval_outputs/water_debris_seg/**/*.preds.json
+data/water_debris/lars_eval/
