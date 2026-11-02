@@ -27,8 +27,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 EVAL = REPO / "data/water_debris/third_party/lars_evaluator"
 ROOT = REPO / "data/water_debris/lars_eval"
-SRC = REPO / "eval_outputs/water_debris_seg/fairness_fixes/sources"
-KEEP = REPO / "eval_outputs/water_debris_seg/fairness_fixes/lars_official"
+OUT_DIR = REPO / "eval_outputs/water_debris_seg/fairness_fixes"   # --out-dir: <dir>/sources and <dir>/lars_official
 
 
 def tree_sha(d: Path) -> str:
@@ -43,6 +42,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--method", required=True, help="prediction dir name under lars_eval/preds")
     ap.add_argument("--scorer-json", type=Path, help="our scorer's JSON for the same predictions (provenance)")
+    ap.add_argument("--out-dir", type=Path, default=OUT_DIR, help="results go to <dir>/sources, evaluator files to <dir>/lars_official")
     args = ap.parse_args()
 
     cfg = ROOT / "val_panoptic.yaml"
@@ -62,9 +62,9 @@ def main() -> None:
            "scorer_json": str(args.scorer_json.resolve().relative_to(REPO)) if args.scorer_json else None,
            "units": "percent", "summary": summary}
     job = os.environ.get("SLURM_JOB_ID", "local")
-    dst = SRC / f"lars_official_{args.method}_{job}.json"
+    dst = args.out_dir / "sources" / f"lars_official_{args.method}_{job}.json"
     dst.write_text(json.dumps(out, indent=2))
-    keep = KEEP / args.method
+    keep = args.out_dir / "lars_official" / args.method
     keep.mkdir(parents=True, exist_ok=True)
     for f in res.iterdir():
         shutil.copy2(f, keep / f.name)

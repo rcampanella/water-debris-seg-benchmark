@@ -170,6 +170,7 @@ def main() -> None:
     g.add_argument("--preds", type=Path, help="our scorer's .preds.json")
     g.add_argument("--weights", type=Path, help="YOLO weights: predict CANSURF val first")
     ap.add_argument("--scorer-json", type=Path, help="our scorer's JSON for the same predictions (debris classes, provenance)")
+    ap.add_argument("--out-dir", type=Path, default=SRC, help="where the JSONs go (default fairness_fixes/sources)")
     ap.add_argument("--debris-classes", help="comma-separated source classes for debris_only (overrides the scorer JSON)")
     args = ap.parse_args()
 
@@ -182,7 +183,7 @@ def main() -> None:
            "gt_image_list_sha256": sha(GT_JSON), "n_images": len(gt)}
     if args.weights:
         dets = yolo_predict(args.weights, doc)
-        preds_path = SRC / f"cansurf_paper_{args.method}_{job}.preds.json"
+        preds_path = args.out_dir / f"cansurf_paper_{args.method}_{job}.preds.json"
         preds_path.write_text(json.dumps(dets))
         out.update(weights=str(args.weights.resolve().relative_to(REPO)), weights_sha256=sha(args.weights))
     else:
@@ -202,7 +203,7 @@ def main() -> None:
         out["debris_only"] = score(gt, [d for d in dets if d["src_class"] in debris], lambda d: 0)
     if dets and "src_class_id" in dets[0] and len({d["src_class"] for d in dets}) > 1:
         out["paper_class_id0"] = score(gt, dets, lambda d: d["src_class_id"])
-    dst = SRC / f"cansurf_paper_{args.method}_{job}.json"
+    dst = args.out_dir / f"cansurf_paper_{args.method}_{job}.json"
     dst.write_text(json.dumps(out, indent=2))
     show = {k: {m: round(v, 3) for m, v in out[k]["paper_protocol"].items() if m in ("precision", "recall", "f1")}
             for k in ("class_agnostic", "debris_only", "paper_class_id0") if k in out}
