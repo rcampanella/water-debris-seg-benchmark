@@ -3,6 +3,10 @@
 
   --source yolo   YOLO checkpoint with 11 classes (9 + Water, Sky); boxes above a confidence threshold prompt SAM
   --source eomt   EoMT panoptic checkpoint; the segments EoMT keeps for PQ (its own keep rule, no threshold) give the boxes
+  --source yolo-seg  YOLO segmentation checkpoint with the same 11 classes (ablation 11, YOLO26-seg); its own masks
+                     (retina_masks, full image resolution) are used and SAM is not run
+Same class order for every 11-class YOLO (YOLOv11s fix 2, YOLO26 ablation 11). Per-image wall time of the detector
+and of SAM (CUDA-synchronised, batch 1, as run here: FP32, first 10 images skipped) is written under `timing_ms`.
 
 SAM (frozen, Ultralytics SAM 2.1 large) turns each box into a mask. Masks are merged into one segment per pixel with
 EoMT's own rule: objects first (highest score first), then Static Obstacle, Water, Sky; a segment keeping less than
@@ -20,6 +24,7 @@ import argparse
 import hashlib
 import json
 import sys
+import time
 from pathlib import Path
 
 import numpy as np
@@ -148,7 +153,7 @@ def sam_masks(sam, im, boxes_xyxy):
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--source", choices=["yolo", "eomt"], required=True)
+    ap.add_argument("--source", choices=["yolo", "yolo-seg", "eomt"], required=True)
     ap.add_argument("--weights", type=Path, required=True)
     ap.add_argument("--split", choices=["held10", "val"], required=True)
     ap.add_argument("--thresholds", type=float, nargs="+", default=[0.25])
@@ -178,8 +183,8 @@ def main() -> None:
         keep = {p.stem for p in HELD10.glob("*.txt")}
         anns = [a for a in anns if Path(a["file_name"]).stem in keep]
     anns = anns[: args.limit or None]
-    sam = SAM(str(SAM_W))
-    if args.source == "yolo":
+    sam = None if args.source == "yolo-seg" else SAM(str(SAM_W))
+    if args.source in ("yolo", "yolo-seg"):
         from ultralytics import YOLO
 
         det = YOLO(str(args.weights))
@@ -195,24 +200,39 @@ def main() -> None:
         h.metrics.to(device)
     conf = {t: np.zeros((4, 3), np.int64) for t in thresholds}
     region_iou = {1: [], 2: []}
+    t_det, t_sam = [], []
+
+    def tick():
+        if device.type == "cuda":
+            torch.cuda.synchronize()
+        return time.perf_counter()
     for k, a in enumerate(anns):
         stem = Path(a["file_name"]).stem
         path = LARS / split_dir / "images" / f"{stem}.jpg"
         im = np.asarray(Image.open(path).convert("RGB"))
         H, W = im.shape[:2]
-        if args.source == "yolo":
-            r = det.predict(str(path), imgsz=640, conf=thresholds[0], max_det=300, verbose=False)[0]
+        t0 = tick()
+        if args.source in ("yolo", "yolo-seg"):
+            r = det.predict(str(path), imgsz=640, conf=thresholds[0], max_det=300, verbose=False,
+                            retina_masks=args.source == "yolo-seg")[0]
             dets = [(YOLO11_TO_LARS[int(c)], float(s), [float(v) for v in b]) for b, s, c in
                     zip(r.boxes.xyxy.tolist(), r.boxes.conf.tolist(), r.boxes.cls.tolist())]
         else:
             with torch.no_grad():
                 full = eomt_kept_segments(det, tv_tensors.Image(torch.from_numpy(im.copy()).permute(2, 0, 1)), device)
             dets = [f[:3] for f in full]
+        t1 = tick()
         masks = []
-        if dets and args.no_sam:
+        if dets and args.source == "yolo-seg":
+            masks = [m.astype(bool) for m in r.masks.data.cpu().numpy()]
+            assert len(masks) == len(dets) and masks[0].shape == (H, W), (stem, len(masks), masks[0].shape)
+        elif dets and args.no_sam:
             masks = [f[3] for f in full]
         elif dets:
             masks = sam_masks(sam, im, [d[2] for d in dets])
+        t2 = tick()
+        if k >= 10:
+            t_det.append(1e3 * (t1 - t0)), t_sam.append(1e3 * (t2 - t1))
         target, crowd, gt_region = load_target(split_dir, stem, a)
         for t in thresholds:
             segs = [(c, s, m) for (c, s, _), m in zip(dets, masks) if t is None or s >= t]
@@ -236,8 +256,9 @@ def main() -> None:
         if (k + 1) % 25 == 0:
             print(f"{k + 1}/{len(anns)}", flush=True)
 
-    out = {"source": args.source, "masks": "EoMT own (check)" if args.no_sam else "SAM", "weights": str(args.weights), "weights_sha256": sha(args.weights), "split": args.split,
-           "n_images": len(anns), "sam": {"weights": str(SAM_W), "sha256": sha(SAM_W)}, "merge_rule":
+    masks_kind = "YOLO-seg own (retina_masks)" if args.source == "yolo-seg" else "EoMT own (check)" if args.no_sam else "SAM"
+    out = {"source": args.source, "masks": masks_kind, "weights": str(args.weights), "weights_sha256": sha(args.weights), "split": args.split,
+           "n_images": len(anns), "sam": None if sam is None else {"weights": str(SAM_W), "sha256": sha(SAM_W)}, "merge_rule":
            "objects (score desc) > Static Obstacle > Water > Sky; drop segment if < 80% of its mask is kept", "by_threshold": {}}
     for t in thresholds:
         r = hosts[t].metrics[0].compute()[:-1]
@@ -255,7 +276,11 @@ def main() -> None:
     out["pilot_region_iou"] = {LARS_NAMES[c]: {"median": float(np.median(v)) if v else None, "n_images": len(v),
                                                 "share_below_0.8": float(np.mean(np.array(v) < 0.8)) if v else None}
                                for c, v in region_iou.items()}
-    if args.source == "yolo" and len(thresholds) > 1:
+    st = lambda a: {"median": float(np.median(a)), "mean": float(np.mean(a))} if a else None
+    out["timing_ms"] = {"detector": st(t_det), "sam": st(t_sam) if sam is not None else None, "n_timed": len(t_det),
+                        "gpu": torch.cuda.get_device_name(0) if device.type == "cuda" else "cpu",
+                        "note": "this script's own loop: FP32, batch 1, detector at the lowest threshold, SAM on every box above it"}
+    if args.source in ("yolo", "yolo-seg") and len(thresholds) > 1:
         best = max(thresholds, key=lambda t: out["by_threshold"][f"{t:.2f}"]["PQ"])
         out["selected_threshold"] = best
     args.out.parent.mkdir(parents=True, exist_ok=True)

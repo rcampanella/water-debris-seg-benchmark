@@ -18,7 +18,7 @@ import tempfile
 import types
 from pathlib import Path
 
-from cansurf_paper_metrics import GT_JSON, PAPER_SCRIPT, REPO, SRC, VAL
+from cansurf_paper_metrics import GT_JSON, PAPER_SCRIPT, REPO, VAL
 
 
 def main() -> None:
@@ -58,7 +58,7 @@ def main() -> None:
     out = {"weights": str(args.weights.resolve().relative_to(REPO)), "ours": str(args.ours.resolve().relative_to(REPO)),
            "variant": args.variant, "paper_script": str(PAPER_SCRIPT.relative_to(REPO)), "n_images": len(names),
            "paper_script_result": paper, "ours_result": ours, "ours_minus_paper": diff}
-    dst = SRC / f"cansurf_paper_check_{args.ours.stem.removeprefix('cansurf_paper_')}.json"
+    dst = args.ours.parent / f"cansurf_paper_check_{args.ours.stem.removeprefix('cansurf_paper_')}.json"   # next to ours
     dst.write_text(json.dumps(out, indent=2))
     print(json.dumps({"paper": paper, "diff": diff}), "->", dst, f"(job {job})")
 
