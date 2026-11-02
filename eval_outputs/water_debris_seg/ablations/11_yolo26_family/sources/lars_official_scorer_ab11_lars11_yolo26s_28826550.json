@@ -1,0 +1,64 @@
+{
+  "source": "yolo",
+  "masks": "SAM",
+  "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26s/weights/best.pt",
+  "weights_sha256": "9034b4fc70a00d1b8458c6771f0414532ca7f86be46605aca5843f2071f6f288",
+  "split": "val",
+  "n_images": 198,
+  "sam": {
+    "weights": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/sam/sam2.1_l.pt",
+    "sha256": "ab7e1ac9cb9f6eb3bcf197ece044f06a707ec49129361a2b47e93e1db6989efd"
+  },
+  "merge_rule": "objects (score desc) > Static Obstacle > Water > Sky; drop segment if < 80% of its mask is kept",
+  "by_threshold": {
+    "0.20": {
+      "PQ": 0.3947729501740847,
+      "PQ_things": 0.29060381059448226,
+      "PQ_stuff": 0.6725573223863579,
+      "PQ_per_class": {
+        "Boat/ship": 0.5115749462703831,
+        "Row boats": 0.28370177559554577,
+        "Paddle board": 0.47572734272550415,
+        "Buoy": 0.3641040559715782,
+        "Swimmer": 0.330483306591999,
+        "Animal": 0.27357871267395556,
+        "Float": 0.0,
+        "Other": 0.08566034492689223,
+        "Static Obstacle": 0.37151931437625707,
+        "Water": 0.7765055375066126,
+        "Sky": 0.8696471152762041
+      },
+      "mIoU": 0.7034470446875453,
+      "IoU_per_class": {
+        "obstacle": 0.4352784812593901,
+        "water": 0.7873669583413359,
+        "sky": 0.8876956944619097
+      }
+    }
+  },
+  "pilot_region_iou": {
+    "Water": {
+      "median": 0.9693802579414768,
+      "n_images": 198,
+      "share_below_0.8": 0.015151515151515152
+    },
+    "Sky": {
+      "median": 0.9732512483943392,
+      "n_images": 176,
+      "share_below_0.8": 0.05113636363636364
+    }
+  },
+  "timing_ms": {
+    "detector": {
+      "median": 18.713962461333722,
+      "mean": 20.834227684548402
+    },
+    "sam": {
+      "median": 148.66255404194817,
+      "mean": 154.4450557396866
+    },
+    "n_timed": 188,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "note": "this script's own loop: FP32, batch 1, detector at the lowest threshold, SAM on every box above it"
+  }
+}

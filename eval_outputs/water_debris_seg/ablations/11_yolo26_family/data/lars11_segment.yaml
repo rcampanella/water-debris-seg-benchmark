@@ -1,0 +1,5 @@
+path: /scratch-shared/rcampanella/water-debris-seg/data/lars/yolo_seg11
+train: train_all/images
+val: val/images
+nc: 11
+names: ["Static Obstacle", "Boat/ship", "Row boats", "Paddle board", "Buoy", "Swimmer", "Animal", "Float", "Other", "Water", "Sky"]

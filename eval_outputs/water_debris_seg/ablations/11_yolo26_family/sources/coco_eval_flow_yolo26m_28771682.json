@@ -1,0 +1,57 @@
+{
+  "checkpoint": {
+    "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26m/weights/best.pt",
+    "weights_sha256": "517e091e5c422f8dff26c1625dc2b701866cf130f611fa859e49586ad3e38e15",
+    "gt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "imgsz": 640,
+    "n_pred": 10834,
+    "ultralytics": {
+      "mAP50-95": 0.42306703224281017,
+      "mAP50": 0.8648219144547729,
+      "precision": 0.8479819033051426,
+      "recall": 0.8502964426877471,
+      "per_class_mAP50-95": {
+        "waste": 0.42306703224281017
+      }
+    },
+    "pycocotools_all_9_classes": {
+      "mAP": 0.4228895913787716,
+      "AP50": 0.8602650957865808,
+      "AP75": 0.3599269282204764,
+      "AP_small": 0.2939173652966829,
+      "AP_medium": 0.5522472737708083,
+      "AP_large": 0.6868433709471348,
+      "AR1": 0.22865612648221342,
+      "AR10": 0.4862648221343873,
+      "AR100": 0.5047924901185771,
+      "AR_small": 0.4093411175979983,
+      "AR_medium": 0.6286919831223629,
+      "AR_large": 0.7359649122807017
+    },
+    "pycocotools_objects_8_classes": {
+      "mAP": 0.4228895913787716,
+      "AP50": 0.8602650957865808,
+      "AP75": 0.3599269282204764,
+      "AP_small": 0.2939173652966829,
+      "AP_medium": 0.5522472737708083,
+      "AP_large": 0.6868433709471348,
+      "AR1": 0.22865612648221342,
+      "AR10": 0.4862648221343873,
+      "AR100": 0.5047924901185771,
+      "AR_small": 0.4093411175979983,
+      "AR_medium": 0.6286919831223629,
+      "AR_large": 0.7359649122807017
+    },
+    "per_class": {
+      "waste": {
+        "AP": 0.4228895913787716,
+        "AP50": 0.8602650957865808,
+        "AR100": 0.5047924901185771
+      }
+    },
+    "gt_boxes_per_class": {
+      "waste": 2024
+    }
+  }
+}

@@ -1,0 +1,670 @@
+{
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.7.0+cu126",
+  "ultralytics": "8.4.173",
+  "setting": "batch 1, imgsz 640, first 220 test images, 20 warm-up; Ultralytics Results.speed preprocess + inference + postprocess",
+  "models": {
+    "cansurf/yolo26l": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_cansurf_yolo26l_28771687.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26l/weights/best.pt",
+      "weights_sha256": "8adf18aaf67c4133b40882ea00be3c06c11dc9c5b1f9fe6869cdfaf2ad587c29",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 14.052260958123952,
+          "mean": 14.091498262132518,
+          "p90": 14.083758427295834
+        },
+        "inference_ms": {
+          "median": 12.532475986517966,
+          "mean": 12.56865373114124,
+          "p90": 12.56163096986711
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.6202449700795114,
+          "mean": 3.6300140945240855,
+          "p90": 3.6410369095392525
+        },
+        "inference_ms": {
+          "median": 2.0161124994046986,
+          "mean": 2.0172936335438862,
+          "p90": 2.01889913296327
+        },
+        "n_timed": 200,
+        "engine_sha256": "38e3a87b73c0bca0534b5bb8bc8fd2add2f581a09dddf12fd00b137ae9e19401"
+      }
+    },
+    "cansurf/yolo26m": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_cansurf_yolo26m_28771683.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26m/weights/best.pt",
+      "weights_sha256": "d5729efa1886e43bd1dbbd0943c67f958b4478aeacf5873b922f54ce50066519",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 10.392725525889546,
+          "mean": 10.396331798401661,
+          "p90": 10.421110899187624
+        },
+        "inference_ms": {
+          "median": 8.774383983109146,
+          "mean": 8.778177208732814,
+          "p90": 8.79773487104103
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.039491595700383,
+          "mean": 3.0432276846840978,
+          "p90": 3.059072163887322
+        },
+        "inference_ms": {
+          "median": 1.505483000073582,
+          "mean": 1.5060724649811164,
+          "p90": 1.5078770346008241
+        },
+        "n_timed": 200,
+        "engine_sha256": "fc36f696fc095568d644e10c246ce2c4fbac9550aeeb88f65fec244f72e9b7bc"
+      }
+    },
+    "cansurf/yolo26n": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_cansurf_yolo26n_28771674.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26n/weights/best.pt",
+      "weights_sha256": "e8956da5f8d1163b36ec170f677b4d9479536f79625f010bf0de68cdc919e016",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 9.732224512845278,
+          "mean": 9.806740701314993,
+          "p90": 9.783264680299908
+        },
+        "inference_ms": {
+          "median": 8.147639047820121,
+          "mean": 8.191886047134176,
+          "p90": 8.185361907817423
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 2.407494990620762,
+          "mean": 2.4092121212743223,
+          "p90": 2.4261343060061336
+        },
+        "inference_ms": {
+          "median": 0.8768890402279794,
+          "mean": 0.8774598262971267,
+          "p90": 0.8786784252151847
+        },
+        "n_timed": 200,
+        "engine_sha256": "009c7291353662c1c2d427e7ea42224e2ba63f3bfcc9da9fd5858451e1a3cd64"
+      }
+    },
+    "cansurf/yolo26s": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_cansurf_yolo26s_28771679.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26s/weights/best.pt",
+      "weights_sha256": "826e2cc946dd69a75d4801f34d40393e351814ea9d4db9eca668698d0267bdca",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 9.945265599526465,
+          "mean": 9.986834255978465,
+          "p90": 9.995262685697526
+        },
+        "inference_ms": {
+          "median": 8.316555002238601,
+          "mean": 8.348501053405926,
+          "p90": 8.360668562818319
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 2.6682864991016686,
+          "mean": 2.700320394942537,
+          "p90": 2.695676137227565
+        },
+        "inference_ms": {
+          "median": 1.0992144234478474,
+          "mean": 1.1190730251837522,
+          "p90": 1.1009867419488728
+        },
+        "n_timed": 200,
+        "engine_sha256": "7dd4bd96536e68358d7a557683521d7f25fd8e065253991fa2ea180422869771"
+      }
+    },
+    "cansurf/yolo26x": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_cansurf_yolo26x_28771691.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26x/weights/best.pt",
+      "weights_sha256": "109f3f2109291b4f59c57ad85a659e4cbdbc16fd7ce76c28b9831eff5efd900b",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 14.260759518947452,
+          "mean": 14.387279580696486,
+          "p90": 14.428852300625294
+        },
+        "inference_ms": {
+          "median": 12.628360069356859,
+          "mean": 12.748263516114093,
+          "p90": 12.778845068532974
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 4.358399601187557,
+          "mean": 4.358331069233827,
+          "p90": 4.376128688454628
+        },
+        "inference_ms": {
+          "median": 2.825166448019445,
+          "mean": 2.8253753937315196,
+          "p90": 2.827620762400329
+        },
+        "n_timed": 200,
+        "engine_sha256": "2502c9ba7f459e0990c4b1a8e53022cd84e28a6a204f9cc7c1f98bcb409ed25b"
+      }
+    },
+    "flow/yolo26l": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_flow_yolo26l_28771686.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26l/weights/best.pt",
+      "weights_sha256": "0568f55abea6dec6f268a3bca3b40a46fbbca4c24b3f4a6c62fc3ccfb8fcfebc",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 14.78159410180524,
+          "mean": 14.761537716258317,
+          "p90": 15.241768886335194
+        },
+        "inference_ms": {
+          "median": 12.769514054525644,
+          "mean": 12.837891717790626,
+          "p90": 13.29221313353628
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.975890052970499,
+          "mean": 3.9877903484739363,
+          "p90": 4.03193332022056
+        },
+        "inference_ms": {
+          "median": 2.021226566284895,
+          "mean": 2.0303254295140505,
+          "p90": 2.023218711838126
+        },
+        "n_timed": 200,
+        "engine_sha256": "f1404317b803d90670d732d17fab2a5cde64396798486f25f50edebd7bd3e76e"
+      }
+    },
+    "flow/yolo26m": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_flow_yolo26m_28771682.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26m/weights/best.pt",
+      "weights_sha256": "517e091e5c422f8dff26c1625dc2b701866cf130f611fa859e49586ad3e38e15",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 10.889005963690579,
+          "mean": 10.971644171513617,
+          "p90": 11.38533465564251
+        },
+        "inference_ms": {
+          "median": 8.947426511440426,
+          "mean": 9.12270080356393,
+          "p90": 9.501040715258569
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.435858990997076,
+          "mean": 3.437944080797024,
+          "p90": 3.521434124559164
+        },
+        "inference_ms": {
+          "median": 1.5050515066832304,
+          "mean": 1.50540262053255,
+          "p90": 1.506744371727109
+        },
+        "n_timed": 200,
+        "engine_sha256": "30f3d2d4e846dbe5580afc611c7baee88ac09d14bb9e05bc16fa58a303389fe7"
+      }
+    },
+    "flow/yolo26n": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_flow_yolo26n_28771673.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26n/weights/best.pt",
+      "weights_sha256": "98cd29ad89856db98957ac184a76a1f146d32f29518b69a99da740138e980964",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 10.095080418977886,
+          "mean": 10.204135060776025,
+          "p90": 10.62120443675667
+        },
+        "inference_ms": {
+          "median": 8.17253056447953,
+          "mean": 8.369924543076195,
+          "p90": 8.740410825703293
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 2.875653502997011,
+          "mean": 2.8626873047323897,
+          "p90": 2.917822147719562
+        },
+        "inference_ms": {
+          "median": 0.8811710285954177,
+          "mean": 0.8818127389531583,
+          "p90": 0.882727827411145
+        },
+        "n_timed": 200,
+        "engine_sha256": "c69f3d089c26bb6bd803f9deae7376499a8bb02a615786f19e5c7bd34c73fa25"
+      }
+    },
+    "flow/yolo26s": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_flow_yolo26s_28771677.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26s/weights/best.pt",
+      "weights_sha256": "dc1870d7b1ebf5ece2628c9c455f3e644214feb89274e8b1f625cbf49f1c4b88",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 10.459833079949021,
+          "mean": 10.572493998915888,
+          "p90": 10.978126246482134
+        },
+        "inference_ms": {
+          "median": 8.46600002842024,
+          "mean": 8.68634328711778,
+          "p90": 9.046518232207745
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.0600575264543295,
+          "mean": 3.0649447219911963,
+          "p90": 3.126149973832071
+        },
+        "inference_ms": {
+          "median": 1.0971350129693747,
+          "mean": 1.102423748234287,
+          "p90": 1.0987625108100474
+        },
+        "n_timed": 200,
+        "engine_sha256": "463639598fa964592a9ab9fc5bedcd54af8d77ec3aefe3e897bc713ed5c3b324"
+      }
+    },
+    "flow/yolo26x": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_flow_yolo26x_28771690.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26x/weights/best.pt",
+      "weights_sha256": "6667fd63ff93adb88727e68ac43f9c5633e7795815aacfadab74563bbc2f161e",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 14.712751028127968,
+          "mean": 14.8860942205647,
+          "p90": 15.258757176343352
+        },
+        "inference_ms": {
+          "median": 12.700448045507073,
+          "mean": 12.942619039677083,
+          "p90": 13.259288284461945
+        },
+        "n_timed": 200
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 4.871179990004748,
+          "mean": 4.882190102362074,
+          "p90": 4.948639043141156
+        },
+        "inference_ms": {
+          "median": 2.8239114908501506,
+          "mean": 2.826049749273807,
+          "p90": 2.826224034652114
+        },
+        "n_timed": 200,
+        "engine_sha256": "3a361a81d716c1868cb2c88507a7a6c66b6af5e965f92357f336e8bdea2eb304"
+      }
+    },
+    "lars11/yolo26l": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26l_28826557.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26l/weights/best.pt",
+      "weights_sha256": "cbfe5a8d2c2018efbd3906f116cec2fad24baca4e1edb596252642b4197088be",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 15.320502920076251,
+          "mean": 17.759198613930494,
+          "p90": 16.10009929863736
+        },
+        "inference_ms": {
+          "median": 12.962661567144096,
+          "mean": 15.51452434224108,
+          "p90": 13.597273419145495
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 4.094484611414373,
+          "mean": 4.199269950374165,
+          "p90": 4.4981409213505685
+        },
+        "inference_ms": {
+          "median": 2.017141494434327,
+          "mean": 2.017748376663272,
+          "p90": 2.0193040021695197
+        },
+        "n_timed": 178,
+        "engine_sha256": "06d4731480a7a883f741c6e5d761f52754a59e9e2cbd09b4ed8f70b1c726ba14"
+      }
+    },
+    "lars11/yolo26l-seg": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26l-seg_28826559.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26l-seg/weights/best.pt",
+      "weights_sha256": "523251aa010eac3170a20760b5fd662494f7918131d2072599c0c629b5eeb9cf",
+      "task": "segment",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 16.875110508408397,
+          "mean": 17.120279427984038,
+          "p90": 17.225098004564643
+        },
+        "inference_ms": {
+          "median": 14.018573507200927,
+          "mean": 14.391446954392817,
+          "p90": 14.114550850354135
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 5.057475122157484,
+          "mean": 5.078246224451852,
+          "p90": 5.435378255788237
+        },
+        "inference_ms": {
+          "median": 2.361906983423978,
+          "mean": 2.362504950724542,
+          "p90": 2.3642038577236235
+        },
+        "n_timed": 178,
+        "engine_sha256": "bb25c0bc7e988b42aee1c4c77800553fb6851897a939317dee3bf9653f3cdbee"
+      }
+    },
+    "lars11/yolo26m": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26m_28826553.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26m/weights/best.pt",
+      "weights_sha256": "f0f7bcead5413db0ada6281a1009eff6d346a8bdfceeff10a4c1c4db53e12247",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 11.042549042031169,
+          "mean": 11.32753184209107,
+          "p90": 11.465344042517245
+        },
+        "inference_ms": {
+          "median": 9.026426530908793,
+          "mean": 9.213594359403288,
+          "p90": 9.07077396987006
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.5100934910587966,
+          "mean": 3.6442593934296976,
+          "p90": 3.9404026232659817
+        },
+        "inference_ms": {
+          "median": 1.5063994796946645,
+          "mean": 1.506844051496199,
+          "p90": 1.5079133212566376
+        },
+        "n_timed": 178,
+        "engine_sha256": "f254bc14b1ab3712421efe0444807427777b27b3c3b97e1a0b54be2ca4925127"
+      }
+    },
+    "lars11/yolo26m-seg": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26m-seg_28826555.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26m-seg/weights/best.pt",
+      "weights_sha256": "13800f8f18932eb9d081a13e9ddec182af9246b20a3ff93609cbaa7bbd44791e",
+      "task": "segment",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 12.801988516002893,
+          "mean": 12.740989750005262,
+          "p90": 13.087021408136934
+        },
+        "inference_ms": {
+          "median": 10.100180516019464,
+          "mean": 10.127710963316847,
+          "p90": 10.145204490981996
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 4.592150973621756,
+          "mean": 4.59241373739153,
+          "p90": 4.909400828182697
+        },
+        "inference_ms": {
+          "median": 1.8509369110688567,
+          "mean": 1.8516279785799679,
+          "p90": 1.8536385265178978
+        },
+        "n_timed": 178,
+        "engine_sha256": "d0b5c92f1b7ee3c0b36ba8d949814fe085471951d299da0d78d7f9cdaadb86a8"
+      }
+    },
+    "lars11/yolo26n": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26n_28826539.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26n/weights/best.pt",
+      "weights_sha256": "e23cc0fa67b941d2b5a32e0bbcc27fb19806aa5170f44e2f2bec1af6789ca84a",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 10.44403447303921,
+          "mean": 12.67696856102498,
+          "p90": 10.853420326020569
+        },
+        "inference_ms": {
+          "median": 8.24757048394531,
+          "mean": 10.569517295336707,
+          "p90": 8.455107943154871
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.0583434272557497,
+          "mean": 3.1292977961293014,
+          "p90": 3.4019149839878082
+        },
+        "inference_ms": {
+          "median": 0.8844679687172174,
+          "mean": 0.8857465987459997,
+          "p90": 0.8879829780198634
+        },
+        "n_timed": 178,
+        "engine_sha256": "b80406e566ce25eaa65300a337c6009500c2723169f4924109ec1f23ec7e91c8"
+      }
+    },
+    "lars11/yolo26n-seg": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26n-seg_28826541.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26n-seg/weights/best.pt",
+      "weights_sha256": "f44e0844c19b3cbbee631f6bd8b81ac569fe315133518069006a8936225cf919",
+      "task": "segment",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 12.284391501452774,
+          "mean": 12.717550530836112,
+          "p90": 12.762815726455301
+        },
+        "inference_ms": {
+          "median": 9.492751560173929,
+          "mean": 10.043210924205402,
+          "p90": 9.908644075039774
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.7556219031102955,
+          "mean": 3.788661307869793,
+          "p90": 4.1567051550373435
+        },
+        "inference_ms": {
+          "median": 1.0139644728042185,
+          "mean": 1.0242581156898667,
+          "p90": 1.0152562521398067
+        },
+        "n_timed": 178,
+        "engine_sha256": "215c2273148befa12f5d4b2942b51fb3610caf6ca5820e875a9f736f0ff627cd"
+      }
+    },
+    "lars11/yolo26s": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26s_28826550.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26s/weights/best.pt",
+      "weights_sha256": "9034b4fc70a00d1b8458c6771f0414532ca7f86be46605aca5843f2071f6f288",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 10.463431070093066,
+          "mean": 11.701493170844872,
+          "p90": 10.824680828955024
+        },
+        "inference_ms": {
+          "median": 8.394308970309794,
+          "mean": 9.601521913323216,
+          "p90": 8.475451555568725
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 3.15008097095415,
+          "mean": 3.2768112455567953,
+          "p90": 3.557810583151877
+        },
+        "inference_ms": {
+          "median": 1.099983521271497,
+          "mean": 1.1056984645272658,
+          "p90": 1.101451471913606
+        },
+        "n_timed": 178,
+        "engine_sha256": "ee17b1efaa2a27c51ba754100cf019726851e98dd56697dd840c666084861007"
+      }
+    },
+    "lars11/yolo26s-seg": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26s-seg_28826552.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26s-seg/weights/best.pt",
+      "weights_sha256": "09bc3c1c342e59c76243b430aeef71d674f72a322b4f37f2e6ab28c88c752144",
+      "task": "segment",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 12.30649754870683,
+          "mean": 12.490493544309368,
+          "p90": 12.645523599348962
+        },
+        "inference_ms": {
+          "median": 9.60851600393653,
+          "mean": 9.847079760792633,
+          "p90": 9.66103741666302
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 4.047020513098687,
+          "mean": 4.0647926919549455,
+          "p90": 4.354761412832886
+        },
+        "inference_ms": {
+          "median": 1.2799110263586044,
+          "mean": 1.280605172989576,
+          "p90": 1.282909931614995
+        },
+        "n_timed": 178,
+        "engine_sha256": "a7a08da3792bbae8bb13ba0acda7cb805e586b3ac0d15c9d634b69a750a2a22c"
+      }
+    },
+    "lars11/yolo26x": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26x_28826560.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26x/weights/best.pt",
+      "weights_sha256": "d18cbb83aaff09c06d3f6d2957533047e558570ba6364a0fbbb9c0dce68b1bf9",
+      "task": "detect",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 15.125824953429401,
+          "mean": 17.419260673439442,
+          "p90": 15.377419453579932
+        },
+        "inference_ms": {
+          "median": 12.785457482095808,
+          "mean": 15.213659379809174,
+          "p90": 12.967510230373591
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 4.913418437354267,
+          "mean": 5.014539519037131,
+          "p90": 5.313327920157462
+        },
+        "inference_ms": {
+          "median": 2.814687497448176,
+          "mean": 2.815230598469171,
+          "p90": 2.8173352126032114
+        },
+        "n_timed": 178,
+        "engine_sha256": "bd7fd6e110bed01f6d309160d381af5110d8ac9bda1694852b030fedd90fcf40"
+      }
+    },
+    "lars11/yolo26x-seg": {
+      "run_json": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/ab11_lars11_yolo26x-seg_28826562.json",
+      "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26x-seg/weights/best.pt",
+      "weights_sha256": "50b26f9825a4f7877aeadd283cd62cdc1958483881c3612f226a39a369e0bbd0",
+      "task": "segment",
+      "pytorch": {
+        "end_to_end_ms": {
+          "median": 16.95942407241091,
+          "mean": 17.173917202823116,
+          "p90": 17.22576168831438
+        },
+        "inference_ms": {
+          "median": 14.148321468383074,
+          "mean": 14.53031701679352,
+          "p90": 14.43660844815895
+        },
+        "n_timed": 178
+      },
+      "tensorrt": {
+        "end_to_end_ms": {
+          "median": 6.281064997892827,
+          "mean": 6.28943743610629,
+          "p90": 6.628560996614397
+        },
+        "inference_ms": {
+          "median": 3.480887971818447,
+          "mean": 3.4815357236735776,
+          "p90": 3.4830368822440505
+        },
+        "n_timed": 178,
+        "engine_sha256": "6f921cd0ab2bc72a79146141b57a70e42253aefd7631d3e0430ca3213980a5b7"
+      }
+    }
+  },
+  "tensorrt": "10.13.3.9.post1",
+  "complete": true
+}

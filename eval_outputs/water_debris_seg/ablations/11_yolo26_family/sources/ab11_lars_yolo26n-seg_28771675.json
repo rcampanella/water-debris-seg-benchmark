@@ -1,0 +1,571 @@
+{
+  "dataset": "lars",
+  "model": "yolo26n-seg",
+  "task": "segment",
+  "job": "28771675",
+  "run_dir": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars_yolo26n-seg",
+  "data_yaml": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/data/lars_segment.yaml",
+  "train_split": "/scratch-shared/rcampanella/water-debris-seg/data/lars/yolo_seg/train_all",
+  "test_split": "/scratch-shared/rcampanella/water-debris-seg/data/lars/yolo_seg/val",
+  "pretrained": "data/water_debris/checkpoints/yolo/yolo26n-seg.pt",
+  "pretrained_sha256": "361fbfabab285c3237700b6bb91d7ecfa602cd945fffda8dbe1242829b71e73f",
+  "selection": "best.pt = epoch with the highest Ultralytics fitness on the TEST split (detect: box mAP50-95; segment: box + mask mAP50-95); no held-out split",
+  "train_args": {
+    "task": "segment",
+    "mode": "train",
+    "model": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/checkpoints/yolo/yolo26n-seg.pt",
+    "data": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/data/lars_segment.yaml",
+    "epochs": 50,
+    "time": null,
+    "patience": 50,
+    "batch": 16,
+    "imgsz": 640,
+    "save": true,
+    "save_period": -1,
+    "cache": "ram",
+    "device": "0",
+    "workers": 8,
+    "project": "water-debris-seg",
+    "name": "lars_yolo26n-seg",
+    "exist_ok": true,
+    "pretrained": true,
+    "cls_remap": true,
+    "optimizer": "AdamW",
+    "verbose": true,
+    "seed": 0,
+    "deterministic": true,
+    "single_cls": false,
+    "rect": false,
+    "cos_lr": false,
+    "close_mosaic": 10,
+    "resume": false,
+    "amp": true,
+    "fraction": 1.0,
+    "profile": false,
+    "freeze": null,
+    "multi_scale": 0.0,
+    "compile": false,
+    "channels_last": null,
+    "overlap_mask": true,
+    "mask_ratio": 4,
+    "dropout": 0.0,
+    "val": true,
+    "split": "val",
+    "save_json": false,
+    "conf": null,
+    "iou": 0.7,
+    "max_det": 355,
+    "quantize": null,
+    "dnn": false,
+    "plots": true,
+    "nms": null,
+    "source": null,
+    "vid_stride": 1,
+    "stream_buffer": false,
+    "visualize": false,
+    "augment": false,
+    "agnostic_nms": false,
+    "classes": null,
+    "retina_masks": false,
+    "embed": null,
+    "show": false,
+    "save_frames": false,
+    "save_txt": false,
+    "save_conf": false,
+    "save_crop": false,
+    "show_labels": true,
+    "show_conf": true,
+    "show_boxes": true,
+    "line_width": null,
+    "format": "torchscript",
+    "optimize": false,
+    "dynamic": false,
+    "simplify": true,
+    "opset": null,
+    "workspace": null,
+    "lr0": 0.000769,
+    "lrf": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3.0,
+    "warmup_momentum": 0.8,
+    "warmup_bias_lr": 0.0,
+    "distill_model": null,
+    "dis": 6.0,
+    "box": 7.5,
+    "cls": 0.5,
+    "cls_pw": 0.0,
+    "dfl": 1.5,
+    "pose": 12.0,
+    "kobj": 1.0,
+    "rle": 1.0,
+    "angle": 1.0,
+    "dlog": 1.0,
+    "dgrad": 0.5,
+    "dlam": 1.0,
+    "nbs": 64,
+    "hsv_h": 0.015,
+    "hsv_s": 0.7,
+    "hsv_v": 0.4,
+    "degrees": 0.0,
+    "translate": 0.1,
+    "scale": 0.5,
+    "shear": 0.0,
+    "perspective": 0.0,
+    "flipud": 0.0,
+    "fliplr": 0.5,
+    "bgr": 0.0,
+    "mosaic": 1.0,
+    "mixup": 0.0,
+    "cutmix": 0.0,
+    "copy_paste": 0.0,
+    "copy_paste_mode": "flip",
+    "auto_augment": "randaugment",
+    "erasing": 0.4,
+    "cfg": null,
+    "tracker": "tracktrack.yaml",
+    "save_dir": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/runs/segment/water-debris-seg/lars_yolo26n-seg"
+  },
+  "wandb_train_run": "https://wandb.ai/riccardo-campanella/water-debris-seg/runs/lars_yolo26n-seg_20261030_124034",
+  "curve": {
+    "source": "/gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars_yolo26n-seg/results.csv",
+    "epochs_run": 50,
+    "selected_epoch": 48,
+    "selected_fitness": 0.37359,
+    "best_epoch_on_plotted_metric": 47,
+    "best_plotted_metric": 0.17481,
+    "plotted_metric": "metrics/mAP50-95(M)",
+    "per_epoch": [
+      {
+        "epoch": 1,
+        "metrics/mAP50-95(B)": 0.06704,
+        "metrics/mAP50(B)": 0.11319,
+        "metrics/mAP50-95(M)": 0.07178,
+        "metrics/mAP50(M)": 0.12109
+      },
+      {
+        "epoch": 2,
+        "metrics/mAP50-95(B)": 0.07094,
+        "metrics/mAP50(B)": 0.14351,
+        "metrics/mAP50-95(M)": 0.08698,
+        "metrics/mAP50(M)": 0.15036
+      },
+      {
+        "epoch": 3,
+        "metrics/mAP50-95(B)": 0.07763,
+        "metrics/mAP50(B)": 0.16626,
+        "metrics/mAP50-95(M)": 0.09571,
+        "metrics/mAP50(M)": 0.17499
+      },
+      {
+        "epoch": 4,
+        "metrics/mAP50-95(B)": 0.10105,
+        "metrics/mAP50(B)": 0.19925,
+        "metrics/mAP50-95(M)": 0.106,
+        "metrics/mAP50(M)": 0.20535
+      },
+      {
+        "epoch": 5,
+        "metrics/mAP50-95(B)": 0.10249,
+        "metrics/mAP50(B)": 0.21658,
+        "metrics/mAP50-95(M)": 0.11253,
+        "metrics/mAP50(M)": 0.22206
+      },
+      {
+        "epoch": 6,
+        "metrics/mAP50-95(B)": 0.12423,
+        "metrics/mAP50(B)": 0.22453,
+        "metrics/mAP50-95(M)": 0.11652,
+        "metrics/mAP50(M)": 0.21305
+      },
+      {
+        "epoch": 7,
+        "metrics/mAP50-95(B)": 0.12921,
+        "metrics/mAP50(B)": 0.24276,
+        "metrics/mAP50-95(M)": 0.1288,
+        "metrics/mAP50(M)": 0.23555
+      },
+      {
+        "epoch": 8,
+        "metrics/mAP50-95(B)": 0.13415,
+        "metrics/mAP50(B)": 0.25083,
+        "metrics/mAP50-95(M)": 0.14104,
+        "metrics/mAP50(M)": 0.26527
+      },
+      {
+        "epoch": 9,
+        "metrics/mAP50-95(B)": 0.14261,
+        "metrics/mAP50(B)": 0.25496,
+        "metrics/mAP50-95(M)": 0.136,
+        "metrics/mAP50(M)": 0.25803
+      },
+      {
+        "epoch": 10,
+        "metrics/mAP50-95(B)": 0.15361,
+        "metrics/mAP50(B)": 0.28864,
+        "metrics/mAP50-95(M)": 0.136,
+        "metrics/mAP50(M)": 0.26611
+      },
+      {
+        "epoch": 11,
+        "metrics/mAP50-95(B)": 0.14937,
+        "metrics/mAP50(B)": 0.28958,
+        "metrics/mAP50-95(M)": 0.1385,
+        "metrics/mAP50(M)": 0.26337
+      },
+      {
+        "epoch": 12,
+        "metrics/mAP50-95(B)": 0.15954,
+        "metrics/mAP50(B)": 0.31627,
+        "metrics/mAP50-95(M)": 0.13793,
+        "metrics/mAP50(M)": 0.27848
+      },
+      {
+        "epoch": 13,
+        "metrics/mAP50-95(B)": 0.14843,
+        "metrics/mAP50(B)": 0.28504,
+        "metrics/mAP50-95(M)": 0.14071,
+        "metrics/mAP50(M)": 0.27397
+      },
+      {
+        "epoch": 14,
+        "metrics/mAP50-95(B)": 0.17436,
+        "metrics/mAP50(B)": 0.3388,
+        "metrics/mAP50-95(M)": 0.15093,
+        "metrics/mAP50(M)": 0.30064
+      },
+      {
+        "epoch": 15,
+        "metrics/mAP50-95(B)": 0.16357,
+        "metrics/mAP50(B)": 0.31309,
+        "metrics/mAP50-95(M)": 0.15034,
+        "metrics/mAP50(M)": 0.28504
+      },
+      {
+        "epoch": 16,
+        "metrics/mAP50-95(B)": 0.15044,
+        "metrics/mAP50(B)": 0.29298,
+        "metrics/mAP50-95(M)": 0.14929,
+        "metrics/mAP50(M)": 0.29632
+      },
+      {
+        "epoch": 17,
+        "metrics/mAP50-95(B)": 0.15875,
+        "metrics/mAP50(B)": 0.29799,
+        "metrics/mAP50-95(M)": 0.14764,
+        "metrics/mAP50(M)": 0.28821
+      },
+      {
+        "epoch": 18,
+        "metrics/mAP50-95(B)": 0.15721,
+        "metrics/mAP50(B)": 0.31597,
+        "metrics/mAP50-95(M)": 0.14067,
+        "metrics/mAP50(M)": 0.28174
+      },
+      {
+        "epoch": 19,
+        "metrics/mAP50-95(B)": 0.16944,
+        "metrics/mAP50(B)": 0.31773,
+        "metrics/mAP50-95(M)": 0.15711,
+        "metrics/mAP50(M)": 0.28465
+      },
+      {
+        "epoch": 20,
+        "metrics/mAP50-95(B)": 0.17577,
+        "metrics/mAP50(B)": 0.31975,
+        "metrics/mAP50-95(M)": 0.15773,
+        "metrics/mAP50(M)": 0.29052
+      },
+      {
+        "epoch": 21,
+        "metrics/mAP50-95(B)": 0.1673,
+        "metrics/mAP50(B)": 0.30725,
+        "metrics/mAP50-95(M)": 0.15598,
+        "metrics/mAP50(M)": 0.29408
+      },
+      {
+        "epoch": 22,
+        "metrics/mAP50-95(B)": 0.16248,
+        "metrics/mAP50(B)": 0.32329,
+        "metrics/mAP50-95(M)": 0.16059,
+        "metrics/mAP50(M)": 0.30346
+      },
+      {
+        "epoch": 23,
+        "metrics/mAP50-95(B)": 0.1718,
+        "metrics/mAP50(B)": 0.32694,
+        "metrics/mAP50-95(M)": 0.15815,
+        "metrics/mAP50(M)": 0.30748
+      },
+      {
+        "epoch": 24,
+        "metrics/mAP50-95(B)": 0.17899,
+        "metrics/mAP50(B)": 0.3386,
+        "metrics/mAP50-95(M)": 0.15373,
+        "metrics/mAP50(M)": 0.2935
+      },
+      {
+        "epoch": 25,
+        "metrics/mAP50-95(B)": 0.18351,
+        "metrics/mAP50(B)": 0.36535,
+        "metrics/mAP50-95(M)": 0.16021,
+        "metrics/mAP50(M)": 0.32632
+      },
+      {
+        "epoch": 26,
+        "metrics/mAP50-95(B)": 0.1854,
+        "metrics/mAP50(B)": 0.33634,
+        "metrics/mAP50-95(M)": 0.16641,
+        "metrics/mAP50(M)": 0.30749
+      },
+      {
+        "epoch": 27,
+        "metrics/mAP50-95(B)": 0.19079,
+        "metrics/mAP50(B)": 0.35661,
+        "metrics/mAP50-95(M)": 0.16294,
+        "metrics/mAP50(M)": 0.31463
+      },
+      {
+        "epoch": 28,
+        "metrics/mAP50-95(B)": 0.18229,
+        "metrics/mAP50(B)": 0.33897,
+        "metrics/mAP50-95(M)": 0.1651,
+        "metrics/mAP50(M)": 0.32254
+      },
+      {
+        "epoch": 29,
+        "metrics/mAP50-95(B)": 0.17255,
+        "metrics/mAP50(B)": 0.33429,
+        "metrics/mAP50-95(M)": 0.154,
+        "metrics/mAP50(M)": 0.29099
+      },
+      {
+        "epoch": 30,
+        "metrics/mAP50-95(B)": 0.18192,
+        "metrics/mAP50(B)": 0.34593,
+        "metrics/mAP50-95(M)": 0.16377,
+        "metrics/mAP50(M)": 0.31016
+      },
+      {
+        "epoch": 31,
+        "metrics/mAP50-95(B)": 0.17031,
+        "metrics/mAP50(B)": 0.32939,
+        "metrics/mAP50-95(M)": 0.15711,
+        "metrics/mAP50(M)": 0.31785
+      },
+      {
+        "epoch": 32,
+        "metrics/mAP50-95(B)": 0.17206,
+        "metrics/mAP50(B)": 0.33352,
+        "metrics/mAP50-95(M)": 0.16391,
+        "metrics/mAP50(M)": 0.30865
+      },
+      {
+        "epoch": 33,
+        "metrics/mAP50-95(B)": 0.18987,
+        "metrics/mAP50(B)": 0.35944,
+        "metrics/mAP50-95(M)": 0.17033,
+        "metrics/mAP50(M)": 0.33311
+      },
+      {
+        "epoch": 34,
+        "metrics/mAP50-95(B)": 0.18806,
+        "metrics/mAP50(B)": 0.3449,
+        "metrics/mAP50-95(M)": 0.16538,
+        "metrics/mAP50(M)": 0.32281
+      },
+      {
+        "epoch": 35,
+        "metrics/mAP50-95(B)": 0.18443,
+        "metrics/mAP50(B)": 0.33816,
+        "metrics/mAP50-95(M)": 0.16089,
+        "metrics/mAP50(M)": 0.30912
+      },
+      {
+        "epoch": 36,
+        "metrics/mAP50-95(B)": 0.18508,
+        "metrics/mAP50(B)": 0.3417,
+        "metrics/mAP50-95(M)": 0.17297,
+        "metrics/mAP50(M)": 0.32768
+      },
+      {
+        "epoch": 37,
+        "metrics/mAP50-95(B)": 0.18456,
+        "metrics/mAP50(B)": 0.34413,
+        "metrics/mAP50-95(M)": 0.16231,
+        "metrics/mAP50(M)": 0.31445
+      },
+      {
+        "epoch": 38,
+        "metrics/mAP50-95(B)": 0.19288,
+        "metrics/mAP50(B)": 0.36721,
+        "metrics/mAP50-95(M)": 0.16797,
+        "metrics/mAP50(M)": 0.31386
+      },
+      {
+        "epoch": 39,
+        "metrics/mAP50-95(B)": 0.19075,
+        "metrics/mAP50(B)": 0.35536,
+        "metrics/mAP50-95(M)": 0.17006,
+        "metrics/mAP50(M)": 0.32608
+      },
+      {
+        "epoch": 40,
+        "metrics/mAP50-95(B)": 0.19306,
+        "metrics/mAP50(B)": 0.37233,
+        "metrics/mAP50-95(M)": 0.1687,
+        "metrics/mAP50(M)": 0.32712
+      },
+      {
+        "epoch": 41,
+        "metrics/mAP50-95(B)": 0.18713,
+        "metrics/mAP50(B)": 0.3709,
+        "metrics/mAP50-95(M)": 0.17135,
+        "metrics/mAP50(M)": 0.33315
+      },
+      {
+        "epoch": 42,
+        "metrics/mAP50-95(B)": 0.18719,
+        "metrics/mAP50(B)": 0.36397,
+        "metrics/mAP50-95(M)": 0.16768,
+        "metrics/mAP50(M)": 0.3118
+      },
+      {
+        "epoch": 43,
+        "metrics/mAP50-95(B)": 0.18845,
+        "metrics/mAP50(B)": 0.36094,
+        "metrics/mAP50-95(M)": 0.17101,
+        "metrics/mAP50(M)": 0.32659
+      },
+      {
+        "epoch": 44,
+        "metrics/mAP50-95(B)": 0.19108,
+        "metrics/mAP50(B)": 0.35968,
+        "metrics/mAP50-95(M)": 0.17246,
+        "metrics/mAP50(M)": 0.31927
+      },
+      {
+        "epoch": 45,
+        "metrics/mAP50-95(B)": 0.19637,
+        "metrics/mAP50(B)": 0.37777,
+        "metrics/mAP50-95(M)": 0.17124,
+        "metrics/mAP50(M)": 0.33214
+      },
+      {
+        "epoch": 46,
+        "metrics/mAP50-95(B)": 0.19746,
+        "metrics/mAP50(B)": 0.3832,
+        "metrics/mAP50-95(M)": 0.17155,
+        "metrics/mAP50(M)": 0.32641
+      },
+      {
+        "epoch": 47,
+        "metrics/mAP50-95(B)": 0.19618,
+        "metrics/mAP50(B)": 0.3686,
+        "metrics/mAP50-95(M)": 0.17481,
+        "metrics/mAP50(M)": 0.33089
+      },
+      {
+        "epoch": 48,
+        "metrics/mAP50-95(B)": 0.20193,
+        "metrics/mAP50(B)": 0.38463,
+        "metrics/mAP50-95(M)": 0.17166,
+        "metrics/mAP50(M)": 0.32604
+      },
+      {
+        "epoch": 49,
+        "metrics/mAP50-95(B)": 0.20044,
+        "metrics/mAP50(B)": 0.38888,
+        "metrics/mAP50-95(M)": 0.17277,
+        "metrics/mAP50(M)": 0.3306
+      },
+      {
+        "epoch": 50,
+        "metrics/mAP50-95(B)": 0.19828,
+        "metrics/mAP50(B)": 0.38189,
+        "metrics/mAP50-95(M)": 0.17271,
+        "metrics/mAP50(M)": 0.33613
+      }
+    ]
+  },
+  "best": {
+    "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars_yolo26n-seg/weights/best.pt",
+    "sha256": "5e5d2a049d966cef8dce06a0a9a4f9eb4824b98615c41e959eb7a44ea590f5a2",
+    "epoch": 48,
+    "box_mAP50_95": 0.2034142349748832,
+    "box_mAP50": 0.3865596392010238,
+    "box_P": 0.6413832205860719,
+    "box_R": 0.36953352116414157,
+    "fitness": 0.37257463228366894,
+    "mask_mAP50_95": 0.1691603973087857,
+    "mask_mAP50": 0.32119342158238173,
+    "per_class_box_mAP50_95": {
+      "Static Obstacle": 0.41314676713905685,
+      "Boat/ship": 0.31354048497139403,
+      "Row boats": 0.22203798733752364,
+      "Paddle board": 0.37698839017477953,
+      "Buoy": 0.1120570894600652,
+      "Swimmer": 0.19826136858743496,
+      "Animal": 0.14149922646891752,
+      "Float": 0.0,
+      "Other": 0.05319680063477714
+    }
+  },
+  "last": {
+    "weights": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars_yolo26n-seg/weights/last.pt",
+    "sha256": "91b725e0dfbd173392d6011ceec8ab1ab502f442dc8242fb0020634a3cba06d5",
+    "epoch": 50,
+    "box_mAP50_95": 0.2024730802633492,
+    "box_mAP50": 0.39253054541905197,
+    "box_P": 0.6923037294571078,
+    "box_R": 0.3654477895038271,
+    "fitness": 0.37194350117640673,
+    "mask_mAP50_95": 0.16947042091305753,
+    "mask_mAP50": 0.3260692209157099,
+    "per_class_box_mAP50_95": {
+      "Static Obstacle": 0.4141092331223987,
+      "Boat/ship": 0.3133462892119969,
+      "Row boats": 0.2119992064141932,
+      "Paddle board": 0.3711709510601499,
+      "Buoy": 0.11331416400627906,
+      "Swimmer": 0.20470149452922973,
+      "Animal": 0.13962691790645748,
+      "Float": 0.0,
+      "Other": 0.053989466119437925
+    }
+  },
+  "params": 3056695,
+  "gflops": 10.3001088,
+  "latency": {
+    "end_to_end_ms": {
+      "median": 12.05027149990201,
+      "mean": 14.971279589527319,
+      "p90": 12.42020299541764
+    },
+    "preprocess_ms": {
+      "median": 0.8567480253987014,
+      "mean": 0.9877212673263478,
+      "p90": 1.2741913844365627
+    },
+    "inference_ms": {
+      "median": 9.42820799537003,
+      "mean": 12.429874211816598,
+      "p90": 9.512841468676925
+    },
+    "postprocess_ms": {
+      "median": 1.5397735114675015,
+      "mean": 1.5536841103843717,
+      "p90": 1.647274725837633
+    },
+    "n_timed": 178,
+    "warmup": 20,
+    "setting": "PyTorch FP16 (half=True), batch 1, imgsz 640, Ultralytics Results.speed",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "torch": "2.7.0+cu126",
+    "cpu": "x86_64"
+  },
+  "plot_y": {
+    "metric": "mask_mAP50_95",
+    "value": 0.1691603973087857
+  }
+}

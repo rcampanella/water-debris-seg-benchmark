@@ -1,0 +1,57 @@
+{
+  "checkpoint": {
+    "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/flow_yolo26s/weights/best.pt",
+    "weights_sha256": "dc1870d7b1ebf5ece2628c9c455f3e644214feb89274e8b1f625cbf49f1c4b88",
+    "gt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/04_flow_mask2box/sources/flow_test_gt_coco.json",
+    "gt_sha256": "29acb22e5a4068736677c996fc7a91c1bec4f997654cc89429273e539347a437",
+    "imgsz": 640,
+    "n_pred": 9750,
+    "ultralytics": {
+      "mAP50-95": 0.4256826090121866,
+      "mAP50": 0.8642681141674098,
+      "precision": 0.859872610781626,
+      "recall": 0.8276814986992758,
+      "per_class_mAP50-95": {
+        "waste": 0.4256826090121866
+      }
+    },
+    "pycocotools_all_9_classes": {
+      "mAP": 0.4270651506269599,
+      "AP50": 0.8552073734878044,
+      "AP75": 0.3710694733327007,
+      "AP_small": 0.29015510741116596,
+      "AP_medium": 0.561131831792794,
+      "AP_large": 0.7057623434177865,
+      "AR1": 0.23423913043478262,
+      "AR10": 0.49036561264822137,
+      "AR100": 0.5064229249011858,
+      "AR_small": 0.40500417014178475,
+      "AR_medium": 0.6364275668073136,
+      "AR_large": 0.762280701754386
+    },
+    "pycocotools_objects_8_classes": {
+      "mAP": 0.4270651506269599,
+      "AP50": 0.8552073734878044,
+      "AP75": 0.3710694733327007,
+      "AP_small": 0.29015510741116596,
+      "AP_medium": 0.561131831792794,
+      "AP_large": 0.7057623434177865,
+      "AR1": 0.23423913043478262,
+      "AR10": 0.49036561264822137,
+      "AR100": 0.5064229249011858,
+      "AR_small": 0.40500417014178475,
+      "AR_medium": 0.6364275668073136,
+      "AR_large": 0.762280701754386
+    },
+    "per_class": {
+      "waste": {
+        "AP": 0.4270651506269599,
+        "AP50": 0.8552073734878044,
+        "AR100": 0.5064229249011858
+      }
+    },
+    "gt_boxes_per_class": {
+      "waste": 2024
+    }
+  }
+}

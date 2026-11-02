@@ -1,0 +1,49 @@
+25/198
+50/198
+75/198
+100/198
+125/198
+150/198
+175/198
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: The ``compute`` method of metric PanopticQuality was called before the ``update`` method which may lead to errors, as metric states have not yet been updated.
+  warnings.warn(*args, **kwargs)
+{
+ "by_threshold": {
+  "0.20": {
+   "PQ": 0.34614974076251975,
+   "PQ_things": 0.23396463892839164,
+   "PQ_stuff": 0.6453100123201945,
+   "PQ_per_class": {
+    "Boat/ship": 0.4834471604075978,
+    "Row boats": 0.26275839919753435,
+    "Paddle board": 0.3961705864740395,
+    "Buoy": 0.2876262825739251,
+    "Swimmer": 0.31446379985988027,
+    "Animal": 0.03736263704742049,
+    "Float": 0.0,
+    "Other": 0.08988824586673576,
+    "Static Obstacle": 0.33236598736134965,
+    "Water": 0.7311682944427818,
+    "Sky": 0.8723957551564522
+   },
+   "mIoU": 0.6796144799065389,
+   "IoU_per_class": {
+    "obstacle": 0.40959674275242497,
+    "water": 0.7401013021227518,
+    "sky": 0.88914539484444
+   }
+  }
+ },
+ "pilot_region_iou": {
+  "Water": {
+   "median": 0.9691501930842158,
+   "n_images": 198,
+   "share_below_0.8": 0.025252525252525252
+  },
+  "Sky": {
+   "median": 0.9756957039776526,
+   "n_images": 176,
+   "share_below_0.8": 0.045454545454545456
+  }
+ }
+}

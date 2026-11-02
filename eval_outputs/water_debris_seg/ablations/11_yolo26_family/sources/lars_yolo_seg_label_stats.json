@@ -1,0 +1,140 @@
+{
+  "train_all": {
+    "images": 2605,
+    "instances_per_class": {
+      "Static Obstacle": 2533,
+      "Boat/ship": 5739,
+      "Animal": 361,
+      "Buoy": 1560,
+      "Float": 22,
+      "Other": 499,
+      "Row boats": 435,
+      "Paddle board": 152,
+      "Swimmer": 345
+    },
+    "crowd_excluded": {
+      "Boat/ship": 175,
+      "Float": 1,
+      "Row boats": 9,
+      "Swimmer": 4,
+      "Other": 2,
+      "Buoy": 6,
+      "Paddle board": 2
+    },
+    "instances_in_several_pieces_merged": {
+      "Static Obstacle": 1402,
+      "Boat/ship": 239,
+      "Animal": 0,
+      "Buoy": 4,
+      "Float": 0,
+      "Other": 0,
+      "Row boats": 20,
+      "Paddle board": 2,
+      "Swimmer": 4
+    },
+    "instances_without_polygon": 9
+  },
+  "val": {
+    "images": 198,
+    "instances_per_class": {
+      "Static Obstacle": 186,
+      "Boat/ship": 763,
+      "Row boats": 32,
+      "Other": 73,
+      "Buoy": 125,
+      "Paddle board": 30,
+      "Swimmer": 26,
+      "Animal": 30,
+      "Float": 3
+    },
+    "crowd_excluded": {
+      "Boat/ship": 23,
+      "Row boats": 2
+    },
+    "instances_in_several_pieces_merged": {
+      "Static Obstacle": 87,
+      "Boat/ship": 32,
+      "Row boats": 3,
+      "Other": 0,
+      "Buoy": 2,
+      "Paddle board": 0,
+      "Swimmer": 1,
+      "Animal": 0,
+      "Float": 0
+    },
+    "instances_without_polygon": 0,
+    "polygon_vs_mask_iou": {
+      "Static Obstacle": {
+        "n": 186,
+        "mean": 0.9911065182100177,
+        "p05": 0.9419218823139351,
+        "min": 0.8444643657552667
+      },
+      "Boat/ship": {
+        "n": 763,
+        "mean": 0.9858273400077807,
+        "p05": 0.912946914271249,
+        "min": 0.43018480492813144
+      },
+      "Row boats": {
+        "n": 32,
+        "mean": 0.996594315160874,
+        "p05": 0.9816193376400838,
+        "min": 0.9628670120898101
+      },
+      "Other": {
+        "n": 73,
+        "mean": 1.0,
+        "p05": 1.0,
+        "min": 1.0
+      },
+      "Buoy": {
+        "n": 125,
+        "mean": 0.9985260748697669,
+        "p05": 1.0,
+        "min": 0.9
+      },
+      "Paddle board": {
+        "n": 30,
+        "mean": 0.9894620100504844,
+        "p05": 0.9221807860391683,
+        "min": 0.8641578705828362
+      },
+      "Swimmer": {
+        "n": 26,
+        "mean": 0.9993951789404169,
+        "p05": 0.9982942617214836,
+        "min": 0.9865489701555276
+      },
+      "Animal": {
+        "n": 30,
+        "mean": 1.0,
+        "p05": 1.0,
+        "min": 1.0
+      },
+      "Float": {
+        "n": 3,
+        "mean": 0.9342108960219017,
+        "p05": 0.8831861095697044,
+        "min": 0.8786535509539175
+      },
+      "all": {
+        "n": 1268,
+        "mean": 0.9895186261032334,
+        "p05": 0.9419666881815469,
+        "min": 0.43018480492813144
+      }
+    }
+  },
+  "class_index": {
+    "0": "Static Obstacle",
+    "1": "Boat/ship",
+    "2": "Row boats",
+    "3": "Paddle board",
+    "4": "Buoy",
+    "5": "Swimmer",
+    "6": "Animal",
+    "7": "Float",
+    "8": "Other"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "checkpoint": {
+    "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26m/weights/best.pt",
+    "weights_sha256": "d5729efa1886e43bd1dbbd0943c67f958b4478aeacf5873b922f54ce50066519",
+    "gt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "imgsz": 640,
+    "n_pred": 22888,
+    "ultralytics": {
+      "mAP50-95": 0.877628981370194,
+      "mAP50": 0.9721589435720168,
+      "precision": 0.9823328451503011,
+      "recall": 0.9431719590491063,
+      "per_class_mAP50-95": {
+        "object": 0.877628981370194
+      }
+    },
+    "pycocotools_all_9_classes": {
+      "mAP": 0.8718435356670733,
+      "AP50": 0.9668212594669694,
+      "AP75": 0.8827118420337843,
+      "AP_small": 0.11028865404018275,
+      "AP_medium": 0.3402935641359539,
+      "AP_large": 0.9271251281321732,
+      "AR1": 0.1545462432760715,
+      "AR10": 0.8554225229914975,
+      "AR100": 0.8813899010931806,
+      "AR_small": 0.1526315789473684,
+      "AR_medium": 0.438213399503722,
+      "AR_large": 0.9347800757355083
+    },
+    "pycocotools_objects_8_classes": {
+      "mAP": 0.8718435356670733,
+      "AP50": 0.9668212594669694,
+      "AP75": 0.8827118420337843,
+      "AP_small": 0.11028865404018275,
+      "AP_medium": 0.3402935641359539,
+      "AP_large": 0.9271251281321732,
+      "AR1": 0.1545462432760715,
+      "AR10": 0.8554225229914975,
+      "AR100": 0.8813899010931806,
+      "AR_small": 0.1526315789473684,
+      "AR_medium": 0.438213399503722,
+      "AR_large": 0.9347800757355083
+    },
+    "per_class": {
+      "object": {
+        "AP": 0.8718435356670733,
+        "AP50": 0.9668212594669694,
+        "AR100": 0.8813899010931806
+      }
+    },
+    "gt_boxes_per_class": {
+      "object": 11526
+    }
+  }
+}

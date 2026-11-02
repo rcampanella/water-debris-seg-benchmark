@@ -1,0 +1,155 @@
+{
+  "source": "yolo-seg",
+  "masks": "YOLO-seg own (retina_masks)",
+  "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26l-seg/weights/best.pt",
+  "weights_sha256": "523251aa010eac3170a20760b5fd662494f7918131d2072599c0c629b5eeb9cf",
+  "split": "val",
+  "n_images": 198,
+  "sam": null,
+  "merge_rule": "objects (score desc) > Static Obstacle > Water > Sky; drop segment if < 80% of its mask is kept",
+  "by_threshold": {
+    "0.10": {
+      "PQ": 0.4593069643983313,
+      "PQ_things": 0.28531132135457293,
+      "PQ_stuff": 0.9232953458483536,
+      "PQ_per_class": {
+        "Boat/ship": 0.48249833682964005,
+        "Row boats": 0.28319613124409393,
+        "Paddle board": 0.4770312472345433,
+        "Buoy": 0.3578017267491692,
+        "Swimmer": 0.34484677474296976,
+        "Animal": 0.133646532725328,
+        "Float": 0.0,
+        "Other": 0.20346982131083896,
+        "Static Obstacle": 0.868856007201949,
+        "Water": 0.9722478907517712,
+        "Sky": 0.9287821395913406
+      },
+      "mIoU": 0.9583728723943046,
+      "IoU_per_class": {
+        "obstacle": 0.9258329283326918,
+        "water": 0.9732134225017249,
+        "sky": 0.9760722663484969
+      }
+    },
+    "0.20": {
+      "PQ": 0.45516697104288323,
+      "PQ_things": 0.27891868106284434,
+      "PQ_stuff": 0.9251624109896535,
+      "PQ_per_class": {
+        "Boat/ship": 0.5007215676389479,
+        "Row boats": 0.31369417381010034,
+        "Paddle board": 0.5035329666059396,
+        "Buoy": 0.3434097807111391,
+        "Swimmer": 0.29974219823063275,
+        "Animal": 0.10720470204897156,
+        "Float": 0.0,
+        "Other": 0.16304405945702324,
+        "Static Obstacle": 0.8718128497159096,
+        "Water": 0.9722437792354159,
+        "Sky": 0.9314306040176351
+      },
+      "mIoU": 0.957692450641828,
+      "IoU_per_class": {
+        "obstacle": 0.923839226983136,
+        "water": 0.9732089736183306,
+        "sky": 0.9760291513240171
+      }
+    },
+    "0.30": {
+      "PQ": 0.4495043953192347,
+      "PQ_things": 0.2709504102143594,
+      "PQ_stuff": 0.9256483555989018,
+      "PQ_per_class": {
+        "Boat/ship": 0.4970936112558727,
+        "Row boats": 0.35772142551318087,
+        "Paddle board": 0.5130335765466415,
+        "Buoy": 0.33522421350215326,
+        "Swimmer": 0.2341320998966694,
+        "Animal": 0.10720470204897156,
+        "Float": 0.0,
+        "Other": 0.12319365295138608,
+        "Static Obstacle": 0.8710759764438997,
+        "Water": 0.9711278285210198,
+        "Sky": 0.934741261831786
+      },
+      "mIoU": 0.9533303325668498,
+      "IoU_per_class": {
+        "obstacle": 0.9131522802972769,
+        "water": 0.9705999142473097,
+        "sky": 0.9762388031559631
+      }
+    },
+    "0.40": {
+      "PQ": 0.4363774625996125,
+      "PQ_things": 0.2528920071853049,
+      "PQ_stuff": 0.9256720103710994,
+      "PQ_per_class": {
+        "Boat/ship": 0.4836283702649722,
+        "Row boats": 0.3707692348040067,
+        "Paddle board": 0.48194320095467946,
+        "Buoy": 0.27793452864878077,
+        "Swimmer": 0.2341320998966694,
+        "Animal": 0.06915721232438443,
+        "Float": 0.0,
+        "Other": 0.10557141058894626,
+        "Static Obstacle": 0.8711399048944649,
+        "Water": 0.9711304447876753,
+        "Sky": 0.9347456814311583
+      },
+      "mIoU": 0.9527545861384631,
+      "IoU_per_class": {
+        "obstacle": 0.911413882198932,
+        "water": 0.9706061725465982,
+        "sky": 0.9762437036698591
+      }
+    },
+    "0.50": {
+      "PQ": 0.42543328886820525,
+      "PQ_things": 0.23888869895827475,
+      "PQ_stuff": 0.92288552862802,
+      "PQ_per_class": {
+        "Boat/ship": 0.45282414863851134,
+        "Row boats": 0.3934693812126266,
+        "Paddle board": 0.46257428088990693,
+        "Buoy": 0.21855602054728845,
+        "Swimmer": 0.24168474107766613,
+        "Animal": 0.06915721232438443,
+        "Float": 0.0,
+        "Other": 0.07284380697581394,
+        "Static Obstacle": 0.8622984624697093,
+        "Water": 0.9711385066553843,
+        "Sky": 0.9352196167589665
+      },
+      "mIoU": 0.9509506185560069,
+      "IoU_per_class": {
+        "obstacle": 0.9060030403866492,
+        "water": 0.9706129651359373,
+        "sky": 0.976235850145434
+      }
+    }
+  },
+  "pilot_region_iou": {
+    "Water": {
+      "median": 0.9832178242975547,
+      "n_images": 198,
+      "share_below_0.8": 0.005050505050505051
+    },
+    "Sky": {
+      "median": 0.9741207539801469,
+      "n_images": 176,
+      "share_below_0.8": 0.05113636363636364
+    }
+  },
+  "timing_ms": {
+    "detector": {
+      "median": 25.63776302849874,
+      "mean": 27.80614046942185
+    },
+    "sam": null,
+    "n_timed": 188,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "note": "this script's own loop: FP32, batch 1, detector at the lowest threshold, SAM on every box above it"
+  },
+  "selected_threshold": 0.1
+}

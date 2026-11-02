@@ -1,0 +1,5 @@
+path: /gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/lars_yolo_11cls
+train: train_all/images
+val: val/images
+nc: 11
+names: ["Static Obstacle", "Boat/ship", "Row boats", "Paddle board", "Buoy", "Swimmer", "Animal", "Float", "Other", "Water", "Sky"]

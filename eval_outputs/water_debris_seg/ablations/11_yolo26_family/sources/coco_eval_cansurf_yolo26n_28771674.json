@@ -1,0 +1,57 @@
+{
+  "checkpoint": {
+    "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/cansurf_yolo26n/weights/best.pt",
+    "weights_sha256": "e8956da5f8d1163b36ec170f677b4d9479536f79625f010bf0de68cdc919e016",
+    "gt": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+    "gt_sha256": "da9bd59f7e820f1b27020d3fd47914afc9c6c0b0c0da2c861c054cd742a70715",
+    "imgsz": 640,
+    "n_pred": 69327,
+    "ultralytics": {
+      "mAP50-95": 0.8672938217474926,
+      "mAP50": 0.9694059720921836,
+      "precision": 0.9817415744861516,
+      "recall": 0.9317195904910637,
+      "per_class_mAP50-95": {
+        "object": 0.8672938217474926
+      }
+    },
+    "pycocotools_all_9_classes": {
+      "mAP": 0.8600416536118309,
+      "AP50": 0.9591709103874152,
+      "AP75": 0.8700417843950552,
+      "AP_small": 0.05031641573738105,
+      "AP_medium": 0.28611787641979514,
+      "AP_large": 0.9198426017042104,
+      "AR1": 0.15347909075134478,
+      "AR10": 0.8469286829776157,
+      "AR100": 0.8730609057782404,
+      "AR_small": 0.12105263157894737,
+      "AR_medium": 0.40512820512820513,
+      "AR_large": 0.9293814933488689
+    },
+    "pycocotools_objects_8_classes": {
+      "mAP": 0.8600416536118309,
+      "AP50": 0.9591709103874152,
+      "AP75": 0.8700417843950552,
+      "AP_small": 0.05031641573738105,
+      "AP_medium": 0.28611787641979514,
+      "AP_large": 0.9198426017042104,
+      "AR1": 0.15347909075134478,
+      "AR10": 0.8469286829776157,
+      "AR100": 0.8730609057782404,
+      "AR_small": 0.12105263157894737,
+      "AR_medium": 0.40512820512820513,
+      "AR_large": 0.9293814933488689
+    },
+    "per_class": {
+      "object": {
+        "AP": 0.8600416536118309,
+        "AP50": 0.9591709103874152,
+        "AR100": 0.8730609057782404
+      }
+    },
+    "gt_boxes_per_class": {
+      "object": 11526
+    }
+  }
+}

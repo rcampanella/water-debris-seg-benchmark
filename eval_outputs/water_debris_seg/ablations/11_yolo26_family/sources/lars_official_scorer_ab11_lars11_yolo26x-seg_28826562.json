@@ -1,0 +1,58 @@
+{
+  "source": "yolo-seg",
+  "masks": "YOLO-seg own (retina_masks)",
+  "weights": "/home/rcampanella/projects/water-debris-seg-benchmark/eval_outputs/water_debris_seg/ablations/11_yolo26_family/runs/lars11_yolo26x-seg/weights/best.pt",
+  "weights_sha256": "50b26f9825a4f7877aeadd283cd62cdc1958483881c3612f226a39a369e0bbd0",
+  "split": "val",
+  "n_images": 198,
+  "sam": null,
+  "merge_rule": "objects (score desc) > Static Obstacle > Water > Sky; drop segment if < 80% of its mask is kept",
+  "by_threshold": {
+    "0.20": {
+      "PQ": 0.4688421429143806,
+      "PQ_things": 0.29880155968198596,
+      "PQ_stuff": 0.9222836982007661,
+      "PQ_per_class": {
+        "Boat/ship": 0.49555423776857815,
+        "Row boats": 0.29658346509300343,
+        "Paddle board": 0.5000783763315111,
+        "Buoy": 0.33779542477596125,
+        "Swimmer": 0.4039589593446003,
+        "Animal": 0.1497315138897115,
+        "Float": 0.0,
+        "Other": 0.20671050025252177,
+        "Static Obstacle": 0.8580705518530717,
+        "Water": 0.973601589675943,
+        "Sky": 0.9351789530732835
+      },
+      "mIoU": 0.9594216357071265,
+      "IoU_per_class": {
+        "obstacle": 0.9266886542510657,
+        "water": 0.9741376197350595,
+        "sky": 0.977438633135254
+      }
+    }
+  },
+  "pilot_region_iou": {
+    "Water": {
+      "median": 0.9854681066368403,
+      "n_images": 198,
+      "share_below_0.8": 0.010101010101010102
+    },
+    "Sky": {
+      "median": 0.9732925967311725,
+      "n_images": 176,
+      "share_below_0.8": 0.045454545454545456
+    }
+  },
+  "timing_ms": {
+    "detector": {
+      "median": 26.449707977008075,
+      "mean": 28.52105091950123
+    },
+    "sam": null,
+    "n_timed": 188,
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "note": "this script's own loop: FP32, batch 1, detector at the lowest threshold, SAM on every box above it"
+  }
+}

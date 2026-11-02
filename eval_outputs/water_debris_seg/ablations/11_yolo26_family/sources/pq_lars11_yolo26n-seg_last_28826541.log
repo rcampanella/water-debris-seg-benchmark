@@ -1,0 +1,98 @@
+25/198
+50/198
+75/198
+100/198
+125/198
+150/198
+175/198
+/home/rcampanella/envs/wdseg-eomt/lib/python3.13/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: The ``compute`` method of metric PanopticQuality was called before the ``update`` method which may lead to errors, as metric states have not yet been updated.
+  warnings.warn(*args, **kwargs)
+{
+ "by_threshold": {
+  "0.10": {
+   "PQ": 0.42372973361360694,
+   "PQ_things": 0.2426101891732311,
+   "PQ_stuff": 0.9067151854546092,
+   "PQ_per_class": {
+    "Boat/ship": 0.38921267980108604,
+    "Row boats": 0.23457388498393045,
+    "Paddle board": 0.3877783603216362,
+    "Buoy": 0.2512647456266143,
+    "Swimmer": 0.2796342712888262,
+    "Animal": 0.25340148683086483,
+    "Float": 0.0,
+    "Other": 0.14501608453289067,
+    "Static Obstacle": 0.8247658051525192,
+    "Water": 0.9684416155886659,
+    "Sky": 0.9269381356226426
+   },
+   "mIoU": 0.9470088262718376,
+   "IoU_per_class": {
+    "obstacle": 0.9007872120015973,
+    "water": 0.9681085756977954,
+    "sky": 0.9721306911161205
+   }
+  },
+  "0.20": {
+   "PQ": 0.4078303899046819,
+   "PQ_things": 0.2207959416525787,
+   "PQ_stuff": 0.9065889185769567,
+   "PQ_per_class": {
+    "Boat/ship": 0.41428089733605206,
+    "Row boats": 0.28148865778620874,
+    "Paddle board": 0.3877783603216362,
+    "Buoy": 0.22287090773643026,
+    "Swimmer": 0.18656228544479203,
+    "Animal": 0.11983998272092533,
+    "Float": 0.0,
+    "Other": 0.15354644187458505,
+    "Static Obstacle": 0.8268041083378065,
+    "Water": 0.969412260585361,
+    "Sky": 0.9235503868077027
+   },
+   "mIoU": 0.9506820294219955,
+   "IoU_per_class": {
+    "obstacle": 0.9123153168040102,
+    "water": 0.9701237072704416,
+    "sky": 0.9696070641915345
+   }
+  },
+  "0.30": {
+   "PQ": 0.39816894110341955,
+   "PQ_things": 0.20815632910984083,
+   "PQ_stuff": 0.904869239752963,
+   "PQ_per_class": {
+    "Boat/ship": 0.4112531394190838,
+    "Row boats": 0.27173409454672043,
+    "Paddle board": 0.3958570449826697,
+    "Buoy": 0.19287082950159465,
+    "Swimmer": 0.17520514130592346,
+    "Animal": 0.07314855908216455,
+    "Float": 0.0,
+    "Other": 0.14518182404057,
+    "Static Obstacle": 0.8277571191519492,
+    "Water": 0.9674510754243193,
+    "Sky": 0.9193995246826203
+   },
+   "mIoU": 0.947456369419608,
+   "IoU_per_class": {
+    "obstacle": 0.906236717331927,
+    "water": 0.9676362139957707,
+    "sky": 0.968496176931126
+   }
+  },
+  "0.40": {
+   "PQ": 0.38489107628955327,
+   "PQ_things": 0.18950293952868585,
+   "PQ_stuff": 0.9059261076518661,
+   "PQ_per_class": {
+    "Boat/ship": 0.38826964694409216,
+    "Row boats": 0.29015954140441697,
+    "Paddle board": 0.3958570449826697,
+    "Buoy": 0.13868027278298928,
+    "Swimmer": 0.14669348617434727,
+    "Animal": 0.03623949736356735,
+    "Float": 0.0,
+    "Other": 0.12012402657740408,
+    "Static Obstacle": 0.8273625557737284,
+

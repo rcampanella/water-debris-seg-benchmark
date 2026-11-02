@@ -1,0 +1,5 @@
+path: /gpfs/home1/rcampanella/projects/water-debris-seg-benchmark/data/water_debris/yolo_splits/cansurf
+train: train_all/images
+val: test/images
+nc: 1
+names: ["debris"]
