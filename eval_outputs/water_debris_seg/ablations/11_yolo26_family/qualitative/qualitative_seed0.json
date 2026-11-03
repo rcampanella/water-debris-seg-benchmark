@@ -1,0 +1,63 @@
+{
+  "lars": {
+    "figure": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/qualitative/lars_seed0.png",
+    "images": [
+      "davimar_seq_69_00226",
+      "inhouse_seq_372_00104",
+      "orca_flow_6_00100",
+      "smd_seq08_00120",
+      "yt028_02_00060"
+    ],
+    "models": [
+      "yolo26l + SAM 2.1-L",
+      "yolo26m-seg",
+      "EoMT (main table)"
+    ],
+    "sources": {
+      "yolo26l + SAM 2.1-L": {
+        "pred_pngs": "data/water_debris/lars_eval/preds/ab11_lars11_yolo26l",
+        "frames": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/lars_official/ab11_lars11_yolo26l/frames.csv"
+      },
+      "yolo26m-seg": {
+        "pred_pngs": "data/water_debris/lars_eval/preds/ab11_lars11_yolo26m-seg",
+        "frames": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/lars_official/ab11_lars11_yolo26m-seg/frames.csv"
+      },
+      "EoMT (main table)": {
+        "pred_pngs": "data/water_debris/lars_eval/preds/eomt_full",
+        "frames": "eval_outputs/water_debris_seg/fairness_fixes/lars_official/eomt_full/frames.csv"
+      }
+    }
+  },
+  "cansurf": {
+    "figure": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/qualitative/cansurf_sea_seed0.png",
+    "image_ids": [
+      1252,
+      1505,
+      1666,
+      1703,
+      1797
+    ],
+    "file_names": [
+      "frame_10155_zahra_cans.jpg",
+      "frame_15405_zahra_cans.jpg",
+      "frame_5085_zahra_cans.jpg",
+      "frame_5910_zahra_cans.jpg",
+      "frame_8070_zahra_cans.jpg"
+    ],
+    "models": [
+      "yolo26n",
+      "yolo26x",
+      "EoMT (main table)"
+    ],
+    "conf": 0.25,
+    "scene": "sea",
+    "scene_regex": "^frame_\\d+_zahra_cans",
+    "n_candidates": 608,
+    "sources": {
+      "gt": "eval_outputs/water_debris_seg/ablations/05_cansurf_small_object/sources/cansurf_val_gt_coco_yolo_aligned.json",
+      "yolo26n": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/cansurf_paper_ab11_yolo26n_28825414.preds.json",
+      "yolo26x": "eval_outputs/water_debris_seg/ablations/11_yolo26_family/sources/cansurf_paper_ab11_yolo26x_28825414.preds.json",
+      "EoMT (main table)": "eval_outputs/water_debris_seg/fairness_fixes/sources/fix1_box_instance_cansurf_eomt_full_28547307.preds.json"
+    }
+  }
+}
